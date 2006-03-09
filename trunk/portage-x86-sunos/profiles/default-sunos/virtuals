@@ -1,0 +1,12 @@
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: 
+
+# Use this virtuals file to either overload the base profile's defined
+# virtuals, or add virtuals that are specific to this family of profiles
+
+virtual/os-headers  sys-sunos/kernel-headers
+virtual/cron 	    sys-sunos/cron
+virtual/libc	    sys-sunos/libc
+virtual/jdk	    sys-sunos/SUNWj5dev
+virtual/jre	    sys-sunos/SUNWj5rt

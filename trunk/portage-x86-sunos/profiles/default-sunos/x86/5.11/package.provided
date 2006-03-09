@@ -1,0 +1,7 @@
+sys-sunos/kernel-headers-11.11
+sys-sunos/os-headers-11.11
+sys-sunos/cron-11.11
+sys-sunos/libc-11.11
+sys-sunos/SUNWj5dev-1.5.0
+sys-sunos/SUNWj5rt-1.5.0
+sys-apps/sandbox-1.2.12-r9999
