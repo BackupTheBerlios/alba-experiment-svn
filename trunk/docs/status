@@ -1,0 +1,22 @@
+* PORTAGE
+   * DONE:
+	* 18 Feb 2006: emerge search working
+	* 18 Feb 2006: ebuild digest - working
+	* 18 Feb 2006 23:20: ebuild unpack - working
+	* 18 Feb 2006 23:23: ebuild compile - working
+   * TODO:
+	* emerge -av portage working
+	* sandbox
+
+* packeges installed in /usr/gnu/bin 
+	* coreutils
+	* findutils
+	* tar
+
+* Guidelines
+   * USERLAND=SunOS
+   * KEYWORD=x86-sunos
+   * GNU tools under /usr/gnu/bin with correct name linked with /usr/bin/ with g-prefix
+
+Chagend:
+   * /etc/env.d/05gcc

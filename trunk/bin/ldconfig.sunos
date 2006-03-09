@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+. /sbin/functions.sh
+/usr/bin/sed "/^\ *#/d" /etc/ld.so.conf | while read lddir; do
+	einfo "Adding $lddir"
+	/usr/bin/crle -u -l $lddir
+	einfo "Caching $lddir"
+	/usr/bin/crle -u -i $lddir
+done
