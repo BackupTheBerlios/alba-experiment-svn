@@ -49,3 +49,7 @@ DEPEND="${RDEPEND}
 PDEPEND="|| ( app-admin/eselect-compiler sys-devel/gcc-config )
 	x86? ( !nocxx? ( !elibc_uclibc? ( !build? ( =virtual/libstdc++-3.3 ) ) ) )"
 
+src_compile() {
+        [[ ${USERLAND} == "SunOS" ]] && EXTRA_ECONF="${EXTRA_ECONF} --with-as=/usr/bin/gas --with-gnu-as --without-gnu-ld --with-ld=/usr/ccs/bin/ld"
+        gcc_src_compile
+}

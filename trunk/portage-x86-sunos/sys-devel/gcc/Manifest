@@ -85,5 +85,5 @@ MD5 d71c91009df788366867cb67fc875d6d files/stubs/gcc-3.4-ssp-stub.patch 1068
 MD5 37e756238508fe9f9e2b9ba6a7ca67ca files/stubs/gcc-4.0-htb-stub.patch 722
 MD5 d71c91009df788366867cb67fc875d6d files/stubs/gcc-4.0-ssp-stub.patch 1068
 MD5 fdb5844de4c256d4b1f167a59120618f gcc-3.4.4-r9999.ebuild 5214
-MD5 3906c5394047321720ecf58d43d6e1da gcc-4.0.2-r9999.ebuild 2306
-MD5 2aee98c1e0dccfa8edf5b0c4f86973a3 gcc-4.1.0-r9999.ebuild 1532
+MD5 460c5302b530912da4f0b4ce9fc16976 gcc-4.0.2-r9999.ebuild 2302
+MD5 8304d77384609065fd52523a8a364355 gcc-4.1.0-r9999.ebuild 1723
