@@ -1,6 +1,6 @@
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-4.2.52_p2.ebuild,v 1.30 2005/08/23 20:46:39 agriffis Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/db/db-4.2.52_p4.ebuild,v 1.2 2005/12/26 22:06:53 mr_bones_ Exp $
 
 inherit eutils gnuconfig db
 
@@ -26,7 +26,7 @@ done
 
 LICENSE="DB"
 SLOT="4.2"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ~ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
 IUSE="tcltk java doc nocxx bootstrap"
 
 DEPEND="tcltk? ( >=dev-lang/tcl-8.4 )
@@ -43,8 +43,8 @@ src_unpack() {
 	done
 	epatch ${FILESDIR}/${PN}-${SLOT}-jarlocation.patch
 	epatch ${FILESDIR}/${PN}-${SLOT}-libtool.patch
-
 	epatch ${FILESDIR}/${PN}-4.0.14-fix-dep-link.patch
+	epatch ${FILESDIR}/${PN}-4.2.52_p2-TXN.patch
 
 	gnuconfig_update "${S}/../dist"
 
@@ -73,6 +73,13 @@ src_compile() {
 	fi
 
 	[[ -n ${CBUILD} ]] && myconf="${myconf} --build=${CBUILD}"
+
+	# the entire testsuite needs the TCL functionality
+	if use tcltk && has test $FEATURES; then
+		myconf="${myconf} --enable-test"
+	else
+		myconf="${myconf} --disable-test"
+	fi
 
 	../dist/configure \
 		--prefix=/usr \
