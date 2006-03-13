@@ -1,0 +1,118 @@
+1c1
+< #!/bin/bash
+---
+> #!/bin/bash 
+5d4
+< 
+329c328
+< 		find "$@" -type d -printf "${D}/%p/.keep\n" | tr "\n" "\0" | $XARGS -0 -n100 touch || die "Failed to recursive create .keep files"
+---
+> 		$FIND "$@" -type d -printf "${D}/%p/.keep\n" | tr "\n" "\0" | $XARGS -0 -n100 touch || die "Failed to recursive create .keep files"
+344a344,345
+> 	#elif [ "$USERLAND" == "SunOS" ]; then
+> 	#	TAR=gtar
+367c368
+< 				tar xf "${srcdir}${x}" ${tarvars} || die "$myfail"
+---
+> 				$TAR xf "${srcdir}${x}" ${tarvars} || die "$myfail"
+370c371
+< 				tar xzf "${srcdir}${x}" ${tarvars} || die "$myfail"
+---
+> 				$TAR xzf "${srcdir}${x}" ${tarvars} || die "$myfail"
+373c374
+< 				bzip2 -dc "${srcdir}${x}" | tar xf - ${tarvars}
+---
+> 				bzip2 -dc "${srcdir}${x}" | $TAR xf - ${tarvars}
+381c382
+< 					tar zxf "${srcdir}${x}" ${tarvars} || die "$myfail"
+---
+> 					${TAR} zxf "${srcdir}${x}" ${tarvars} || die "$myfail"
+388c389
+< 					bzip2 -dc "${srcdir}${x}" | tar xf - ${tarvars} 
+---
+> 					bzip2 -dc "${srcdir}${x}" | $TAR xf - ${tarvars} 
+421c422
+< 			for x in $(find "${WORKDIR}" -type f '(' -name config.guess -o -name config.sub ')') ; do
+---
+> 			for x in $($FIND "${WORKDIR}" -type f '(' -name config.guess -o -name config.sub ')') ; do
+518c519
+< 			make -n prefix=${D}/usr \
+---
+> 			$MAKE -n prefix=${D}/usr \
+527c528
+< 		make prefix=${D}/usr \
+---
+> 		$MAKE prefix=${D}/usr \
+669c670
+< 	install -m0700 -d "${WORKDIR}" || die "Failed to create dir '${WORKDIR}'"
+---
+> 	install -m 0700 -d "${WORKDIR}" || die "Failed to create dir '${WORKDIR}'"
+708c709
+< 		find "${BUILDDIR}" -type d ! -regex "^${WORKDIR}" | sort -r | tr "\n" "\0" | $XARGS -0 rmdir &>/dev/null
+---
+> 		$FIND "${BUILDDIR}" -type d ! -regex "^${WORKDIR}" | sort -r | tr "\n" "\0" | $XARGS -0 rmdir &>/dev/null
+711c712
+< 	if [ -z "$(find "${BUILDDIR}" -mindepth 1 -maxdepth 1)" ]; then
+---
+> 	if [ -z "$($FIND "${BUILDDIR}" -mindepth 1 -maxdepth 1)" ]; then
+956c957
+< 	tar cpvf - ./ | bzip2 -f > ../bin.tar.bz2 || die "Failed to create tarball"
+---
+> 	$TAR cpvf - ./ | bzip2 -f > ../bin.tar.bz2 || die "Failed to create tarball"
+1022c1023
+< 	for i in $(find "${D}/" -type f -perm -2002); do
+---
+> 	for i in $($FIND "${D}/" -type f -perm -2002); do
+1027c1028
+< 	for i in $(find "${D}/" -type f -perm -4002); do
+---
+> 	for i in $($FIND "${D}/" -type f -perm -4002); do
+1034c1035
+< 	for i in $(find "${D}/" -type f -perm -2); do
+---
+> 	for i in $($FIND "${D}/" -type f -perm -2); do
+1047c1048
+< 		# because the loader will search $PWD when it finds null paths.
+---
+> 		# because the loader will search $PWD when it find null paths.
+1147c1148
+< 	find "${D}/" -user  portage | while read file; do
+---
+> 	$FIND "${D}/" -user  portage | while read file; do
+1166c1167
+< 	find "${D}/" -group portage | while read file; do
+---
+> 	$FIND "${D}/" -group portage | while read file; do
+1191c1192
+< 	if hasq multilib-strict ${FEATURES} && [ -x /usr/bin/file -a -x /usr/bin/find -a \
+---
+> 	if hasq multilib-strict ${FEATURES} && [ -x /usr/bin/file -a -x $FIND -a \
+1196c1197
+< 			for file in $(find ${D}/${dir} -type f | egrep -v "^${D}/${dir}/${MULTILIB_STRICT_EXEMPT}"); do
+---
+> 			for file in $($FIND ${D}/${dir} -type f | egrep -v "^${D}/${dir}/${MULTILIB_STRICT_EXEMPT}"); do
+1227c1228
+< 		find "${IMAGE}" -name ${no_inst} -exec rm -fR {} \; >&/dev/null
+---
+> 		$FIND "${IMAGE}" -name ${no_inst} -exec rm -fR {} \; >&/dev/null
+1255c1256
+< 		for i in $(find ${IMAGE}/ -type f -perm -4000); do
+---
+> 		for i in $($FIND ${IMAGE}/ -type f -perm -4000); do
+1260c1261
+< 		for i in $(find ${IMAGE}/ -type f -perm -2000); do
+---
+> 		for i in $($FIND ${IMAGE}/ -type f -perm -2000); do
+1271c1272
+< 		for i in $(find ${IMAGE}/ -type f \( -perm -4000 -o -perm -2000 \) ); do
+---
+> 		for i in $($FIND ${IMAGE}/ -type f \( -perm -4000 -o -perm -2000 \) ); do
+1325c1326
+< 	tar czf "/usr/src/redhat/SOURCES/${PF}.tar.gz" "${O}/${PF}.ebuild" "${O}/files" || die "Failed to create base rpm tarball."
+---
+> 	$TAR czf "/usr/src/redhat/SOURCES/${PF}.tar.gz" "${O}/${PF}.ebuild" "${O}/files" || die "Failed to create base rpm tarball."
+1668,1669c1669
+< 
+< 	if [ "$(id -nu)" == "portage" ] ; then
+---
+> 	if [ "$($ID -nu)" == "portage" ] ; then
