@@ -6,7 +6,9 @@
 # virtuals, or add virtuals that are specific to this family of profiles
 
 virtual/os-headers  sys-sunos/kernel-headers
-virtual/cron 	    sys-sunos/cron
+virtual/cron 	    sys-sunos/SUNWcsu
 virtual/libc	    sys-sunos/libc
 virtual/jdk	    sys-sunos/SUNWj5dev
 virtual/jre	    sys-sunos/SUNWj5rt
+virtual/mta	    sys-sunos/SUNWsndmu
+app-misc/pax-utils  sys-sunos/SUNWcsu
