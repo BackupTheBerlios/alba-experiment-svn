@@ -17,6 +17,7 @@
    * USERLAND=SunOS
    * KEYWORD=x86-sunos
    * GNU tools under /usr/gnu/bin with correct name linked with /usr/bin/ with g-prefix
+   * Overlay portage tree: ebuild into the overlay have release number starting from r1100 to avoid collisions
 
 Chagend:
    * /etc/env.d/05gcc
