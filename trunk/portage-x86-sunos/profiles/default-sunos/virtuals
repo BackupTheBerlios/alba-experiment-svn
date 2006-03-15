@@ -12,3 +12,7 @@ virtual/jdk	    sys-sunos/SUNWj5dev
 virtual/jre	    sys-sunos/SUNWj5rt
 virtual/mta	    sys-sunos/SUNWsndmu
 app-misc/pax-utils  sys-sunos/SUNWcsu
+sys-devel/gettext   sys-sunos/SUNWcsu
+x11-base/xorg-x11   sys-sunos/SUNWxorg-server
+virtual/x11	    sys-sunos/SUNWxorg-server
+virtual/libintl	    sys-sunos/SUNWcsu

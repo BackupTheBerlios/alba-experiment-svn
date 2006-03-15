@@ -4,3 +4,4 @@ USE="x86-sunos"
 CHOST="i386-pc-solaris2.11"
 CFLAGS="-O2 -march=i686 -pipe"
 GNU_PREFIX="/usr/gnu"
+PREROOTPATH='/usr/gnu/bin'

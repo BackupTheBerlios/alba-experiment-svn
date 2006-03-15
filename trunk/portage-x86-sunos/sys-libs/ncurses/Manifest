@@ -1,3 +1,4 @@
+MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r1100 64
 MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r5 64
 MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r6 64
 MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r9999 64
@@ -9,4 +10,5 @@ MD5 1ecbf68a55269d2cebeb997f6973fc1d files/ncurses-5.4-share-sed.patch 686
 MD5 61ecd5aac5ddbd35cc4d4a00282eed01 files/ncurses-5.4-xterm.patch 495
 MD5 ad3890f5461218f96e1f999a48879711 files/ncurses-5.5-gfbsd.patch 3060
 MD5 2167b54d7c96964183554e767e5f5376 files/xterm-debian.ti 342
-MD5 b20fec2a885ec970dbf3561d714f3ad6 ncurses-5.4-r9999.ebuild 5725
+MD5 51c31276b7e38e86d7cc2c1e4a3debbb ncurses-5.4-r1100.ebuild 5632
+MD5 b20fec2a885ec970dbf3561d714f3ad6 ncurses-5.4-r999.ebuild 5725
