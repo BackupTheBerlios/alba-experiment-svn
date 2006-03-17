@@ -160,6 +160,7 @@ src_install() {
 	if [[ ${USERLAND} == "SunOS" ]]; then
 		rm "${D}"/lib/libcurses.so
 		rm "${D}"/usr/lib/libcurses.so
+		dosym /lib/libncurses.so /usr/lib/libncurses.so
 	fi
 }
 
