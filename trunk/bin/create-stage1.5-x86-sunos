@@ -3,7 +3,7 @@
 . /sbin/functions.sh
 
 STAGENAME="stage1.5-x86-sunos"
-STAGEDIST="${GTODEVHOME}/${STAGENAME}"
+STAGEDIST="/var/tmp/${STAGENAME}"
 STAGEPKGLIST="${GTODEVHOME}/conf/${STAGENAME}.pkglist"
 OPT="--nodeps"
 

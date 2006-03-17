@@ -30,6 +30,7 @@ if [ -f $EBFULLNAME ]; then
 	}
 	' $EBFULLNAME > $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild
 	cp -vRf /usr/portage/$CATEGORY/files $PORTDIR_OVERLAY/$CATEGORY
+	rm -f $PORTDIR_OVERLAY/$CATEGORY/files/digest-*
 	ebuild $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild digest
 else
 	echo No such ebuild found
