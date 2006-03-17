@@ -1,9 +1,5 @@
 MD5 d687545889dacb43e121f4932d99a534 files/bash-3.0-etc-inputrc.patch 1443
-MD5 cca21eb56279efff8356d028b1b39dd8 files/digest-readline-4.3-r5 348
-MD5 cca21eb56279efff8356d028b1b39dd8 files/digest-readline-4.3-r6 348
-MD5 e3ee94eed45baf4ca76736da56d72bad files/digest-readline-5.0-r2 350
-MD5 c6787137b31f3b6943210ff723c0dbeb files/digest-readline-5.1-r2 282
-MD5 899ae79419e83907ddf440269d4612c7 files/digest-readline-5.1_p2 675
+MD5 e3ee94eed45baf4ca76736da56d72bad files/digest-readline-5.0-r1100 350
 MD5 1f4e1b4930462b3eb702a0ce0ef5d9c7 files/digest-readline-5.1_p2-r1100 179
 MD5 9905e333ead392447a670e0f2374651a files/macos.patch 504
 MD5 b908c05444b4c9edbeefa1977345182e files/readline-5.0-darwin.patch 461
@@ -16,4 +12,5 @@ MD5 e4ac33c0a2293b72378e00e8729c71af files/readline-5.1-cleanups.patch 3817
 MD5 73869a19bab0f37a7ee46e377d2bac15 files/readline-5.1-rlfe-build.patch 252
 MD5 c59aee767346ecfc235e155e20d9e16b files/readline-5.1-rlfe-libutil.patch 530
 MD5 ae8aaec6f366e3f675d626b157c8cffd files/readline-5.1-rlfe-uclibc.patch 1694
-MD5 2717c6956ebe790f199e787abf267e3d readline-5.1_p2-r1100.ebuild 3171
+MD5 5d38149d9d7274731600e3f06e282e4f readline-5.0-r1100.ebuild 2791
+MD5 b468c3bd0e5e25eb38ec824f8d911c72 readline-5.1_p2-r1100.ebuild 3173
