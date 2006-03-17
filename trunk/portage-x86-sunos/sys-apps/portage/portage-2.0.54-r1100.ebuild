@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-apps/portage/portage-2.0.54.ebuild,v 1.7 2006/01/20 21:22:10 metalgod Exp $
 
-inherit toolchain-funcs
+inherit toolchain-funcs eutils
 
 DESCRIPTION="The Portage Package Management System. The primary package management and distribution system for Gentoo."
 HOMEPAGE="http://www.gentoo.org/"
@@ -22,6 +22,12 @@ S=${WORKDIR}/${PN}-${PV}
 
 src_unpack() {
 	unpack ${A}
+	if [[ ${USERLAND} == "SunOS" ]]; then
+		cd "${S}"
+		epatch "${FILESDIR}"/portage_data-sunos.patch
+		epatch "${FILESDIR}"/portage-sunos.patch
+		epatch "${FILESDIR}"/dosbin-sunos.patch
+	fi
 }
 
 src_compile() {
@@ -55,6 +61,9 @@ src_install() {
 		eerror "Please notify the arch maintainer about this issue. Using generic."
 		eerror ""
 		newins make.conf make.conf.example
+	fi
+	if [ ${USERLAND} == "SunOS" ]; then
+		newins "${FILESDIR}"/make.conf.x86-sunos make.conf.example
 	fi
 
 	if ! use userland_Darwin; then
