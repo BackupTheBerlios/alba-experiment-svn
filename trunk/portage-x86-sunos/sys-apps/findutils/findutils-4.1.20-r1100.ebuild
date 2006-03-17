@@ -65,6 +65,7 @@ src_install() {
 		dosym /usr/bin/gxargs ${GNU_PREFIX}/bin/xargs
 	fi
 
+	rm -f ${D}/usr/$(get_libdir)/charset.alias
 }
 
 pkg_postinst() {

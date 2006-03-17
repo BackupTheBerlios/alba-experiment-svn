@@ -11,4 +11,4 @@ MD5 6d52de5b305608054e88b17c5b282048 files/findutils-4.2.20-man.patch 331
 MD5 0b8c5e1bc2e54e46c292ad6a90729f75 files/findutils-4.2.24-selinux.diff 14356
 MD5 564a526b2ac65b70eebdb60a97f7e1ed files/findutils-4.3.0-selinux.diff 15741
 MD5 0315b5033cf65d15f24b1c252070db45 files/findutils-env-size.patch 672
-MD5 45b05f05017345e407d0adf9c8cf1d9e findutils-4.1.20-r1100.ebuild 2157
+MD5 2dc8b89b24df911b41ca7f7d9f44d588 findutils-4.1.20-r1100.ebuild 2201
