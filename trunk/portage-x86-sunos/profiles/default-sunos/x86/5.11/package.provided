@@ -7,3 +7,4 @@ sys-apps/sandbox-1.2.12-r9999
 sys-sunos/SUNWsndmu-11.11
 sys-sunos/SUNWcsu-11.11
 sys-suos/SUNWxorg-server-6.9.0.5.11.3200
+virtual/libstdc++-3.3
