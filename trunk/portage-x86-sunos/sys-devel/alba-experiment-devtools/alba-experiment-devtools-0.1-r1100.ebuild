@@ -4,7 +4,7 @@
 
 DESCRIPTION="Collection of developer scripts for Gentoo/Solaris aka alba-experiment"
 HOMEPAGE="http://developer.berlios.de/projects/alba-experiment/"
-SRC_URI="http://developer.berlios.de/projects/alba-experiment/${P}.tar.bz2"
+SRC_URI="http://download.berlios.de/alba-experiment/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
