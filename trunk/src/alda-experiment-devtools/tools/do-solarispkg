@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+PKGOUTDIR=/home/shared/developement/aurora/packages
+WORKDIR=/home/shared/developement/aurora/work
+
+PACKAGE=`basename $PWD`
+echo "Creating package for '$PACKAGE'"
+echo "Extracting package informations"
+NAME=`echo $PACKAGE | sed "s/\-[1-9].*$//"`
+PKG=GNTO${NAME}
+VERSION=`echo $PACKAGE | sed "s/$NAME-//"`
+
+# Default values for pkginfo
+CATEGORY=application,gentoo,gentoostage2
+ARCH=`uname -p`
+
+PKGDIR=${WORKDIR}/$NAME-$VERSION
+
+echo "Creating prototype."
+#echo "Press a key"; read
+(echo 'i pkginfo'; pkgproto ${PKGDIR}/image=/ ) > ${PKGDIR}/prototype 2> $PKGDIR/prototype.err
+
+cat <<_EOF_ > ${PKGDIR}/pkginfo
+PKG=$PKG
+NAME=$NAME
+VERSION=$VERSION
+CATEGORY=$CATEGORY
+DESC=$DESCRIPTION
+ARCH=$ARCH
+VENDOR=$VENDOR
+EMAIL=$EMAIL
+_EOF_
+
+echo "Making package spool"
+#echo "Press a key"; read
+(cd $PKGDIR; pkgmk -o )
+
+echo "Transferring package"
+#echo "Press a key"; read
+if [ ! -d $PKGOUTDIR ]; then
+   mkdir -p $PKGOUTDIR
+fi
+pkgtrans -s /var/spool/pkg $PKGOUTDIR/$PKG.pkg $PKG
