@@ -1,0 +1,6 @@
+MD5 3338fff0166374e14ae138e6a1f4cd21 files/1.2.7-gentoo.diff 464
+MD5 cfc3cad1942561090fafce6a25a23bf0 files/digest-libpng-1.2.8-r1100 127
+MD5 c13ed05aceb450c805e01fd39d16ae45 files/libpng-1.2.8-build.patch 3845
+MD5 029ec280f20678b76004c1a0a0270111 files/libpng-1.2.8-strnlen.patch 580
+MD5 7443cfcd027ad293e56ec7bed76ee21c files/macos.patch 589
+MD5 82ef1dd0a4cf86e0c79a63a6b5d51d08 libpng-1.2.8-r1100.ebuild 1845
