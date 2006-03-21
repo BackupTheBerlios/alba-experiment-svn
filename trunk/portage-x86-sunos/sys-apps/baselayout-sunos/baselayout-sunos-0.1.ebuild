@@ -5,8 +5,8 @@
 inherit flag-o-matic eutils toolchain-funcs multilib
 
 DESCRIPTION="Filesystem baselayout addendum for Solaris based system"
-HOMEPAGE="http://alba-experiment.berlios.de"
-SRC_URI="mirror://gentoo/${P}.tar.bz2"
+HOMEPAGE="http://developer.berlios.de/projects/alba-experiment/"
+SRC_URI="http://download.berlios.de/alba-experiment/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
