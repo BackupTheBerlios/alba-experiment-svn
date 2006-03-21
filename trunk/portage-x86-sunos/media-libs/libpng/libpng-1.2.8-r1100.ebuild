@@ -40,6 +40,7 @@ src_unpack() {
 		-e "/^ZLIBINC=/s:=.*:=:" \
 		-e "/^LIBPATH=/s:/lib:/$(get_libdir):" \
 		-e 's:mkdir:mkdir -p:' \
+		-e '/^prefix=/s:=/usr/local:=/usr:' \
 		${makefilein} > Makefile || die
 
 	sed -i -e "s:libdir=\${exec_prefix}/lib:libdir=/usr/$(get_libdir):" \
