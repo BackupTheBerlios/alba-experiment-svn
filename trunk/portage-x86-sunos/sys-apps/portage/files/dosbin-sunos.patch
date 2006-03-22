@@ -1,4 +1,4 @@
---- /home/shared/developement/alba-experiment/work/portage-2.0.54-src/bin/dosbin	2005-12-30 10:12:16.000000000 +0100
+--- ../../../work/portage-2.0.54-src/bin/dosbin	2005-12-30 10:12:16.000000000 +0100
 +++ /usr/lib/portage/bin/dosbin	2006-03-17 15:17:11.973513000 +0100
 @@ -18,10 +18,14 @@
  	else

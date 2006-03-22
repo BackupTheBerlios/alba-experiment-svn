@@ -27,6 +27,7 @@ src_unpack() {
 		epatch "${FILESDIR}"/portage_data-sunos.patch
 		epatch "${FILESDIR}"/portage-sunos.patch
 		epatch "${FILESDIR}"/dosbin-sunos.patch
+		epatch "${FILESDIR}"/dobin-sunos.patch
 	fi
 }
 
