@@ -8,8 +8,8 @@ else
 	eerror "/etc/make.conf not found"
 	exit 1
 fi
-if [ -f /etc/conf.d/gentoolkit-dev-sunos.conf ]; then
-	. /etc/conf.d/gentoolkit-dev-sunos.conf
+if [ -f /etc/conf.d/alba-experiment-devtools.conf ]; then
+	. /etc/conf.d/alba-experiment-devtools.conf
 else
 	eerror "/etc/conf.d/gentoolkit-dev-sunos.conf not found"
 	exit 1
@@ -39,7 +39,7 @@ if [ -f $EBFULLNAME ]; then
 	s/"$/ x86-sunos"/
 	}
 	' $EBFULLNAME > $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild
-	cp -vRf /usr/portage/$CATEGORY/files $PORTDIR_OVERLAY/$CATEGORY
+	gcp -vRf /usr/portage/$CATEGORY/files $PORTDIR_OVERLAY/$CATEGORY
 	ebuild $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild digest
 	eend
 else
