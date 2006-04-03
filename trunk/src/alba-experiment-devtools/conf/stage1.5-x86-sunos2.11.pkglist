@@ -15,7 +15,6 @@ sys-apps/texinfo
 sys-apps/gawk
 sys-apps/coreutils
 sys-apps/file
-sys-apps/net-tools
 sys-apps/findutils
 dev-python/python-fchksum
 dev-lang/python
@@ -34,3 +33,9 @@ sys-devel/gnuconfig
 sys-devel/binutils-config
 sys-devel/bison
 app-editors/vim
+dev-libs/openssl
+app-misc/ca-certificates
+dev-libs/apr
+dev-libs/apr-util
+net-misc/neon
+dev-util/subversion
