@@ -3,25 +3,31 @@
 . /sbin/functions.sh
 
 STAGENAME="stage1.5-x86-sunos2.11"
-STAGEDIST="/var/tmp/${STAGENAME}/image"
+STAGEDIST="/var/tmp/${STAGENAME}"
 STAGEPKGLIST="${GTODEVHOME}/conf/${STAGENAME}.pkglist"
 LOGFILE="/var/log/portage/${STAGENAME}.log"
 date > ${LOGFILE}
 OPT="--nodeps"
 
 [[ -d ${STAGEDIST} ]] && rm -Rf ${STAGEDIST}
-mkdir -p ${STAGEDIST} 2>/dev/null
+mkdir -p ${STAGEDIST}/image 2>/dev/null
 einfo "Creating ${STAGENAME} in ${STAGEDIST}"
 cat ${STAGEPKGLIST} | while read pkg; do
 	ebegin "Adding package ${pkg}"
 	FEATURES='-collision-protect'
 	export FEATURES
-	ROOT=${STAGEDIST} emerge -v --usepkgonly --noreplace ${OPT} ${pkg} >> $LOGFILE 2>&1
+	ROOT="${STAGEDIST}/image" emerge -v --usepkgonly --noreplace ${OPT} ${pkg} >> $LOGFILE 2>&1
 	eend $?
 done 
 
+einfo "Patching..."
+ebegin "Moving /bin files to /usr/bin"
+cd ${STAGEDIST}/image/ && mv bin/* ../usr/bin
+rmdir bin
+eend $?
+
 ebegin "Creating stagefile ${STAGENAME}..."
-cd ${STAGEDIST} 
+cd ${STAGEDIST}/image
 /usr/bin/tar cf ../${STAGENAME}.suntar *
 gzip ../${STAGENAME}.suntar
 eend

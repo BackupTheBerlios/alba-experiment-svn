@@ -1,19 +1,20 @@
 #!/usr/bin/bash
 
 . /sbin/functions.sh
+. /etc/conf.d/alba-experiment-devtools.conf
+. /etc/make.conf
 
 STAGENAME="stage1.5-x86-sunos2.11"
-STAGEDIST="/var/tmp/${STAGENAME}/image"
+STAGEDIST="/var/tmp/${STAGENAME}"
 STAGEPKGLIST="${GTODEVHOME}/conf/${STAGENAME}.pkglist"
 
-PKGOUTDIR=/home/shared/developement/aurora/packages
-WORKDIR=/home/shared/developement/aurora/work
+PKGOUTDIR="${DISTDIR}"
 
 PACKAGE="${STAGENAME}"
 einfo "Creating package for '$PACKAGE'"
 NAME="${STAGENAME}"
-PKG=GNTO${NAME}
-VERSION="11.00"
+PKG=GNTOstage1
+VERSION="`echo ${STAGENAME}| sed s/^stage//`"
 
 # Default values for pkginfo
 CATEGORY=application,gentoo,gentoostage
@@ -21,28 +22,35 @@ ARCH=`uname -p`
 
 PKGDIR="${STAGEDIST}"
 
+ebegin "Patching imagedir."
+rm "${STAGEDIST}/image/usr/share/ca-certificates/mozilla/ABAecom_=sub.__Am._Bankers_Assn.=_Root_CA.crt"
+if [ -d ${STAGEDIST}/image/bin ]; then
+	cd ${STAGEDIST}/image && mv bin/* usr/bin
+	rmdir ${STAGEDIST}/image/bin
+fi
+
 ebegin "Creating prototype."
 (echo 'i pkginfo'; pkgproto ${PKGDIR}/image=/ ) > ${PKGDIR}/prototype 2> $PKGDIR/prototype.err
-eend $?
+eend $? 
 
 cat <<_EOF_ > ${PKGDIR}/pkginfo
 PKG=$PKG
 NAME=$NAME
 VERSION=$VERSION
 CATEGORY=$CATEGORY
-DESC=$DESCRIPTION
+DESC=${STAGENAME}
 ARCH=$ARCH
 VENDOR=$VENDOR
 EMAIL=$EMAIL
 _EOF_
 
-echo "Making package spool"
-#echo "Press a key"; read
+ebegin "Making package spool"
 (cd $PKGDIR; pkgmk -o )
+eend $?
 
-echo "Transferring package"
-#echo "Press a key"; read
+ebegin "Transferring package"
 if [ ! -d $PKGOUTDIR ]; then
    mkdir -p $PKGOUTDIR
 fi
-pkgtrans -s /var/spool/pkg $PKGOUTDIR/$PKG.pkg $PKG
+pkgtrans -s /var/spool/pkg $PKGOUTDIR/${STAGENAME}.pkg $PKG
+eend $?
