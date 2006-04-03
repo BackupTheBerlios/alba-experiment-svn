@@ -11,11 +11,13 @@ virtual/libc	    sys-sunos/libc
 virtual/jdk	    sys-sunos/SUNWj5dev
 virtual/jre	    sys-sunos/SUNWj5rt
 virtual/mta	    sys-sunos/SUNWsndmu
-app-misc/pax-utils  sys-sunos/SUNWcsu
-sys-devel/gettext   sys-sunos/SUNWcsu
-x11-base/xorg-x11   sys-sunos/SUNWxorg-server
 virtual/x11	    sys-sunos/SUNWxorg-server
 virtual/xft	    sys-sunos/SUNWxorg-server
 virtual/glu	    sys-sunos/SUNWxorg-mesa
 virtual/opengl	    sys-sunos/SUNWxorg-mesa
 virtual/libintl	    sys-sunos/SUNWcsu
+virtual/alsa	    sys-sunos/SUNWaudd
+virtual/pam	    sys-sunos/SUNWcsl	
+app-arch/cpio	    sys-sunos/SUNWcsu
+app-misc/pax-utils  sys-sunos/SUNWcsu
+sys-devel/gettext   sys-sunos/SUNWcsu
