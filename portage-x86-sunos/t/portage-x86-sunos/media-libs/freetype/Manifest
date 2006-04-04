@@ -1,0 +1,6 @@
+MD5 10bd432787c1a182edece351dbf82809 files/config.mk 1240
+MD5 f9a58f527647abffba59f1db219693a4 files/digest-freetype-2.1.10-r1100 141
+MD5 51968a6fff68a83653c7281147312e77 files/freetype-1.3.1-malloc.patch 772
+MD5 f96e5959658f100cb8d1af8a197b8c45 files/freetype-2.1.10-internal_header.patch 667
+MD5 6c404648e3cb8f86b329f7dac5d70cc8 files/freetype-2.1.9-fix_bci.patch 643
+MD5 c924fa39ecc906cc095d9fe0e46f615a freetype-2.1.10-r1100.ebuild 1820

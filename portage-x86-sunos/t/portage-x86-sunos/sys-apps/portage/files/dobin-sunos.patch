@@ -1,0 +1,15 @@
+--- ../../../work/portage-2.0.54-src/bin/dobin	2005-12-30 10:12:16.000000000 +0100
++++ /usr/lib/portage/bin/dobin	2006-03-22 22:52:15.213761000 +0100
+@@ -22,7 +22,11 @@
+ 		if [ "$USERLAND" == "GNU" ]; then
+ 			install -m0755 -o root -g root  "${x}" "${D}${DESTTREE}/bin" || exit 4
+ 		else
+-			install -m0755 -o root -g wheel "${x}" "${D}${DESTTREE}/bin" || exit 4
++	                if [ "$USERLAND" == "SunOS" ]; then
++				install -m0755 -o root -g staff "${x}" "${D}${DESTTREE}/bin" || exit 4
++			else
++				install -m0755 -o root -g wheel "${x}" "${D}${DESTTREE}/bin" || exit 4
++			fi
+ 		fi
+ 	fi
+ done

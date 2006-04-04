@@ -1,0 +1,5 @@
+MD5 c8aa611da8e9cc0f331fde445f8ea43f files/digest-tcl-8.4.12-r1100 66
+MD5 23a4b408a4ea393df1da149ed8cb4d4c files/tcl-8.4.11-multilib.patch 1808
+MD5 1209abd340cad17f50f87c58f1c0f9f5 files/tcl-8.4.6-multilib.patch 1070
+MD5 e0ebf10eb8bf4542ae57ba591daa68a4 files/tcl-configure-LANG.patch 1686
+MD5 d2ac32e4adcbd756a1a9595e94c9bba4 tcl-8.4.12-r1100.ebuild 3518

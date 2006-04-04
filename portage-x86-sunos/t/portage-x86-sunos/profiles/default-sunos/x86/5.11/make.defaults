@@ -1,0 +1,7 @@
+ARCH="x86"
+ACCEPT_KEYWORDS="x86-sunos"
+USE="x86-sunos"
+CHOST="i386-pc-solaris2.11"
+CFLAGS="-O2 -march=i386 -pipe"
+GNU_PREFIX="/usr/gnu"
+PREROOTPATH='/usr/gnu/bin'

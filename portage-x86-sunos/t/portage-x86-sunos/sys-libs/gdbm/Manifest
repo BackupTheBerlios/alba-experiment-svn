@@ -1,0 +1,4 @@
+MD5 c7bef9bbd37f161be399c58c61edef94 files/digest-gdbm-1.8.3-r2 62
+MD5 c7bef9bbd37f161be399c58c61edef94 files/digest-gdbm-1.8.3-r9999 62
+MD5 9ed34cb95efec19c95fbf28a2e7e0986 files/gdbm-1.8.3-fix-install-ownership.patch 1567
+MD5 a5494c21f55c12b26e0e4af08147e2f4 gdbm-1.8.3-r9999.ebuild 1454

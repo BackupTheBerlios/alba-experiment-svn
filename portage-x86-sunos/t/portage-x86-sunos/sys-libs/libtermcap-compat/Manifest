@@ -1,0 +1,6 @@
+MD5 88a1c08b3377362fbf228dd424880fe9 files/digest-libtermcap-compat-2.0.8-r1 211
+MD5 88a1c08b3377362fbf228dd424880fe9 files/digest-libtermcap-compat-2.0.8-r2 211
+MD5 0f9b74f5efad53d4cf0827d882f3ef68 files/digest-libtermcap-compat-2.0.8-r9999 211
+MD5 f44d7442f29d0a63d10f7633925ccd6e files/libtermcap-compat-2.0.8-fPIC.patch 740
+MD5 c5389fda988845f0c56af4ec72c8d524 files/libtermcap-compat_bcopy_fix.patch 314
+MD5 8688af32281eb2f0277a158df8feee83 libtermcap-compat-2.0.8-r9999.ebuild 1419

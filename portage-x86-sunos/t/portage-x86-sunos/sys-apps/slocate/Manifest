@@ -1,0 +1,5 @@
+MD5 808c72100437fdcf6ab1af2a60e4b79d files/digest-slocate-2.7-r1100 211
+MD5 6cd691d75d501eb87ed12cf31c1e1ff6 files/slocate-2.7-bounds.patch 305
+MD5 798bd427c87de3cfdb9ecd6854f2e56b files/slocate-2.7-really-long-paths.patch 538
+MD5 708503ec255083a2b20b230070147a62 files/updatedb.conf 567
+MD5 7deca37ed2fd2bd44eee04d3a4d04e87 slocate-2.7-r1100.ebuild 2791
