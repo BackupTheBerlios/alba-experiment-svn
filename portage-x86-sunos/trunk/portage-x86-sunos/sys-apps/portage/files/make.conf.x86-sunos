@@ -22,7 +22,8 @@
 #
 # Example:
 #USE="X gtk gnome -alsa"
-USE="nls -gpm -fortran zlib berkdb perl -java -xmms ssl bzip2"
+USE="nls -gpm -fortran zlib berkdb perl -java -xmms ssl bzip2 bash-completion readline python pango startup-notification\
+     -qt xprint pam -kde -alsa -arts"
 
 # Host Setting
 # ============
@@ -298,7 +299,7 @@ PORTAGE_NICENESS=3
 #                as a security measure.  As a side effect this can remove 
 #                sandbox access violations for users. 
 #  'usersandbox' enables sandboxing while portage is running under userpriv.
-FEATURES="buildpkg collision-protect -sandbox -userpriv -usersandbox -sfperms"
+FEATURES="buildpkg noclean collision-protect -sandbox -userpriv -usersandbox -sfperms"
 #FEATURES="sandbox ccache distcc distlocks autoaddcvs"
 #
 # CCACHE_SIZE sets the space use limitations for ccache. The default size is
