@@ -1,5 +1,0 @@
-MD5 f03c40425597a17fe05729462b8e3000 bison-1.875d-r1100.ebuild 1801
-MD5 61b224a9eaf1ae7f77c2d1456d8fda87 files/bison-1.32-extfix.patch 1170
-MD5 644a4912da3e5107f509022f173ec146 files/bison-1.875-gccerror.patch 1538
-MD5 b0e8983afb264754c539f1eb53116970 files/bison-2.0-token-name-translate.patch 826
-MD5 6af3f9859615301181f6a1536aa56fb1 files/digest-bison-1.875d-r1100 65

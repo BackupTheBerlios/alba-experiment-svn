@@ -1,6 +1,0 @@
-MD5 10083207a4ef051d20d11e0838bdae94 files/digest-fontconfig-2.3.2-r1100 68
-MD5 37e60cdff43bf3f04e9db8931e0d1f47 files/patch/fontconfig-2.1-slighthint.patch 2171
-MD5 1636083efd15746d8f194aff41aa6e02 files/patch/fontconfig-2.2-blacklist.patch 1216
-MD5 4b5453071b61ecef4bb530b0bca695e1 files/patch/fontconfig-2.2-local_fontdir-r1.patch 487
-MD5 4d77167b56a7dff0d7c7b5b8168b85ba files/patch/fontconfig-2.2-remove_subpixel_test.patch 441
-MD5 30975372560629bb8824cd6fe97161b5 fontconfig-2.3.2-r1100.ebuild 2143

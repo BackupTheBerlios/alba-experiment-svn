@@ -1,7 +1,0 @@
-MD5 e2d17570d5e260a709cfe3715107d94d files/digest-libao-0.8.5 63
-MD5 483a5fe5056608b9c0d47a944670fc87 files/digest-libao-0.8.6-r1 129
-MD5 8265cb33fb30d3f8138e8c7cde5fcf9d files/digest-libao-0.8.6-r1100 135
-MD5 f0c7b22eb94ec3d7579323d160b6afeb files/digest-libao-0.8.6-r2 135
-MD5 91ea6d44f5feb641704b813186508a0d files/libao-0.8.5-ppc-macos.patch 3038
-MD5 e6273f789010799956933aad72d23a5c files/libao-0.8.6-ppc-macos.patch 1862
-MD5 c0a9bb51cedd1f65f50ef9370cb079bb libao-0.8.6-r1100.ebuild 1419

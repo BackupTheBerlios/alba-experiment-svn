@@ -1,6 +1,0 @@
-MD5 3b53108102459e2f91dd97698367ac4d files/digest-tiff-3.7.4-r1100 63
-MD5 6a9a255a3b89908c05b1f8bbde260e26 files/tiff-3.7.1-tiffdump.patch 439
-MD5 4bffd94510b6a669790656394f2d0302 files/tiff-3.7.1-trans.patch 479
-MD5 f0b2abf65d2e777bb249d460fc54cd87 files/tiff-3.7.2-buffer_check.patch 2093
-MD5 94f0e7d5e8a574073ec05f7c24c81fc1 files/tiff-3.7.4-assign-dont-compare.patch 404
-MD5 8933aa2027867523172c5fab521aef01 tiff-3.7.4-r1100.ebuild 1013

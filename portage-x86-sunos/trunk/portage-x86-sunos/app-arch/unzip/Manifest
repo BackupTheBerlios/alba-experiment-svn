@@ -1,4 +1,0 @@
-MD5 96a480a7d42cba427e44955d142d670c files/digest-unzip-5.52-r1100 61
-MD5 3b01796cbe10d9492bd8c0825bc83544 files/unzip-5.50-dotdot.patch 3236
-MD5 b17d0181200f3e1f47a55b54eb93527d files/unzip-5.52-no-exec-stack.patch 334
-MD5 60add0898db30fac0dbb9546ba150e70 unzip-5.52-r1100.ebuild 1497

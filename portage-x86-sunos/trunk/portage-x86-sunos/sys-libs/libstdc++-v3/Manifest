@@ -1,6 +1,0 @@
-MD5 14f4d6619c938dbb907e2420c0eeefd9 files/digest-libstdc++-v3-3.3.3-r1 64
-MD5 5498beb727cec74ec6624683c227d6fa files/digest-libstdc++-v3-3.3.4 238
-MD5 620157296e3ef40e2655e87bb50516f8 files/digest-libstdc++-v3-3.3.4-r9999 63
-MD5 79ef0db9c6e9750aa92334dded832283 files/digest-libstdc++-v3-3.3.6 64
-MD5 b2a96584f4cee72362695ba44c911c40 files/libstdc++_amd64_multilib_hack.patch 350
-MD5 f1168ae7db49dda54941c89128cfe9b2 libstdc++-v3-3.3.4-r9999.ebuild 8322
