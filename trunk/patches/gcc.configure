@@ -1,1 +1,0 @@
-../work/gcc-4.0.2/configure --prefix=/usr --with-as=/usr/i686-pc-solaris2.11/binutils-bin/2.16.1/as --with-gnu-as --with-gnu-ld --with-ld=/usr/i686-pc-solaris2.11/binutils-bin/2.16.1/ld --enable-shared --enable-languages=c,c++ --host=i686-pc-solaris2.11 --enable-threads --disable-multilib

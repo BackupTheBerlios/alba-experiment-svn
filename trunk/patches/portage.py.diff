@@ -1,6 +1,0 @@
-1792c1792,1794
-< 				else:
----
-> 				elif oe.errno == 22:
-> 					print red("!!!")+" Unable to chgrp of %s to portage, continuing\n" % mysettings["DISTDIR"]
-> 				else:	
