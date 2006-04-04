@@ -52,5 +52,7 @@ src_install() {
 	cd "${S}"/sbin
 	into /
 	dosbin *
+
+	dosym ../../sbin/functions.sh /etc/init.d/functions.sh
 }
 
