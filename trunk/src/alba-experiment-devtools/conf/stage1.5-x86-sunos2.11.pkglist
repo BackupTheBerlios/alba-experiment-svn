@@ -34,8 +34,11 @@ sys-devel/binutils-config
 sys-devel/bison
 app-editors/vim
 dev-libs/openssl
-app-misc/ca-certificates
-dev-libs/apr
-dev-libs/apr-util
+sys-libs/gdbm
+dev-libs/expat
+>=dev-libs/apr-0
+>=dev-libs/apr-util-0
 net-misc/neon
+sys-libs/db
+app-shells/bash-completion-config
 dev-util/subversion
