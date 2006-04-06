@@ -120,7 +120,7 @@ PORTAGE_TMPDIR=/var/tmp
 #     it. The entire repository of tarballs for gentoo is 9G. This is
 #     considerably more than any user will ever download. 2-3G is
 #     a large DISTDIR.
-DISTDIR=/home/shared/software/distfiles/
+#DISTDIR=/usr/portage/distfiles
 #
 # PKGDIR is the location of binary packages that you can have created
 #     with '--buildpkg' or '-b' while emerging a package. This can get
@@ -138,7 +138,7 @@ PORT_LOGDIR=/var/log/portage
 # PORTDIR_OVERLAY is a directory where local ebuilds may be stored without
 #     concern that they will be deleted by rsync updates. Default is not
 #     defined.
-PORTDIR_OVERLAY=/home/shared/developement/portage-x86-sunos/
+PORTDIR_OVERLAY=/opt/portage-x86-sunos/
 
 # Fetching files 
 # ==============
