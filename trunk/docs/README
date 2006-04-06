@@ -16,11 +16,6 @@ Install
 
    1. Install the stage1.5 file
       * pkgadd -d <STAGEFILE>
-   2. Update/create the library cache
-   	# ldconfig
-   2. configure the make.conf file: 
-   	* add or change PORTDIR_OVERLAY=/opt/portage-x86-sunos 
-	* edit it or copy the make.conf.example file
    2. obtain the official portage tree with one of the following options:
       a) download a portage snapshot and untar it
       b) rsync the portage tree
@@ -30,10 +25,18 @@ Install
       	# svn co http://svn.berlios.de/svnroot/repos/alba-experiment/trunk/portage-x86-sunos
       b) download a snapshot and untar it
    5. create a link to the profile: 
-   	# cd /etc
-	# ln -sf /opt/portage-x86-sunos/profiles/default-sunos/x86/5.11/ make.profile
+	# ln -sf ../opt/portage-x86-sunos/profiles/default-sunos/x86/5.11/ /etc/make.profile
+   2. configure the make.conf file: 
+   	* add or change PORTDIR_OVERLAY=/opt/portage-x86-sunos 
+	* edit it or copy the make.conf.example file
    6. add the new architecture to default architecture list:
    	# echo x86-sunos >> /usr/portage/profiles/arch.list
-   7. 
-   99. enjoy
+   7. update the environment:
+   	# binutils-config i386-pc-solaris2.11-2.16.1
+	# 
+   2. Update/create the library cache # ldconfig 99. enjoy
 
+Todo
+----
+
+* fix the man pages: right now they are gzipped and not suitable for SUN man
