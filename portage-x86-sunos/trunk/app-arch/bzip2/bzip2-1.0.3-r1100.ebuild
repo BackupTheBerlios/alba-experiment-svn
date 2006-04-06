@@ -18,14 +18,16 @@ DEPEND=""
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-1.0.2-NULL-ptr-check.patch
-	epatch "${FILESDIR}"/${P}-makefile-CFLAGS.patch
-	epatch "${FILESDIR}"/${P}-saneso.patch
-	epatch "${FILESDIR}"/${P}-shared-largefile-support.patch
-	epatch "${FILESDIR}"/${PN}-1.0.2-progress.patch
-	epatch "${FILESDIR}"/${PN}-1.0.2-chmod.patch
-	epatch "${FILESDIR}"/${P}-no-test.patch
-	sed -i -e 's:\$(PREFIX)/man:\$(PREFIX)/share/man:g' Makefile || die "sed manpath"
+	if [ ! ${USERLAND} == "SunOS" ]; then
+		epatch "${FILESDIR}"/${PN}-1.0.2-NULL-ptr-check.patch
+		epatch "${FILESDIR}"/${P}-makefile-CFLAGS.patch
+		epatch "${FILESDIR}"/${P}-saneso.patch
+		epatch "${FILESDIR}"/${P}-shared-largefile-support.patch
+		epatch "${FILESDIR}"/${PN}-1.0.2-progress.patch
+		epatch "${FILESDIR}"/${PN}-1.0.2-chmod.patch
+		epatch "${FILESDIR}"/${P}-no-test.patch
+	fi
+		sed -i -e 's:\$(PREFIX)/man:\$(PREFIX)/share/man:g' Makefile || die "sed manpath"
 
 	# - Generate symlinks instead of hardlinks
 	# - pass custom variables to control libdir
@@ -33,6 +35,8 @@ src_unpack() {
 		-e 's:ln $(PREFIX)/bin/:ln -s :' \
 		-e 's:$(PREFIX)/lib:$(PREFIX)/$(LIBDIR):g' \
 		Makefile || die "sed links"
+	[[ ${USERLAND} == "SunOS" ]] && sed -i 's/-Wl,-soname -Wl,libbz2.so.1.0//' "${S}"/Makefile-libbz2_so
+
 }
 
 src_compile() {

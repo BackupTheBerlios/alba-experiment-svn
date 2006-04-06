@@ -1,4 +1,4 @@
-MD5 9055e34125c80a27f31849c21bf59572 bzip2-1.0.3-r1100.ebuild 2230
+MD5 ff8d88c3b548278e5050353c3eb4799a bzip2-1.0.3-r1100.ebuild 2384
 MD5 cc73bebefba3a38c58fc49b49d7d25a7 files/bzip2-1.0.2-NULL-ptr-check.patch 838
 MD5 dbeea89d55ec8759ef24434afc2316ab files/bzip2-1.0.2-bzgrep.patch 626
 MD5 a0833247f0c02ccb65cceb33ea521457 files/bzip2-1.0.2-chmod.patch 2780
