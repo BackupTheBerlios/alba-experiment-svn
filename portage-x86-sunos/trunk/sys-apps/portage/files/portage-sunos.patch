@@ -11,3 +11,8 @@
  					raise oe
  
  		# writable by portage_gid?  This is specific to root, adjust perms if needed automatically.
+@@ -7035,3 +7035,3 @@
+ def cleanup_pkgmerge(mypkg,origdir):
+-       shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/portage-pkg/"+mypkg)
++       shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/portage-pkg/"+mypkg,ignore_errors=True) #brx: I don't like this but I don't "know" how to resolve this.
+        if os.path.exists(settings["PORTAGE_TMPDIR"]+"/portage/"+mypkg+"/temp/environment"):
