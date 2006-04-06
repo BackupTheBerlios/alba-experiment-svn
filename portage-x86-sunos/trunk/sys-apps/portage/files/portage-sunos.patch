@@ -1,18 +1,14 @@
 --- pym/portage.py	2005-12-30 10:13:07.000000000 +0100
-+++ pym/portage.py	2006-03-17 09:46:54.880702000 +0100
-@@ -1789,7 +1789,9 @@
- 			except OSError, oe:
- 				if oe.errno == 1:
++++ pym/portage.py	2006-03-23 19:07:54.858075000 +0100
+@@ -1791,3 +1791,5 @@
  					print red("!!!")+" Unable to chgrp of %s to portage, continuing\n" % mysettings["DISTDIR"]
 -				else:
 +				elif oe.errno == 22:
 +					print red("!!!")+" Unable to chgrp of %s to portage, continuing\n" % mysettings["DISTDIR"]
 +				else:	
  					raise oe
- 
- 		# writable by portage_gid?  This is specific to root, adjust perms if needed automatically.
-@@ -7035,3 +7035,3 @@
+@@ -7033,3 +7035,3 @@
  def cleanup_pkgmerge(mypkg,origdir):
--       shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/portage-pkg/"+mypkg)
-+       shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/portage-pkg/"+mypkg,ignore_errors=True) #brx: I don't like this but I don't "know" how to resolve this.
-        if os.path.exists(settings["PORTAGE_TMPDIR"]+"/portage/"+mypkg+"/temp/environment"):
+-	shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/portage-pkg/"+mypkg)
++	shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/portage-pkg/"+mypkg,ignore_errors=True)
+ 	if os.path.exists(settings["PORTAGE_TMPDIR"]+"/portage/"+mypkg+"/temp/environment"):
