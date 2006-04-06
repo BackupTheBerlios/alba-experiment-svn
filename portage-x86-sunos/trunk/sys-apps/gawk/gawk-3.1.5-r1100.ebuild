@@ -1,8 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/gawk/gawk-3.1.5.ebuild,v 1.6 2005/10/13 00:11:25 kito Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/gawk/gawk-3.1.5.ebuild,v 1.16 2006/03/19 20:58:35 ferdy Exp $
 
-inherit eutils toolchain-funcs
+inherit eutils toolchain-funcs multilib
 
 DESCRIPTION="GNU awk pattern-matching language"
 HOMEPAGE="http://www.gnu.org/software/gawk/gawk.html"
@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/gawk/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
 IUSE="nls build"
 
 RDEPEND=""
@@ -24,6 +24,7 @@ src_unpack() {
 
 	# Copy filefuncs module's source over ...
 	cp -pPR "${FILESDIR}"/filefuncs "${SFFS}" || die "cp failed"
+	[[ ${USERLAND} == "SunOS" ]] && sed -i 's/-Wl,-soname -Wl,$(TARGET).so.$(MAJORVER)//' "${SFFS}"/Makefile
 
 	cd "${S}"
 	epatch "${FILESDIR}"/${P}-core.patch
@@ -31,12 +32,13 @@ src_unpack() {
 	epatch "${FILESDIR}"/${PN}-3.1.3-getpgrp_void.patch #fedora
 	# support for dec compiler.
 	[[ $(tc-getCC) == "ccc" ]] && epatch "${FILESDIR}"/${PN}-3.1.2-dec-alpha-compiler.diff
+
 }
 
 src_compile() {
 	econf \
 		--bindir=/bin \
-		--libexec=/usr/lib/misc \
+		--libexec='$(libdir)/misc' \
 		$(use_enable nls) \
 		--enable-switch \
 		|| die
