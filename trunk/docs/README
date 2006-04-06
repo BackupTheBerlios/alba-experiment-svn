@@ -3,9 +3,14 @@ Portage for Solaris
 
 Pre-requirements
 ----------------
-   * a working installation of Solaris, for a list of minimal packages requirements see docs/Solaris-base-packages.txt
-     Note that if you have a non-core installation of Solaris some files could be overwritten. To ensure that portage 
-     would not overwrite files you don't want, use the FEATURE='collision-protect' parameter into /etc/make.conf
+   * a working installation of Solaris, for a list of minimal packages 
+     requirements see docs/Solaris-base-packages.txt
+     Note that if you have a non-core installation of Solaris some files could 
+     be overwritten.  Using the Solaris package method (pkgadd) to install the 
+     stage1.5 should help you in finding conflicting files.
+     To ensure that portage would not overwrite files you don't want while 
+     emerging packages, use the FEATURE='collision-protect' parameter into 
+     /etc/make.conf.
    * add the portage user and group to the system
    	# groupadd -g 250 portage
 	# useradd -u 250 -g portage -G portage -d /var/tmp/portage -m -s /bin/false portage
@@ -33,7 +38,7 @@ Install
    	# echo x86-sunos >> /usr/portage/profiles/arch.list
    7. update the environment:
    	# binutils-config i386-pc-solaris2.11-2.16.1
-	# 
+	# gcc-config i386-pc-solaris2.11-4.1.0
    2. Update/create the library cache # ldconfig 99. enjoy
 
 Todo
