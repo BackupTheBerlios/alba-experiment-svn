@@ -65,6 +65,7 @@ cmd_setup() {
 	# Sourcing /etc/env.d/gcc/${CC_COMP} is going to mess up
 	# PATH among things...
 	CP=$(find_path cp)
+	ID=$(find_path gid)
 	RM=$(find_path rm)
 	MV=$(find_path mv)
 	LN=$(find_path ln)
@@ -73,7 +74,9 @@ cmd_setup() {
 	SED=$(find_path sed)
 	AWK=$(find_path gawk)
 	GREP=$(find_path grep)
-	FIND=$(find_path find)
+	FIND=$(find_path gfind)
+	MKDIR=$(find_path gmkdir)
+	RMDIR=$(find_path grmdir)
 	CHMOD=$(find_path chmod)
 	TOUCH=$(find_path touch)
 	PYTHON=$(find_path python)
@@ -135,7 +138,7 @@ switch_profile() {
 	local OLD_CC_COMP=
 	local GCC_BIN_PATH=
 
-	if [[ "$(id -u)" -ne 0 ]] ; then
+	if [[ "$(${ID} -u)" -ne 0 ]] ; then
 		eerror "$0: Must be root."
 		exit 1
 	fi
@@ -288,7 +291,7 @@ switch_profile() {
 			multiarg=${multiarg/@/-}
 			multilibdir=${multilib%;*}
 			libdir="lib/"$("${ROOT}/${GCC_BIN_PATH}"/gcc ${multiarg} -print-multi-os-directory)
-			if mkdir -p "${ROOT}/${libdir}"/.gcc.config.new ; then
+			if ${MKDIR} -p "${ROOT}/${libdir}"/.gcc.config.new ; then
 				for gcclib in gcc_s unwind ; do
 					if [[ -n $(ls "${ROOT}/${LDPATH}/${multilibdir}"/lib${gcclib}.so.* 2>/dev/null) ]]; then
 						${CP} -pP "${ROOT}/${LDPATH}/${multilibdir}"/lib${gcclib}.so.* "${ROOT}/${libdir}"/.gcc.config.new/
@@ -296,7 +299,7 @@ switch_profile() {
 						${MV} -f "${ROOT}/${libdir}"/.gcc.config.new/* "${ROOT}/${libdir}"/
 					fi
 				done
-				rmdir "${ROOT}/${libdir}"/.gcc.config.new
+				${RMDIR} "${ROOT}/${libdir}"/.gcc.config.new
 			fi
 		done
 		unset multilib
