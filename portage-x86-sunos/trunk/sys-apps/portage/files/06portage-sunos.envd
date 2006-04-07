@@ -1,0 +1,6 @@
+ID="/usr/gnu/bin/id"
+XARGS="/usr/gnu/bin/xargs"
+TAR="/usr/gnu/bin/tar"
+LDPATH="/usr/gnu/lib:/usr/sfw/lib"
+FIND="/usr/gnu/bin/find"
+TAIL="/usr/gnu/bin/tail"
