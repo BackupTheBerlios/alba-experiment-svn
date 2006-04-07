@@ -43,11 +43,7 @@ src_install() {
 
 	# all the shared libs go into /lib
 	# for NFS based /usr
-	if [[ ${USERLAND} == "SunOS" ]]; then
-		into /usr
-	else
-		into /
-	fi
+	into /
 	dolib libz.so.${PV}
 	( cd "${D}"/$(get_libdir) ; chmod 755 libz.so.* )
 	dosym libz.so.${PV} /$(get_libdir)/libz.so

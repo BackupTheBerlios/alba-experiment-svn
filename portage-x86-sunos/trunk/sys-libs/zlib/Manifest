@@ -4,4 +4,4 @@ MD5 9d3fdd73e1997aa5c823fc210f29919d files/zlib-1.2.1-configure.patch 3149
 MD5 a337d1727a4f6f9ed8d29e43cde40e89 files/zlib-1.2.1-fPIC.patch 662
 MD5 f84d68bd9a614ad5495a369cb258cf8d files/zlib-1.2.1-glibc.patch 395
 MD5 40634a4cbdcd9c795cfc34473c76038c files/zlib-1.2.2-mapfile.patch 2139
-MD5 6be214f6d2d8af41fdd2cb391c54e656 zlib-1.2.3-r1100.ebuild 1456
+MD5 9817030d3a9941cfc9ee0432f6776ec1 zlib-1.2.3-r1100.ebuild 1394
