@@ -18,6 +18,7 @@ virtual/opengl	    sys-sunos/SUNWxorg-mesa
 virtual/libintl	    sys-sunos/SUNWcsu
 virtual/alsa	    sys-sunos/SUNWaudd
 virtual/pam	    sys-sunos/SUNWcsl	
+sys-libs/pam	    sys-sunos/SUNWcsl	
 app-arch/cpio	    sys-sunos/SUNWcsu
 app-misc/pax-utils  sys-sunos/SUNWcsu
 sys-devel/gettext   sys-sunos/SUNWcsu
