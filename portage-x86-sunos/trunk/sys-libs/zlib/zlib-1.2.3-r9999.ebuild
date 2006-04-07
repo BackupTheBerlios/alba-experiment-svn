@@ -47,5 +47,5 @@ src_install() {
 	( cd "${D}"/$(get_libdir) ; chmod 755 libz.so.* )
 	dosym libz.so.${PV} /$(get_libdir)/libz.so
 	dosym libz.so.${PV} /$(get_libdir)/libz.so.1
-	gen_usr_ldscript libz.so
+	[[ ${USERLAND} != "SunOS" ]] && gen_usr_ldscript libz.so
 }
