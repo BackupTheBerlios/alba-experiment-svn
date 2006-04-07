@@ -1,0 +1,7 @@
+MD5 6da3f60483a60d6318af2499bafe77f1 audiofile-0.2.6-r1100.ebuild 955
+MD5 a9f80077df4cbb634b38f27805e377c8 files/audiofile-0.2.6-constantise.patch 11783
+MD5 9d76ce996f4c8a8efa8854b6836bcc93 files/audiofile-0.2.6-m4.patch 273
+MD5 614e3fa2ecce47cc2b638aee1d145dba files/digest-audiofile-0.2.6-r1 67
+MD5 614e3fa2ecce47cc2b638aee1d145dba files/digest-audiofile-0.2.6-r1100 67
+MD5 4105d3728b33a7f3cd97f5fc624d8eac files/digest-audiofile-0.2.6-r2 247
+MD5 6be24f4f613faf959f406fcbe756324e files/sfconvert-eradicator.patch 4345
