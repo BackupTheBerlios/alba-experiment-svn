@@ -19,13 +19,14 @@ RDEPEND=""
 src_compile() {
 	tc-export CC RANLIB
 	export AR="$(tc-getAR) rc"
+	[[ ${USERLAND} == "SunOS" ]] && unset CFLAGS
 	./configure --shared --prefix=/usr --libdir=/$(get_libdir) || die
 	emake || die
 }
 
 src_install() {
 	einstall libdir="${D}"/$(get_libdir) || die
-	rm "${D}"/$(get_libdir)/libz.a
+	[[ ${USERLAND} != "SunOS" ]] && rm "${D}"/$(get_libdir)/libz.a
 	insinto /usr/include
 	doins zconf.h zlib.h
 
@@ -42,7 +43,7 @@ src_install() {
 
 	# all the shared libs go into /lib
 	# for NFS based /usr
-	into /
+	into /use
 	dolib libz.so.${PV}
 	( cd "${D}"/$(get_libdir) ; chmod 755 libz.so.* )
 	dosym libz.so.${PV} /$(get_libdir)/libz.so
