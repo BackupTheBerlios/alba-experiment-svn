@@ -1,0 +1,15 @@
+--- scripts/makefile.solaris.orig	2006-04-07 16:45:21.819648000 +0200
++++ scripts/makefile.solaris	2006-04-07 16:47:19.999469000 +0200
+@@ -11 +11 @@
+-prefix=/usr/local
++prefix=/usr
+@@ -19,2 +19,2 @@
+-ZLIBLIB=/usr/local/lib
+-ZLIBINC=/usr/local/include
++ZLIBLIB=/lib
++ZLIBINC=/usr/include
+@@ -29,2 +29,2 @@
+-#RANLIB=ranlib
+-RANLIB=echo
++RANLIB=ranlib
++#RANLIB=echo

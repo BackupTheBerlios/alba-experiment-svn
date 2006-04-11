@@ -25,6 +25,7 @@ src_unpack() {
 	cp scripts/makefile.linux{,.orig}
 	epatch "${FILESDIR}"/${PN}-1.2.8-strnlen.patch
 	epatch "${FILESDIR}"/${PN}-1.2.8-build.patch
+	epatch "${FILESDIR}"/${PN}-1.2.8-build-sunos.patch
 
 	[[ $(gcc-version) == "3.3" || $(gcc-version) == "3.2" ]] \
 		&& replace-cpu-flags k6 k6-2 k6-3 i586
@@ -35,13 +36,19 @@ src_unpack() {
 		*-solaris*) makefilein="scripts/makefile.solaris";;
 		*)         makefilein="scripts/makefile.linux";;
 	esac
-	sed \
-		-e "/^ZLIBLIB=/s:=.*:=:" \
-		-e "/^ZLIBINC=/s:=.*:=:" \
-		-e "/^LIBPATH=/s:/lib:/$(get_libdir):" \
-		-e 's:mkdir:mkdir -p:' \
-		-e '/^prefix=/s:=/usr/local:=/usr:' \
-		${makefilein} > Makefile || die
+	case ${CHOST} in
+		*-solaris*) sed \
+			-e 's:mkdir:mkdir -p:' \
+			-e '/^prefix=/s:=/usr/local:=/usr:' \
+			${makefilein} > Makefile ;;
+		*) sed \
+			-e "/^ZLIBLIB=/s:=.*:=:" \
+			-e "/^ZLIBINC=/s:=.*:=:" \
+			-e "/^LIBPATH=/s:/lib:/$(get_libdir):" \
+			-e 's:mkdir:mkdir -p:' \
+			-e '/^prefix=/s:=/usr/local:=/usr:' \
+			${makefilein} > Makefile || die
+	esac
 
 	sed -i -e "s:libdir=\${exec_prefix}/lib:libdir=/usr/$(get_libdir):" \
 		scripts/${PN}.pc.in || die
