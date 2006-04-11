@@ -1,4 +1,5 @@
 app-shells/bash
+dev-libs/popt
 net-misc/rsync
 net-misc/wget
 app-arch/bzip2
