@@ -5,7 +5,6 @@
 inherit eutils flag-o-matic pam autotools
 
 MY_P=${P/_/}
-
 DESCRIPTION="The Common Unix Printing System"
 HOMEPAGE="http://www.cups.org/"
 SRC_URI="ftp://ftp2.easysw.com/pub/cups/test/${MY_P}-source.tar.bz2
@@ -15,7 +14,7 @@ ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/test/${MY_P}-source.tar.b
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
-IUSE="ssl slp pam samba nls gnutls"
+IUSE="ssl slp pam samba nls gnutls preserve-original"
 
 DEP="pam? ( virtual/pam )
 	ssl? (
@@ -145,6 +144,24 @@ src_install() {
 pkg_preinst() {
 	# cleanups
 	[ -n "${PN}" ] && rm -fR /usr/share/doc/${PN}-*
+
+	# save original files
+	if use preserve-original; then 
+		einfo "Preserving original files..."
+		for d in /usr/bin /usr/sbin; do
+			cd ${D}/${d}
+			for x in *; do
+				if [ -f /${d}/${x} ]; then
+					einfo "Saving ${d}/${x}"
+					if [ -f /${d}/{x}.original ]; then 
+						ewarn "${d}/${x}.original exists, skipping."
+					else
+						mv /${d}/${x} /${d}/${x}.original
+					fi
+				fi
+			done
+		done
+	fi
 }
 
 pkg_postinst() {

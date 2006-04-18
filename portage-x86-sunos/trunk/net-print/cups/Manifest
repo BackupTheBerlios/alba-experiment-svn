@@ -1,4 +1,4 @@
-MD5 a72e6a7695ff7a4867f7104a3b175f53 cups-1.1.23-r1100.ebuild 4618
+MD5 889f29b540bbbf178423903701b639f2 cups-1.1.23-r1100.ebuild 5036
 MD5 85bc20d893f097ef0f13947179c3838c files/cups-1.1.22-xpdf2-underflow.patch 2301
 MD5 b22c12cb42113ddc40988cfbe93e3519 files/cups-1.1.23-bindnow.patch 2087
 MD5 14726f87ced90b9e00ec6a5026bb901d files/cups-1.1.23-respectldflags.patch 2922
