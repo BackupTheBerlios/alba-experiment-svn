@@ -49,7 +49,7 @@ src_install() {
 	dosym libz.so.${PV} /$(get_libdir)/libz.so
 	dosym libz.so.${PV} /$(get_libdir)/libz.so.1
 	if [[ ${USERLAND} == "SunOS" ]] ; then
-		dosym libz.so.${PV} /usr/$(get_libdir)/libz.so
+		dosym /$(get_libdir)/libz.so.${PV} /usr/$(get_libdir)/libz.so
 	fi
 	[[ ${USERLAND} != "SunOS" ]] && gen_usr_ldscript libz.so
 }
