@@ -1,0 +1,7 @@
+MD5 34afecbd7a176ad14f4b655d857ea0d3 cairo-1.0.2-r1100.ebuild 1541
+MD5 53ac163d10a3d89ee7a0fb6085f74a06 cairo-1.0.4-r1100.ebuild 1292
+MD5 6600a332745a27c0333f2c8193a805fa files/cairo-1.0.2-pkg_macro.patch 542
+MD5 ce0ff23d9d7dc27eafe29f87bd52524e files/digest-cairo-1.0.2 64
+MD5 ce0ff23d9d7dc27eafe29f87bd52524e files/digest-cairo-1.0.2-r1100 64
+MD5 dd098b533608d6250bc6d4fbe016256d files/digest-cairo-1.0.4 238
+MD5 842c6779264d28bc680ed303664e3513 files/digest-cairo-1.0.4-r1100 64
