@@ -1,8 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/groff-1.19.1-r2.ebuild,v 1.16 2005/09/29 07:57:59 usata Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/groff/groff-1.19.2-r1.ebuild,v 1.2 2006/03/30 15:16:27 flameeyes Exp $
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic toolchain-funcs multilib
 
 MB_PATCH="groff_1.18.1-7" #"${P/-/_}-7"
 DESCRIPTION="Text formatter used for man pages"
@@ -11,7 +11,7 @@ SRC_URI="mirror://gnu/groff/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
 IUSE="X"
 
 DEPEND=">=sys-apps/texinfo-4.7-r1
@@ -24,22 +24,12 @@ src_unpack() {
 
 	# Fix the info pages to have .info extensions,
 	# else they do not get gzipped.
-	epatch "${FILESDIR}"/groff-1.18-infoext.patch
-
-	# Do not generate example files that require us to
-	# depend on netpbm.
-	epatch "${FILESDIR}"/groff-1.18-no-netpbm-depend.patch
+	epatch "${FILESDIR}"/${P}-infoext.patch
 
 	# Make dashes the same as minus on the keyboard so that you
 	# can search for it. Fixes #17580 and #16108
 	# Thanks to James Cloos <cloos@jhcloos.com>
 	epatch "${FILESDIR}"/${PN}-man-UTF-8.diff
-
-	# Fix stack limit (inifite loop) #64117
-	epatch "${FILESDIR}"/${P}-stack.patch
-
-	# Fix tempfile usage #68404
-	epatch "${FILESDIR}"/${P}-tmpfile.patch
 
 	# Fix make dependencies so we can build in parallel
 	epatch "${FILESDIR}"/${P}-parallel-make.patch
@@ -53,12 +43,6 @@ src_unpack() {
 			contrib/mom/Makefile.sub \
 			doc/Makefile.in \
 			doc/Makefile.sub || die "cross-compile sed failed"
-		touch .dont-build-X
-	fi
-	# Only build X stuff if we have X installed, but do 
-	# not depend on it, else we get circular deps :(
-	if ! use X || [[ -z $(type -p xmkmf) ]] ; then
-		touch .dont-build-X
 	fi
 }
 
@@ -70,51 +54,32 @@ src_compile() {
 	# (fixes bug 36008, 06 Jan 2004 agriffis)
 	replace-flags -Os -O
 
-	# -march=2.0 makes groff unable to finish the compile process
-	use hppa && replace-cpu-flags 2.0 1.0
-
 	# CJK doesnt work yet with groff-1.19
 	#	$(use_enable cjk multibyte)
 
-	# many fun sandbox errors with econf
-	./configure \
-		--host=${CHOST} \
-		--prefix=/usr \
-		--mandir=/usr/share/man \
-		--infodir=\${inforoot} \
+	econf \
+		--with-appresdir=/etc/X11/app-defaults \
+		$(use_with X x) \
 		|| die
 	emake || die
-
-	if [ ! -f .dont-build-X ] ; then
-		cd ${S}/src/xditview
-		xmkmf || die
-		make depend all || die
-	fi
 }
 
 src_install() {
-	dodir /usr /usr/share/doc/${PF}/{examples,html}
+	dodir /usr/bin
 	make \
 		prefix="${D}"/usr \
-		manroot="${D}"/usr/share/man \
-		inforoot="${D}"/usr/share/info \
-		docdir="${D}"/usr/share/doc/${PF} \
+		bindir="${D}"/usr/bin \
+		libdir="${D}"/usr/$(get_libdir) \
+		appresdir="${D}"/etc/X11/app-defaults \
+		datadir="${D}"/usr/share \
+		mandir="${D}"/usr/share/man \
+		infodir="${D}"/usr/share/info \
 		install || die
 
-	# The following links are required for xman
+	# The following links are required for man #123674
 	dosym eqn /usr/bin/geqn
 	dosym tbl /usr/bin/gtbl
-	dosym soelim /usr/bin/zsoelim
 
 	dodoc BUG-REPORT ChangeLog FDL MORE.STUFF NEWS \
 		PROBLEMS PROJECTS README REVISION TODO VERSION
-
-	if [ ! -f .dont-build-X ] ; then
-		cd ${S}/src/xditview
-		make DESTDIR="${D}" \
-			BINDIR=/usr/bin \
-			MANPATH=/usr/share/man \
-			install \
-			install.man || die
-	fi
 }
