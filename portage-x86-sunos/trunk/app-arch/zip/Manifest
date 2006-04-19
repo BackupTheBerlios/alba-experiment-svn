@@ -1,0 +1,5 @@
+MD5 b009eed54f390241bea0b96110afb737 files/digest-zip-2.31-r1100 58
+MD5 6cf67950f3003a17d048c9a3ce4f243a files/zip-2.3-unix_configure-pic.patch 444
+MD5 249bdbaf477c3e08661cd70e3e7aa5fa files/zip-2.31-exec-stack.patch 407
+MD5 ceb628bca144581dbeff71136122a8e2 files/zip-CAN-2004-1010.patch 673
+MD5 e6d7b027eae54f0cc22c7fa16259bc21 zip-2.31-r1100.ebuild 1428
