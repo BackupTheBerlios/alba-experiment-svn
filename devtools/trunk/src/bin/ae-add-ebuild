@@ -40,6 +40,7 @@ if [ -f $EBFULLNAME ]; then
 	}
 	' $EBFULLNAME > $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild
 	gcp -vRf /usr/portage/$CATEGORY/files $PORTDIR_OVERLAY/$CATEGORY
+	rm $PORTDIR_OVERLAY/$CATEGORY/files/digest-*
 	ebuild $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild digest
 	eend
 else
