@@ -1,0 +1,7 @@
+MD5 e929a4ff61cf03505afda7df1b9cebca files/digest-mozilla-launcher-1.49 250
+MD5 44cd36de5c499e6ac67e16aefde88b3c files/digest-mozilla-launcher-1.51 250
+MD5 1876bd2e89beed782b53bf130211c2b4 files/digest-mozilla-launcher-1.51-r1100 68
+MD5 5f2388f082f553879f178d465eb546a3 files/mozilla-launcher-1.35-multilib.patch 1297
+MD5 29ef6c963fe90532a8d9c606f8b6b885 files/mozilla-launcher-1.39-multilib.patch 1457
+MD5 be5a0ad8bb87165cb87a3b52b109b0f5 files/mozilla-launcher-1.41-multilib.patch 1457
+MD5 9615c44581f0fb83964af5341d24b7d7 mozilla-launcher-1.51-r1100.ebuild 976
