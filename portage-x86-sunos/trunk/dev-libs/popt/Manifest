@@ -1,4 +1,6 @@
 MD5 0933441e77d0a43c85e3d1471bbc2633 files/digest-popt-1.7-r1 60
+MD5 0933441e77d0a43c85e3d1471bbc2633 files/digest-popt-1.7-r1100 60
 MD5 0933441e77d0a43c85e3d1471bbc2633 files/digest-popt-1.7-r9999 60
 MD5 65e91b3cbc5d3c136d141bae0629fc6a files/popt-1.7-missing-tests.patch 552
-MD5 28e31c5aef0215cd4a05a140174fd5b0 popt-1.7-r9999.ebuild 922
+MD5 28e31c5aef0215cd4a05a140174fd5b0 popt-1.7-r1100.ebuild 922
+MD5 fc4ade9289fe2487cb0483d7d22e9475 popt-1.7-r9999.ebuild 923
