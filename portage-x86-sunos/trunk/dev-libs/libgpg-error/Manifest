@@ -1,0 +1,5 @@
+MD5 302b903544cdc360228540b136ca4826 files/digest-libgpg-error-1.0-r1 68
+MD5 4d5f6ae916a18ac9e6c7d571f4f979e3 files/digest-libgpg-error-1.1 68
+MD5 4d5f6ae916a18ac9e6c7d571f4f979e3 files/digest-libgpg-error-1.1-r1100 68
+MD5 351613fb76980248b69def1933899216 files/libgpg-error-1.0-locale.h.patch 367
+MD5 5a6189f82a60ccaf3912847e2c1889b2 libgpg-error-1.1-r1100.ebuild 835
