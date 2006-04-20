@@ -1,0 +1,3 @@
+MD5 98c253856c4823fdfe9095d900744ff6 files/digest-nasm-0.98.39-r1100 65
+MD5 d7164046de6edb82be4a9e5f911568fd files/nasm-0.98.39-elf-visibility.patch 4219
+MD5 e3f882175ffb62b008aa5e582385c847 nasm-0.98.39-r1100.ebuild 1560
