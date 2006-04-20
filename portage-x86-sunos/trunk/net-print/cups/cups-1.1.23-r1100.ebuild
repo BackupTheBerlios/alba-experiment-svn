@@ -139,6 +139,15 @@ src_install() {
 
 	# allow lppasswd, #107306
 	fowners root /usr/bin/lppasswd
+
+	#add Solaris Service Management Facility service
+	case ${CHOST} in 
+		*-solaris*)
+					dodir /var/svc/manifest/application/print
+					instinto /var/svc/manifest/application/print
+					newins ${FILESDIR}/sol-svc-cups.xml cups.xml
+					;;			
+	esac
 }
 
 pkg_preinst() {
@@ -172,6 +181,14 @@ pkg_postinst() {
 	install -m0711 -o lp -d ${ROOT}/etc/cups/certs
 	install -d -m0755 ${ROOT}/etc/cups/{interfaces,ppd}
 
+	case ${CHOST} in 
+		*-solaris*)
+					einfo "Adding service 'cups' to SMF"
+					svccfg import /var/svc/manifest/application/print/cups.xml
+					einfo
+					;;
+	esac
+
 	einfo "If you're using a USB printer, \"emerge coldplug; rc-update add"
 	einfo "coldplug boot\" is something you should probably do. This"
 	einfo "will allow any USB kernel modules (if present) to be loaded"
@@ -181,4 +198,5 @@ pkg_postinst() {
 	einfo "http://www.gentoo.org/doc/en/printing-howto.xml."
 
 	einfo "You need to emerge ghostscript with the cups-USEflag turned on"
+
 }
