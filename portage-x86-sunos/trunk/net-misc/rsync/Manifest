@@ -1,3 +1,4 @@
+MD5 6ea5e340a0832f3ef750b4c183a0bae9 files/digest-rsync-2.6.0-r1100 204
 MD5 e04533ca371c57d742250cc0622c005e files/digest-rsync-2.6.0-r6 204
 MD5 6ea5e340a0832f3ef750b4c183a0bae9 files/digest-rsync-2.6.0-r9999 204
 MD5 62972fab38bf033135efad0bd025f65b files/digest-rsync-2.6.3-r1 63
@@ -14,4 +15,5 @@ MD5 f92735d68f21c6516c8916b484ecd848 files/rsyncd.conf 518
 MD5 d3ab23dab6a9dcad0b966d96bd2a743f files/rsyncd.conf.d 149
 MD5 85d62854c15e2e275184c9af7e5d6d18 files/rsyncd.init.d 438
 MD5 9fe188afd112764c6fcf1d07b80ca8d1 files/rsyncd.xinetd 170
+MD5 fd01c9b5846798be646a5fd54da318ca rsync-2.6.0-r1100.ebuild 2659
 MD5 fd01c9b5846798be646a5fd54da318ca rsync-2.6.0-r9999.ebuild 2659
