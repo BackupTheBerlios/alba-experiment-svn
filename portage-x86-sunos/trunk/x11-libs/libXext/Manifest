@@ -1,0 +1,4 @@
+MD5 2dae9efa4b208714f3211ec41893b0d7 files/digest-libXext-1.0.0-r1 244
+MD5 51e223186502558c95a0bf3a680a39a2 files/digest-libXext-1.0.0-r1100 66
+MD5 68769b5f5ffd78e38ebd2c58e4653649 files/fix_shadow_manpages.patch 963
+MD5 f46d807022c1c0a9e8d896ce908b7cc9 libXext-1.0.0-r1100.ebuild 707
