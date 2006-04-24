@@ -1,0 +1,7 @@
+MD5 b9e6cee737dea02a879ca7f8927b769a files/digest-pycrypto-2.0.1-r1100 66
+MD5 1cef0f805deeb0a9632606f1f97cce29 files/pycrypto-2.0.1-bindist.patch 1561
+MD5 6409a768dc7049b71e4b01d380db5d3a files/pycrypto-2.0.1-gmp.patch 644
+MD5 f069c9d2982308d3b8043000d596c6a7 files/pycrypto-2.0.1-ia64.patch 442
+MD5 ca6b2813ae5d3481760d8d8436826811 files/pycrypto-2.0.1-sancho-package-rename.patch 2688
+MD5 b3a3f729857328b1801aa072802cc955 files/pycrypto-2.0.1-uint32.patch 1078
+MD5 ffbd52755405b14e76dcdfdafd07c78b pycrypto-2.0.1-r1100.ebuild 1476
