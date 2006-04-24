@@ -1,0 +1,19 @@
+--- pym/portage_data.py	2006-04-24 12:32:37.916823000 +0200
++++ pym/portage_data.py	2006-04-24 12:43:35.384463000 +0200
+@@ -61,10 +61,13 @@
+ 	secpass=2
+ try:
+-	wheelgid=grp.getgrnam("wheel")[2]
++	if (userland == "SunOS"):
++		wheelgid=grp.getgrnam("staff")[2]
++	else:
++		wheelgid=grp.getgrnam("wheel")[2]
+ 	if (not secpass) and (wheelgid in os.getgroups()):
+ 		secpass=1
+ except KeyError:
+-	writemsg("portage initialization: your system doesn't have a 'wheel' group.\n")
+-	writemsg("Please fix this as it is a normal system requirement. 'wheel' is GID 10\n")
++	writemsg("portage initialization: your system doesn't have a 'wheel/staff' group.\n")
++	writemsg("Please fix this as it is a normal system requirement. 'wheel/staff' is GID 10\n")
+ 	writemsg("'emerge baselayout' and an 'etc-update' should remedy this problem.\n")
+ 	pass

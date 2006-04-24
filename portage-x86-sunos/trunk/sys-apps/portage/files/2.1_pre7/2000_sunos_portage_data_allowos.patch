@@ -1,0 +1,10 @@
+--- pym/portage_data.py	2006-04-24 12:25:17.000000000 +0200
++++ pym/portage_data.py	2006-04-24 12:32:37.916823000 +0200
+@@ -23,4 +23,7 @@
+ 	userland="BSD"
+ 	os.environ["XARGS"]="xargs"
++elif ostype in ["SunOS"]:
++       userland="SunOS"
++       writemsg(red("Operating system")+" \""+ostype+"\" "+red("currently experimental. Use at your own risk!")+"\n")
+ else:
+ 	writemsg(red("Operating system")+" \""+ostype+"\" "+red("currently unsupported. Exiting.")+"\n")
