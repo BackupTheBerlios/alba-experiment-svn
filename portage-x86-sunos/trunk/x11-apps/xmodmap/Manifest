@@ -1,0 +1,6 @@
+MD5 9fe674c605d1b9018e12f912048765d4 files/digest-xmodmap-1.0.0-r1100 241
+RMD160 79c88ec4285a6a7bd5119d70be7815ad0fe3f1c8 files/digest-xmodmap-1.0.0-r1100 241
+SHA256 b78fcaf8f5cb847e3b29755d3089ca15173dcf22b7ba970d5cb2aa203c1c8e7e files/digest-xmodmap-1.0.0-r1100 241
+MD5 3255cfa3574fc524dd1e7e43e7419094 xmodmap-1.0.0-r1100.ebuild 509
+RMD160 eea2c2e06dfffe4f6f2d9454f4dd8a7cc944d28d xmodmap-1.0.0-r1100.ebuild 509
+SHA256 11cffb8095ff3ad12d1459e5274899a3fdd6dbddbacb078f21a2d8df1833f61b xmodmap-1.0.0-r1100.ebuild 509
