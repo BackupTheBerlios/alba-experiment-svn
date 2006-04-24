@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/libstdc++-v3/libstdc++-v3-3.3.4.ebuild,v 1.20 2006/02/10 02:00:02 herbs Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/libstdc++-v3/libstdc++-v3-3.3.6.ebuild,v 1.7 2006/02/10 02:00:02 herbs Exp $
 
 inherit eutils flag-o-matic libtool gnuconfig versionator
 
@@ -111,8 +111,8 @@ S=${WORKDIR}/gcc-${PV}
 [ ! -n "${CCHOST}" ] && export CCHOST="${CHOST}"
 
 LOC="/usr"
-#MY_PV="`echo ${PV} | gawk -F. '{ gsub(/_pre.*|_alpha.*/, ""); print $1 "." $2 }'`"
-#MY_PV_FULL="`echo ${PV} | gawk '{ gsub(/_pre.*|_alpha.*/, ""); print $0 }'`"
+#MY_PV="`echo ${PV} | awk -F. '{ gsub(/_pre.*|_alpha.*/, ""); print $1 "." $2 }'`"
+#MY_PV_FULL="`echo ${PV} | awk '{ gsub(/_pre.*|_alpha.*/, ""); print $0 }'`"
 MY_PV="$(get_version_component_range 1-2)"
 MY_PV_FULL="$(get_version_component_range 1-3)"
 
@@ -130,7 +130,7 @@ HOMEPAGE="http://gcc.gnu.org/libstdc++/"
 
 LICENSE="GPL-2 LGPL-2.1"
 
-KEYWORDS="amd64 ~mips ppc ppc64 ~sparc x86 x86-sunos"
+KEYWORDS="~amd64 ~mips ~ppc ppc64 sparc ~x86 x86-sunos"
 IUSE="multilib nls nptl build"
 
 # 3.2.3 -> 3.3.x install .so.5, so lets slot to 5
