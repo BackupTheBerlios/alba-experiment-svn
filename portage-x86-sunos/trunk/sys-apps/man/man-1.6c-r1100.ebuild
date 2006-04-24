@@ -77,6 +77,7 @@ src_compile() {
 	else
 		mylang="none"
 	fi
+
 	./configure \
 		-confdir=/etc \
 		+sgid +fhs \
@@ -102,6 +103,16 @@ src_install() {
 	for x in ${mansects//:/ } ; do
 		keepdir /var/cache/man/cat${x}
 	done
+
+	cd ${D}/usr/bin
+	[[ ! -d ${D}/${GNU_PREFIX}/bin ]] && mkdir ${D}/${GNU_PREFIX}/bin
+	if [[ ${USERLAND} == "SunOS" ]] ; then
+		for x in *; do
+			mv ${x} g${x}
+			dosym g${x} ${D}/usr/gnu/bin/${x}
+		done
+	fi
+
 }
 
 pkg_postinst() {

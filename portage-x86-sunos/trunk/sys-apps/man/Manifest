@@ -16,4 +16,4 @@ MD5 bcba5439024c0d7c4e23c6b2a30372f0 files/man-1.6b-build.patch 189
 MD5 cc5bb9ed7778c068c9154f0f8c6a5e07 files/man-1.6b-more-sections.patch 291
 MD5 abb7fe555b253f97b165cb1f99f50924 files/man-1.6c-cut-duplicate-manpaths.patch 2148
 MD5 76741ffabcab0009a9602bee8f9c47bf files/man-1.6c-makewhatis-typo.patch 461
-MD5 6bc6f62b1a1fa98c4f6fb96fe2c4ef25 man-1.6c-r1100.ebuild 3276
+MD5 dde0d003c3f8eb6d071af4fdebe90f33 man-1.6c-r1100.ebuild 3493
