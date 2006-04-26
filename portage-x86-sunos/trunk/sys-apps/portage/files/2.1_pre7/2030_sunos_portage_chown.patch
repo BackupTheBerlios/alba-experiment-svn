@@ -1,9 +1,9 @@
---- pym/portage_util.py	2006-04-26 15:24:40.623616000 +0200
-+++ pym/portage_util.py	2006-04-26 15:24:46.106637000 +0200
-@@ -489,6 +489,4 @@
+--- pym/portage_util.py	2006-04-26 15:38:51.815840000 +0200
++++ pym/portage_util.py	2006-04-26 15:24:40.623616000 +0200
+@@ -489,4 +489,6 @@
  			elif oe.errno == errno.ENOENT:
  				raise FileNotFound(filename)
--			elif oe.errno == errno.EINVAL:
--				None	
++			elif oe.errno == errno.EINVAL:
++				None	
  			else:
  				raise
