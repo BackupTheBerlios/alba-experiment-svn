@@ -1,0 +1,23 @@
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: 
+
+sys-devel/gettext   	sys-sunos/SUNWcsu
+x11-libs/gtk+       	sunos-jds/SUNWgnome-base-libs-devel
+dev-libs/glib       	sunos-jds/SUNWgnome-base-libs-devel
+dev-libs/atk       	sunos-jds/SUNWgnome-base-libs-devel
+gnome-base/libglade     sunos-jds/SUNWgnome-base-libs-devel
+gnome-base/gnome-vfs	sunos-jds/SUNWgnome-vfs-devel
+app-text/scrollkeeper	sunos-jds/SUNWgnome-libs-devel
+gnome-extra/gtkhtml	sunos-jds/SUNWgnome-libs-devel
+gnome-base/libgnomeui	sunos-jds/SUNWgnome-libs-devel
+gnome-base/gconf	sunos-jds/SUNWgnome-config-devel
+gnome-base/libbonobo	sunos-jds/SUNWgnome-component-devel
+net-libs/libsoup	sunos-jds/SUNWevolution-libs-devel
+media-video/totem	sunos-jds/SUNWgnome-media-player
+gnome-extra/nautilus-cd-burner	sunos-jds/SUNWgnome-cd-burner
+media-libs/gst-plugins	sunos-jds/SUNWgnome-media-devel
+media-plugins/gst-plugins-vorbis sunos-jds/SUNWgnome-media
+media-plugins/gst-plugins-mad sunos-jds/SUNWgnome-media
+media-plugins/gst-plugins-ogg sunos-jds/SUNWgnome-media
+media-plugins/gst-plugins-gnomevfs sunos-jds/SUNWgnome-media
