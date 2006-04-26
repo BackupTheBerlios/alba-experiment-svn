@@ -1,0 +1,2 @@
+g-prefix - Prefix all the GNU utilities with letter 'g'
+gnulinks - Create symlinks to g-prefixed executables under GNU_PREFIX/bin omitting the 'g' prefix
