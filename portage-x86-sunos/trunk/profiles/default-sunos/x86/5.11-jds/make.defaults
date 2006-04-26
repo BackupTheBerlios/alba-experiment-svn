@@ -5,3 +5,4 @@ CHOST="i386-pc-solaris2.11"
 CFLAGS="-O2 -march=i386 -pipe"
 GNU_PREFIX="/usr/gnu"
 PREROOTPATH='/usr/gnu/bin'
+USE="g-prefix gnulinks"
