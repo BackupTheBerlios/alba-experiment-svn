@@ -147,7 +147,7 @@ src_install() {
 	done
 
 	if use g-prefix ; then
-		sed -i s:[^g]grep:ggrep: ${D}/etc/bash/bashrc || die "sed failed"
+		sed -i s:g*grep:ggrep: ${D}/etc/bash/bashrc || die "sed failed"
 	fi
 	
 
