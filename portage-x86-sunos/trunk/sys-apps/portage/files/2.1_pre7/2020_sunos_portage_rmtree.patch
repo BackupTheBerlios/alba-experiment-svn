@@ -1,0 +1,18 @@
+--- pym/portage.py	2006-04-24 15:49:06.040521000 +0200
++++ pym/portage.py	2006-04-24 16:04:28.691639000 +0200
+@@ -6437,8 +6437,11 @@
+ 
+ def cleanup_pkgmerge(mypkg,origdir):
+-	shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/binpkgs/"+mypkg)
+-	if os.path.exists(settings["PORTAGE_TMPDIR"]+"/portage/"+mypkg+"/temp/environment"):
+-		os.unlink(settings["PORTAGE_TMPDIR"]+"/portage/"+mypkg+"/temp/environment")
+-	os.chdir(origdir)
++	try:
++		shutil.rmtree(settings["PORTAGE_TMPDIR"]+"/binpkgs/"+mypkg)
++		if os.path.exists(settings["PORTAGE_TMPDIR"]+"/portage/"+mypkg+"/temp/environment"):
++			os.unlink(settings["PORTAGE_TMPDIR"]+"/portage/"+mypkg+"/temp/environment")
++		os.chdir(origdir)
++	except os.error:
++		return None
+ 
+ def pkgmerge(mytbz2,myroot,mysettings):
