@@ -403,10 +403,10 @@ egetent() {
 	*-darwin*)
 		case "$2" in
 		*[!0-9]*) # Non numeric
-			nidump $1 . | awk -F":" "{ if (\$1 ~ /^$2$/) {print \$0;exit;} }"
+			nidump $1 . | gawk -F":" "{ if (\$1 ~ /^$2$/) {print \$0;exit;} }"
 			;;
 		*)	# Numeric
-			nidump $1 . | awk -F":" "{ if (\$3 == $2) {print \$0;exit;} }"
+			nidump $1 . | gawk -F":" "{ if (\$3 == $2) {print \$0;exit;} }"
 			;;
 		esac
 		;;
@@ -1113,7 +1113,7 @@ unpack_makeself() {
 	local shrtsrc=$(basename "${src}")
 	echo ">>> Unpacking ${shrtsrc} to ${PWD}"
 	if [[ -z ${skip} ]] ; then
-		local ver=$(grep -a '#.*Makeself' "${src}" | awk '{print $NF}')
+		local ver=$(grep -a '#.*Makeself' "${src}" | gawk '{print $NF}')
 		local skip=0
 		exe=tail
 		case ${ver} in
@@ -1121,22 +1121,22 @@ unpack_makeself() {
 				skip=$(grep -a ^skip= "${src}" | cut -d= -f2)
 				;;
 			2.0|2.0.1)
-				skip=$(grep -a ^$'\t'tail "${src}" | awk '{print $2}' | cut -b2-)
+				skip=$(grep -a ^$'\t'tail "${src}" | gawk '{print $2}' | cut -b2-)
 				;;
 			2.1.1)
-				skip=$(grep -a ^offset= "${src}" | awk '{print $2}' | cut -b2-)
+				skip=$(grep -a ^offset= "${src}" | gawk '{print $2}' | cut -b2-)
 				let skip="skip + 1"
 				;;
 			2.1.2)
-				skip=$(grep -a ^offset= "${src}" | awk '{print $3}' | head -n 1)
+				skip=$(grep -a ^offset= "${src}" | gawk '{print $3}' | head -n 1)
 				let skip="skip + 1"
 				;;
 			2.1.3)
-				skip=`grep -a ^offset= "${src}" | awk '{print $3}'`
+				skip=`grep -a ^offset= "${src}" | gawk '{print $3}'`
 				let skip="skip + 1"
 				;;
 			2.1.4|2.1.5)
-				skip=$(grep -a offset=.*head.*wc "${src}" | awk '{print $3}' | head -n 1)
+				skip=$(grep -a offset=.*head.*wc "${src}" | gawk '{print $3}' | head -n 1)
 				skip=$(head -n ${skip} "${src}" | wc -c)
 				exe="dd"
 				;;
