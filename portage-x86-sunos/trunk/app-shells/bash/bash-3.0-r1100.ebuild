@@ -23,7 +23,7 @@ SRC_URI="mirror://gnu/bash/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
 IUSE="nls build bashlogger"
 
 # we link statically with ncurses
@@ -138,12 +138,18 @@ src_install() {
 	[[ ${USERLAND} != "BSD" ]] && [[ ${USERLAND} != "SunOS" ]] && dosym bash /bin/sh
 	dosym bash /bin/rbash
 
+
 	insinto /etc/bash
 	doins "${FILESDIR}"/{bashrc,bash_logout}
 	insinto /etc/skel
 	for f in bash{_logout,_profile,rc} ; do
 		newins "${FILESDIR}"/dot-${f} .${f}
 	done
+
+	if use g-prefix ; then
+		sed -i s:[^g]grep:ggrep: ${D}/etc/bash/bashrc || die "sed failed"
+	fi
+	
 
 	if use build ; then
 		rm -rf "${D}"/usr
