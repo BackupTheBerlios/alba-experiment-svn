@@ -11,8 +11,8 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-sunos"
-IUSE="build nls static"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
+IUSE="build nls static g-prefix gnulinks"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
@@ -50,12 +50,13 @@ src_compile() {
 		append-ldflags -static
 	fi
 	local myconf=""
-	if [[ ${USERLAND} == "SunOS" ]] ; then 
-		einfo Userland = ${USERLAND}
-		myconf="--bindir=/usr/gnu/bin"
-        else
-		myconf="--bindir=/bin"
+	myconf="--bindir=/bin"
+
+	if use g-prefix ; then
+		myconf="${myconf} --program-prefix=g"
+		pprefix="g"
 	fi
+
 	econf \
 		${myconf} \
 		$(use_enable nls) \
@@ -70,13 +71,21 @@ src_install() {
 
 	# Override the default shell scripts... grep knows how to act
 	# based on how it's called
-	if [[ ${USERLAND} == "SunOS" ]] ; then 
-		ln -sfn grep "${D}"/usr/gnu/bin/egrep || die "ln egrep failed"
-		ln -sfn grep "${D}"/usr/gnu/bin/fgrep || die "ln egrep failed"
-	else
-		ln -sfn grep "${D}"/bin/egrep || die "ln egrep failed"
-		ln -sfn grep "${D}"/bin/fgrep || die "ln fgrep failed"
+
+	if use gnulinks  ; then
+		test -z ${GNU_PREFIX} && die "GNU_PREFIX environment variable must be set"
+                # create symlinks in /usr/gnu/bin
+                dodir ${GNU_PREFIX}/bin
+                cd "${D}"/bin
+                einfo "Creating links in ${GNU_PREFIX}/bin"
+                local x
+                for x in * ; do
+                        dosym /bin/${x} ${GNU_PREFIX}/bin/${x:1}
+                done
 	fi
+
+	ln -sfn ${pprefix}grep "${D}"/bin/${pprefix}egrep || die "ln egrep failed"
+	ln -sfn ${pprefix}grep "${D}"/bin/${pprefix}fgrep || die "ln fgrep failed"
 
 	if use build ; then
 		rm -r "${D}"/usr/share
