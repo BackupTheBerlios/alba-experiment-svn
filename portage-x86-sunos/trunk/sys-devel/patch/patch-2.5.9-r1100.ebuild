@@ -25,7 +25,11 @@ src_unpack() {
 
 src_compile() {
 	strip-flags
-	append-flags -DLINUX -D_XOPEN_SOURCE=500
+	case ${CHOST} in
+		*-linux*) append-flags -DLINUX -D_XOPEN_SOURCE=500
+			;;
+		*-solaris*) ;;
+	esac
 	use static && append-ldflags -static
 
 	local myconf=""
