@@ -1,2 +1,6 @@
-MD5 462f58164e9f533b2ba1d9abf95b317f files/digest-gnu-gs-fonts-std-8.11-r1100 79
+MD5 6571e081f73782afb921924b083dcd89 files/digest-gnu-gs-fonts-std-8.11-r1100 283
+RMD160 022fe31472e20de79fb737c95165a6ff827165aa files/digest-gnu-gs-fonts-std-8.11-r1100 283
+SHA256 6cfa340b40217e9b7aa2a93b80ceda3946e054a219b5751911444647ed044262 files/digest-gnu-gs-fonts-std-8.11-r1100 283
 MD5 15c534cc7e123faf48384221baa6ef87 gnu-gs-fonts-std-8.11-r1100.ebuild 656
+RMD160 5c0d6a7a51892265c5ee0057a1eb1f50449616bf gnu-gs-fonts-std-8.11-r1100.ebuild 656
+SHA256 2c45e0b3a54cd86324f1ae1493aac807e4ecf4c99a419c8dc0245c11ce24ccaa gnu-gs-fonts-std-8.11-r1100.ebuild 656
