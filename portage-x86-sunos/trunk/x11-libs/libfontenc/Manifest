@@ -1,2 +1,6 @@
-MD5 3e1f71e454bc68b512ed1dfa67fcd292 files/digest-libfontenc-1.0.1-r1100 69
+MD5 fa54024de1127aafdc2f95251c0c008d files/digest-libfontenc-1.0.1-r1100 253
+RMD160 05471a22450f42a40fc0420656c398fdb975cdbe files/digest-libfontenc-1.0.1-r1100 253
+SHA256 a4ccefcc1e76c3ccd82911010f3adacdccb06336658e7f4bf3a8c4e984106699 files/digest-libfontenc-1.0.1-r1100 253
 MD5 3831664116fd77ac6aafffa4819e6c6c libfontenc-1.0.1-r1100.ebuild 574
+RMD160 f9e90b1040f7892fb0fb0cca5879bbcacb5e1e58 libfontenc-1.0.1-r1100.ebuild 574
+SHA256 af981cd043f0fdc3bf0fd2a92d93b602ddee1053f334dffffdadfe789d174f3c libfontenc-1.0.1-r1100.ebuild 574
