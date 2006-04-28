@@ -12,8 +12,8 @@ SRC_URI="mirror://gentoo/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-sunos"
-IUSE="build static"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
+IUSE="build static g-prefix gnulinks"
 
 DEPEND=""
 
@@ -29,7 +29,7 @@ src_compile() {
 	use static && append-ldflags -static
 
 	local myconf=""
-	[[ ${USERLAND} != "GNU" ]] && myconf="--program-prefix=g"
+	( [[ ${USERLAND} != "GNU" ]] || use g-prefix ) && myconf="--program-prefix=g"
 	ac_cv_sys_long_file_names=yes econf ${myconf} || die
 
 	emake || die "emake failed"
@@ -39,4 +39,20 @@ src_install() {
 	einstall || die
 	dodoc AUTHORS ChangeLog NEWS README
 	use build && rm -r "${D}"/usr/share
+	if use gnulinks; then
+		[[ -z ${GNU_PREFIX} ]] && die "environment variable GNU_PREFIX must be set"
+                dodir ${GNU_PREFIX}/bin
+                cd "${D}"
+		local d
+		for d in usr/bin bin; do
+                	if [ -d ${d} ]; then
+                		einfo "Creating links in ${GNU_PREFIX}/bin"
+				cd ${d}
+                		local x
+                		for x in * ; do
+                        		dosym /bin/${x} ${GNU_PREFIX}/bin/${x:1}
+                		done
+			fi
+		done
+	fi
 }
