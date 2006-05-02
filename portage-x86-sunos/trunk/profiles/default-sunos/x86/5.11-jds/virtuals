@@ -39,3 +39,14 @@ media-plugins/gst-plugins-vorbis sunos-jds/SUNWgnome-media
 media-plugins/gst-plugins-mad sunos-jds/SUNWgnome-media
 media-plugins/gst-plugins-ogg sunos-jds/SUNWgnome-media
 media-plugins/gst-plugins-gnomevfs sunos-jds/SUNWgnome-media
+gnome-base/gnome-desktop	sunos-jds/SUNWgnome
+dev-python/gnome-python		sunos-jds/SUNWgnome-python-libs
+gnome-base/gnome-panel		sunos-jds/SUNWgnome-panel
+dev-python/pygtk		sunos-jds/SUNWgnome-python-libs
+gnome-base/libgnome		sunos-jds/SUNWgnome-libs-devel
+gnome-base/libbonoboui		sunos-jds/SUNWgnome-libs-devel
+gnome-base/libgnomeprintui	sunos-jds/SUNWgnome-libs-devel
+dev-python/pyorbit		sunos-jds/SUNWgnome-python-libs
+gnome-base/libgnomecanvas	sunos-jds/SUNWgnome-base-libs-devel
+media-libs/libart_lgpl		sunos-jds/SUNWgnome-base-libs-devel
+gnome-base/gnome-keyring	sunos-jds/SUNWgnome-libs-devel

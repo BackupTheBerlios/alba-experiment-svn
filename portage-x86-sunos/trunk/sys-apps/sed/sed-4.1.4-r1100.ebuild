@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/sed/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha arm amd64 hppa ia64 m68k mips ppc ppc64 ppc-macos s390 sh sparc x86 ~x86-sunos"
+KEYWORDS="alpha arm amd64 hppa ia64 m68k mips ppc ppc64 ppc-macos s390 sh sparc x86 x86-sunos"
 IUSE="nls static build bootstrap"
 
 RDEPEND="nls? ( virtual/libintl )"

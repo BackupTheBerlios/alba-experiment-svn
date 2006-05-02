@@ -12,7 +12,7 @@ sys-apps/sandbox-1.2.12-r9999
 sys-sunos/SUNWsndmu-11.11
 sys-sunos/SUNWcsu-11.11
 sys-sunos/SUNWcsl-11.11
-#sys-sunos/SUNWxorg-server-6.9.0.5.11.3200
+sys-sunos/SUNWxorg-server-6.9.0.5.11.3200
 #sys-sunos/SUNWxorg-mesa-6.9.0.5.11.3200
 sys-sunos/SUNWaudd-11.11
 sys-sunos/SUNWdoc-11.11
@@ -28,3 +28,9 @@ sunos-jds/SUNWevolution-libs-devel-2.2.7
 sunos-jds/SUNWgnome-media-player-1.2.0
 sunos-jds/SUNWgnome-cd-burner-2.12.2
 sunos-jds/SUNWgnome-audio-devel-2.12.0
+sunos-jds/SUNWgnome-2.12.0
+sunos-jds/SUNWgnome-python-libs-2.12.0
+sunos-jds/SUNWgnome-panel-2.12.0
+dev-python/gnome-python-extras-2.12.0
+gnome-extra/evolution-data-server-1.4.2.1
+x11-libs/cairo-1.0.2-r1100
