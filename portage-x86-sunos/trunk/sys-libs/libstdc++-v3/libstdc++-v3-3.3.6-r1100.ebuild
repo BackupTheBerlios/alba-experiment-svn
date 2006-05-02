@@ -191,6 +191,11 @@ src_compile() {
 		myconf="${myconf} --enable-nls --without-included-gettext"
 	fi
 
+	case ${CHOST} in
+		i?86-pc-solaris2.*) myconf="${myconf} --with-as=/usr/bin/gas --with-gnu-as --without-gnu-ld --with-ld=/usr/ccs/bin/ld" 
+							;;
+	esac
+
 	(has_multilib_profile || use multilib) || myconf="${myconf} --disable-multilib"
 
 	do_filter_flags
