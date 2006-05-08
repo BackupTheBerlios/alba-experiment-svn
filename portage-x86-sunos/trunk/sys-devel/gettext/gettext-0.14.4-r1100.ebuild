@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 ~x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
 IUSE="emacs nls doc"
 
 DEPEND="|| ( sys-libs/glibc dev-libs/libiconv )"
@@ -56,6 +56,7 @@ src_compile() {
 	else
 		myconf="${myconf} --with-included-gettext --enable-nls"
 	fi
+	use g-prefix && EXTRA_ECONF='--program-prefix=g'
 	use emacs || export EMACS=no #93823
 	CXX=$(tc-getCC) \
 	econf \
@@ -106,6 +107,26 @@ src_install() {
 		elisp-site-file-install "${FILESDIR}"/50po-mode-gentoo.el
 	else
 		rm -rf "${D}"/usr/share/emacs
+	fi
+	
+	if use gnulinks ; then
+	    # create symlinks in /usr/gnu/bin
+		dodir ${GNU_PREFIX}/bin
+		cd "${D}"
+		for d in usr/bin bin; do
+			if [ -d ${d} ]; then
+				cd ${d}
+				einfo "Creating links in ${GNU_PREFIX}/bin"
+				local x
+				for x in * ; do
+					if use g-prefix; then
+						dosym /${d}/${x} ${GNU_PREFIX}/bin/${x:1} #removes leading 'g'
+					else
+						dosym /${d}/${x} ${GNU_PREFIX}/bin/${x}
+					fi
+				done
+			fi
+		done
 	fi
 
 	dodoc AUTHORS BUGS ChangeLog DISCLAIM NEWS README* THANKS TODO
