@@ -47,3 +47,13 @@ else
 	eerror "No such ebuild found"
 	exit 3
 fi
+if [ ! -z ${USESVN} ]; then
+	svn add $PORTDIR_OVERLAY/$CATEGORY
+	svn commit $PORTDIR_OVERLAY/$CATEGORY -m "initial ebuild addition for $CATEGORY"
+fi
+
+#Diagnose ebuild
+if grep gen_usr_ldscript $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild ; then
+	ewarn 
+	ewarn "NOTE: The ebuild uses gen_usr_ldscript. You have to remove it if you are using sun-ld"
+fi
