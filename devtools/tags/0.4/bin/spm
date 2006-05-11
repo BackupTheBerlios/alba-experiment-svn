@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+
+use strict;
+use Getopt::Long;
+use Data::Dumper;
+
+my $opt_q;
+
+##### MODES ####
+
+# query mode
+
+my $PKGINFO='pkginfo';
+
+my %opt;
+
+sub parse_pkginfo{
+	my $pkginfo=shift;
+	my %pinfo;
+	my $lastvar;
+	foreach (@{$pkginfo}) {
+		next if (/^$/);
+		s/^ *//;
+		chomp;
+		my ($var,$val)=split(/:  /);
+		$var=~s/^ *//;
+		if (!defined($val)){
+			$val=$var;
+			$var=$lastvar;
+		}
+		$val=~s/^ *//;
+		$lastvar=$var;
+		#warn "DEBUG: $var#$val\n";
+		$pinfo{$var}=$val;
+	}
+	warn Dumper(\%pinfo) if $opt{'d'};
+	return \%pinfo;
+}
+
+sub query{
+	warn "Query mode" if $opt{'d'};
+	if (  (!defined $opt{'f'}) 
+	      && (!defined $opt{'l'})
+	      && (!defined $opt{'i'}) 
+	      && (defined $ARGV[0]))
+	{
+	      # simple query mode
+	      warn "Query mode: single package" if $opt{'d'};
+	      my @res=`$PKGINFO -l $ARGV[0]`;
+	      my $pinfo=parse_pkginfo \@res;
+	      print "$pinfo->{'PKGINST'}-$pinfo->{'VERSION'}\n";
+	}
+	
+}
+
+my $result=GetOptions(
+	\%opt,
+    	'q|query',          # query mode
+	    'a|all',        # query all packages
+       	    'f',            # query package owning file(s)
+            'i|info',       # display package information
+	    'l',            # display package file list
+	'd|debug'
+	);
+
+
+if ($opt{'q'}){
+	query();	
+}

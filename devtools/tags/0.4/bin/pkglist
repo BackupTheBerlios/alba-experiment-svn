@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+CONTENT="/var/sadm/install/contents"
+PKGNAME=$1
+FTYPE=$2
+
+if [ -z "$PKGNAME" ]; then
+	echo You must specify a package name
+	exit 1
+fi
+grep $PKGNAME $CONTENT | grep " ${FTYPE:-f} "
