@@ -2,6 +2,7 @@
 
 use strict;
 use Getopt::Long;
+use Data::Dumper;
 
 my $opt_q;
 
@@ -13,16 +14,41 @@ my $PKGINFO='pkginfo';
 
 my %opt;
 
+sub parse_pkginfo{
+	my $pkginfo=shift;
+	my %pinfo;
+	my $lastvar;
+	foreach (@{$pkginfo}) {
+		next if (/^$/);
+		s/^ *//;
+		chomp;
+		my ($var,$val)=split(/:  /);
+		$var=~s/^ *//;
+		if (!defined($val)){
+			$val=$var;
+			$var=$lastvar;
+		}
+		$val=~s/^ *//;
+		$lastvar=$var;
+		#warn "DEBUG: $var#$val\n";
+		$pinfo{$var}=$val;
+	}
+	warn Dumper(\%pinfo) if $opt{'d'};
+	return \%pinfo;
+}
+
 sub query{
 	warn "Query mode" if $opt{'d'};
 	if (  (!defined $opt{'f'}) 
 	      && (!defined $opt{'l'})
-	      && (!defined $opt{'i'}) )
+	      && (!defined $opt{'i'}) 
+	      && (defined $ARGV[0]))
 	{
 	      # simple query mode
 	      warn "Query mode: single package" if $opt{'d'};
-	      my $res=`$PKGINFO $ARGV[0]`;
-	      print $res;
+	      my @res=`$PKGINFO -l $ARGV[0]`;
+	      my $pinfo=parse_pkginfo \@res;
+	      print "$pinfo->{'PKGINST'}-$pinfo->{'VERSION'}\n";
 	}
 	
 }
