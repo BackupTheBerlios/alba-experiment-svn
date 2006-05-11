@@ -6,13 +6,13 @@
 PKGNAME="alba-experiment-devtools"
 einfo "Creating release for \"${PKGNAME}\""
 WORKDIR="/var/tmp/alba-experiment-devtools/image"
-SVNURL="http://svn.berlios.de/svnroot/repos/alba-experiment/devtools/tags/"
+SVNURL="https://svn.berlios.de/svnroot/repos/alba-experiment/devtools/tags/"
 
 [ -d ${WORKDIR} ] && rm -rf ${WORKDIR} 2>/dev/null 1>&2
 [ ! -d ${WORKDIR} ] && mkdir -p ${WORKDIR} 2>/dev/null 1>&2
 
 einfon "Finding last release..."
-REL0=`svn ls ${SVNURL} | $TAIL -n 1`
+REL0=`svn ls ${SVNURL} | gtail -n 1`
 REL=`basename $REL0`
 echo "${REL}"
 
@@ -21,5 +21,5 @@ svn export ${SVNURL}/${REL} "${WORKDIR}"/"${PKGNAME}"-"${REL}"
 
 ebegin "Creating package"
 cd ${WORKDIR}
-$TAR jcf ${DISTDIR}/${PKGNAME}-${REL}.tar.bz2 ${PKGNAME}-${REL}
+gtar jcf ${DISTDIR}/${PKGNAME}-${REL}.tar.bz2 ${PKGNAME}-${REL}
 eend $?
