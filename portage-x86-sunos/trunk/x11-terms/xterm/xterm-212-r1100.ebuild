@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-terms/xterm/xterm-212.ebuild,v 1.1 2006/04/12 21:53:00 exg Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-terms/xterm/xterm-212-r2.ebuild,v 1.1 2006/05/10 11:23:44 exg Exp $
 
 inherit flag-o-matic
 
@@ -10,7 +10,7 @@ SRC_URI="ftp://invisible-island.net/${PN}/${P}.tgz"
 
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
 IUSE="truetype Xaw3d unicode toolbar doc"
 
 RDEPEND="|| ( (	x11-libs/libX11
@@ -19,25 +19,29 @@ RDEPEND="|| ( (	x11-libs/libX11
 		x11-libs/libXmu
 		x11-libs/libxkbfile
 		x11-libs/libXft
-		x11-libs/libXaw )
+		x11-libs/libXaw
+		unicode? ( x11-apps/luit ) )
 	virtual/x11 )
 	Xaw3d? ( x11-libs/Xaw3d )
-	doc? ( sys-apps/groff )
 	virtual/utempter"
 
 DEPEND="${RDEPEND}
+	doc? ( sys-apps/groff )
 	|| ( x11-proto/xproto virtual/x11 )"
 
 pkg_setup() {
-	if has_version ">=x11-base/xorg-x11-7.0.0_rc1"; then
-		einfo "Found $(best_version x11-base/xorg-x11)."
-		NEWAPPDEFAULTS=1
-		DEFAULTS_DIR="/usr/$(get_libdir)/X11/app-defaults"
+	if has_version "x11-libs/libX11"; then
+		DEFAULTS_DIR="/usr/share/X11/app-defaults"
 	else
-		einfo "Not found xorg-x11 version 7."
-		NEWAPPDEFAULTS=0
 		DEFAULTS_DIR="/etc/X11/app-defaults"
 	fi
+}
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}"
+
+	epatch "${FILESDIR}"/xterm-app-defaults-ref.patch
 }
 
 src_compile() {
@@ -45,7 +49,7 @@ src_compile() {
 
 	local myconf=""
 
-	if has_version ">=x11-base/xorg-x11-7.0.0_rc1"; then
+	if has_version "x11-libs/libX11"; then
 		myconf="--disable-narrowproto"
 	fi
 
