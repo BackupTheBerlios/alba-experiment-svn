@@ -22,7 +22,7 @@ COMMON_DEPEND="
 	>=dev-libs/libgcrypt-1.1.94
 	>=dev-libs/libksba-0.9.13
 	>=dev-libs/libgpg-error-1.0
-	=dev-libs/libassuan-0.6.10
+	>=dev-libs/libassuan-0.6.10
 	ldap? ( net-nds/openldap )
 	caps? ( sys-libs/libcap )"
 
