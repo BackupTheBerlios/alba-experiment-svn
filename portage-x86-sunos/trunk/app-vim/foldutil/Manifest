@@ -1,0 +1,6 @@
+MD5 79e5b08f914feecb00cd86d525cdd134 files/digest-foldutil-2.0-r1100 235
+RMD160 0853a94f3857e76e182146bd072eba2766e1a9e9 files/digest-foldutil-2.0-r1100 235
+SHA256 90fafcf7efbc2c2ab95dd2247ccec52c898636c87b2d18153aacce00b04a6c38 files/digest-foldutil-2.0-r1100 235
+MD5 4c53c3a3daadfc70d3df55b50b3fd4dd foldutil-2.0-r1100.ebuild 690
+RMD160 260765ac1af6bfe5c17dac514ba0e6e000dc2eb5 foldutil-2.0-r1100.ebuild 690
+SHA256 b97fbb5a77d386b49d9535875cfc9d11f6e7e532f04b58df742c3b3a84f2f608 foldutil-2.0-r1100.ebuild 690
