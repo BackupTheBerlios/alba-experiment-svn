@@ -1,0 +1,6 @@
+MD5 04bcb149c5c34ea7484ee759236a720b files/digest-gnome-keyring-0.4.9-r1100 262
+RMD160 d83ba3b0ec8c55263a3e5c8d4a931fe8c1550692 files/digest-gnome-keyring-0.4.9-r1100 262
+SHA256 43c5b74745980a7236fe07ddd3f2ec0c763d7a741e88f48872abfe457b3d8821 files/digest-gnome-keyring-0.4.9-r1100 262
+MD5 6968c07c0f94e4bce18f388149831ad0 gnome-keyring-0.4.9-r1100.ebuild 600
+RMD160 36f44c99e15e3f54c76a32529fc2e49154cd7b51 gnome-keyring-0.4.9-r1100.ebuild 600
+SHA256 4f6a0ce02ef97b5141adc7b79037c559fa942d24435274b8d4d525f607a143ad gnome-keyring-0.4.9-r1100.ebuild 600
