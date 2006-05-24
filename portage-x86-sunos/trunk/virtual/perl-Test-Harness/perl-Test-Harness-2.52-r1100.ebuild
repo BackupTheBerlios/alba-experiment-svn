@@ -12,5 +12,5 @@ KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86
 
 IUSE=""
 DEPEND=""
-RDEPEND="=perl-core/Test-Harness-2.52"
+RDEPEND="=perl-core/Test-Harness-2.52-r1100"
 
