@@ -58,13 +58,15 @@ src_compile() {
 	#	$(use_enable cjk multibyte)
 
 	local myconf=""
-
-	use g-prefix && myconf="${myconf} --program-prefix=g"
+	if use g-prefix ; then
+		pprefix="g"
+		myconf="${myconf} --program-prefix=${pprefix}"
+    fi
 
 	econf \
+		${myconf} \
 		--with-appresdir=/etc/X11/app-defaults \
 		$(use_with X x) \
-		${myconf} \
 		|| die
 	emake || die
 }
@@ -87,24 +89,29 @@ src_install() {
 
 	dodoc BUG-REPORT ChangeLog FDL MORE.STUFF NEWS \
 		PROBLEMS PROJECTS README REVISION TODO VERSION
-
-        if use gnulinks ; then
+		
+		local gexecs="troff tbl eqn neqn refer soelim lookbib indxbib nroff"
+		if use gnulinks ; then
+			ebegin "GNU-ization of the distribution."
+			[[ ! -z ${GNU_PREFIX} ]] || die "Environment variable GNU_PREFIX must be set."
 		    # create symlinks in /usr/gnu/bin
 			dodir ${GNU_PREFIX}/bin
 			cd "${D}"
-			for d in usr/bin bin; do
-				if [ -d ${d} ]; then
-					einfo "Creating links in ${GNU_PREFIX}/bin"
-					local x
-					for x in * ; do
-						if use g-prefix; then
-							dosym /bin/${x} ${GNU_PREFIX}/bin/${x:1} #removes leading 'g'
-						else
-							dosym /bin/${x} ${GNU_PREFIX}/bin/${x}
-						fi
-					done
+			local d="/usr/bin"
+			local x
+			for x in ${gexecs} ; do
+				if [ -x ${d}/${x} ]; then
+					if use g-prefix; then
+						#einfo "${d}/${x} -mv-> ${pprefix}${x}"
+						newbin ${D}/${d}/${x} ${pprefix}${x}
+						rm -f ${D}/${d}/${x}
+						#einfo "${d}/${pprefix}${x} -ln-> ${GNU_PREFIX}/bin/${x}"
+						dosym /${d}/${pprefix}${x} ${GNU_PREFIX}/bin/${x}
+					else
+						dosym /${d}/${x} ${GNU_PREFIX}/bin/${x}
+					fi
 				fi
 			done
-        fi
-	
+			eend
+		fi
 }
