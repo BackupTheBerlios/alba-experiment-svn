@@ -1,0 +1,31 @@
+--- cairo-1.0.4/src/cairoint.h.original	2006-03-15 17:48:01.000000000 +0100
++++ cairo-1.0.4/src/cairoint.h	2006-05-24 13:36:26.589037000 +0200
+@@ -95,9 +95,9 @@
+ 
+ /* slim_internal.h */
+-#if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
++/* #if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
+ #define cairo_private		__attribute__((__visibility__("hidden")))
+-#else
++#else */
+ #define cairo_private
+-#endif
++/* #endif */
+ 
+ /* This macro allow us to deprecate a function by providing an alias
+
+--- cairo-1.0.4/pixman/src/slim_internal.h.original	2006-03-14 03:08:44.000000000 +0100
++++ cairo-1.0.4/pixman/src/slim_internal.h	2006-05-24 13:06:53.273604000 +0200
+@@ -48,9 +48,9 @@
+    like the function name instead of just an attribute.  */
+ 
+-#if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
++/* #if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
+ #define pixman_private	__attribute__((__visibility__("hidden")))
+-#else
++#else */
+ #define pixman_private
+-#endif
++/* #endif */
+ 
+ /* The following macros are used for PLT bypassing.  First of all,

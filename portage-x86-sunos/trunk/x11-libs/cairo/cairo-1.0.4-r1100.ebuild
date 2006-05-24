@@ -29,6 +29,15 @@ DEPEND="${RDEPEND}
 	doc? (	>=dev-util/gtk-doc-1.3
 		~app-text/docbook-xml-dtd-4.2 )"
 
+src_unpack() {
+	unpack "${A}"
+	cd "${S}"
+
+	use x86-sunos && epatch ${FILESDIR}/${P}-x86-sunos-visibility.patch
+}
+
+
+
 src_compile() {
 
 	econf $(use_enable X xlib) \
