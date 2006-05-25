@@ -39,11 +39,16 @@ src_unpack() {
 	epatch ${FILESDIR}/${PN}-${PV}-config.patch
 	epatch ${FILESDIR}/${PN}-${PV}-config-1.patch
 	epatch ${FILESDIR}/${PN}-mips64.patch
+	cp ${FILESDIR}/SunOS5.11_i86pc.mk ${S}/mozilla/security/coreconf
+	
 }
 
 src_compile() {
 	if use amd64 || use ppc64 || use ia64 || use s390; then
 		export USE_64=1
+	fi
+	if use x86-sunos && use gcc; then
+		export NS_USE_GCC=1
 	fi
 	export NSDISTMODE=copy
 	cd ${S}/mozilla/security/coreconf
