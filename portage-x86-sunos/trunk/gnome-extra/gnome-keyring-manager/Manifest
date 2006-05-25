@@ -1,0 +1,6 @@
+MD5 56279e8595163203892472da78bbb374 files/digest-gnome-keyring-manager-2.14.0-r1100 289
+RMD160 fcdd6fa0ca66cd1c14bc3a4050cd1db98201074c files/digest-gnome-keyring-manager-2.14.0-r1100 289
+SHA256 99de89e545920d4ad0108f9587eb747ddabc20eb15d0750aa4e0ecaf01c10c68 files/digest-gnome-keyring-manager-2.14.0-r1100 289
+MD5 b312b1b596f4f50191b17781263b9f96 gnome-keyring-manager-2.14.0-r1100.ebuild 889
+RMD160 767216633d06abeb3ad337816fa04f103bf7bc62 gnome-keyring-manager-2.14.0-r1100.ebuild 889
+SHA256 b1e6d79554420f2ba4107e2511629f0fd4d92ea97d95f4f2a62f74a8bd90d769 gnome-keyring-manager-2.14.0-r1100.ebuild 889
