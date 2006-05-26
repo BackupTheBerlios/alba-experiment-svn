@@ -78,7 +78,8 @@ linguas() {
 }
 
 src_unpack() {
-	unpack firefox-${PV}.tar.gz
+	#unpack firefox-${PV}.tar.gz
+	unpack ${A}
 
 	linguas
 	for X in ${linguas}; do
