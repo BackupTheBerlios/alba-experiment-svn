@@ -11,7 +11,7 @@ SRC_URI="mirror://openssl/source/${P}.tar.gz"
 LICENSE="openssl"
 SLOT="0"
 # make sure your arch is ABI compat before adding KEYWORD back in
-KEYWORDS="-* ~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="-* ~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-sunos"
 IUSE="emacs test bindist zlib"
 
 RDEPEND=""

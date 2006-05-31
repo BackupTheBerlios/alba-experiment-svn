@@ -1,0 +1,6 @@
+MD5 8fb3320540180ac677a11ea8ada2f9e2 files/digest-smtpclient-1.0.1-r1100 250
+RMD160 37d1ae326d836438f4b9136e3d145fcf0779803c files/digest-smtpclient-1.0.1-r1100 250
+SHA256 d8d36210ecd9a5ca8d77528e6b843f5b0b68f609bac719ec548908d157be8ed3 files/digest-smtpclient-1.0.1-r1100 250
+MD5 80a3bc6b5e0da57fbedb0463d135702b smtpclient-1.0.1-r1100.ebuild 517
+RMD160 06359f8abb22f5677c96ad009afc029ddf2f6484 smtpclient-1.0.1-r1100.ebuild 517
+SHA256 c019afa6cb2fbc2f9ceb39bc841e56e366687f389653dfe266bb73b29620ba76 smtpclient-1.0.1-r1100.ebuild 517

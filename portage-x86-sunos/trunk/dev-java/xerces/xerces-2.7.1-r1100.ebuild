@@ -30,7 +30,7 @@ src_unpack() {
 	unpack ${A}
 
 	cd ${S}
-	epatch ${FILESDIR}/${PF}-gentoo.patch
+	epatch ${FILESDIR}/${P}-gentoo.patch
 	epatch ${FILESDIR}/${P}-no_dom3.patch
 
 	mkdir tools && cd tools

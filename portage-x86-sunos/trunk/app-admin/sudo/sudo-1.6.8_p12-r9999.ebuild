@@ -11,7 +11,7 @@ HOMEPAGE="http://www.sudo.ws/"
 SRC_URI="ftp://ftp.sudo.ws/pub/sudo/${P/_/}.tar.gz"
 LICENSE="Sudo"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-sunos"
 IUSE="pam skey offensive ldap selinux"
 
 DEPEND="pam? ( || ( virtual/pam sys-libs/pam ) )

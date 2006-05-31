@@ -6,13 +6,13 @@ inherit eutils distutils
 
 DESCRIPTION="Gentoo's installer for web-based applications"
 HOMEPAGE="http://www.gentoo.org/"
-SRC_URI="http://dev.gentoo.org/~wrobel/webapp-config/${PF}.tar.gz"
+SRC_URI="http://dev.gentoo.org/~wrobel/webapp-config/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
 IUSE=""
-S=${WORKDIR}/${PF}
+S=${WORKDIR}/${P}
 
 DEPEND=""
 

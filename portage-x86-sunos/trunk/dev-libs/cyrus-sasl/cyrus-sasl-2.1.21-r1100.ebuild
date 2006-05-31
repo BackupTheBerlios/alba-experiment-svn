@@ -21,7 +21,7 @@ IUSE="berkdb crypt gdbm ldap mysql postgres kerberos ssl java pam
 RDEPEND="virtual/libc
 	berkdb? ( >=sys-libs/db-3.2 )
 	gdbm? ( >=sys-libs/gdbm-1.8.0 )
-	ldap? ( >=net-nds/openldap-2.0.25 )
+	ldap? ( >=net-nds/openldap-2.3 )
 	mysql? ( >=dev-db/mysql-3.23.51 )
 	postgres? ( >=dev-db/postgresql-7.2 )
 	pam? ( virtual/pam )

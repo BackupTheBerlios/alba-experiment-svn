@@ -4,7 +4,7 @@
 
 DESCRIPTION="Provides /etc/mime.types file"
 HOMEPAGE="http://www.gentoo.org/"
-SRC_URI="mirror://gentoo/${PF}.tar.bz2"
+SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"

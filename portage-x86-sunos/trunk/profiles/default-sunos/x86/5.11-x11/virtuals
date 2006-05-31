@@ -21,7 +21,10 @@ x11-proto/videoproto	sys-sunos/SUNWxwinc
 virtual/libiconv   		sys-sunos/SUNWcsu
 virtual/ssh				sys-sunos/SUNWsshu
 virtual/eject			sys-sunos/SUNWcsu
-virtual/fam			sys-sunos/SUNWcsu
+virtual/fam				sys-sunos/SUNWcsu
+virtual/logger			sys-sunos/SUNWcsu	
+virtual/ldap			sys-sunos/SUNWcsl
+net-libs/openslp		sys-sunos/SUNWslpu
 #gnome-base/libglade     sunos-jds/SUNWgnome-base-libs-devel
 #gnome-base/gnome-vfs	sunos-jds/SUNWgnome-vfs-devel
 #app-text/scrollkeeper	sunos-jds/SUNWgnome-libs-devel
