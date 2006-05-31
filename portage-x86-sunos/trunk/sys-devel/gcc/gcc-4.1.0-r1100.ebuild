@@ -17,7 +17,7 @@ DESCRIPTION="The GNU Compiler Collection.  Includes C/C++, java compilers, pie+s
 HOMEPAGE="http://www.gnu.org/software/gcc/gcc.html"
 
 LICENSE="GPL-2 LGPL-2.1"
-KEYWORDS="-* ~amd64 ~ppc ~x86 x86-sunos"
+KEYWORDS="-* ~amd64 ~ppc ~x86 ~x86-sunos"
 
 RDEPEND="!sys-devel/hardened-gcc
 	|| ( app-admin/eselect-compiler >=sys-devel/gcc-config-1.3.12-r4 )
