@@ -35,7 +35,7 @@ src_install() {
 		use gnulinks && prefix=$GNU_PREFIX
 		dodir ${prefix}/bin
 		dodir ${prefix}/share/man/man1
-		dosym gmake ${prefix}/bin/make
-		dosym gmake.1 ${prefix}/share/man/man1/make.1
+		dosym /usr/bin/gmake ${prefix}/bin/make
+		dosym /usr/share/man/man1/gmake.1 ${prefix}/share/man/man1/make.1
 	fi
 }
