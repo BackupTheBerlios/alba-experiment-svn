@@ -1,0 +1,69 @@
+#!/usr/bin/bash 
+
+. /sbin/functions.sh
+
+if [ -f /etc/make.conf ]; then
+	. /etc/make.conf
+else
+	eerror "/etc/make.conf not found"
+	exit 1
+fi
+if [ -f /etc/conf.d/alba-experiment-devtools.conf ]; then
+	. /etc/conf.d/alba-experiment-devtools.conf
+else
+	eerror "/etc/conf.d/gentoolkit-dev-sunos.conf not found"
+	exit 1
+fi
+EBUILD=$1
+if [ -z "$EBUILD" ]; then
+	eerror "Please specify an ebuild name to copy in '$PORTDIR_OVERLAY'"
+	exit 1
+fi
+CATEGORY=`echo $EBUILD| sed s/-[0-9].*$//`
+EBNAME=`echo $EBUILD | cut -d '/' -f 2`
+EBFULLNAME=/usr/portage/$CATEGORY/$EBNAME.ebuild
+EBSHORTNAME=`echo $EBNAME | sed s/-[0-9].*$//`
+EBVER=`echo $EBNAME | sed s/^$EBSHORTNAME//`
+#echo EBVER $EBVER
+EBVER_MAJ=`echo $EBVER | sed s/-r[0-9].*$//`
+#echo EBVER_MAJ $EBVER_MAJ
+EBVER_MIN=`echo $EBVER | sed s/^$EBVER_MAJ//`
+#echo EBVER_MIN $EBVER_MIN
+EBNEWNAME=${EBSHORTNAME}${EBVER_MAJ}-r1100
+if [ -f $EBFULLNAME ]; then
+	ebegin "Copying ebuild to sunos portage tree: $PORTDIR_OVERLAY"
+	#ls -l $EBFULLNAME
+	mkdir -p $PORTDIR_OVERLAY/$CATEGORY > /dev/null 2>&1
+	#echo "'$EBFULLNAME' => '$PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild'"
+	sed '/KEYWORDS=/ {
+	s/"$/ x86-sunos"/
+	}
+	' $EBFULLNAME > $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild
+	gcp -Rf /usr/portage/$CATEGORY/files $PORTDIR_OVERLAY/$CATEGORY
+	eend $?
+	ebegin "Removing old digest"
+	rm $PORTDIR_OVERLAY/$CATEGORY/files/digest-* >/dev/null 2>&1
+	eend $?
+	ebegin "Downloading source and computing new digest"
+	ebuild $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild digest > /dev/null 2>&1
+	eend $?
+else
+	eerror "No such ebuild found"
+	exit 3
+fi
+if [ ! -z ${USESVN} ]; then
+	ebegin "Adding initial ebuild to portage SVN tree"
+	svn add $PORTDIR_OVERLAY/$CATEGORY > /dev/null 2>&1
+	svn commit $PORTDIR_OVERLAY/$CATEGORY -m "initial ebuild addition for $CATEGORY" > /dev/null 2>&1
+	eend $?
+fi
+
+#Diagnose ebuild
+if grep gen_usr_ldscript $PORTDIR_OVERLAY/$CATEGORY/$EBNEWNAME.ebuild ; then
+	ewarn 
+	ewarn "NOTE: The ebuild uses gen_usr_ldscript. You have to remove it if you are using sun-ld"
+fi
+
+einfo "Testing the ebuild dependecies"
+emerge -qp ${EBSHORTNAME}
+
