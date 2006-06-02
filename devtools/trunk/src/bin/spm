@@ -14,11 +14,11 @@ my $PKGINFO='pkginfo';
 
 my %opt;
 
-sub parse_pkginfo{
-	my $pkginfo=shift;
+sub pkginfo_long_parse{
+	my $pkgname=shift;
 	my %pinfo;
 	my $lastvar;
-	foreach (@{$pkginfo}) {
+	foreach (`$PKGINFO -l $pkgname`) {
 		next if (/^$/);
 		s/^ *//;
 		chomp;
@@ -39,15 +39,24 @@ sub parse_pkginfo{
 
 sub query{
 	warn "Query mode" if $opt{'d'};
+	if ( defined $opt{'a'} ){
+	      warn "Query mode: all packages" if $opt{'d'};
+	      for my $p (`$PKGINFO`){
+	      	chomp $p;
+		my @pkgs=split(/\s+/,$p);
+	      	warn "pkg: " . @pkgs[1] if $opt{'d'};
+	      	my $pinfo=pkginfo_long_parse $pkgs[1];
+	      	print "$pinfo->{'PKGINST'}-$pinfo->{'VERSION'}\n";
+	      };
+	}
 	if (  (!defined $opt{'f'}) 
 	      && (!defined $opt{'l'})
-	      && (!defined $opt{'i'}) 
+	      && (!defined $opt{'i'})
 	      && (defined $ARGV[0]))
 	{
 	      # simple query mode
 	      warn "Query mode: single package" if $opt{'d'};
-	      my @res=`$PKGINFO -l $ARGV[0]`;
-	      my $pinfo=parse_pkginfo \@res;
+	      my $pinfo=pkginfo_long_parse $ARGV[0];
 	      print "$pinfo->{'PKGINST'}-$pinfo->{'VERSION'}\n";
 	}
 	

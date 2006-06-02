@@ -9,8 +9,9 @@ STAGENAME="stage1.5-x86-sunos2.11"
 STAGEDIST="/var/tmp/${STAGENAME}"
 STAGEPKGLIST="${GTODEVHOME}/conf/${STAGENAME}.pkglist"
 LOGFILE="/var/log/portage/${STAGENAME}.log"
+PKGDIR=`portageq pkgdir`
 date > ${LOGFILE}
-OPT="--nodeps"
+OPT=""
 
 [[ -d ${STAGEDIST} ]] && rm -Rf ${STAGEDIST}
 mkdir -p ${STAGEDIST}/image 2>/dev/null
@@ -18,10 +19,17 @@ mkdir -p ${STAGEDIST}/image 2>/dev/null
 function phase1 {
 	einfo "I - Creating ${STAGENAME} in ${STAGEDIST}"
 	cat ${STAGEPKGLIST} | while read pkg; do
-		ebegin "Adding package ${pkg}"
+		PBV=`portageq best_visible / $pkg`
+		einfo "Checking for existing package ${PBV}"
+		if [ ! -f $PKGDIR/$PBV.tbz2 ]; then
+			ebegin "Package: $PKGDIR/$PBV.tbz2 does not existing, building"	
+			emerge -v --buildpkgonly --noreplace ${OPT}  ${pkg} >> $LOGFILE 2>&1
+			eend $?
+		fi
+		ebegin "Adding package ${PBV}"
 		FEATURES='-collision-protect'
 		export FEATURES
-		ROOT="${STAGEDIST}/image" emerge -v --usepkgonly --noreplace ${OPT} ${pkg} >> $LOGFILE 2>&1
+		ROOT="${STAGEDIST}/image" emerge -v --usepkgonly ${OPT} ${pkg} >> $LOGFILE 2>&1
 		eend $?
 	done 
 }
