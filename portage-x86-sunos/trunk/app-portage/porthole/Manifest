@@ -1,0 +1,6 @@
+MD5 9e9d8f24ca07a742874eff138d8b3aec files/digest-porthole-0.5.0-r1100 247
+RMD160 ca7bddb51e05eaf1ea6e3e743db9dc611130d6e9 files/digest-porthole-0.5.0-r1100 247
+SHA256 142075d9bbdd05a5a6e03cf05643aa0038abf7c800c250b65887310bd5bdb2a0 files/digest-porthole-0.5.0-r1100 247
+MD5 2af6110ff88f6240ed55e382670742ce porthole-0.5.0-r1100.ebuild 1096
+RMD160 58bef70cd2c87a0af75f4d52e7ef7b3ed724bf53 porthole-0.5.0-r1100.ebuild 1096
+SHA256 baaef95957e53693b90601bf70fca9e2896e1dc9428724ef11d68ba176bf2241 porthole-0.5.0-r1100.ebuild 1096
