@@ -42,12 +42,17 @@ DOCS="ChangeLog MAINTAINERS NEWS TODO"
 RESTRICT="confcache"
 
 pkg_setup() {
-	G2CONF="$(use_with ldap openldap) \
-		$(use_with kerberos krb5 /usr) \
+	G2CONF="$(use_with kerberos krb5 /usr) \
 		$(use_enable ssl nss)          \
 		$(use_enable ssl smime)        \
 		$(use_enable ipv6)             \
 		$(use_enable nntp)"
+	
+	if use ldap && use displace; then
+		G2CONF="${G2CONF} $(use_with ldap openldap)=/usr/openldap";
+	else
+		G2CONF="${G2CONF} $(use_with ldap openldap)"
+	fi
 
 	if use krb4 && ! built_with_use virtual/krb5 krb4; then
 		ewarn
