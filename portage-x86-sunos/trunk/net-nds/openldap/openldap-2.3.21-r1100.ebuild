@@ -219,10 +219,17 @@ src_compile() {
 		append-ldflags -L/usr/$(get_libdir)
 	fi
 
+	if use displace ; then
+		myconf="${myconf} \
+				--prefix=/usr/openldap \
+				"
+	else
+		myconf="${myconf} --libexecdir=/usr/$(get_libdir)/openldap"
+	fi
+
 	econf \
 		--enable-static \
 		--enable-shared \
-		--libexecdir=/usr/$(get_libdir)/openldap \
 		${myconf} || die "configure failed"
 
 	make depend || die "make depend failed"
@@ -307,6 +314,12 @@ src_install() {
 		exeinto /etc/openldap/ssl
 		doexe ${FILESDIR}/gencert.sh
 	fi
+
+	if use displace; then
+		dodir /etc/env.d
+		echo "LDPATH=/usr/openldap/lib" > ${D}/etc/env.d/09openldap
+	fi
+		
 
 	# keep old libs if any
 	# from 2.1

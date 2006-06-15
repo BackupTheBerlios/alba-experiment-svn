@@ -20,7 +20,11 @@ DEPEND="dev-libs/libxml2
 
 src_compile() {
 	epatch ${FILESDIR}/perl-module-3.0.1.diff
-	econf || die
+	if use g-prefix ; then
+		FILEUTIL="/usr/bin/gfile" econf || die
+	else
+		econf || die
+	fi
 	make || die
 }
 

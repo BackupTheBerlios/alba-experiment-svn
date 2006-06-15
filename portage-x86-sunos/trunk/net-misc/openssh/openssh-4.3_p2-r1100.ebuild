@@ -24,7 +24,7 @@ SRC_URI="mirror://openbsd/OpenSSH/portable/${PARCH}.tar.gz
 LICENSE="as-is"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
-IUSE="ipv6 static pam tcpd kerberos skey selinux chroot X509 ldap smartcard sftplogging hpn libedit"
+IUSE="ipv6 static pam tcpd kerberos skey selinux chroot X509 ldap smartcard sftplogging hpn libedit displace"
 
 RDEPEND="pam? ( virtual/pam )
 	kerberos? ( virtual/krb5 )
@@ -91,7 +91,12 @@ src_compile() {
 	use skey && use alpha && append-ldflags -mlarge-data
 	if use ldap ; then
 		filter-flags -funroll-loops
-		myconf="${myconf} --with-ldap"
+		if use displace; then
+			myconf="${myconf} --with-ldap=/usr/openldap"
+		else
+			myconf="${myconf} --with-ldap"
+		fi
+
 	fi
 	use selinux && append-flags -DWITH_SELINUX && append-ldflags -lselinux
 
@@ -105,10 +110,18 @@ src_compile() {
 
 	use ipv6 || myconf="${myconf} --with-ipv4-default"
 
+	if use displace; then
+		myconf="${myconf} \
+				--prefix=/usr/openssh \
+				--sysconfdir=/etc/openssh"
+	else
+		myconf="${myconf} \
+				--sysconfdir=/etc/ssh"
+	fi
+
 	econf \
 		--with-ldflags="${LDFLAGS}" \
 		--disable-strip \
-		--sysconfdir=/etc/ssh \
 		--libexecdir=/usr/$(get_libdir)/misc \
 		--datadir=/usr/share/openssh \
 		--disable-suid-ssh \
