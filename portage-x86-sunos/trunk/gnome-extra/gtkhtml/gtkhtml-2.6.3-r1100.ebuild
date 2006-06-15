@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/gnome-extra/gtkhtml/gtkhtml-2.6.3.ebuild,v 1.1 2006/01/12 22:34:20 compnerd Exp $
 
-inherit eutils gnome2 versionator
+inherit eutils gnome2 versionator autotools
 
 MY_P="lib${P}"
 MY_PN="lib${PN}"
@@ -41,5 +41,5 @@ src_unpack() {
 	if use alpha; then
 		epatch ${FILESDIR}/${MY_PN}-2.2.0-alpha.patch || die
 	fi
-
+	eautoreconf
 }
