@@ -29,12 +29,20 @@ src_unpack() {
 	ht_fix_file Configure Customize
 	touch .neverInv
 	epatch "${FILESDIR}"/4.73-answer-config.patch
+	# patch to add support for Solaris 11/OpenSolaris to the Config script
+	use x86-sunos && epatch "${FILESDIR}/${P}-x86-sunos-config.patch"
 }
 
 src_compile() {
 	use static && append-ldflags -static
-
-	./Configure linux || die "configure failed"
+	
+	case ${CHOST} in
+		*-linux*) ./Configure linux || die "configure failed"
+			;;
+		*-solaris*) ./Configure solaris || die "configure failed"
+			;;
+		*) die "$CHOST not supported"
+	esac
 
 	# Make sure we use proper toolchain
 	sed -i \
