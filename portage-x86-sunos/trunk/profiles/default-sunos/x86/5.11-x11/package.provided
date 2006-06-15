@@ -19,6 +19,8 @@ sys-sunos/SUNWdoc-11.11
 sys-sunos/SUNWmfrun-2.1.4
 sys-sunos/SUNWsshu-11.11
 sys-sunos/SUNWslpu-11.11
+sys-sunos/SUNWrcmdc-11.11
+sys-sunos/SUNWbip-11.11
 #sunos-jds/SUNWgnome-base-libs-devel-1.2.0
 #sunos-jds/SUNWgnome-base-libs-devel-2.12.0
 #sunos-jds/SUNWgnome-vfs-devel-2.12.0

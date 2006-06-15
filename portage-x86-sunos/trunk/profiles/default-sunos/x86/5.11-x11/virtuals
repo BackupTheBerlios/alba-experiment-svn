@@ -25,6 +25,9 @@ virtual/fam				sys-sunos/SUNWcsu
 virtual/logger			sys-sunos/SUNWcsu	
 virtual/ldap			sys-sunos/SUNWcsl
 net-libs/openslp		sys-sunos/SUNWslpu
+net-analyzer/traceroute	sys-sunos/SUNWcsu
+net-misc/whois			sys-sunos/SUNWrcmdc
+net-misc/iputils		sys-sunos/SUNWbip
 #gnome-base/libglade     sunos-jds/SUNWgnome-base-libs-devel
 #gnome-base/gnome-vfs	sunos-jds/SUNWgnome-vfs-devel
 #app-text/scrollkeeper	sunos-jds/SUNWgnome-libs-devel

@@ -1,8 +1,17 @@
 ARCH="x86-sunos"
 ACCEPT_KEYWORDS="x86-sunos"
+
 CHOST="i386-pc-solaris2.11"
-CFLAGS="-O2 -march=i386 -pipe"
+CFLAGS="-O2 -march=i386 -pipe -I/usr/X11/include"
 CXXFLAGS="-O2 -march=i386 -pipe"
+MAKE="gmake"
+
 GNU_PREFIX="/usr/gnu"
 PREROOTPATH='/usr/gnu/bin:/usr/openwin/bin:/usr/bin'
-USE="x86-sunos g-prefix gnulinks nopie sun-ld gcc"
+USE="x86-sunos g-prefix gnulinks nopie sun-ld gcc displace"
+
+FEATURES="-sandbox -userpriv"
+
+KERNEL="SunOS"
+USERLAND="SunOS"
+ELIBC="SunOS"
