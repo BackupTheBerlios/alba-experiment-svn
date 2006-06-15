@@ -1,0 +1,6 @@
+MD5 f9bf50cb0d304288f8fe07db3385bdeb files/Makefile.in.am-2.4.2-xmlcatalog.patch 1331
+MD5 6876e5db1b80846b82a289a82b44408b files/digest-libglade-0.17-r6 65
+MD5 225998fcdfb3607e5908dfb6178d849b files/digest-libglade-2.5.0 67
+MD5 ff81ecaaaec02a4578b6c4ee3234f2c2 files/digest-libglade-2.5.1 67
+MD5 ff81ecaaaec02a4578b6c4ee3234f2c2 files/digest-libglade-2.5.1-r1100 67
+MD5 b4d061e2cf9c7e53706eeeb5ac6682a3 libglade-2.5.1-r1100.ebuild 1369
