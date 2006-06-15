@@ -26,7 +26,7 @@ src_unpack() {
 	cd ${S}
 	jar xvf ${DISTDIR}/${A} || die "failed to unpack"
 
-	cp ${FILESDIR}/build-${PVR}.xml build.xml
+	cp ${FILESDIR}/build-${PV}.xml build.xml
 
 	jar xvf ${P//-/_}_src.jar || die "failed to unpack"
 	rm *.jar

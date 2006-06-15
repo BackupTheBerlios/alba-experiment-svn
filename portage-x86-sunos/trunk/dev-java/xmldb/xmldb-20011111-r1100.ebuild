@@ -36,7 +36,7 @@ src_unpack() {
 	epatch ${FILESDIR}/${P}-unreachable.patch
 
 	mkdir src && mv org src
-	cp ${FILESDIR}/build-${PVR}.xml build.xml
+	cp ${FILESDIR}/build-${PV}.xml build.xml
 }
 
 src_compile() {

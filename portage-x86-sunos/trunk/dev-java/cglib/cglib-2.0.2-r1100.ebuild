@@ -29,7 +29,7 @@ src_unpack() {
 
 	cd ${S}/lib
 	rm -f *.jar
-	java-pkg_jar-from asm-1.4
+	java-pkg_jar-from asm-1.4.1
 	java-pkg_jar-from aspectwerkz-2
 }
 
