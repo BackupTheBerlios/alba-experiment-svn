@@ -38,22 +38,23 @@ src_compile() {
 	# Default CFLAGS and CXXFLAGS is -O2 but this make openjade segfault
 	# on hppa. Using -O1 works fine. So I force it here.
 	use hppa && replace-flags -O2 -O1
-	use x86-sunos && replace-flags -O2 -O1
+	
+	# resolve the sigfault issue
+	local myconf
+	use x86-sunos && myconf="${myconf} --disable-shared --enable-static"
 
 	ln -s config/configure.in configure.in
 	elibtoolize
 
 	SGML_PREFIX=/usr/share/sgml
 	
-	einfo "CFLAGS=$CFLAGS"
-	einfo "CXXFLAGS=$CXXFLAGS"
-
 	econf \
 		--enable-http \
 		--enable-default-catalog=/etc/sgml/catalog \
 		--enable-default-search-path=/usr/share/sgml \
 		--libdir=/usr/$(get_libdir) \
-		--datadir=/usr/share/sgml/${P} || die
+		--datadir=/usr/share/sgml/${P} \
+		${myconf} || die
 
 	emake || die
 }

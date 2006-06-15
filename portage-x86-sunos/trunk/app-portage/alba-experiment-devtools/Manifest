@@ -1,3 +1,6 @@
+MD5 d41d8cd98f00b204e9800998ecf8427e ChangeLog 0
+RMD160 9c1185a5c5e9fc54612808977ee8f548b2258d31 ChangeLog 0
+SHA256 e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 ChangeLog 0
 MD5 3edcc1e9918fb74f76ff3d7fa1586595 alba-experiment-devtools-0.1-r1100.ebuild 1023
 RMD160 10469fba72a7aaa3addfb1aedff3ed4ff66199ae alba-experiment-devtools-0.1-r1100.ebuild 1023
 SHA256 2912c1b76b7f168be76919d4f10a2fd287ebf857504ea84964fe83093253b2f6 alba-experiment-devtools-0.1-r1100.ebuild 1023
@@ -10,6 +13,9 @@ SHA256 2912c1b76b7f168be76919d4f10a2fd287ebf857504ea84964fe83093253b2f6 alba-exp
 MD5 3edcc1e9918fb74f76ff3d7fa1586595 alba-experiment-devtools-0.4-r1100.ebuild 1023
 RMD160 10469fba72a7aaa3addfb1aedff3ed4ff66199ae alba-experiment-devtools-0.4-r1100.ebuild 1023
 SHA256 2912c1b76b7f168be76919d4f10a2fd287ebf857504ea84964fe83093253b2f6 alba-experiment-devtools-0.4-r1100.ebuild 1023
+MD5 238b6bc914a7d21acf3a12073c048904 alba-experiment-devtools-0.5-r1100.ebuild 1000
+RMD160 32940fb28642ec20a62d41f2e8f86b308119b83f alba-experiment-devtools-0.5-r1100.ebuild 1000
+SHA256 4732a997c2e034040ec04a5e00e42c973d0925695ba3d37d1d584d6baafb61c8 alba-experiment-devtools-0.5-r1100.ebuild 1000
 MD5 9fca98200b8f422e4c3be405cbfae0af files/digest-alba-experiment-devtools-0.1-r1100 79
 RMD160 98ae45083e8e9ab630e7ea314de6072ed9816c84 files/digest-alba-experiment-devtools-0.1-r1100 79
 SHA256 6f682c790d9ed53c71da16dfbf950e796345a60c3a8272d5368ff616031d0d5e files/digest-alba-experiment-devtools-0.1-r1100 79
@@ -22,3 +28,6 @@ SHA256 d16c04a4ac86b1e1b51ae1d869b67eac710ba39fe4de71d8488f6d902e42a3d3 files/di
 MD5 18bde32432c7f3026e9fd546c2d65e09 files/digest-alba-experiment-devtools-0.4-r1100 283
 RMD160 7e228a3d1dcd74bd55aea932cf9e32425c3c8c28 files/digest-alba-experiment-devtools-0.4-r1100 283
 SHA256 69b17944c058de2c1341f936497c01623c52e0e150f604f876586953c2ffa926 files/digest-alba-experiment-devtools-0.4-r1100 283
+MD5 4c2e4bff32e5eca764a5142d4a8765a7 files/digest-alba-experiment-devtools-0.5-r1100 283
+RMD160 29146e5a497587bfaf6cda51e2264e4d3682b355 files/digest-alba-experiment-devtools-0.5-r1100 283
+SHA256 8036d5a6f29a6a720a4b1a9697c7c62e0f24d5e75dff4e65e4cbc71a00de652c files/digest-alba-experiment-devtools-0.5-r1100 283

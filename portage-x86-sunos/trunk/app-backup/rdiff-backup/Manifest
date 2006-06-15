@@ -1,0 +1,6 @@
+MD5 adaa847f33b97d564c54cd2aaa53fe9e files/digest-rdiff-backup-1.0.4-r1100 256
+RMD160 8f7224d4035bef847e7b047a900bad262d71953e files/digest-rdiff-backup-1.0.4-r1100 256
+SHA256 ecef8c589ac1c83a5419e50c8d8e9a3614fa919e645c66915b96a9f5195fdf13 files/digest-rdiff-backup-1.0.4-r1100 256
+MD5 9d813a2d83109854005e26d4b8b1c553 rdiff-backup-1.0.4-r1100.ebuild 724
+RMD160 58b3bbeb889f676892b670bff0d6b052cd0329d8 rdiff-backup-1.0.4-r1100.ebuild 724
+SHA256 3f03854b22daf3690cda2786df9b8b555918854275ee11f23ac9ec002f0d4fda rdiff-backup-1.0.4-r1100.ebuild 724
