@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/evolution-2.6.1.ebuild,v 1.2 2006/05/15 15:35:16 dertobi123 Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/evolution-2.6.1.ebuild,v 1.4 2006/06/07 21:05:30 allanonjl Exp $
 
 inherit eutils flag-o-matic alternatives gnome2 autotools
 
@@ -12,7 +12,7 @@ SRC_URI="${SRC_URI}
 LICENSE="GPL-2 FDL-1.1"
 SLOT="2.0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
-IUSE="bogofilter crypt dbus debug doc gstreamer ipv6 kerberos krb4 ldap mono nntp pda profile spell ssl widescreen"
+IUSE="bogofilter crypt dbus debug doc gstreamer hal ipv6 kerberos krb4 ldap mono nntp pda profile spell ssl widescreen"
 
 # Pango dependency required to avoid font rendering problems
 # evolution-data-server dep is 1.5 because in the e-utils directories,
@@ -62,7 +62,7 @@ DEPEND="${RDEPEND}
 	sys-devel/gettext
 	sys-devel/bison
 	app-text/scrollkeeper
-	gnome-base/gnome-common
+	>=gnome-base/gnome-common-2.12.0
 	doc? ( >=dev-util/gtk-doc-0.6 )"
 
 DOCS="AUTHORS ChangeLog* HACKING MAINTAINERS NEWS* README"
@@ -79,8 +79,13 @@ pkg_setup() {
 		$(use_enable nntp)               \
 		$(use_enable pda pilot-conduits) \
 		$(use_enable profile profiling)  \
-		$(use_with ldap openldap)        \
 		$(use_with kerberos krb5 /usr)"
+
+	if use displace; then
+		G2CONF="${G2CONF} $(use_with ldap openldap)=/usr/openldap"
+	else
+		G2CONF="${G2CONF} $(use_with ldap openldap)"
+	fi
 
 	if use krb4 && ! built_with_use virtual/krb5 krb4; then
 		ewarn

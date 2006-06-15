@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/media-sound/cdparanoia/cdparanoia-3.9.8-r3.ebuild,v 1.14 2006/05/05 16:07:31 tcort Exp $
 
-inherit eutils flag-o-matic gnuconfig linux-info
+inherit eutils flag-o-matic gnuconfig 
 
 MY_P=${PN}-III-alpha9.8
 S=${WORKDIR}/${MY_P}
