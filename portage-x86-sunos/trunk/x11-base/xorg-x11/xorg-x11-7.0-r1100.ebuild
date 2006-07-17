@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-x11/xorg-x11-7.0-r1.ebuild,v 1.19 2006/04/06 21:42:18 spyderous Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-x11/xorg-x11-7.0-r1.ebuild,v 1.26 2006/07/07 14:04:56 augustus Exp $
 
 inherit eutils
 
@@ -9,7 +9,7 @@ HOMEPAGE="http://xorg.freedesktop.org"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ppc64 ~sh ~sparc x86 ~x86-fbsd x86-sunos"
 IUSE_INPUT_DEVICES="
 	input_devices_acecad
 	input_devices_aiptek
@@ -45,7 +45,6 @@ IUSE_INPUT_DEVICES="
 IUSE_VIDEO_CARDS="
 	video_cards_apm
 	video_cards_ark
-	video_cards_ati
 	video_cards_chips
 	video_cards_cirrus
 	video_cards_cyrix
@@ -56,11 +55,14 @@ IUSE_VIDEO_CARDS="
 	video_cards_i740
 	video_cards_i810
 	video_cards_imstt
+	video_cards_mach64
 	video_cards_mga
 	video_cards_neomagic
 	video_cards_newport
 	video_cards_nsc
 	video_cards_nv
+	video_cards_r128
+	video_cards_radeon
 	video_cards_rendition
 	video_cards_s3
 	video_cards_s3virge
@@ -183,7 +185,6 @@ RDEPEND="${RDEPEND}
 			)
 			(
 				x11-drivers/xf86-input-acecad
-				x11-drivers/xf86-input-aiptek
 				x11-drivers/xf86-input-calcomp
 				x11-drivers/xf86-input-citron
 				x11-drivers/xf86-input-digitaledge
@@ -191,7 +192,6 @@ RDEPEND="${RDEPEND}
 				x11-drivers/xf86-input-dynapro
 				x11-drivers/xf86-input-elo2300
 				x11-drivers/xf86-input-elographics
-				x11-drivers/xf86-input-evdev
 				x11-drivers/xf86-input-fpit
 				x11-drivers/xf86-input-hyperpen
 				x11-drivers/xf86-input-jamstudio
@@ -207,13 +207,19 @@ RDEPEND="${RDEPEND}
 				x11-drivers/xf86-input-spaceorb
 				x11-drivers/xf86-input-summa
 				x11-drivers/xf86-input-tek4957
-				x11-drivers/xf86-input-ur98
 				x11-drivers/xf86-input-void
+
+				kernel_linux? (
+					x11-drivers/xf86-input-aiptek
+					x11-drivers/xf86-input-evdev
+					x11-drivers/xf86-input-ur98
+				)
 
 				x86? ( x11-drivers/xf86-input-vmmouse
 					x11-drivers/synaptics
 					x11-misc/linuxwacom
 				)
+				x86-fbsd? ( x11-drivers/xf86-input-vmmouse )
 				amd64? ( x11-drivers/xf86-input-vmmouse
 					x11-drivers/synaptics
 					x11-misc/linuxwacom
@@ -231,7 +237,6 @@ RDEPEND="${RDEPEND}
 			(
 				video_cards_apm? ( x11-drivers/xf86-video-apm )
 				video_cards_ark? ( x11-drivers/xf86-video-ark )
-				video_cards_ati? ( x11-drivers/xf86-video-ati )
 				video_cards_chips? ( x11-drivers/xf86-video-chips )
 				video_cards_cirrus? ( x11-drivers/xf86-video-cirrus )
 				video_cards_cyrix? ( x11-drivers/xf86-video-cyrix )
@@ -242,11 +247,14 @@ RDEPEND="${RDEPEND}
 				video_cards_i740? ( x11-drivers/xf86-video-i740 )
 				video_cards_i810? ( x11-drivers/xf86-video-i810 )
 				video_cards_imstt? ( x11-drivers/xf86-video-imstt )
+				video_cards_mach64? ( x11-drivers/xf86-video-ati )
 				video_cards_mga? ( x11-drivers/xf86-video-mga )
 				video_cards_neomagic? ( x11-drivers/xf86-video-neomagic )
 				video_cards_newport? ( x11-drivers/xf86-video-newport )
 				video_cards_nsc? ( x11-drivers/xf86-video-nsc )
 				video_cards_nv? ( x11-drivers/xf86-video-nv )
+				video_cards_r128? ( x11-drivers/xf86-video-ati )
+				video_cards_radeon? ( x11-drivers/xf86-video-ati )
 				video_cards_rendition? ( x11-drivers/xf86-video-rendition )
 				video_cards_s3? ( x11-drivers/xf86-video-s3 )
 				video_cards_s3virge? ( x11-drivers/xf86-video-s3virge )
@@ -273,7 +281,9 @@ RDEPEND="${RDEPEND}
 				video_cards_voodoo? ( x11-drivers/xf86-video-voodoo )
 
 				video_cards_3dfx? ( 3dfx? ( >=media-libs/glide-v3-3.10 ) )
-				video_cards_nvidia? ( media-video/nvidia-glx )
+				video_cards_nvidia? ( || ( media-video/nvidia-glx
+							x11-drivers/nvidia-drivers
+							x11-drivers/nvidia-legacy-drivers ) )
 				video_cards_fglrx? ( x11-drivers/ati-drivers )
 			)
 			(
@@ -285,7 +295,8 @@ RDEPEND="${RDEPEND}
 					x11-drivers/xf86-video-mga
 
 					x11-drivers/xf86-video-sisusb
-					x11-drivers/xf86-video-v4l )
+					kernel_linux? ( x11-drivers/xf86-video-v4l )
+				)
 
 				3dfx? ( >=media-libs/glide-v3-3.10 )
 
@@ -363,18 +374,7 @@ RDEPEND="${RDEPEND}
 					x11-drivers/xf86-video-vga
 					x11-drivers/xf86-video-via
 					x11-drivers/xf86-video-voodoo )
-				mips? ( x11-drivers/xf86-video-chips
-					x11-drivers/xf86-video-cirrus
-					x11-drivers/xf86-video-glint
-					x11-drivers/xf86-video-newport
-					x11-drivers/xf86-video-nv
-					x11-drivers/xf86-video-s3
-					x11-drivers/xf86-video-s3virge
-					x11-drivers/xf86-video-savage
-					x11-drivers/xf86-video-sis
-					x11-drivers/xf86-video-tdfx
-					x11-drivers/xf86-video-trident
-					x11-drivers/xf86-video-voodoo )
+				mips? ( x11-drivers/xf86-video-newport )
 				ppc? ( x11-drivers/xf86-video-chips
 					x11-drivers/xf86-video-glint
 					x11-drivers/xf86-video-imstt
@@ -430,6 +430,8 @@ RDEPEND="${RDEPEND}
 					x11-drivers/xf86-video-via
 					x11-drivers/xf86-video-vmware
 					x11-drivers/xf86-video-voodoo )
+				x86-fbsd? (
+					x11-drivers/xf86-video-vmware )
 			)
 		)"
 
