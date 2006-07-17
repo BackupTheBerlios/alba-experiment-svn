@@ -1,0 +1,6 @@
+MD5 5ac3d3dc863ac99d878a13278d71b7bb files/digest-gimp-freetype-0.6-r1100 253
+RMD160 9b94744e46ae3cabbade21fe64bc4cd7309ea383 files/digest-gimp-freetype-0.6-r1100 253
+SHA256 4e33cc458320f72197364a245df9c944bb41d933dc99a2af417de38dad116aa4 files/digest-gimp-freetype-0.6-r1100 253
+MD5 5e27a32c7be334bbe80a7bf84ae03c0f gimp-freetype-0.6-r1100.ebuild 721
+RMD160 fe13a969c3406ffe484b5869707c0e15632d6b24 gimp-freetype-0.6-r1100.ebuild 721
+SHA256 fdf8a6e47102ad16f0b53fe789cac09809914680c8af15e57360527ec235204b gimp-freetype-0.6-r1100.ebuild 721
