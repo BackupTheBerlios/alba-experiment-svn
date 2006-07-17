@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/xorg-server-1.0.2-r3.ebuild,v 1.5 2006/04/23 22:32:14 spyderous Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-base/xorg-server/xorg-server-1.0.2-r7.ebuild,v 1.4 2006/06/30 15:03:28 wolf31o2 Exp $
 
 # Must be before x-modular eclass is inherited
 # Hack to make sure autoreconf gets run
@@ -16,6 +16,7 @@ MESA_P="${MESA_PN}-${MESA_PV}"
 MESA_SRC_P="${MESA_PN}Lib-${MESA_PV}"
 
 PATCHES="${FILESDIR}/${P}-Sbus.patch
+	${FILESDIR}/CVE-2006-1526-xrender-mitri.patch
 	${FILESDIR}/${P}-sparc64-cfbrrop-fix.patch
 	${FILESDIR}/${P}-64bit-fix-indirect-vertex-array.patch
 	${FILESDIR}/${P}-64bit-fix-have-dix-config.patch
@@ -25,13 +26,18 @@ PATCHES="${FILESDIR}/${P}-Sbus.patch
 	${FILESDIR}/${PV}-Xprint-xprintdir.patch
 	${FILESDIR}/${PV}-try-to-fix-xorgcfg.patch
 	${FILESDIR}/${PV}-fix-xorgconfig-rgbpath-and-mouse.patch
-	${DISTDIR}/${PV}-overlay-window.patch.bz2"
+	${DISTDIR}/${PV}-overlay-window.patch.bz2
+	${FILESDIR}/${PV}-fix-readKernelMapping-overrun.patch
+	${FILESDIR}/${PV}-fix-rom-read-dualhead.patch
+	${FILESDIR}/x11r7.0-setuid.diff"
 
 SRC_URI="${SRC_URI}
 	mirror://sourceforge/mesa3d/${MESA_SRC_P}.tar.bz2
 	http://dev.gentoo.org/~spyderous/xorg-x11/1.0.2/1.0.2-overlay-window.patch.bz2"
 DESCRIPTION="X.Org X servers"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
+# It's suid and has lazy bindings, so FEATURES="stricter" doesn't work
+RESTRICT="stricter"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ppc64 ~sh ~sparc x86 ~x86-fbsd x86-sunos"
 IUSE="dri ipv6 minimal xprint"
 RDEPEND="x11-libs/libXfont
 	x11-libs/xtrans
@@ -62,7 +68,7 @@ RDEPEND="x11-libs/libXfont
 	!minimal? ( x11-libs/libdmx
 		x11-libs/libXtst
 		x11-libs/libXres )
-	x11-libs/libxkbui
+	>=x11-libs/libxkbui-1.0.2
 	x11-libs/liblbxutil"
 	# Xres is dmx-dependent, xkbui is xorgcfg-dependent
 	# Xaw is dmx- and xorgcfg-dependent
@@ -126,6 +132,11 @@ pkg_setup() {
 
 	# (#121394) Causes window corruption
 	filter-flags -fweb
+
+	# Nothing else provides new enough glxtokens.h
+	ewarn "Forcing on xorg-x11 for new enough glxtokens.h..."
+	OLD_IMPLEM="$(eselect opengl show)"
+	eselect opengl set --impl-headers ${OPENGL_DIR}
 }
 
 src_install() {
@@ -167,7 +178,8 @@ switch_opengl_implem() {
 		# Use new opengl-update that will not reset user selected
 		# OpenGL interface ...
 		echo
-		eselect opengl set --use-old ${OPENGL_DIR}
+#		eselect opengl set --use-old ${OPENGL_DIR}
+		eselect opengl set ${OLD_IMPLEM}
 }
 
 xprint_src_install() {
