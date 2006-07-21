@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/evince/"
 LICENSE="GPL-2"
 
 # TODO: Use 'gnome' flag instead of 'nautilus'
-IUSE="dbus djvu doc dvi nautilus t1lib tiff"
+IUSE="dbus djvu doc dvi nautilus t1lib tiff comics"
 
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
@@ -49,7 +49,7 @@ ELTCONF="--portage"
 
 pkg_setup() {
 	G2CONF="--disable-scrollkeeper \
-		--enable-comics		\
+		$(use_enable comics)		\
 		$(use_enable dbus)  \
 		$(use_enable djvu)  \
 		$(use_enable dvi)   \
