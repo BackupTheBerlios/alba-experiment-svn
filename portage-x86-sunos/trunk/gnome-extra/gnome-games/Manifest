@@ -1,6 +1,6 @@
-MD5 36ed60126b8e5fec86e1107e65251a75 files/digest-gnome-games-2.14.1-r1100 262
-RMD160 cb959e5c0dd3319885975a423b745a822d04d20d files/digest-gnome-games-2.14.1-r1100 262
-SHA256 0954c53974685cad26dab209310cb41d8816fef32b76f691902230eec8f71d62 files/digest-gnome-games-2.14.1-r1100 262
+MD5 200a41841e9257ef9fb2e9f1d1a961d7 files/digest-gnome-games-2.14.2.1-r1100 268
+RMD160 0475d1824ee2e43c57353b62d545f5b35e1ee721 files/digest-gnome-games-2.14.2.1-r1100 268
+SHA256 4dd622e902c9d027a8fca8daa6ecbac5884e51c0fcf7831d870daeeeb870a8ef files/digest-gnome-games-2.14.2.1-r1100 268
 MD5 372ffee341289fdafeae705e94970666 files/gnome-games-2.10.1-no_esd.patch 1379
 RMD160 523dc79dd8f251e4889f2bc4d0786c7aeff9ef38 files/gnome-games-2.10.1-no_esd.patch 1379
 SHA256 cc3d97bd7d080e1a8cde2e988208dcb956a86cfdbdcbe046eacb93502724d76a files/gnome-games-2.10.1-no_esd.patch 1379
@@ -25,3 +25,6 @@ SHA256 aeff2667ee00266d15c2f81c00e4315285345a691409c377543004fe4b777e81 files/gn
 MD5 1c259cdbaacafa8e2df75c4649914494 gnome-games-2.14.1-r1100.ebuild 1975
 RMD160 1b9b609e6adbf537fd762a22f86256a457efd750 gnome-games-2.14.1-r1100.ebuild 1975
 SHA256 b9571aa11860d46ad60d5a7fac264b4c10866f8ac333acad6f3bde3a3ec14dd7 gnome-games-2.14.1-r1100.ebuild 1975
+MD5 213f3b1e6a38c4055010221a555243f3 gnome-games-2.14.2.1-r1100.ebuild 1982
+RMD160 612386694ef3f46216c1b20e66710cbd6f02b424 gnome-games-2.14.2.1-r1100.ebuild 1982
+SHA256 545e7806dc26ca0cbe42d15762c165487eca0128fac579340487c66e20eafcdb gnome-games-2.14.2.1-r1100.ebuild 1982
