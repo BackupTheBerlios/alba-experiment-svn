@@ -1,6 +1,6 @@
-MD5 452889ffaa55e76f3978c0077f445b69 files/digest-gnome-system-monitor-2.14.1-r1100 289
-RMD160 1e1a1f6dfeb0b6b9fdf8692d237ec6815275b867 files/digest-gnome-system-monitor-2.14.1-r1100 289
-SHA256 eba5f2e5fdf64c3e9d5e76a28478b384301d4274ec435b0000058c3ee6e52d63 files/digest-gnome-system-monitor-2.14.1-r1100 289
+MD5 3e808eacd7fb1461e65562c7a3085e52 files/digest-gnome-system-monitor-2.14.4-r1100 289
+RMD160 a7e52e95cea21bd4c7cb5d489fb81547c8255f96 files/digest-gnome-system-monitor-2.14.4-r1100 289
+SHA256 15ac4682c01426ff67b8f7c10cbde86d4dd30fa9bd05f04e5a737d9f597240b2 files/digest-gnome-system-monitor-2.14.4-r1100 289
 MD5 1717d3423ff0c95f21dd6037d93a26cf files/gnome-system-monitor-2.10.1-icon_warning.patch 503
 RMD160 ea651090e1c7f905e5a99d8fe0e70d09d12aed6d files/gnome-system-monitor-2.10.1-icon_warning.patch 503
 SHA256 b075bfb615367a0720c7b64c395815f355df870d1680a0b612df39d37d060d18 files/gnome-system-monitor-2.10.1-icon_warning.patch 503
@@ -10,3 +10,6 @@ SHA256 1d67fa8a4e8217c39346aa1715465ccc40ad368142b608c8021479122fa0e6cc files/gn
 MD5 95d4f3053bdae58bf02821fa9924bcf9 gnome-system-monitor-2.14.1-r1100.ebuild 811
 RMD160 3a5bb19ce97a4c61e45b098bfc33b0774fc20705 gnome-system-monitor-2.14.1-r1100.ebuild 811
 SHA256 68cd5f47190bcb2b23fdffce8597ec90cda4e500957f2769915a94b1985fb601 gnome-system-monitor-2.14.1-r1100.ebuild 811
+MD5 57dc8a7bf6e8de899eaa06fe2aba9afc gnome-system-monitor-2.14.4-r1100.ebuild 806
+RMD160 59151f67904cdc7c6cd2d52270cb4fcb387c6c5e gnome-system-monitor-2.14.4-r1100.ebuild 806
+SHA256 4a1c882b06bc830e74fec43fe802477d7eae86cfcdf7270052d7019a7e9a9a76 gnome-system-monitor-2.14.4-r1100.ebuild 806
