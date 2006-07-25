@@ -8,7 +8,7 @@ DESCRIPTION="Gnome Database Access Library"
 HOMEPAGE="http://www.gnome-db.org/"
 LICENSE="GPL-2 LGPL-2"
 
-IUSE="berkdb doc firebird freetds ldap mdb mysql oci8 odbc postgres sqlite xbase"
+IUSE="berkdb doc firebird freetds ldap mdb mysql oci8 odbc postgres sqlite xbase openldap-alternate-prefix"
 SLOT="1"
 KEYWORDS="~alpha ~amd64 ~hppa ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
 
@@ -46,13 +46,20 @@ pkg_setup() {
 	G2CONF="$(use_with berkdb bdb /usr)    \
 		$(use_with firebird firebird /usr) \
 		$(use_with freetds tds /usr)       \
-		$(use_with ldap ldap /usr)         \
 		$(use_with mdb mdb /usr)           \
 		$(use_with mysql mysql /usr)       \
 		$(use_with odbc odbc /usr)         \
 		$(use_with postgres postgres /usr) \
 		$(use_with sqlite sqlite /usr)     \
 		$(use_with xbase xbase /usr)"
+	
+	if use openldap-alternate-prefix ; then
+		G2CONF="${G2CONF} \
+				$(use_with ldap ldap /usr/openldap)"
+	else
+		G2CONF="${G2CONF} \
+				$(use_with ldap ldap /usr)"
+	fi
 
 	use oci8 || G2CONF="${G2CONF} --without-oracle"
 
