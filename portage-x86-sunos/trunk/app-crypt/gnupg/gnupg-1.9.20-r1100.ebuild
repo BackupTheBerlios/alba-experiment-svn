@@ -1,8 +1,8 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/gnupg-1.9.20-r2.ebuild,v 1.1 2006/05/11 10:00:17 dragonheart Exp $
+# $Header: /var/cvsroot/gentoo-x86/app-crypt/gnupg/gnupg-1.9.20-r3.ebuild,v 1.9 2006/07/23 02:55:32 psi29a Exp $
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic autotools
 
 DESCRIPTION="The GNU Privacy Guard, a GPL pgp replacement"
 HOMEPAGE="http://www.gnupg.org/"
@@ -10,8 +10,8 @@ SRC_URI="mirror://gnupg/alpha/gnupg/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="1.9"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
-IUSE="X caps ldap nls smartcard selinux"
+KEYWORDS="alpha amd64 arm ~hppa ia64 mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-sunos"
+IUSE="X caps gpg2-experimental ldap nls smartcard selinux"
 
 COMMON_DEPEND="
 	dev-lang/perl
@@ -22,7 +22,7 @@ COMMON_DEPEND="
 	>=dev-libs/libgcrypt-1.1.94
 	>=dev-libs/libksba-0.9.13
 	>=dev-libs/libgpg-error-1.0
-	>=dev-libs/libassuan-0.6.10
+	~dev-libs/libassuan-0.6.10
 	ldap? ( net-nds/openldap )
 	caps? ( sys-libs/libcap )"
 
@@ -46,6 +46,10 @@ src_unpack() {
 		./autogen.sh
 	fi
 	sed -i -e 's/PIC/__PIC__/g' intl/relocatable.c || die "PIC patching failed"
+
+	epatch "${FILESDIR}/${P}-fbsd.patch"
+	epatch "${FILESDIR}/${P}-fbsd-gcc41.patch"
+	AT_M4DIR="m4 gl/m4" eautoreconf
 }
 
 src_compile() {
@@ -68,7 +72,7 @@ src_compile() {
 	econf \
 		--enable-agent \
 		--enable-symcryptrun \
-		--enable-gpg \
+		$(use_enable gpg2-experimental gpg) \
 		--enable-gpgsm \
 		$(use_enable smartcard scdaemon) \
 		$(use_enable nls) \
@@ -84,7 +88,7 @@ src_install() {
 	dodoc ChangeLog NEWS README THANKS TODO VERSION
 
 	if ! use caps; then
-		fperms u+s,go-r /usr/bin/gpg2
+		use gpg2-experimental && fperms u+s,go-r /usr/bin/gpg2
 		fperms u+s,go-r /usr/bin/gpg-agent
 	fi
 }
