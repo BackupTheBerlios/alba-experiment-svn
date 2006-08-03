@@ -82,8 +82,8 @@ src_unpack() {
 	done
 
 	# Apply our patches
-	cd ${S} || die "cd failed"
-	EPATCH_FORCE="yes" epatch ${WORKDIR}/patch
+	#cd ${S} || die "cd failed"
+	#EPATCH_FORCE="yes" epatch ${WORKDIR}/patch
 
 	# Fix a compilation issue using the 32-bit userland with 64-bit kernel on
 	# PowerPC, because with that configuration, it detects a ppc64 system.
@@ -96,10 +96,10 @@ src_unpack() {
 	fi
 
 	# Fix sparc bus errors #115729 <gustavoz>
-	use sparc && epatch ${FILESDIR}/firefox-bus-error.patch
+	#use sparc && epatch ${FILESDIR}/firefox-bus-error.patch
 
-	WANT_AUTOCONF="2.13" \
-		eautoreconf || die "failed  running eautoreconf"
+	#WANT_AUTOCONF="2.13" \
+		#eautoreconf || die "failed  running eautoreconf"
 }
 
 src_compile() {
