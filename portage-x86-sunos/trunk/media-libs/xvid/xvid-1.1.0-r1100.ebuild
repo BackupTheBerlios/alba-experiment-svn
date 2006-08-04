@@ -13,7 +13,7 @@ SRC_URI="http://downloads.xvid.org/downloads/${MY_P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="1"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="doc altivec"
 
 DEPEND="x86? ( >=dev-lang/nasm-0.98.36 )
