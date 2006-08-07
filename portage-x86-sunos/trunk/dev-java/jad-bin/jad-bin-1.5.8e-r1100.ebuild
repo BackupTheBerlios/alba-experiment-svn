@@ -4,7 +4,9 @@
 
 DESCRIPTION="Jad - The fast JAva Decompiler"
 HOMEPAGE="http://www.kpdus.com/jad.html"
-SRC_URI="http://www.kpdus.com/jad/linux/jadls158.zip"
+SRC_URI="x86? (http://www.kpdus.com/jad/linux/jadls158.zip)
+		amd64? (http://www.kpdus.com/jad/linux/jadls158.zip)
+		x86-sunos? (http://www.kpdus.com/jad/solaris/jadsx8158.zip)"
 DEPEND="app-arch/unzip"
 RDEPEND=""
 KEYWORDS="x86 amd64 -ppc ~x86-sunos"
