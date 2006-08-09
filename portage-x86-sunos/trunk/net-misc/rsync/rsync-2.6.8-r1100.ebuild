@@ -1,45 +1,46 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/net-misc/rsync/rsync-2.6.0-r6.ebuild,v 1.2 2006/01/02 18:56:09 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/net-misc/rsync/rsync-2.6.8-r2.ebuild,v 1.1 2006/05/14 05:42:57 vapier Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
 DESCRIPTION="File transfer program to keep remote files into sync"
 HOMEPAGE="http://rsync.samba.org/"
-SRC_URI="http://rsync.samba.org/ftp/rsync/old-versions/${P}.tar.gz
-	http://www.imada.sdu.dk/~bardur/personal/40-patches/rsync-proxy-auth/rsync-2.5.6-proxy-auth-1.patch
-	acl? ( http://www.saout.de/misc/${P}-acl.diff.bz2 )"
+SRC_URI="http://rsync.samba.org/ftp/rsync/${P/_/}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 -x86-sunos"
-IUSE="acl build livecd static xinetd"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ~m68k ~mips ppc ~ppc-macos ppc64 ~s390 ~sh sparc x86 ~x86-fbsd x86-sunos"
+IUSE="acl build ipv6 static xinetd"
 
 RDEPEND="!build? ( >=dev-libs/popt-1.5 )
-	acl? ( sys-apps/acl )"
+	acl? ( kernel_linux? ( sys-apps/acl ) )"
 DEPEND="${RDEPEND}
 	>=sys-apps/portage-2.0.51"
 
-src_unpack() {
-	unpack ${P}.tar.gz
-	cd "${S}"
-	epatch "${FILESDIR}"/${P}-sanitize.patch
-	epatch "${DISTDIR}"/${PN}-2.5.6-proxy-auth-1.patch
-	epatch "${FILESDIR}"/${P}-cvsignore.patch
-	use acl && epatch "${DISTDIR}"/${P}-acl.diff.bz2
-	use livecd && epatch ${FILESDIR}/${P}-livecd-sigmask.patch
+S=${WORKDIR}/${P/_/}
 
-	# apply security patch from bug #60309
-	epatch "${FILESDIR}"/${PN}-pathsanitize.patch
+src_unpack() {
+	unpack ${P/_/}.tar.gz
+	cd "${S}"
+	epatch "${FILESDIR}"/${P}-fix-deferred-msgs.patch #133054
+	epatch "${FILESDIR}"/${P}-verbose-quiet-output.patch #133217
+	if use acl ; then
+		epatch patches/{acls,xattrs}.diff
+		./prepare-source || die
+	fi
 }
 
 src_compile() {
-	[ "`gcc-version`" == "2.95" ] && append-ldflags -lpthread
+	[[ $(gcc-version) == "2.95" ]] && append-ldflags -lpthread
 	use static && append-ldflags -static
-	export LDFLAGS
+
 	econf \
 		$(use_with build included-popt) \
-		$(use_with acl acl-support) \
+		$(use_enable acl acl-support) \
+		$(use_enable acl xattr-support) \
+		$(use_enable ipv6) \
+		--with-rsyncd-conf=/etc/rsyncd.conf \
 		|| die
 	emake || die "emake failed"
 }
@@ -75,9 +76,4 @@ pkg_postinst() {
 	ewarn "Please make sure you do NOT disable the rsync server running"
 	ewarn "in a chroot.  Please check /etc/rsyncd.conf and make sure"
 	ewarn "it says: use chroot = yes"
-	echo
-	einfo 'This patch enables usage of user:pass@proxy.foo:port'
-	einfo 'in the RSYNC_PROXY environment variable to support'
-	einfo 'the "Basic" proxy authentication scheme if you are'
-	einfo 'behind a password protected HTTP proxy.'
 }
