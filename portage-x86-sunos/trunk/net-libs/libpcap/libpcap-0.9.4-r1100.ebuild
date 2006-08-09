@@ -29,8 +29,13 @@ src_compile() {
 	emake || die "compile problem"
 
 	# no provision for this in the Makefile, so...
-	$(tc-getCC) ${LDFLAGS} -Wl,-soname,libpcap.so.0 -shared -fPIC -o libpcap.so.${PV:0:3} *.o \
-		|| die "couldn't make a shared lib"
+	if ! use sun-ld; then
+		$(tc-getCC) ${LDFLAGS} -Wl,-soname,libpcap.so.0 -shared -fPIC -o libpcap.so.${PV:0:3} *.o \
+			|| die "couldn't make a shared lib"
+	else
+		$(tc-getCC) ${LDFLAGS} -shared -fPIC -o libpcap.so.${PV:0:3} *.o \
+			|| die "couldn't make a shared lib"
+	fi
 }
 
 src_install() {
