@@ -1,10 +1,10 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/coreutils-5.96.ebuild,v 1.4 2006/05/26 04:27:01 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/coreutils-5.96.ebuild,v 1.7 2006/07/06 19:19:32 flameeyes Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
-PATCH_VER=1.1
+PATCH_VER="1.2"
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)"
 HOMEPAGE="http://www.gnu.org/software/coreutils/"
 SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2
@@ -15,7 +15,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-sunos"
 IUSE="acl nls selinux static"
 
 RDEPEND="selinux? ( sys-libs/libselinux )
@@ -27,6 +27,8 @@ DEPEND="${RDEPEND}
 	>=sys-devel/autoconf-2.58
 	>=sys-devel/m4-1.4-r1
 	sys-apps/help2man"
+
+RESTRICT="confcache"
 
 pkg_setup() {
 	# fixup expr for #123342
@@ -92,8 +94,6 @@ src_compile() {
 		&& myconf="${myconf} --bindir=/bin" \
 		|| myconf="${myconf} --bindir=/usr/libexec/gnu"
 
-	use gprefix && myconf="--bindir=/usr/bin --program-prefix=g"
-
 	[[ ${ELIBC} == "glibc" || ${ELIBC} == "uclibc" ]] \
 		&& myconf="${myconf} --without-included-regex"
 
@@ -152,26 +152,4 @@ src_install() {
 		# For now, drop the man pages, collides with the ones of the system.
 		rm -rf ${D}/usr/share/man
 	fi
-       if use gnulinks ; then
-               [[ ! -z ${GNU_PREFIX} ]] || die "Environment variable GNU_PREFIX must be set."
-               # create symlinks in /usr/gnu/bin
-               dodir ${GNU_PREFIX}/bin
-               cd "${D}"
-               for d in usr/bin bin; do
-                       if [ -d ${d} ]; then
-                               cd ${d}
-                               einfo "Creating links from ${d} in ${GNU_PREFIX}/bin"
-                               local x
-                               for x in * ; do
-                                       if [ -x ${x} ]; then
-                                               if use g-prefix; then
-                                                       dosym /${d}/${x} ${GNU_PREFIX}/bin/${x:1} #removes leading 'g'
-                                               else
-                                                       dosym /${d}/${x} ${GNU_PREFIX}/bin/${x}
-                                               fi
-                                       fi
-                               done
-                       fi
-               done
-       fi
 }
