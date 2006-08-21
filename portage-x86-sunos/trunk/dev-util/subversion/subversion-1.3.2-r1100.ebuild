@@ -1,16 +1,16 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-util/subversion/subversion-1.3.0_rc4.ebuild,v 1.6 2006/01/01 13:33:10 pauldv Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-util/subversion/subversion-1.3.2-r1.ebuild,v 1.8 2006/07/30 19:28:32 dang Exp $
 
 inherit elisp-common libtool python eutils bash-completion flag-o-matic depend.apache perl-module
 
 DESCRIPTION="A compelling replacement for CVS"
 HOMEPAGE="http://subversion.tigris.org/"
-SRC_URI="http://subversion.tigris.org/downloads/${P/_rc/-rc}.tar.gz"
+SRC_URI="http://subversion.tigris.org/downloads/${P/_rc/-rc}.tar.bz2"
 
 LICENSE="Apache-1.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 -x86-sunos"
+KEYWORDS="alpha amd64 ~arm ~hppa ia64 ~mips ppc ~ppc-macos ppc64 sparc x86 ~x86-fbsd ~x86-sunos"
 IUSE="apache2 berkdb python emacs perl java nls nowebdav zlib ruby"
 RESTRICT="test"
 
@@ -20,7 +20,7 @@ COMMONDEPEND="apache2? ( ${APACHE2_DEPEND} )
 	perl? ( >=dev-lang/perl-5.8.6-r6
 		!=dev-lang/perl-5.8.7 )
 	ruby? ( >=dev-lang/ruby-1.8.2 )
-	!nowebdav? ( >=net-misc/neon-0.24.7 )
+	!nowebdav? ( >=net-misc/neon-0.26 )
 	berkdb? ( =sys-libs/db-4* )
 	zlib? ( sys-libs/zlib )
 	java? ( virtual/jdk )
@@ -64,6 +64,10 @@ src_unpack() {
 	epatch ${FILESDIR}/subversion-db4.patch
 	epatch ${FILESDIR}/subversion-1.1.1-perl-vendor.patch
 	epatch ${FILESDIR}/subversion-hotbackup-config.patch
+	epatch ${FILESDIR}/subversion-1.3.1-neon-config.patch
+	epatch ${FILESDIR}/subversion-apr_cppflags.patch
+	# rapidsvn developers work with 1.3.2
+	epatch ${FILESDIR}/subversion-1.3.1-neon-0.26.patch
 
 	export WANT_AUTOCONF=2.5
 	autoconf
@@ -100,6 +104,10 @@ src_compile() {
 	fi
 
 	append-flags `/usr/bin/apr-config --cppflags`
+	
+	# I18n linking fix for Solaris. Solaris has external i18n library
+	# flistello at gmail dot com
+	use x86-sunos && append-ldflags -lintl
 
 	econf ${myconf} \
 		$(use_with berkdb berkeley-db) \
@@ -110,6 +118,9 @@ src_compile() {
 		--with-apr-util=/usr \
 		--disable-experimental-libtool \
 		--disable-mod-activation || die "econf failed"
+
+	# Respect the user LDFLAGS
+	export EXTRA_LDFLAGS="${LDFLAGS}"
 
 	# Build subversion, but do it in a way that is safe for parallel builds.
 	# Also apparently the included apr has a libtool that doesn't like -L flags.
@@ -245,13 +256,6 @@ EOF
 		[[ -f ${f} ]] && dodoc ${f}
 	done
 
-	# The release candidate does not have the book
-	# # Install the book in it's own dir
-	# docinto book
-	# cd ${S}
-	# echo "installing html book"
-	# dohtml -r doc/book/svn-book.html doc/book/styles.css doc/book/images || die "Installing book failed"
-
 	# Install emacs lisps
 	if use emacs; then
 		insinto /usr/share/emacs/site-lisp/subversion
@@ -278,7 +282,7 @@ pkg_postinst() {
 	einfo "svnadmin (see man svnadmin) or the following command to create it in"
 	einfo "/var/svn:"
 	einfo
-	einfo "    ebuild /path/to/ebuild/${PF}.ebuild config"
+	einfo "    emerge --config =${CATEGORY}/${PF}"
 	einfo
 	einfo "If you upgraded from an older version of berkely db and experience"
 	einfo "problems with your repository then run the following commands as root:"
