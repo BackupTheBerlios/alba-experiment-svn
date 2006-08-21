@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/evolution-2.6.2-r1.ebuild,v 1.6 2006/07/17 18:46:46 dang Exp $
+# $Header: /var/cvsroot/gentoo-x86/mail-client/evolution/evolution-2.6.2-r1.ebuild,v 1.7 2006/08/16 17:34:52 corsair Exp $
 
 inherit eutils flag-o-matic alternatives gnome2 autotools
 
@@ -11,7 +11,7 @@ SRC_URI="${SRC_URI}
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="2.0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 ~x86-sunos"
 IUSE="bogofilter crypt dbus debug doc gstreamer hal ipv6 kerberos krb4 ldap mono nntp pda profile spell ssl widescreen"
 
 # Pango dependency required to avoid font rendering problems
@@ -79,13 +79,8 @@ pkg_setup() {
 		$(use_enable nntp)               \
 		$(use_enable pda pilot-conduits) \
 		$(use_enable profile profiling)  \
+		$(use_with ldap openldap)        \
 		$(use_with kerberos krb5 /usr)"
-
-	if use openldap-alternate-prefix; then
-		G2CONF="${G2CONF} $(use_with ldap openldap)=/usr/openldap"
-	else
-		G2CONF="${G2CONF} $(use_with ldap openldap)"
-	fi
 
 	if use krb4 && ! built_with_use virtual/krb5 krb4; then
 		ewarn
@@ -169,21 +164,13 @@ src_unpack() {
 src_compile() {
 	# Use NSS/NSPR only if 'ssl' is enabled.
 	if use ssl ; then
-		NSS_LIB=/usr/$(get_libdir)/nss
-		NSS_INC=/usr/include/nss
-		NSPR_LIB=/usr/$(get_libdir)/nspr
-		NSPR_INC=/usr/include/nspr
-
-		G2CONF="${G2CONF} \
-			--with-nspr-includes=${NSPR_INC} \
-			--with-nspr-libs=${NSPR_LIB}     \
-			--with-nss-includes=${NSS_INC}   \
-			--with-nss-libs=${NSS_LIB}"
+		sed -i -e "s|mozilla-nss|nss|
+			s|mozilla-nspr|nspr|" ${S}/configure
+		G2CONF="${G2CONF} --enable-nss=yes"
 	else
 		G2CONF="${G2CONF} --without-nspr-libs --without-nspr-includes \
 			--without-nss-libs --without-nss-includes"
 	fi
-
 
 	# problems with -O3 on gcc-3.3.1
 	replace-flags -O3 -O2
