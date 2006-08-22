@@ -1,0 +1,20 @@
+--- svn2cl.sh.orig	2006-06-02 23:22:13.369791000 +0200
++++ svn2cl.sh	2006-06-02 23:23:08.672884000 +0200
+@@ -186,16 +186,7 @@
+   esac
+ done
+ 
+-# find the directory that this script resides in
+-prog="$0"
+-while [ -h "$prog" ]
+-do
+-  dir=`dirname "$prog"`
+-  prog=`ls -ld "$prog" | sed "s/^.*-> \(.*\)/\1/;/^[^/]/s,^,$dir/,"`
+-done
+-dir=`dirname $prog`
+-dir=`cd $dir && pwd`
+-XSL="$dir/svn2${OUTSTYLE}.xsl"
++XSL="/usr/share/svn2cl/svn2${OUTSTYLE}.xsl"
+ 
+ # check if the authors file is formatted as a legacy
+ # colon separated file
