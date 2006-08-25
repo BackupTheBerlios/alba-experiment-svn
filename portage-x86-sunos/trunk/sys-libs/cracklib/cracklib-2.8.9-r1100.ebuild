@@ -37,14 +37,17 @@ src_install() {
 
 	# move shared libs to /
 	dodir /$(get_libdir)
-	mv "${D}"/usr/$(get_libdir)/*.so* "${D}"/$(get_libdir)/ || die "could not move shared"
-	gen_usr_ldscript libcrack.so
+	if ! use x86-sunos; then
+		mv "${D}"/usr/$(get_libdir)/*.so* "${D}"/$(get_libdir)/ || die "could not move shared"
+		gen_usr_ldscript libcrack.so
+	fi
 
 	echo -n "Generating cracklib dicts ... "
 	insinto /usr/share/dict
 	doins dicts/cracklib-small || die "word dict"
 	tc-is-cross-compiler \
 		|| export PATH=${D}/usr/sbin:${PATH} LD_LIBRARY_PATH=${D}/$(get_libdir)
+	use x86-sunos && export  LD_LIBRARY_PATH=${D}/usr/$(get_libdir)
 	cracklib-format dicts/cracklib-small \
 		| cracklib-packer "${D}"/usr/$(get_libdir)/cracklib_dict \
 		|| die "couldnt create dict"
