@@ -1,0 +1,11 @@
+--- lib/fascist.c.orig	2006-08-25 10:58:13.837171000 +0200
++++ lib/fascist.c	2006-08-25 11:00:16.373916000 +0200
+@@ -522,7 +522,7 @@
+     {
+         return ("memory allocation error");
+     }
+-    while ((i = getpwuid_r(uid, &passwd, sbuffer, sbufferlen, &pwp)) != 0)
++    while ((i = getpwuid_r(uid, &passwd, sbuffer, sbufferlen)) != 0)
+     {
+         if (i == ERANGE)
+         {

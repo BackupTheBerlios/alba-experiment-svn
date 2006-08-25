@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-libs/cracklib/cracklib-2.8.9.ebuild,v 1.10 2006/07/09 02:19:56 kumba Exp $
 
-inherit eutils toolchain-funcs multilib
+inherit eutils toolchain-funcs multilib flag-o-matic
 
 MY_P=${P/_}
 DESCRIPTION="Password Checking Library"
@@ -19,6 +19,10 @@ DEPEND=""
 S=${WORKDIR}/${MY_P}
 
 src_compile() {
+	use x86-sunos && {
+		use nls && append-ldflags -lintl
+		epatch ${FILESDIR}/cracklib-2.8.9-sunos-getpwuid_r.patch
+	}
 	econf \
 		--with-default-dict='$(libdir)/cracklib_dict' \
 		$(use_enable nls) \
