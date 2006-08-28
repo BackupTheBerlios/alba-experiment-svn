@@ -16,7 +16,7 @@ SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.bz2
 LICENSE="|| ( QPL-1.0 GPL-2 )"
 
 SLOT="3"
-KEYWORDS="alpha amd64 hppa ~ia64 ~mips ppc ~ppc-macos ppc64 sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 hppa ~ia64 ~mips ppc ~ppc-macos ppc64 sparc x86 ~x86-fbsd -x86-sunos"
 IUSE="cups debug doc examples firebird gif ipv6 mysql nas nis odbc opengl postgres sqlite xinerama immqt immqt-bc"
 
 DEPEND="|| ( ( x11-libs/libXcursor
