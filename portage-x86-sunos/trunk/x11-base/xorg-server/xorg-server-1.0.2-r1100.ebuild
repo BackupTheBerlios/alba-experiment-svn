@@ -37,7 +37,7 @@ SRC_URI="${SRC_URI}
 DESCRIPTION="X.Org X servers"
 # It's suid and has lazy bindings, so FEATURES="stricter" doesn't work
 RESTRICT="stricter"
-KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ppc64 ~sh ~sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ppc64 ~sh ~sparc x86 ~x86-fbsd -x86-sunos"
 IUSE="dri ipv6 minimal xprint"
 RDEPEND="x11-libs/libXfont
 	x11-libs/xtrans
