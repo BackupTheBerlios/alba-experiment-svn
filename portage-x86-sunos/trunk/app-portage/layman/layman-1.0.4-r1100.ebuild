@@ -6,13 +6,13 @@ inherit eutils distutils
 
 DESCRIPTION="A python script for retrieving gentoo overlays "
 HOMEPAGE="http://projects.gunnarwrobel.de/scripts"
-SRC_URI="http://build.pardus.de/downloads/${PF}.tar.gz"
+SRC_URI="http://build.pardus.de/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86 x86-sunos"
 IUSE=""
-S=${WORKDIR}/${PF}
+S=${WORKDIR}/${P}
 
 DEPEND="dev-util/subversion"
 
