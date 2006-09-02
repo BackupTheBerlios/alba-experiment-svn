@@ -1,0 +1,6 @@
+MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-opengl-7.0 1
+RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-opengl-7.0 1
+SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-opengl-7.0 1
+MD5 30c2e257f0b8be428a16cb69181ac09c opengl-7.0.ebuild 488
+RMD160 40f88af8317066a66c5b45c48eeccbeb3a19d0bc opengl-7.0.ebuild 488
+SHA256 156336016bfcc527115316ed478db37170dbf5bd6f5761ae9909e272634e7ee8 opengl-7.0.ebuild 488
