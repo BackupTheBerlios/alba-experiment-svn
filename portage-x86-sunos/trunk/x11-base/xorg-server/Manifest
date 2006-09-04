@@ -28,9 +28,9 @@ SHA256 a74066ead6963d0d155dc107138b2ddab12f322f12c4c292ac9f38f388f63f85 files/1.
 MD5 c51e1f359e9008bd496173a013866343 files/CVE-2006-1526-xrender-mitri.patch 819
 RMD160 ab993ffd54ec143755f00a2cfc526253fdb7230b files/CVE-2006-1526-xrender-mitri.patch 819
 SHA256 1558fcaf5f1f6050c6a38023bc4effd8802320c2c6b3c146f19ceb8beb2d367b files/CVE-2006-1526-xrender-mitri.patch 819
-MD5 adc2af1b0631d956e153b1d799feb30e files/digest-xorg-server-1.0.2-r7 771
-RMD160 dad2fda29285b37ec0d937e38563578bc60279c4 files/digest-xorg-server-1.0.2-r7 771
-SHA256 6c7dac83f185237e0913ec3ff8221155170193005c58e5eb306114b3941dd352 files/digest-xorg-server-1.0.2-r7 771
+MD5 5bbe7de7ebbf30c9991b3fd800b1f219 files/digest-xorg-server-1.1.1 500
+RMD160 0a5b1d758ab4077ac728b7ec6cc7f06fb49ce273 files/digest-xorg-server-1.1.1 500
+SHA256 1bea059c9ffe1dee3634293efe79b0a429d52ca18eda558e2e7b9e0605b0504a files/digest-xorg-server-1.1.1 500
 MD5 0411ec21c16bdabd945159476b1c796a files/x11r7.0-setuid.diff 3513
 RMD160 a6b7b95e54b748ad2d1892395927a9c681e940ea files/x11r7.0-setuid.diff 3513
 SHA256 8305e689358d5a92c1fae74f520a044677d468d6a617afddc5013af7b37c5db6 files/x11r7.0-setuid.diff 3513
@@ -67,3 +67,6 @@ SHA256 4206dae89325a10d8f050b6e80653da44d645cec9342d3b361b0fac47a2aefa2 xorg-ser
 MD5 c910ae776652e412c60fe311f1df78fa xorg-server-1.0.2-r7.ebuild 6191
 RMD160 99f2418074845ef1c3d426548eada481c85d9584 xorg-server-1.0.2-r7.ebuild 6191
 SHA256 ac343263a5a66e16fe861ebb91ba13927ad881fd1e263abb22ba301f92463991 xorg-server-1.0.2-r7.ebuild 6191
+MD5 7825d22097eb89e136717423771885f0 xorg-server-1.1.1.ebuild 15708
+RMD160 baae8ac5fef0f2d0cd5fdbb2e45cb4213281e909 xorg-server-1.1.1.ebuild 15708
+SHA256 b03611c765fd5c260107b01e0130fb86f7a199844e78acc89dc1af67faf77197 xorg-server-1.1.1.ebuild 15708
