@@ -1,6 +1,6 @@
-MD5 a5c9364b5623b5374bdab1db9de2d9b3 files/digest-libxklavier-2.2-r1100 247
-RMD160 6a8341794b00d9ee8fc9e144c7c9e85e75fd4181 files/digest-libxklavier-2.2-r1100 247
-SHA256 09b842e23964a64676ab5336dfad40ed4bdba90e53e9520e94b4fc0ad2228ee7 files/digest-libxklavier-2.2-r1100 247
+MD5 a5c9364b5623b5374bdab1db9de2d9b3 files/digest-libxklavier-2.2 247
+RMD160 6a8341794b00d9ee8fc9e144c7c9e85e75fd4181 files/digest-libxklavier-2.2 247
+SHA256 09b842e23964a64676ab5336dfad40ed4bdba90e53e9520e94b4fc0ad2228ee7 files/digest-libxklavier-2.2 247
 MD5 dd5b95ef05fbd2d67d79ce2053a1f4a2 files/libxklavier-1.14-werror.patch 1189
 RMD160 92529e908cb97926227ae1f9cf62e69b8d4c7b05 files/libxklavier-1.14-werror.patch 1189
 SHA256 1397df8a206d2f1ea1878694e7113831d040d8665ea0fbee6a291b31bc0cc7bb files/libxklavier-1.14-werror.patch 1189
@@ -13,3 +13,6 @@ SHA256 ba4be6b7737b09875adf109384fb375377540fbb213d62b647ba36baad28a7a0 files/su
 MD5 f0b5f1f817dcf19e9ee8a56751aef3e9 libxklavier-2.2-r1100.ebuild 1385
 RMD160 7de59288b0592d125039d9ed25919062a3519bfb libxklavier-2.2-r1100.ebuild 1385
 SHA256 4b35771e396bbff2c2ae6b8a41dc2fd1116ad0c98354af0419387c736da3430c libxklavier-2.2-r1100.ebuild 1385
+MD5 ae4dba68ef9ad0b6bd5b1e0591c92c59 libxklavier-2.2.ebuild 1389
+RMD160 02274a1715b13328a516aa1f99f42a83b3213c84 libxklavier-2.2.ebuild 1389
+SHA256 3960245fb3f7e3c16731b1ac20d5beee2bea912d9dfc46005d1d884a116742dc libxklavier-2.2.ebuild 1389
