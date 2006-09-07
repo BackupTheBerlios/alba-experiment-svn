@@ -1,6 +1,6 @@
-MD5 4dabe9abdba7013922d9e4d9a52d2dd3 files/digest-gstreamer-0.10.6-r1100 256
-RMD160 f78838aef06751ce462c201b481b3664b1cbf0d2 files/digest-gstreamer-0.10.6-r1100 256
-SHA256 5d90bc2f9f9532015ae1abd8cab1f04320d17db1f6ddad2412760deae307f1fc files/digest-gstreamer-0.10.6-r1100 256
+MD5 71fb1638ef7b8fc30456588bc996a3df files/digest-gstreamer-0.8.11 256
+RMD160 92fd3469d93819065a4a387186b78ce109762274 files/digest-gstreamer-0.8.11 256
+SHA256 1edf71e72de10ac4d577acf06b19de2fe1efd74eb2d06d774ab1628aee9aa78f files/digest-gstreamer-0.8.11 256
 MD5 465e9b8e2f33205128b7a69eca2e2c02 files/gstreamer-0.8.3-jade_fix.patch 1713
 RMD160 e52cf7b4fb0e7d0a4043365dd1abaab5a121897f files/gstreamer-0.8.3-jade_fix.patch 1713
 SHA256 852eb5828e8c5e270e8b32323e37dcf266308b5b5e5aa1f26d08bbb1be4fc51d files/gstreamer-0.8.3-jade_fix.patch 1713
@@ -16,3 +16,6 @@ SHA256 423e985be67788a333e834a3e41863953e8d52f8c0b72154cc2df69657dc3007 files/gs
 MD5 930ef7e081e97c1c6863eff9e82f46ab gstreamer-0.10.6-r1100.ebuild 1970
 RMD160 c053ffba97c493d9b8e5b73f6d241a780610129c gstreamer-0.10.6-r1100.ebuild 1970
 SHA256 23b04473a43dd8ae6719b924195df274b93a8e4f01172a7810f143829424378c gstreamer-0.10.6-r1100.ebuild 1970
+MD5 d05f2b14a75e776edfa3af924ff534bc gstreamer-0.8.11.ebuild 2838
+RMD160 c921123183ba07b023f7590275a1b563efa5c984 gstreamer-0.8.11.ebuild 2838
+SHA256 0748e31d3514c15af4556ecb19fcb71ae476c47fcd26b48b25a8c102b58d3d72 gstreamer-0.8.11.ebuild 2838
