@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 SLOT="0"
 IUSE=""
 
-KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~m68k ~mips ppc ppc-macos ~ppc64 ~s390 ~sh sparc x86 ~x86-sunos"
+KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~m68k ~mips ppc ppc-macos ~ppc64 ~s390 ~sh sparc x86 -x86-sunos"
 
 DEPEND=">=sys-apps/portage-2.0.51_pre21
 	>=dev-lang/python-2.0
