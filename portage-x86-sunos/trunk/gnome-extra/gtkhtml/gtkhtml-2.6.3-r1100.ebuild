@@ -14,7 +14,7 @@ SRC_URI="mirror://gnome/sources/${MY_PN}/${MY_MAJ_PV}/${MY_P}.tar.bz2"
 
 LICENSE="LGPL-2.1 GPL-2"
 SLOT="2"
-KEYWORDS="~alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 arm hppa ia64 ~mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE="accessibility"
 
 # FIXME : seems only testapps need gnomevfs
