@@ -8,7 +8,7 @@
 inherit x-modular flag-o-matic
 
 DESCRIPTION="X.Org Xfont library"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd -x86-sunos"
 IUSE="ipv6"
 RDEPEND="x11-libs/xtrans
 	x11-libs/libfontenc

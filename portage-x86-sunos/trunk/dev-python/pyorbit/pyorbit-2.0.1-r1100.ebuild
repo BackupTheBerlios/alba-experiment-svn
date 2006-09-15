@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-python/pyorbit/pyorbit-2.0.1.ebuild,v 1.10 2006/03/04 09:20:28 lucass Exp $
 
-inherit python gnome2
+inherit python gnome2 flag-o-matic
 
 DESCRIPTION="ORBit2 bindings for Python"
 HOMEPAGE="http://www.pygtk.org/"
@@ -24,6 +24,7 @@ src_unpack() {
 	# disable pyc compiling
 	mv ${S}/py-compile ${S}/py-compile.orig
 	ln -s /bin/true ${S}/py-compile
+	use x86-sunos && append-flags "-D_XPG6"
 }
 
 src_install() {

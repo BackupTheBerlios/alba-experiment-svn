@@ -11,7 +11,7 @@ HOMEPAGE="http://www.macromedia.com/"
 
 IUSE=""
 SLOT="0"
-KEYWORDS="amd64 -ppc -sparc x86 x86-sunos"
+KEYWORDS="amd64 -ppc -sparc x86 -x86-sunos"
 LICENSE="Macromedia"
 
 DEPEND="!net-www/gplflash

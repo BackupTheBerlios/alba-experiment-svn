@@ -1,2 +1,6 @@
 MD5 bbd2008d50dbb4c92b97af921e819f83 files/digest-libmng-1.0.9-r1100 64
+RMD160 c7e77ec54d15f6c17f2cfd2dd6fbb27afb186325 files/digest-libmng-1.0.9-r1100 64
+SHA256 7d771b811511fd4d3746eae9d035bbc6673fb682f86023a86797b339178bf969 files/digest-libmng-1.0.9-r1100 64
 MD5 0548f3524e89b8902b255fce0b2b94fb libmng-1.0.9-r1100.ebuild 1005
+RMD160 2fcfe3ff2cf7a650eb933bd8e9eb9315ca7545a5 libmng-1.0.9-r1100.ebuild 1005
+SHA256 60efb6c498f4b2e77ffa7308b112e54bc92ff646b3dedca90bfca3820b675e9c libmng-1.0.9-r1100.ebuild 1005

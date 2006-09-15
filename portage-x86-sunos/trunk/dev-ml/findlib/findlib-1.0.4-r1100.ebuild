@@ -72,3 +72,4 @@ check_stublibs() {
 
 pkg_postinst() {
 	check_stublibs
+}

@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/libungif/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-sunos"
 IUSE="rle X"
 
 DEPEND="X? ( || ( ( x11-libs/libXt x11-libs/libX11 x11-libs/libICE x11-libs/libSM ) virtual/x11 ) )

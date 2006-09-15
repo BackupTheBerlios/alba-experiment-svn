@@ -16,7 +16,7 @@ SRC_URI="mirror://sourceforge/mesa3d/${LIB_P}.tar.bz2
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 arm ~hppa ia64 mips ppc ppc64 sh sparc ~x86 ~x86-fbsd ~x86-sunos"
+KEYWORDS="alpha ~amd64 arm ~hppa ia64 mips ppc ppc64 sh sparc ~x86 ~x86-fbsd -x86-sunos"
 IUSE=""
 
 RDEPEND="virtual/glut

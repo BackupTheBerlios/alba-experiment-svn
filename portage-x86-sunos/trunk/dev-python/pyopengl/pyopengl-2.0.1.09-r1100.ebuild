@@ -50,4 +50,9 @@ s:tk.getvar('tk_library'):${TKLIBRARY}:g;
 s:tk.getvar('tcl_library'):${TCLLIBRARY}:g;"""
 	sed -i -e "${SEDED}" togl_setup.py
 
+	if use x86-sunos; then
+		cd ${S}
+		epatch ${FILESDIR}/${P}-sunos-config.diff
+	fi
+
 }

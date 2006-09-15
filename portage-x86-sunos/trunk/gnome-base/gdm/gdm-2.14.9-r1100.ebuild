@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/gdm-2.14.9-r1.ebuild,v 1.6 2006/07/17 17:18:01 dang Exp $
 
-inherit eutils pam gnome2
+inherit eutils pam gnome2 sun-smf-utils
 
 DESCRIPTION="GNOME Display Manager"
 HOMEPAGE="http://www.gnome.org/projects/gdm/"
@@ -142,6 +142,11 @@ src_install() {
 pkg_postinst() {
 	gnome2_pkg_postinst
 
+	case ${CHOST} in 
+		*-solaris2.1*)
+			smf_install 
+			;;
+		*)
 	# Soft restart, assumes Gentoo defaults for file locations
 	FIFOFILE=/var/gdm/.gdmfifo
 	PIDFILE=/var/run/gdm.pid
@@ -155,6 +160,8 @@ pkg_postinst() {
 
 	einfo "To make GDM start at boot, edit /etc/rc.conf"
 	einfo "and then execute 'rc-update add xdm default'."
+	;;
+	esac
 
 	einfo "GDM has changed the location of its configuration file.  Please"
 	einfo "edit /etc/X11/gdm/custom.conf.  The factory defaults are located"
@@ -166,6 +173,13 @@ pkg_postinst() {
 pkg_postrm() {
 	gnome2_pkg_postrm
 
-	einfo "To remove GDM from startup please execute"
-	einfo "'rc-update del xdm default'"
+	case ${CHOST} in 
+		*-solaris2.1*)
+			smf_delete 
+			;;
+		*)
+			einfo "To remove GDM from startup please execute"
+			einfo "'rc-update del xdm default'"
+			;;
+	esac
 }

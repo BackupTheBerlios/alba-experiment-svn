@@ -1,9 +1,17 @@
-ARCH="x86"
-ACCEPT_KEYWORDS="x86-sunos"
-USE="x86-sunos"
+ARCH="x86-sunos"
+ACCEPT_KEYWORDS="~x86-sunos x86-sunos"
+
 CHOST="i386-pc-solaris2.11"
 CFLAGS="-O2 -march=i386 -pipe"
+CXXFLAGS="-O2 -march=i386 -pipe"
+MAKE="gmake"
+
 GNU_PREFIX="/usr/gnu"
-PREROOTPATH='/usr/gnu/bin'
+PREROOTPATH='/usr/gnu/bin:/usr/bin'
+USE="x86-sunos g-prefix gnulinks nopie sun-ld gcc displace openldap-alternate-prefix nodrm"
+
+FEATURES="-sandbox -userpriv"
+
 KERNEL="SunOS"
-USE="g-prefix gnulinks"
+USERLAND="SunOS"
+ELIBC="SunOS"

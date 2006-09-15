@@ -11,7 +11,7 @@ HOMEPAGE="http://www.rhythmbox.org/"
 SRC_URI="http://ftp.gnome.org/pub/gnome/sources/rhythmbox/0.9/${MY_P}.tar.bz2"
 LICENSE="GPL-2"
 
-KEYWORDS="~amd64 ~ppc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 IUSE="vorbis flac aac mad ipod avahi howl daap dbus libnotify musicbrainz
 tagwriting python gstreamer010"
 #I want tagwriting to be on by default in the future. It is just a local flag

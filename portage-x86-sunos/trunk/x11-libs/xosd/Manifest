@@ -4,9 +4,9 @@ SHA256 623a95978f31f301c55ab19424c1ecf70db5d8f8dfbc8c39224a7dce8b8f1e8c files/2.
 MD5 1132764268b2645df6a9a3ba6bf06e4d files/bmp-dlg_config.patch 403
 RMD160 40ec201fe3edf3155c4c9d3dfdc8d30323287446 files/bmp-dlg_config.patch 403
 SHA256 b40712da31de131709f66f85e7032031eebcf20f006f9c6d8c6248b76f53a784 files/bmp-dlg_config.patch 403
-MD5 9232dfd3a15a1de9722ea74498e256c1 files/digest-xosd-2.2.14-r1 732
-RMD160 071cc09810836660609be60be6db61d8a98710d3 files/digest-xosd-2.2.14-r1 732
-SHA256 766ee1eba0651b5208a1d153140c2b0f17e44bab2a2476ebc5b428bb0c88b0d4 files/digest-xosd-2.2.14-r1 732
+MD5 5b39bdc481e1e96fd3f845c21ef3c074 files/digest-xosd-2.2.14-r1 735
+RMD160 060c641e9578cc7ed63e90f39caa5e3647572aca files/digest-xosd-2.2.14-r1 735
+SHA256 fc3379b0260e5442b662c7dc62da55479b06ddf09b1377fa93b613129fad013f files/digest-xosd-2.2.14-r1 735
 MD5 7a327614154b7eb25a641f0ad4bdec90 files/xosd-2.2.14-bmp-fixes.patch 11472
 RMD160 7eeca191e8d5a80829c4ba974c709e484416c3c6 files/xosd-2.2.14-bmp-fixes.patch 11472
 SHA256 86630811e71b0f779a202b1bbd218167f942dcd8a9ff92bc7115f7986a631f4c files/xosd-2.2.14-bmp-fixes.patch 11472

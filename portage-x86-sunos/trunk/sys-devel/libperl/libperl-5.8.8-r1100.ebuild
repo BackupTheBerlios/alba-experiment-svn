@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/libperl/libperl-5.8.8-r1.ebuild,v 1.2 2006/03/31 20:35:15 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/libperl/libperl-5.8.8-r1.ebuild,v 1.13 2006/07/02 19:45:01 vapier Exp $
 
 # The basic theory based on comments from Daniel Robbins <drobbins@gentoo.org>.
 #
@@ -68,7 +68,7 @@ HOMEPAGE="http://www.perl.org"
 SLOT="${PERLSLOT}"
 LIBPERL="libperl$(get_libname ${PERLSLOT}.${SHORT_PV})"
 LICENSE="Artistic GPL-2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc-macos ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd ~x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-sunos"
 
 # rac 2004.08.06
 
@@ -120,7 +120,7 @@ src_unpack() {
 	#   LIBPERL=libperl.so.${SLOT}.`echo ${PV} | cut -d. -f1,2`
 	#
 	cd ${S};
-	use userland_Darwin || epatch ${FILESDIR}/${PN}-create-libperl-soname.patch
+	use userland_Darwin || use x86-sunos || epatch ${FILESDIR}/${PN}-create-libperl-soname.patch
 
 	# uclibc support - dragonheart 2004.06.16
 	# Now upstreamed - MPC 2005.06.28
@@ -134,6 +134,11 @@ src_unpack() {
 
 	# we need the same @INC-inversion magic here we do in perl
 	cd ${S}; epatch ${FILESDIR}/${P}-reorder-INC.patch
+
+	# On PA7200, uname -a contains a single quote and we need to 
+	# filter it otherwise configure fails. See #125535.
+	epatch ${FILESDIR}/perl-hppa-pa7200-configure.patch
+
 
 	use amd64 && cd ${S} && epatch ${FILESDIR}/${P}-lib64.patch
 	[[ ${CHOST} == *-dragonfly* ]] && cd ${S} && epatch ${FILESDIR}/${P}-dragonfly-clean.patch
@@ -168,6 +173,8 @@ src_compile() {
 		*-netbsd*) osname="netbsd" ;;
 		*-openbsd*) osname="openbsd" ;;
 		*-darwin*) osname="darwin" ;;
+		#*-solaris*) osname="solaris_2" ;;
+		*-solaris*) osname="solaris" ;;
 
 		*) osname="linux" ;;
 	esac

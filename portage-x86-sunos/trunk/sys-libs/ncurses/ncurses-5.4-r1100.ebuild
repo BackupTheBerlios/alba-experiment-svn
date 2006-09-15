@@ -47,7 +47,7 @@ src_compile() {
 	local myconf=""
 	( use build || use bootstrap || use nocxx ) \
 		&& myconf="${myconf} --without-cxx --without-cxx-binding --without-ada"
- 	[[ ${USERLAND} == "SunOS" ]] && myconf="${myconf} --program-prefix=g --includedir=/usr/include/ncurses"
+	[[ ${USERLAND} == "SunOS" ]] && myconf="${myconf} --program-prefix=g --includedir=/usr/include/ncurses"
 
 	# First we build the regular ncurses ...
 	mkdir "${WORKDIR}"/narrowc

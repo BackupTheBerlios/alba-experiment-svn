@@ -11,7 +11,7 @@ HOMEPAGE="http://www.lirc.org"
 SLOT="0"
 LICENSE="GPL-2"
 IUSE="alsa debug doc X usb hardware-carrier transmitter udev"
-KEYWORDS="~alpha ~amd64 ia64 ppc ppc64 x86 ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ia64 ppc ppc64 x86 -x86-sunos"
 SRC_URI="mirror://sourceforge/lirc/${P/_pre/pre}.tar.bz2"
 
 S=${WORKDIR}/${P/_pre/pre}

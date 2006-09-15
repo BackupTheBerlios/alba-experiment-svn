@@ -60,4 +60,16 @@ src_install() {
 	cd ${S}
 	dodoc AUTHORS BACKLOG ChangeLog ChangeLog.OLD \
 		NEWS README README.OLD THANKS TODO
+
+	if [[ ${USERLAND} == "SunOS" ]] ; then
+		for x in uuencode uudecode; do
+		einfo "${x}"
+		if [[ -f /usr/bin/${x} ]] ; then 
+			einfo "Renaming and creating new link for ${x}"
+			mv ${D}/usr/bin/${x} ${D}/usr/bin/${x}.sharutils
+			dodir ${GNU_PREFIX}/bin
+			dosym /usr/bin/${x}.sharutils ${GNU_PREFIX}/bin/${x}
+		fi
+		done
+	fi
 }

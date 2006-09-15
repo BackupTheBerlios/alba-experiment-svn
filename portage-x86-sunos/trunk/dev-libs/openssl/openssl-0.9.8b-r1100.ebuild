@@ -10,7 +10,7 @@ SRC_URI="mirror://openssl/source/${P}.tar.gz"
 
 LICENSE="openssl"
 SLOT="0"
-KEYWORDS="-* ~x86-sunos"
+KEYWORDS="-* -x86-sunos"
 IUSE="emacs test bindist zlib"
 
 RDEPEND=""

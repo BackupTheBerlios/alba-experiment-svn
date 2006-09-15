@@ -59,3 +59,33 @@ net-misc/iputils		sys-sunos/SUNWbip
 #media-libs/libart_lgpl		sunos-jds/SUNWgnome-base-libs-devel
 #gnome-base/gnome-keyring	sunos-jds/SUNWgnome-libs-devel
 #media-libs/musicbrainz		sunos-jds/SUNWmusicbrainz
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: 
+
+# Use this virtuals file to either overload the base profile's defined
+# virtuals, or add virtuals that are specific to this family of profiles
+
+virtual/os-headers  sys-sunos/kernel-headers
+virtual/cron 	    sys-sunos/SUNWcsu
+virtual/libc	    sys-sunos/SUNWcsl
+virtual/jdk	    sys-sunos/SUNWj5dev
+virtual/jre	    sys-sunos/SUNWj5rt
+virtual/mta	    sys-sunos/SUNWsndmu
+virtual/x11	    sys-sunos/SUNWxorg-server
+virtual/xft	    sys-sunos/SUNWxorg-server
+virtual/glu	    sys-sunos/SUNWxorg-mesa
+virtual/opengl	    sys-sunos/SUNWxorg-mesa
+virtual/libintl	    sys-sunos/SUNWcsu
+virtual/alsa	    sys-sunos/SUNWaudd
+virtual/pam	    sys-sunos/SUNWcsl	
+virtual/utempter    sys-sunos/SUNWcsu
+virtual/motif	    sys-sunos/SUNWmfrun
+sys-libs/pam	    sys-sunos/SUNWcsl	
+app-arch/cpio	    sys-sunos/SUNWcsu
+app-misc/pax-utils  sys-sunos/SUNWcsu
+# sys-devel/gettext   sys-sunos/SUNWcsu
+sys-libs/glibc	    sys-sunos/SUNWcsl
+dev-libs/libiconv   sys-sunos/SUNWcsu
+sys-apps/man	    sys-sunos/SUNWdoc
+#

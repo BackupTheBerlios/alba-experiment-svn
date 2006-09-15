@@ -1,2 +1,6 @@
 MD5 f3f8f9a5fe2f9e1ca10aa505edeeb4e2 files/digest-libvorbis-1.1.2-r1100 68
+RMD160 2389e7d9c96de2f7ce2e4dcedf9fde5803d5a48d files/digest-libvorbis-1.1.2-r1100 68
+SHA256 4e1ebe0a3f3842806ddcfc906a1f77dadffc2ac5fb6e198611f8f0ee127800e1 files/digest-libvorbis-1.1.2-r1100 68
 MD5 e9282c0e0061149583b4cd7016863c98 libvorbis-1.1.2-r1100.ebuild 2501
+RMD160 878afeb7059f8ead76f022634c78f47835404878 libvorbis-1.1.2-r1100.ebuild 2501
+SHA256 695f2f35213c0ba48f6d6b6fe950cc555f53f3f27bf69203b660f804a37986e0 libvorbis-1.1.2-r1100.ebuild 2501

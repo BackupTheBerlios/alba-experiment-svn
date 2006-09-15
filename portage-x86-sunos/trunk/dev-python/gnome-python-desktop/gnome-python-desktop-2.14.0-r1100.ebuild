@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/dev-python/gnome-python-desktop/gnome-python-desktop-2.14.0.ebuild,v 1.10 2006/05/03 13:58:53 dertobi123 Exp $
 
-inherit distutils gnome2 python virtualx
+inherit distutils gnome2 python virtualx flag-o-matic
 
 DESCRIPTION="provides python interfacing modules for some GNOME desktop
 libraries"
@@ -47,6 +47,13 @@ src_install() {
 		doins -r examples
 	fi
 }
+
+src_compile() {
+	use x86-sunos && append-flags "-D_XPG6"
+	cd "${S}"
+	gnome2_src_compile
+}
+
 
 pkg_postinst() {
 	python_version
