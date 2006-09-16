@@ -2,6 +2,8 @@
 # ldconfig substitute command for Sun OS/Solaris/OpenSolaris
 . /sbin/functions.sh
 
+NOCACHE=1
+
 if [ -f /etc/ld.so.conf ]; then
 	D1=`/usr/gnu/bin/date +"%s" -r /etc/ld.so.conf`
 	D2=`/usr/gnu/bin/date +"%s" -r /var/ld/ld.config 2>/dev/null`
@@ -14,11 +16,15 @@ if [ -f /etc/ld.so.conf ]; then
 		/usr/bin/sed "/^\ *#/d" /etc/ld.so.conf | while read lddir; do
 			einfo "Adding $lddir"
 			/usr/bin/crle -u -l $lddir
-			einfo "Caching $lddir"
-			/usr/bin/crle -u -i $lddir
+			if [ -z "$NOCACHE" ]; then
+				einfo "Caching $lddir"
+				/usr/bin/crle -u -i $lddir
+			fi
 		done
 	else
-		einfo "Updating cache"
-		/usr/bin/crle -u
+		if [ -z "$NOCACHE" ]; then
+			einfo "Updating cache"
+			/usr/bin/crle -u
+		fi
 	fi
 fi
