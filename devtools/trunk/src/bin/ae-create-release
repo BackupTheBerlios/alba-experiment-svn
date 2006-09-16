@@ -1,0 +1,36 @@
+#!/usr/bin/bash
+
+. /sbin/functions.sh
+. /etc/make.conf
+
+MODULE=$1
+
+if [ -z ${MODULE} ]; then
+	eerror "You must specifi a module name"
+	exit 1
+fi
+
+if [ -z $2 ]; then
+	PKGNAME="${MODULE}"
+else
+	PKGNAME=$2
+fi
+einfo "Creating release for \"${PKGNAME}\""
+WORKDIR="/var/tmp/${PKGNAME}/image"
+SVNURL="https://svn.berlios.de/svnroot/repos/alba-experiment/${MODULE}/tags/"
+
+[ -d ${WORKDIR} ] && rm -rf ${WORKDIR} 2>/dev/null 1>&2
+[ ! -d ${WORKDIR} ] && mkdir -p ${WORKDIR} 2>/dev/null 1>&2
+
+einfon "Finding last release..."
+REL0=`svn ls ${SVNURL} | $TAIL -n 1`
+REL=`basename $REL0`
+echo "${REL}"
+
+einfo "Exporting the release"
+svn export ${SVNURL}/${REL} "${WORKDIR}"/"${PKGNAME}"-"${REL}"
+
+ebegin "Creating package"
+cd ${WORKDIR}
+$TAR jcf ${DISTDIR}/${PKGNAME}-${REL}.tar.bz2 ${PKGNAME}-${REL}
+eend $?

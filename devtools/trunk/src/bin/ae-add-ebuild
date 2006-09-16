@@ -19,12 +19,17 @@ if [ -z "$EBUILD" ]; then
 	eerror "Please specify an ebuild name to copy in '$AEOVERLAY'"
 	exit 1
 fi
+if [ -z "$2" ]; then
+	PORTDIR=/usr/portage
+else
+	PORTDIR=$2
+fi
 
 ADDKEYWORD='~x86-sunos'
 
 CATEGORY=`echo $EBUILD| sed s/-[0-9].*$//`
 EBNAME=`echo $EBUILD | cut -d '/' -f 2`
-EBFULLNAME=/usr/portage/$CATEGORY/$EBNAME.ebuild
+EBFULLNAME=$PORTDIR/$CATEGORY/$EBNAME.ebuild
 EBSHORTNAME=`echo $EBNAME | sed s/-[0-9].*$//`
 EBVER=`echo $EBNAME | sed s/^$EBSHORTNAME//`
 #echo EBVER $EBVER
@@ -32,7 +37,19 @@ EBVER_MAJ=`echo $EBVER | sed s/-r[0-9].*$//`
 #echo EBVER_MAJ $EBVER_MAJ
 EBVER_MIN=`echo $EBVER | sed s/^$EBVER_MAJ//`
 #echo EBVER_MIN $EBVER_MIN
-EBNEWNAME=${EBSHORTNAME}${EBVER_MAJ}-r1100
+EBVER_REV=`echo $EBVER | sed s/^$EBVER_MAJ$EBVER_MIN//`
+#echo EBVER_REV $EBVER_REV
+EBNEWNAME=$EBNAME
+#EBNEWNAME=${EBSHORTNAME}${EBVER_MAJ}-r1100
+#einfon "Finding suitable revision number for $EBSHORTNAME..."
+#rev=$EBVER_REV
+#while [ -f $AEOVERLAY/$CATEGORY/$EBNEWNAME.ebuild ]; do
+	#(( rev++ ))
+	#EBNEWNAME=${EBSHORTNAME}${EBVER_MAJ}-r$rev
+#done
+#cho "$rev"
+einfo "New ebuild name is: $EBNEWNAME"
+
 if [ -f $EBFULLNAME ]; then
 	ebegin "Copying ebuild to sunos portage tree: $AEOVERLAY"
 	#ls -l $EBFULLNAME
@@ -42,7 +59,7 @@ if [ -f $EBFULLNAME ]; then
 	s/\"$/ $ADDKEYWORD\"/
 	}
 	" $EBFULLNAME > $AEOVERLAY/$CATEGORY/$EBNEWNAME.ebuild
-	gcp -Rf /usr/portage/$CATEGORY/files $AEOVERLAY/$CATEGORY
+	gcp -Rf $PORTDIR/$CATEGORY/files $AEOVERLAY/$CATEGORY
 	eend $?
 	ebegin "Removing old digest"
 	rm $AEOVERLAY/$CATEGORY/files/digest-* >/dev/null 2>&1
@@ -68,5 +85,4 @@ if grep gen_usr_ldscript $AEOVERLAY/$CATEGORY/$EBNEWNAME.ebuild ; then
 fi
 
 einfo "Testing the ebuild dependecies"
-emerge -qp ${EBSHORTNAME}
-
+emerge -qav =${CATEGORY}${EBVER}
