@@ -10,7 +10,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="${PV:0:3}"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 ~ppc-macos s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE=""
 
 # stupid blocker for stupid package #98762
