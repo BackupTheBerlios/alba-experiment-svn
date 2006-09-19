@@ -1,0 +1,6 @@
+MD5 1b24ee98ef44037df3dd9907a43c90f0 files/digest-xorg-cf-files-1.0.2 262
+RMD160 5216b4f6f9b15186b0f6ce1f82f85871a378cefd files/digest-xorg-cf-files-1.0.2 262
+SHA256 965f05e56eeb9b05f9b54bb68b312be2b5e4f6e1efc0107d8af071815591354a files/digest-xorg-cf-files-1.0.2 262
+MD5 73c180af3d72d503185aee2874a5a752 xorg-cf-files-1.0.2.ebuild 610
+RMD160 4c3bc8164346ed64b4a42264f6a9bbb864b1f05e xorg-cf-files-1.0.2.ebuild 610
+SHA256 5402ef3c08601a7b93bcd8a48a5758378b7a730f259cc1a02b8153befd8ce9b2 xorg-cf-files-1.0.2.ebuild 610
