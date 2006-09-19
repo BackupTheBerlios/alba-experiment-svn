@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copyright 1999-2005 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-config/files/binutils-config-1.8,v 1.10 2006/01/13 11:16:42 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-config/files/binutils-config-1.8,v 1.17 2006/05/13 05:11:16 vapier Exp $
 
 # Format of /etc/env.d/binutils/:
 #  config-TARGET:	CURRENT=version for TARGET
@@ -11,10 +11,12 @@ cd /
 
 trap ":" INT QUIT TSTP
 
+argv0=${0##*/}
 source /etc/init.d/functions.sh || {
-	echo "$0: Could not source /etc/init.d/functions.sh!"
+	echo "${argv0}: Could not source /etc/init.d/functions.sh!" 1>&2
 	exit 1
 }
+esyslog() { :; }
 umask 022
 
 usage() {
@@ -126,7 +128,7 @@ switch_profile() {
 		if [[ ${TARGET} == ${HOST} ]] ; then
 			dstinc=${ROOT}/usr/include
 		else
-			dstinc=${ROOT}/usr/${TARGET}/include
+			dstinc=${ROOT}/usr/${TARGET}/usr/include
 		fi
 		mkdir -p "${dstinc}"
 		for x in * ; do
@@ -167,7 +169,7 @@ switch_profile() {
 
 uninstall_target() {
 	if [[ ${TARGET} == ${HOST} ]] ; then
-		eerror "$0: Refusing to uninstall native binutils"
+		eerror "${argv0}: Refusing to uninstall native binutils"
 		exit 1
 	fi
 
@@ -179,7 +181,7 @@ uninstall_target() {
 		rm -f "${ENV_D}"/${PROFILE}
 	done
 	if [[ -z ${PROFILE} ]] && [[ ! -e ${ENV_D}/config-${TARGET} ]] ; then
-		eerror "$0: No profiles exist for '${TARGET}'"
+		eerror "${argv0}: No profiles exist for '${TARGET}'"
 		exit 1
 	fi
 
@@ -192,7 +194,7 @@ uninstall_target() {
 		rm -f "${ROOT}"/usr/${TARGET}/bin/${x}
 	done
 	for x in ansidecl.h bfd.h bfdlink.h dis-asm.h symcat.h ; do
-		rm -f "${ROOT}"/usr/${TARGET}/include/${x}
+		rm -f "${ROOT}"/usr/${TARGET}/{usr/,}include/${x}
 	done
 	for x in bfd iberty opcodes ; do
 		rm -f "${ROOT}"/usr/${HOST}/${TARGET}/lib/lib${x}{{-*,}.so,.a,.la}
@@ -201,7 +203,7 @@ uninstall_target() {
 	find "${ROOT}"/usr/${TARGET}/lib -xtype l -exec rm {} \;
 	rmdir "${ROOT}"/usr/${HOST}/${TARGET}/lib "${ROOT}"/usr/${HOST}/${TARGET} 2>/dev/null
 	rm -f "${ROOT}"/usr/${TARGET}/lib/ldscripts
-	rmdir "${ROOT}"/usr/${TARGET}/{bin,include,lib} "${ROOT}"/usr/${TARGET} 2>/dev/null
+	rmdir "${ROOT}"/usr/${TARGET}/{usr/,}{bin,include,lib,usr} "${ROOT}"/usr/${TARGET} 2>/dev/null
 	rmdir "${ROOT}"/var/db/pkg/cross-${TARGET} 2>/dev/null
 
 	rm -f "${ENV_D}"/${TARGET}-*
@@ -209,14 +211,14 @@ uninstall_target() {
 
 get_current_profile() {
 	if [[ ! -f ${ENV_D}/config-${PROFILE} ]] ; then
-		eerror "$0: No binutils profile is active!"
+		eerror "${argv0}: No binutils profile is active!"
 		return 1
 	fi
 
 	source "${ENV_D}/config-${PROFILE}"
 
 	if [[ -z ${CURRENT} ]] ; then
-		eerror "$0: No binutils profile is active!"
+		eerror "${argv0}: No binutils profile is active!"
 		return 1
 	fi
 
@@ -227,6 +229,8 @@ get_current_profile() {
 
 list_profiles() {
 	local i=1
+
+	set_HOST
 
 	if [[ ${ROOT} != / ]] ; then
 		echo "Using binutils-config info in ${ROOT}"
@@ -243,7 +247,11 @@ list_profiles() {
 			x=${x##*/}
 			if [[ -e ${ENV_D}/config-${TARGET} ]] ; then
 				source "${ENV_D}/config-${TARGET}"
-				[[ ${VER} == ${CURRENT} ]] && x="${x} ${GOOD}*${NORMAL}"
+				if [[ ${VER} == ${CURRENT} ]] ; then
+					[[ ${TARGET} == ${HOST} ]] \
+						&& x="${x} ${GOOD}*${NORMAL}" \
+						|| x="${x} ${HILITE}*${NORMAL}"
+				fi
 			fi
 			echo " [${i}] ${x}"
 			((++i))
@@ -303,10 +311,12 @@ while [[ $# -gt 0 ]] ; do
 			usage
 			exit 0
 			;;
-		-v|--version)
-			cvsver="$Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-config/files/binutils-config-1.8,v 1.10 2006/01/13 11:16:42 vapier Exp $"
+		-V|--version)
+			cvsver="$Header: /var/cvsroot/gentoo-x86/sys-devel/binutils-config/files/binutils-config-1.8,v 1.17 2006/05/13 05:11:16 vapier Exp $"
 			cvsver=${cvsver##*binutils-config-}
-			echo "binutils-config-${cvsver%%,v *}"
+			bver=${cvsver%%,v *}
+			cvsver=${cvsver#* }
+			echo "binutils-config-${bver} (r${cvsver%% *})"
 			exit 0
 			;;
 		--amd64|--arm|--mips|--x86)
@@ -328,7 +338,7 @@ while [[ $# -gt 0 ]] ; do
 			;;
 		*)
 			if [[ -n ${PROFILE} ]] && [[ ${PROFILE} != "current" ]] ; then
-				eerror "$0: Too many arguments!  Run $0 without parameters for help."
+				eerror "${argv0}: Too many arguments!  Run ${argv0} without parameters for help."
 				exit 1
 			fi
 
@@ -345,7 +355,9 @@ while [[ $# -gt 0 ]] ; do
 					fi
 					((++i))
 				done
-			else
+			fi
+
+			if [[ -z ${PROFILE} ]] ; then
 				# User gave us a full HOST-ver
 				x=${x##*/}
 				if [[ ! -f ${ENV_D}/${x} ]] && [[ ! -f ${ENV_D}/config-${x} ]] ; then
@@ -354,7 +366,7 @@ while [[ $# -gt 0 ]] ; do
 					if [[ -f ${ENV_D}/${HOST}-${x} ]] ; then
 						x=${HOST}-${x}
 					else
-						eerror "$0: Could not locate '$x' in '${ENV_D}/'!"
+						eerror "${argv0}: Could not locate '$x' in '${ENV_D}/'!"
 						exit 1
 					fi
 				fi
