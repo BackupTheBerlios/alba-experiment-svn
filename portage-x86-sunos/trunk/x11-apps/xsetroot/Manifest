@@ -1,0 +1,6 @@
+MD5 87dcbabe3977239a0104ad43392f6eb9 files/digest-xsetroot-1.0.1 244
+RMD160 ccf9c0c7f6e521e59d1f0e002fa36fc936b1f0ca files/digest-xsetroot-1.0.1 244
+SHA256 d7a87351cb0c94d0a65a41cc97cf0accfe5a2fc058f3751c352462ae63be9a82 files/digest-xsetroot-1.0.1 244
+MD5 0b4525904b3bc8ae58f073e4d64a2fe9 xsetroot-1.0.1.ebuild 522
+RMD160 dc7d3e573b83afa12b5b1a40ce8342872ab1c11b xsetroot-1.0.1.ebuild 522
+SHA256 d959f77417c9c93f5812badf2d2f45cfbc3e761548b53835bd544360e24b913d xsetroot-1.0.1.ebuild 522
