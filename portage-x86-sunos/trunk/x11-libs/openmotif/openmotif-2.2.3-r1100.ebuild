@@ -13,7 +13,7 @@ SRC_URI="ftp://ftp.motifzone.net/om${PV}/src/${MY_P}.tar.gz
 
 LICENSE="MOTIF"
 SLOT="2.2"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc-macos ppc64 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc-macos ppc64 sh sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND="virtual/libc
