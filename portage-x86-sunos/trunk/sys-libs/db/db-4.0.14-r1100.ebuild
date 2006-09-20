@@ -11,7 +11,7 @@ HOMEPAGE="http://www.sleepycat.com"
 IUSE="tcltk java doc"
 SLOT="4"
 LICENSE="DB"
-KEYWORDS="alpha amd64 ~hppa ia64 m68k ~mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ~hppa ia64 m68k ~mips ppc ppc64 sparc x86 -x86-sunos"
 
 DEPEND="tcltk? ( dev-lang/tcl )
 	java? ( virtual/jdk )"
