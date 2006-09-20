@@ -1,0 +1,6 @@
+MD5 1a91b1f8cc5a52035628fef4f2be56e5 files/digest-xdpyinfo-1.0.1 244
+RMD160 6e1da0b04d7586415d73d95a9f8c925c1616e23b files/digest-xdpyinfo-1.0.1 244
+SHA256 1415c0916218c0f6b020161e4cae8121e38090ccbab74a82ca543a85218b9b63 files/digest-xdpyinfo-1.0.1 244
+MD5 bee9db56a4b1b03e9989cedf785b1cc6 xdpyinfo-1.0.1.ebuild 909
+RMD160 32c30cc4227c8a7112a0159942f119f3edeac94e xdpyinfo-1.0.1.ebuild 909
+SHA256 6ae0a0558fefc59eb6d3369164707c92079b95f819c8d5abababed4ab941acf2 xdpyinfo-1.0.1.ebuild 909
