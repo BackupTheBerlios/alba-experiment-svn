@@ -22,7 +22,7 @@ SRC_URI="http://www.python.org/ftp/python/${PV}/${MY_P}.tar.bz2"
 
 LICENSE="PSF-2.2"
 SLOT="2.4"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE="ncurses gdbm ssl readline tcltk berkdb bootstrap ipv6 build ucs2 doc X nocxx"
 
 DEPEND=">=sys-libs/zlib-1.1.3
