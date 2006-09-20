@@ -16,7 +16,7 @@
 #  CHOST = CTARGET  - install into /
 #  CHOST != CTARGET - install into /usr/CTARGET/
 
-KEYWORDS="-* amd64 arm -hppa ~ia64 m68k ~mips ppc ~ppc64 ~s390 sh ~sparc x86 x86-sunos"
+KEYWORDS="-* amd64 arm -hppa ~ia64 m68k ~mips ppc ~ppc64 ~s390 sh ~sparc x86 -x86-sunos"
 
 BRANCH_UPDATE=""
 
