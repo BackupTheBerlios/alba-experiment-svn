@@ -21,7 +21,7 @@ DEPEND="=media-libs/freetype-2*
 	X? ( || ( ( x11-libs/libXext x11-proto/xextproto ) virtual/x11 ) )
 	mp3? ( media-libs/libid3tag )"
 
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sh sparc x86 ~x86-fbsd -x86-sunos"
 
 src_compile() {
 	local mymmx=""
