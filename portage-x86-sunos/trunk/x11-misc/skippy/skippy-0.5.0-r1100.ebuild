@@ -12,7 +12,7 @@ SRC_URI="http://thegraveyard.org/files/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 
 RDEPEND="|| ( ( x11-libs/libXext
 		x11-libs/libX11
