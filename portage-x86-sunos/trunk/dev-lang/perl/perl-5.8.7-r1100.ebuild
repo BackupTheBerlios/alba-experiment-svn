@@ -17,7 +17,7 @@ LIBPERL="libperl$(get_libname ${PERLSLOT}.${SHORT_PV})"
 
 LICENSE="Artistic GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ~ppc64 s390 sh sparc x86 ~x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ~ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE="berkdb debug doc gdbm ithreads perlsuid build minimal"
 PERL_OLDVERSEN="5.8.0 5.8.2 5.8.4 5.8.5 5.8.6"
 
