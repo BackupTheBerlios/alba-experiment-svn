@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.gnu.org/gnu/make/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 -x86-sunos"
 IUSE="nls static build"
 
 DEPEND="nls? ( sys-devel/gettext )"

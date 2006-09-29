@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${PN}_${MY_PV}.orig.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 ppc-macos s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE="unicode"
 
 DEPEND=">=app-shells/bash-2.04-r3

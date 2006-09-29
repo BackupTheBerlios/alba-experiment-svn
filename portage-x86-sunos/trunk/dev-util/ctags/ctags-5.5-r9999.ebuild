@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/ctags/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 alpha x86 ~ppc sparc mips hppa ia64 ppc64 s390 x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 mips ~ppc ppc64 s390 sparc x86 -x86-sunos"
 IUSE=""
 
 
