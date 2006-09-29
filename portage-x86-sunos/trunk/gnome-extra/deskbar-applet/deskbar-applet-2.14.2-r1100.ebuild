@@ -9,7 +9,7 @@ HOMEPAGE="http://raphael.slinckx.net/deskbar/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 hppa ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="eds"
 
 RDEPEND=">=dev-lang/python-2.3
