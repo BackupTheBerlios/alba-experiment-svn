@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/sys-devel/gcc/gcc-3.4.6-r1.ebuild,v 1.15 2006/09/09 02:48:34 vapier Exp $
 
 MAN_VER=""
-PATCH_VER="1.0"
+PATCH_VER="1.2"
 UCLIBC_VER="1.1"
 UCLIBC_GCC_VER="3.4.5"
 PIE_VER="8.7.9"
@@ -24,7 +24,7 @@ PIE_GLIBC_STABLE="x86 sparc amd64 ppc ppc64"
 PIE_UCLIBC_STABLE="x86 mips ppc"
 
 # arch/libc configurations known to be broken with {PIE,SSP}-by-default
-SSP_UNSUPPORTED="hppa"
+SSP_UNSUPPORTED="hppa sh"
 SSP_UCLIBC_UNSUPPORTED="${SSP_UNSUPPORTED}"
 PIE_UCLIBC_UNSUPPORTED="alpha amd64 arm hppa ia64 m68k ppc64 s390 sh sparc"
 PIE_GLIBC_UNSUPPORTED="hppa"
@@ -40,14 +40,15 @@ inherit toolchain eutils
 
 DESCRIPTION="The GNU Compiler Collection.  Includes C/C++, java compilers, pie+ssp extensions, Haj Ten Brugge runtime bounds checking"
 
-KEYWORDS="-* alpha amd64 arm mips ppc ppc64 sh sparc x86 ~x86-fbsd -x86-sunos"
+KEYWORDS="-* alpha amd64 arm mips ppc ppc64 sh sparc x86 ~x86-fbsd ~x86-sunos"
 
 # we need a proper glibc version for the Scrt1.o provided to the pie-ssp specs
 # NOTE: we SHOULD be using at least binutils 2.15.90.0.1 everywhere for proper
 # .eh_frame ld optimisation and symbol visibility support, but it hasnt been
 # well tested in gentoo on any arch other than amd64!!
-RDEPEND="|| ( app-admin/eselect-compiler >=sys-devel/gcc-config-1.3.12-r4 )
+RDEPEND="|| ( >=sys-devel/gcc-config-1.3.12-r4 app-admin/eselect-compiler )
 	>=sys-libs/zlib-1.1.4
+	virtual/libiconv
 	elibc_glibc? (
 		>=sys-libs/glibc-2.3.3_pre20040420-r1
 		hardened? ( >=sys-libs/glibc-2.3.3_pre20040529 )
@@ -73,8 +74,7 @@ DEPEND="${RDEPEND}
 	>=sys-devel/bison-1.875
 	>=sys-devel/binutils-2.14.90.0.8-r1
 	amd64? ( >=sys-devel/binutils-2.15.90.0.1.1-r1 )"
-PDEPEND="|| ( app-admin/eselect-compiler sys-devel/gcc-config )
-	x86? ( !nocxx? ( !elibc_uclibc? ( !build? ( || ( sys-libs/libstdc++-v3 =sys-devel/gcc-3.3* ) ) ) ) )"
+PDEPEND="|| ( sys-devel/gcc-config app-admin/eselect-compiler )"
 
 src_unpack() {
 	gcc_src_unpack
@@ -124,7 +124,7 @@ src_unpack() {
 			# this patch does, because if you are, you are probably already aware of what
 			# it does.
 			# All that said, the abilities of this patch are disabled by default and need
-			# to be enabled by passing -mip28-cache-barrier.  Only used to build kernels, 
+			# to be enabled by passing -mip28-cache-barrier.  Only used to build kernels,
 			# There is the possibility it may be used for very specific userland apps too.
 			if use ip28 or use ip32r10k; then
 				epatch ${FILESDIR}/3.4.2/gcc-3.4.2-mips-ip28_cache_barriers-v4.patch
@@ -138,13 +138,14 @@ src_unpack() {
 	esac
 }
 
+
 src_compile() {
 	if use x86-sunos; then
 		EXTRA_ECONF="${EXTRA_ECONF} --with-as=/usr/bin/gas --with-gnu-as"
 		if use use sun-ld ; then
-			EXTRA_ECONF="${EXTRA_ECONF} --without-gnu-ld --with-ld=/usr/ccs/bin/ld" 
+			EXTRA_ECONF="${EXTRA_ECONF} --without-gnu-ld --with-ld=/usr/ccs/bin/ld"
 		else
-			EXTRA_ECONF="${EXTRA_ECONF} --with-gnu-ld --with-ld=/usr/bin/gld" 
+			EXTRA_ECONF="${EXTRA_ECONF} --with-gnu-ld --with-ld=/usr/bin/gld"
 		fi
 	fi
 	gcc_src_compile
