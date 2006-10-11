@@ -1,0 +1,6 @@
+MD5 6bd9559fb7a9e96a928d49b64f9cfb80 files/digest-grepmail-5.30.32 247
+RMD160 d0a00bb06c6f665ea3b6be0c0366c8d9ba2443dc files/digest-grepmail-5.30.32 247
+SHA256 5f8ddb584d7904a3211f5d09de3e3f4446f0eec171869faef5c8f45ae40ec415 files/digest-grepmail-5.30.32 247
+MD5 9eccf5f7575e890a58d73faf1238eec4 grepmail-5.30.32.ebuild 721
+RMD160 a88628501392ac3b5e9788e79908830c25dcfcd0 grepmail-5.30.32.ebuild 721
+SHA256 0e84fb969664e3310de45edda1039e4eeb28fdbee100e6f00787625bffcac330 grepmail-5.30.32.ebuild 721
