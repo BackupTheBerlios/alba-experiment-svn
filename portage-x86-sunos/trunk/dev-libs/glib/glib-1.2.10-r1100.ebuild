@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.gtk.org/pub/gtk/v1.2/${P}.tar.gz
 
 LICENSE="LGPL-2.1"
 SLOT="1"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd -x86-sunos"
 IUSE="hardened"
 
 DEPEND=""

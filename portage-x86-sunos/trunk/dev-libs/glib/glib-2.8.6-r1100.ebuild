@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gtk.org/"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="~alpha amd64 arm hppa ia64 m68k ~mips ppc ~ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 arm hppa ia64 m68k ~mips ppc ~ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE="debug doc hardened"
 
 RDEPEND="virtual/libc
