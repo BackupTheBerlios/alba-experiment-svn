@@ -9,7 +9,7 @@ HOMEPAGE="http://www.freedesktop.org/software/startup-notification/"
 
 LICENSE="LGPL-2 BSD"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND="|| ( (	x11-libs/libX11
