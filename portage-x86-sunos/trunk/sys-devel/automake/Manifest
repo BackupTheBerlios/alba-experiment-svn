@@ -22,6 +22,9 @@ SHA256 a84825d8a8b55411a8d2b6eebeae29e9ce1cdb4eee9be0d3125748b58ceac26a automake
 MD5 fa2254f357d202ecb678a7c05c7df5d4 automake-1.6.3-r9999.ebuild 1442
 RMD160 0fa5faab3a21f97cfc5b78e1440dd8059f5da5fd automake-1.6.3-r9999.ebuild 1442
 SHA256 a84825d8a8b55411a8d2b6eebeae29e9ce1cdb4eee9be0d3125748b58ceac26a automake-1.6.3-r9999.ebuild 1442
+MD5 4017ee2e8220dca7f435853cde22b67f automake-1.6.3.ebuild 1455
+RMD160 8cb418b90ee2fcc7d637393e88c80b0aefa8c074 automake-1.6.3.ebuild 1455
+SHA256 ff6b314677c30af69746018596bcf501da5c67dd8f402a8eb2ca5256e4944f44 automake-1.6.3.ebuild 1455
 MD5 b7254c530c32b07013d7d93ad1a2aa8a automake-1.7.9-r1.ebuild 1530
 RMD160 a81d9b016b471dc387c3b276939c8de933eb0bbf automake-1.7.9-r1.ebuild 1530
 SHA256 0e9ad963042913e771e376be61018553e78011febbd83f80c2acf0e2bf3bc636 automake-1.7.9-r1.ebuild 1530
@@ -88,6 +91,6 @@ SHA256 01d85d830875aa05eec4ad209033473f3f8603f66781fdd9fd9b3cbb07ecbbd2 files/au
 MD5 bc49c3ba33df8d9bd85ab91d7ffa50bd files/automake-1.9.6-infopage-namechange.patch 1156
 RMD160 6c6c899d0119bd1068c3e1c63301c7ee74663ba9 files/automake-1.9.6-infopage-namechange.patch 1156
 SHA256 32fcbef369731846abb28181cc924c4d8261eafd3b86d3c506976de622b76737 files/automake-1.9.6-infopage-namechange.patch 1156
-MD5 c76ed2b2906e4f02b50bd3cfe5cc5b38 files/digest-automake-1.5 238
-RMD160 7e7414bc4a35a55011db5113d574a3ad1af1a8b2 files/digest-automake-1.5 238
-SHA256 1cb851753e4ada190b10b5a04ebe7036956042e5f58f5b4e6a4f012a544f8ea2 files/digest-automake-1.5 238
+MD5 d465eb29487d18df3427e8482f7c376e files/digest-automake-1.6.3 247
+RMD160 8766b8d66af4d819ddf5c4526c23dae370ee3b52 files/digest-automake-1.6.3 247
+SHA256 8b0b2a3946994f88b2de96db50a6e1896298cccfa392dbd1e2a90e6f976b4a20 files/digest-automake-1.6.3 247
