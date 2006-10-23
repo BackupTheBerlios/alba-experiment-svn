@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/ghostscript/${MY_P}.tar.gz"
 
 LICENSE="GPL-1"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND=""
