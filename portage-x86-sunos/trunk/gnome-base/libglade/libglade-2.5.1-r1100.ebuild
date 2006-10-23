@@ -10,7 +10,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
 SLOT="2.0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc"
 
 RDEPEND=">=dev-libs/glib-2.5
