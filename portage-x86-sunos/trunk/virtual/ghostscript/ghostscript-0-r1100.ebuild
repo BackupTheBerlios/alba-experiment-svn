@@ -7,7 +7,7 @@ HOMEPAGE="http://www.ghostscript.com"
 SRC_URI=""
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd -x86-sunos"
 IUSE=""
 DEPEND="|| (
 		app-text/ghostscript-gnu
