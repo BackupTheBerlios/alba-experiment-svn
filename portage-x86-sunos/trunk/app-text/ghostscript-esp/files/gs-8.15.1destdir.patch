@@ -318,4 +318,4 @@ diff -urN espgs-8.15.1.orig/src/unixinst.mak espgs-8.15.1/src/unixinst.mak
 +	-mkdir -p $(DESTDIR)$(gssharedir)
  	$(SH) -c 'echo $(GS_SHARED_OBJS) | while read obj ; do \
 -	    test -z $$obj || $(INSTALL_PROGRAM) $$obj $(gssharedir)/; done'
-+	    test -z "$$obj" || $(INSTALL_PROGRAM) $$obj $(DESTDIR)$(gssharedir)/; done'
++	    test -z $$obj || $(INSTALL_PROGRAM) $$obj $(DESTDIR)$(gssharedir)/; done'
