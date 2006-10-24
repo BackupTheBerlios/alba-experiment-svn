@@ -1,0 +1,6 @@
+MD5 115e07da2b1a3aa6170fabe805443a8b files/digest-tarsync-0.2.1 241
+RMD160 76a8db93ca9bde1d2b90495c4be47f799766e236 files/digest-tarsync-0.2.1 241
+SHA256 db0910333e7945b0fe471f7a8e15817ab71c5605fc551e5726ea57d042a1ebc5 files/digest-tarsync-0.2.1 241
+MD5 a4d01c74b5501a4a019e62597a9024e9 tarsync-0.2.1.ebuild 711
+RMD160 72d54af516d236f3f6e81cdf33010f7d6014e825 tarsync-0.2.1.ebuild 711
+SHA256 2aaeb385d8c8743039899eff10dcbcc70ca2c56a20a254a58c067cde68d02dbc tarsync-0.2.1.ebuild 711
