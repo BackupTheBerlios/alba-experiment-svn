@@ -10,7 +10,7 @@ SRC_URI="http://savannah.nongnu.org/download/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~arm ~ppc ~sparc ~x86 ~ppc-macos x86-sunos"
+KEYWORDS="~amd64 ~arm ~ppc ~ppc-macos ~sparc ~x86 -x86-sunos"
 IUSE="acl xattr"
 
 DEPEND=">=net-libs/librsync-0.9.7
