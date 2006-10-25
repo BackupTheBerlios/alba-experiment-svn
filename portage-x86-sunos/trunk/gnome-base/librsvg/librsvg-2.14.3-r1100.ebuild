@@ -9,7 +9,7 @@ HOMEPAGE="http://librsvg.sourceforge.net/"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="doc gnome zlib"
 
 RDEPEND=">=media-libs/fontconfig-1.0.1
