@@ -8,7 +8,7 @@ SRC_URI="http://tango-project.org/releases/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=dev-perl/XML-Simple-2
