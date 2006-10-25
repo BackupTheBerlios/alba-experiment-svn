@@ -19,7 +19,7 @@ SRC_URI="${SRC_URI}
 
 S=${WORKDIR}/vim${VIM_VERSION/.}
 DESCRIPTION="GUI version of the Vim text editor"
-KEYWORDS="alpha amd64 hppa ia64 mips ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 mips ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="gnome gtk motif nls"
 PROVIDE="virtual/editor"
 DEPEND="${DEPEND}

@@ -17,7 +17,7 @@ SRC_URI="${SRC_URI}
 
 S=${WORKDIR}/vim${VIM_VERSION/.*}
 DESCRIPTION="GUI version of the Vim text editor"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="aqua gnome gtk motif nextaw"
 PROVIDE="virtual/editor"
 DEPEND="${DEPEND}
