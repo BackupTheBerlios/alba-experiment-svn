@@ -14,7 +14,7 @@ SRC_URI="mirror://sourceforge/imagemagick/${MY_P2}.tar.bz2"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sh ~sparc ~x86 -x86-sunos"
 IUSE="bzip2 doc fpx graphviz gs jbig jpeg jpeg2k lcms mpeg nocxx perl png tiff truetype X wmf xml zlib"
 
 RDEPEND="bzip2? ( app-arch/bzip2 )
