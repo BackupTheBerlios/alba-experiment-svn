@@ -10,7 +10,7 @@ SRC_URI="http://www.boutell.com/gd/http/${P}.tar.gz"
 
 LICENSE="|| ( as-is BSD )"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd -x86-sunos"
 IUSE="fontconfig jpeg png truetype xpm"
 
 DEPEND="fontconfig? ( media-libs/fontconfig )
