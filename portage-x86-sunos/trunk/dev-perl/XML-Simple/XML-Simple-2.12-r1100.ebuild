@@ -10,7 +10,7 @@ SRC_URI="mirror://cpan/authors/id/G/GR/GRANTM/${P}.tar.gz"
 HOMEPAGE="http://www.cpan.org/modules/by-module/XML/${P}.readme"
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
-KEYWORDS="x86 amd64 ppc sparc alpha ppc64 x86-sunos"
+KEYWORDS="alpha amd64 ppc ppc64 sparc x86 -x86-sunos"
 
 SRC_TEST="do"
 
