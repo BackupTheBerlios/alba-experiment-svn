@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 LICENSE="GPL-2 LGPL-2"
 
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="avahi doc gnutls hal ipv6 samba ssl"
 
 RDEPEND=">=gnome-base/libbonobo-2.3.1
