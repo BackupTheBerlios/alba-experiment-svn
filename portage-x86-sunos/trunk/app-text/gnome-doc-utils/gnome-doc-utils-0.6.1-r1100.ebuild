@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm hppa ia64 ~mips ppc ~ppc64 ~sh sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 ~arm hppa ia64 ~mips ppc ~ppc64 ~sh sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=dev-libs/libxml2-2.6.12
