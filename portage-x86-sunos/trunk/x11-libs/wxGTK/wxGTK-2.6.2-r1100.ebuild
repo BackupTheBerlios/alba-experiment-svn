@@ -8,7 +8,7 @@ DESCRIPTION="GTK+ version of wxWidgets, a cross-platform C++ GUI toolkit and
 wxbase non-gui library"
 
 SLOT="2.6"
-KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ~arm hppa ia64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="gnome joystick odbc opengl sdl X"
 RDEPEND="${RDEPEND}
 	opengl? ( virtual/opengl )

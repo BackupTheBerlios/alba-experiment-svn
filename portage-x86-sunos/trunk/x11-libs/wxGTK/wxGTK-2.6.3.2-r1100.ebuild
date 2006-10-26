@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/wxpython/wxPython-src-${PV}.tar.gz
 	doc? ( mirror://sourceforge/wxwindows/wxWidgets-${HTML_PV}-HTML.tar.gz )"
 
 SLOT="2.6"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="gnome joystick odbc opengl sdl X"
 RDEPEND="${RDEPEND}
 	X? ( opengl? ( virtual/opengl )
