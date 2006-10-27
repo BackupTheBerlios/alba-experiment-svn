@@ -9,7 +9,7 @@ HOMEPAGE="http://live.gnome.org/GnomePilot"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ppc sparc x86 ~x86-sunos"
+KEYWORDS="~amd64 ~ia64 ppc sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=gnome-base/libgnome-2.0
