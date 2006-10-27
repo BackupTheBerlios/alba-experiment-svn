@@ -16,7 +16,7 @@ IUSE=""
 
 SLOT="2"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 hppa ia64 ppc sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 ppc sparc x86 -x86-sunos"
 
 RDEPEND=">=dev-libs/glib-2"
 
