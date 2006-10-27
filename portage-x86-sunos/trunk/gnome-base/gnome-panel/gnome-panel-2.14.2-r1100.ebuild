@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 FDL-1.1 LGPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~arm hppa ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 ~arm hppa ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="doc eds"
 
 RDEPEND=">=gnome-base/gnome-desktop-2.11.92
