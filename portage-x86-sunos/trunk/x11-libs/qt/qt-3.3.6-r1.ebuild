@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/qt-3.3.6-r1.ebuild,v 1.12 2006/08/23 12:39:16 caleb Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-libs/qt/qt-3.3.6-r1.ebuild,v 1.14 2006/10/15 21:43:57 kloeri Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -16,7 +16,7 @@ SRC_URI="ftp://ftp.trolltech.com/qt/source/qt-x11-${SRCTYPE}-${PV}.tar.bz2
 LICENSE="|| ( QPL-1.0 GPL-2 )"
 
 SLOT="3"
-KEYWORDS="alpha amd64 hppa ~ia64 ~mips ppc ~ppc-macos ppc64 sparc x86 ~x86-fbsd ~x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ~ppc-macos ppc64 sparc x86 ~x86-fbsd ~x86-sunos"
 IUSE="cups debug doc examples firebird gif ipv6 mysql nas nis odbc opengl postgres sqlite xinerama immqt immqt-bc"
 
 DEPEND="|| ( ( x11-libs/libXcursor
@@ -68,7 +68,7 @@ pkg_setup() {
 	CXX=$(tc-getCXX)
 	if [[ ${CXX/g++/} != ${CXX} ]]; then
 		PLATCXX="g++"
-	elif [[ ${CXX/icc/} != ${CXX} ]]; then
+	elif [[ ${CXX/icpc/} != ${CXX} ]]; then
 		PLATCXX="icc"
 	else
 		die "Unknown compiler ${CXX}."
@@ -85,8 +85,6 @@ pkg_setup() {
 			PLATNAME="darwin" ;;
 		*-linux-*|*-linux)
 			PLATNAME="linux" ;;
-		*-solaris*|*-linux)
-			PLATNAME="solaris" ;;
 		*)
 			die "Unknown CHOST, no platform choosed."
 	esac
