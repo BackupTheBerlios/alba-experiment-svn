@@ -1,0 +1,6 @@
+MD5 2cfe4dfe768970b3819ed062a52852e4 files/digest-keychain-2.6.6 244
+RMD160 1e4db634e4c4d56c50917ea78ebf6b0127f04fa5 files/digest-keychain-2.6.6 244
+SHA256 cd6cbbd3ceeedd71899e92263beedfca371cef4759fae9b564fd6c062625ce6f files/digest-keychain-2.6.6 244
+MD5 82d78dfa9e6efd360d1b22d9ca0fe5c1 keychain-2.6.6.ebuild 908
+RMD160 6f13ac92533904498db14867308210aae6d56eb8 keychain-2.6.6.ebuild 908
+SHA256 61229e586d5f67fbe34307de3478bdda2feec8412fdf8cc8394de53ffe3d975a keychain-2.6.6.ebuild 908
