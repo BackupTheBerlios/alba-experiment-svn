@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/xscreensaver-4.24.ebuild,v 1.2 2006/03/08 10:36:52 nelchael Exp $
+# $Header: /var/cvsroot/gentoo-x86/x11-misc/xscreensaver/xscreensaver-4.24.ebuild,v 1.15 2006/10/22 01:06:57 omp Exp $
 
 inherit eutils flag-o-matic pam fixheadtails autotools
 
@@ -11,15 +11,12 @@ SRC_URI="http://www.jwz.org/xscreensaver/${P}.tar.gz"
 HOMEPAGE="http://www.jwz.org/xscreensaver/"
 
 LICENSE="BSD"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="alpha amd64 ~arm hppa ia64 mips ppc ppc64 sparc x86 ~x86-sunos"
 SLOT="0"
 
-RDEPEND="|| ( (
-		x11-libs/libXxf86misc
-		x11-apps/xwininfo
-		x11-apps/appres
-		xinerama? ( x11-libs/libXinerama ) )
-	virtual/x11 )
+RDEPEND="x11-libs/libXxf86misc
+	x11-apps/xwininfo
+	x11-apps/appres
 	media-libs/netpbm
 	>=sys-libs/zlib-1.1.4
 	>=dev-libs/libxml2-2.5
@@ -30,20 +27,21 @@ RDEPEND="|| ( (
 	kerberos? ( krb4? ( >=app-crypt/mit-krb5-1.2.5 ) )
 	jpeg? ( media-libs/jpeg )
 	opengl? ( virtual/opengl
-	          >=media-libs/gle-3.0.1 )
+		>=media-libs/gle-3.0.1 )
+	xinerama? ( x11-libs/libXinerama )
 	!arm? ( new-login? ( gnome-base/gdm ) )"
 
 DEPEND="${RDEPEND}
-	|| ( ( x11-proto/xf86vidmodeproto
-		x11-proto/xextproto
-		x11-proto/scrnsaverproto
-		x11-proto/recordproto
-		x11-proto/xf86miscproto
-		xinerama? ( x11-proto/xineramaproto ) )
-	virtual/x11 )
+	x11-proto/xf86vidmodeproto
+	x11-proto/xextproto
+	x11-proto/scrnsaverproto
+	x11-proto/recordproto
+	x11-proto/xf86miscproto
+	=sys-devel/automake-1.4*
 	sys-devel/bc
 	dev-util/pkgconfig
-	nls? ( sys-devel/gettext )"
+	nls? ( sys-devel/gettext )
+	xinerama? ( x11-proto/xineramaproto )"
 
 # simple workaround for the flurry screensaver
 filter-flags -mabi=altivec
@@ -192,7 +190,7 @@ pkg_postinst() {
 		ewarn "has made every effort to make sure these savers do not"
 		ewarn "abuse their setuid root status, the possibilty exists that"
 		ewarn "someone will exploit xscreensaver and will be able to gain"
-		ewarn "root privledges. You have been warned."
+		ewarn "root privileges. You have been warned."
 		ewarn
 	fi
 
