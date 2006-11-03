@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/gtk2-perl/Gnome2-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=x11-libs/gtk+-2
