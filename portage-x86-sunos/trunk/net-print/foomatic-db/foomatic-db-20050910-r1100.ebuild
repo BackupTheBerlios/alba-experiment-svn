@@ -11,7 +11,7 @@ SRC_URI="http://linuxprinting.org/download/foomatic/${PN}-3.0-${PV}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~hppa ~amd64 ~ia64 ~mips ~ppc64 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="cups ppds"
 
 DEPEND="dev-libs/libxml2
