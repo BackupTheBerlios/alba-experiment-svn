@@ -9,7 +9,7 @@ HOMEPAGE="http://www.burtonini.com/blog/computers/sound-juicer/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="flac ogg"
 
 RDEPEND=">=dev-libs/glib-2
