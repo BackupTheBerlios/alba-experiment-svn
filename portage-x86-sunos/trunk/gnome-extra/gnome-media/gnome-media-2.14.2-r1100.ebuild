@@ -9,7 +9,7 @@ HOMEPAGE="http://ronald.bitfreak.net/gnome-media.php"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="ipv6 mad ogg vorbis"
 
 RDEPEND=">=dev-libs/glib-1.3.7
