@@ -11,7 +11,7 @@ SRC_URI="${SRC_URI} http://www.ibiblio.org/gentoo/distfiles/gtk+-1.2.10-r8-gento
 
 LICENSE="LGPL-2.1"
 SLOT="1"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 ~sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 ~sparc x86 ~x86-fbsd -x86-sunos"
 IUSE="nls debug"
 
 RDEPEND="||	(
