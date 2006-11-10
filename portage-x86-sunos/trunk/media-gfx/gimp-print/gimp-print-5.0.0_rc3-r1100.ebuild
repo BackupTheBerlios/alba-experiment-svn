@@ -10,7 +10,7 @@ MY_P=gutenprint-${PV/_/-}
 
 DESCRIPTION="Gimp Print Drivers"
 HOMEPAGE="http://gimp-print.sourceforge.net"
-KEYWORDS="~x86 ~ppc ~alpha ~sparc ~hppa ~amd64 ~ppc64 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 SRC_URI="mirror://sourceforge/gimp-print/${MY_P}.tar.bz2"
 
 RDEPEND="cups? ( >=net-print/cups-1.1.14 )
