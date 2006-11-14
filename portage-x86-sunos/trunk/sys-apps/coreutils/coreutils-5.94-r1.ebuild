@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-apps/coreutils/coreutils-5.94-r1.ebuild,v 1.13 2006/09/19 04:48:21 vapier Exp $
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic toolchain-funcs gnuize
 
 PATCH_VER=1.2
 DESCRIPTION="Standard GNU file utilities (chmod, cp, dd, dir, ls...), text utilities (sort, tr, head, wc..), and shell utilities (whoami, who,...)"
@@ -15,7 +15,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.bz2
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-sunos"
-IUSE="acl build nls selinux static"
+IUSE="acl build nls selinux static gnulinks g-prefix"
 
 RDEPEND="selinux? ( sys-libs/libselinux )
 	acl? ( sys-apps/acl sys-apps/attr )
@@ -143,6 +143,10 @@ src_install() {
 		for x in * ; do
 			dosym /bin/${x} /usr/bin/${x}
 		done
+	else
+		if use gnulinks; then 
+			create_gnulinks
+		fi
 	fi
 
 	if ! use build ; then
