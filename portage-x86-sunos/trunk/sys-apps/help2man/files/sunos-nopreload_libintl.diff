@@ -1,0 +1,24 @@
+--- configure.in.orig	2006-09-18 11:56:59.571941000 +0200
++++ configure.in	2006-09-18 11:57:05.059282000 +0200
+@@ -22,14 +22,14 @@
+     AC_PATH_PROG(MSGFMT, msgfmt)
+     test -z "$MSGFMT" && AC_MSG_ERROR([gettext required])
+ 
+-    AC_MSG_CHECKING([for pre-loadable libintl])
+-    preload=`LD_PRELOAD="preloadable_libintl.so" sh -c 'echo yes' 2>/dev/null`
+-    AC_MSG_RESULT(${preload:=no})
+-    test "$preload" = no && \
+-	AC_MSG_ERROR([libpreloadable_libintl.so required (gettext 0.12+)])
++    #AC_MSG_CHECKING([for pre-loadable libintl])
++    #preload=`LD_PRELOAD="preloadable_libintl.so" sh -c 'echo yes' 2>/dev/null`
++    #AC_MSG_RESULT(${preload:=no})
++    #test "$preload" = no && \
++	#AC_MSG_ERROR([libpreloadable_libintl.so required (gettext 0.12+)])
+ 
+-    extra_make_all='preload man_l10n'
+-    extra_make_install='install_preload install_l10n'
++    extra_make_all='man_l10n'
++    extra_make_install='install_l10n'
+ fi
+ 
+ AC_PROG_INSTALL

@@ -13,7 +13,7 @@ SRC_URI="ftp://ftp.pld.org.pl/software/${PN}/${P}.tar.bz2"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 -x86-sunos"
 IUSE="nls pam selinux skey nousuid"
 
 RDEPEND=">=sys-libs/cracklib-2.7-r3

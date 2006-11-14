@@ -15,7 +15,7 @@ SRC_URI="mirror://debian/pool/main/a/apmd/${MY_P}.orig.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ppc ppc64 x86 x86-sunos"
+KEYWORDS="~amd64 ~ia64 ppc ppc64 x86 -x86-sunos"
 IUSE="X nls"
 
 RDEPEND=">=sys-apps/debianutils-1.16

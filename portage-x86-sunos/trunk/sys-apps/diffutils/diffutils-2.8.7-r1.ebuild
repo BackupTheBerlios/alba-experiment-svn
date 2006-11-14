@@ -1,8 +1,8 @@
-# Copyright 1999-2005 Gentoo Foundation
+# Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-apps/diffutils/diffutils-2.8.7-r1.ebuild,v 1.10 2006/01/11 04:37:28 vapier Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-apps/diffutils/diffutils-2.8.7-r1.ebuild,v 1.11 2006/03/30 14:41:18 flameeyes Exp $
 
-inherit eutils flag-o-matic
+inherit eutils flag-o-matic gnuize
 
 DESCRIPTION="Tools to make diffs and compare files"
 HOMEPAGE="http://www.gnu.org/software/diffutils/diffutils.html"
@@ -11,7 +11,7 @@ SRC_URI="ftp://alpha.gnu.org/gnu/diffutils/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-sunos"
 IUSE="nls static"
 
 RDEPEND=""
@@ -43,6 +43,7 @@ src_unpack() {
 }
 
 src_compile() {
+
 	local myconf
 	local pprefix="g"
 	if use g-prefix; then
@@ -56,28 +57,9 @@ src_compile() {
 src_install() {
 	make install DESTDIR="${D}" || die
 	dodoc ChangeLog NEWS README
-
+	
 	if use gnulinks ; then
-		[[ ! -z ${GNU_PREFIX} ]] || die "Environment variable GNU_PREFIX must be set."
-		# create symlinks in /usr/gnu/bin
-		dodir ${GNU_PREFIX}/bin
-		cd "${D}"
-		for d in usr/bin bin; do
-			if [ -d ${d} ]; then
-				cd ${d}
-				einfo "Creating links from ${d} in ${GNU_PREFIX}/bin"
-				local x
-				for x in * ; do
-					if [ -x ${x} ]; then
-						if use g-prefix; then
-							dosym /${d}/${x} ${GNU_PREFIX}/bin/${x:1} #removes leading 'g'
-						else
-							dosym /${d}/${x} ${GNU_PREFIX}/bin/${x}
-						fi
-					fi
-				done
-			fi
-		done
+		create_gnulinks	
 	fi
 
 	# use the manpage from 'sys-apps/man-pages'
