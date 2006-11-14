@@ -16,6 +16,9 @@ SHA256 d483bfa7cbae8b7b3dffc25291a9b0038f809daad77cdfbe60cf89f0703ef0d8 autoconf
 MD5 64e81f3cf7de45933a7481d4916ddaa0 autoconf-2.59-r9999.ebuild 1347
 RMD160 6fd53f6ca4efa6848ba13eaae1175c951ce5fc76 autoconf-2.59-r9999.ebuild 1347
 SHA256 37da8c083c098059375a0e91fd37f7418785777c1293e3ca2b0727d8d0a0928d autoconf-2.59-r9999.ebuild 1347
+MD5 50d0c3927688cffcc980d1b43b0be0fe autoconf-2.60.ebuild 1380
+RMD160 1faf82b15e5828835c83e62f03e803379d43a547 autoconf-2.60.ebuild 1380
+SHA256 dcc69e8c6a5375e3a66a9d5b17c6488aa408a39f438a7bb1b85ed5ad6af8dac6 autoconf-2.60.ebuild 1380
 MD5 dee8e039dbcfd6a6543e28688615ee17 files/autoconf-2.13-destdir.patch 677
 RMD160 ff71fb18c1676455e267dfd8f3059e8c9384fe19 files/autoconf-2.13-destdir.patch 677
 SHA256 67c3eaf2f8aaf3acbcff387bc3fc6d46688b56a6b51043344e301bfaf16186a0 files/autoconf-2.13-destdir.patch 677
@@ -28,6 +31,6 @@ SHA256 0bd6d00b2f77e89684ed7305c3821090950fcc6407ab045fd3ace91ac0b19abd files/au
 MD5 d21d9ebffb28303a365f043cc1b600b6 files/autoconf-2.60-tests.patch 720
 RMD160 cbae84eb08b71dc034b38d8ad2d915e06180235d files/autoconf-2.60-tests.patch 720
 SHA256 96a54f7623bd889f3f8a12c802305a8e07a0dc781796ab78c8f9b61c4644c9fa files/autoconf-2.60-tests.patch 720
-MD5 a89abcc4d9e5c007b80e450c1689ee34 files/digest-autoconf-2.13 241
-RMD160 a848c53b51743fd791d51d89270a121ff9164b63 files/digest-autoconf-2.13 241
-SHA256 26ad44620584cc253db8880190e1d291f37bbdd27ffbe55b1549845a34b93ce0 files/digest-autoconf-2.13 241
+MD5 020c405f06573dc9d4a75f886b70808f files/digest-autoconf-2.60 244
+RMD160 d7cf76ddd2867dc0bae4ad3fc70986bbdf64a468 files/digest-autoconf-2.60 244
+SHA256 c25aef093f7f5a69ff230c02f88c47efa6c4c5d05d31f836b70589b043d67f5e files/digest-autoconf-2.60 244
