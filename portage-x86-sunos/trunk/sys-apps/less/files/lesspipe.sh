@@ -71,6 +71,7 @@ lesspipe() {
 	*.ps|*.pdf) ps2ascii "$1" || pstotext "$1" || pdftotext "$1" ;;
 	*.doc)      antiword "$1" || catdoc "$1" ;;
 	*.rtf)      unrtf --nopict --text "$1" ;;
+	*.conf|*.txt|*.log) ;; # force less to work on these directly #150256
 
 	### URLs ###
 	ftp://*|http://*|*.htm|*.html)
@@ -91,7 +92,7 @@ lesspipe() {
 	*.zip)        unzip -l "$1" ;;
 	*.rpm)        rpm -qpivl --changelog -- "$1" ;;
 	*.cpi|*.cpio) cpio -itv < "$1" ;;
-	*.ace)        unace l -- "$1" ;;
+	*.ace)        unace l "$1" ;;
 	*.arc)        arc v "$1" ;;
 	*.arj)        unarj l -- "$1" ;;
 	*.cab)        cabextract -l -- "$1" ;;
@@ -100,6 +101,7 @@ lesspipe() {
 	*.7z)         7z l -- "$1" ;;
 	*.a)          ar tv "$1" ;;
 	*.so)         readelf -h -d -s -- "$1" ;;
+	*.mo|*.gmo)   msgunfmt -- "$1" ;;
 
 	*.rar|.r[0-9][0-9])  unrar l -- "$1" ;;
 
@@ -185,7 +187,7 @@ if [[ -z $1 ]] ; then
 	echo "Usage: lesspipe.sh <file>"
 elif [[ $1 == "-V" ]] ; then
 	Id="cvsid"
-	cvsid="$Id: lesspipe.sh,v 1.14 2005/12/23 00:35:38 vapier Exp $"
+	cvsid="$Id: lesspipe.sh,v 1.19 2006/11/05 21:58:50 vapier Exp $"
 	cat <<-EOF
 		$cvsid
 		Copyright 2001-2005 Gentoo Foundation
