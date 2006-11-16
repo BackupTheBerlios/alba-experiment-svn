@@ -10,7 +10,7 @@ SRC_URI="mirror://cpan/authors/id/I/IN/INGY/${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc sparc x86 -x86-sunos"
 IUSE="gtk"
 
 DEPEND="perl-core/Digest-MD5

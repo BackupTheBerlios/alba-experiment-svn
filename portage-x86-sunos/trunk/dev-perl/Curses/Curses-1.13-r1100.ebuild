@@ -13,7 +13,7 @@ SRC_URI="mirror://cpan/authors/id/G/GI/GIRAFFED/${MY_P}.tgz"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE=""
 
 SRC_TEST="do"

@@ -10,7 +10,7 @@ SRC_URI="mirror://cpan/authors/id/P/PA/PARDUS/${PN}/${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="~x86 x86-sunos"
+KEYWORDS="~x86 -x86-sunos"
 IUSE=""
 SRC_TEST="do"
 

@@ -9,7 +9,7 @@ HOMEPAGE="http://www.cpan.org/modules/by-module/IO/ERYQ/${P}.readme"
 SRC_URI="mirror://cpan/authors/id/D/DS/DSKOLL/${P}.tar.gz"
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 s390 sh sparc x86 ~x86-fbsd -x86-sunos"
 IUSE=""
 
 SRC_TEST="do"

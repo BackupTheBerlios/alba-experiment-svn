@@ -10,5 +10,5 @@ HOMEPAGE="http://search.cpan.org/~sburke/${P}/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="x86 amd64 ppc sparc alpha hppa mips ia64 ppc64 x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""

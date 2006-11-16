@@ -11,7 +11,7 @@ SRC_URI="mirror://cpan/authors/id/C/CS/CSOE/${P}.tar.gz"
 HOMEPAGE="http://search.cpan.org/~csoe/${P}/"
 SLOT="0"
 LICENSE="Artistic as-is"
-KEYWORDS="x86 ~ppc sparc alpha hppa mips amd64 x86-sunos"
+KEYWORDS="alpha amd64 hppa mips ~ppc sparc x86 -x86-sunos"
 
 DEPEND=">=sys-libs/ncurses-5.2
 	perl-core/Filter

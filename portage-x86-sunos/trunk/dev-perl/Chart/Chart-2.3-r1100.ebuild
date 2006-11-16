@@ -13,7 +13,7 @@ HOMEPAGE="http://search.cpan.org/~chartgrp/${P}/"
 
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 ia64 ppc ppc64 sparc x86 ~x86-fbsd -x86-sunos"
 IUSE=""
 
 DEPEND="${DEPEND}

@@ -12,7 +12,7 @@ SRC_URI="mirror://cpan/authors/id/M/ML/MLEHMANN/${MY_P}.tar.gz"
 HOMEPAGE="http://gtk2-perl.sf.net/"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ia64 x86 x86-sunos"
+KEYWORDS="~amd64 ~ia64 x86 -x86-sunos"
 IUSE=""
 
 DEPEND="${DEPEND}

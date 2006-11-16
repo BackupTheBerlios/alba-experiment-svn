@@ -10,7 +10,7 @@ HOMEPAGE="http://search.cpan.org/~reatmon/${P}/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="alpha amd64 hppa ia64 ppc sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 ppc sparc x86 -x86-sunos"
 IUSE="ssl"
 
 SRC_TEST="do"

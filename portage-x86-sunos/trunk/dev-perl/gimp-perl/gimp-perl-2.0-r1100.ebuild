@@ -14,7 +14,7 @@ SRC_URI="mirror://cpan/authors/id/S/SJ/SJBURGES/Gimp2/${MY_P}.tar.gz
 
 LICENSE="Artistic GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~sparc x86 x86-sunos"
+KEYWORDS="~amd64 ~sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=dev-lang/perl-5.8

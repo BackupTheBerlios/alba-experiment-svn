@@ -10,7 +10,7 @@ HOMEPAGE="http://search.cpan.org/~JMEHNLE/${P}/"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~alpha ~amd64 hppa ~ia64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 hppa ~ia64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""
 SRC_TEST="do"
 

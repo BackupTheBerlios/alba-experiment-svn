@@ -9,7 +9,7 @@ HOMEPAGE="http://search.cpan.org/search?query=${PN}"
 SRC_URI="mirror://cpan/authors/id/I/IN/INGY/${P}.tar.gz"
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd -x86-sunos"
 IUSE=""
 
 SRC_TEST="do"

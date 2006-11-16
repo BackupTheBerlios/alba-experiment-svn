@@ -10,7 +10,7 @@ HOMEPAGE="http://www.cpan.org/modules/by-module/Mail/${P}.readme"
 
 SLOT="0"
 LICENSE="Artistic"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~s390 sparc x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~s390 sparc x86 -x86-sunos"
 IUSE=""
 
 # Tests are not enabled for this package intentionally. They require

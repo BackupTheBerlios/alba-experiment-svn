@@ -10,7 +10,7 @@ SRC_URI="mirror://cpan/authors/id/G/GB/GBROWN/${P}.tar.gz"
 
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
-KEYWORDS="~ia64 x86 x86-sunos"
+KEYWORDS="~ia64 x86 -x86-sunos"
 IUSE="cups"
 #SRC_TEST="do"
 

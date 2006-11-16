@@ -10,7 +10,7 @@ SRC_URI="mirror://cpan/authors/id/S/ST/STBEY/${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc ppc64 s390 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 ppc ppc64 s390 sparc x86 -x86-sunos"
 IUSE=""
 
 SRC_TEST="do"

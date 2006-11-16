@@ -10,7 +10,7 @@ HOMEPAGE="http://search.cpan.org/~chamas/${P}/"
 IUSE=""
 SLOT="0"
 LICENSE="|| ( Artistic GPL-2 )"
-KEYWORDS="x86 amd64 alpha ppc sparc hppa mips ia64 x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 mips ppc sparc x86 -x86-sunos"
 
 DEPEND="virtual/libc
 	>=dev-lang/perl-5

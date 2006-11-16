@@ -12,5 +12,5 @@ SRC_URI="mirror://cpan/authors/id/R/RM/RMCFARLA/Gtk2-Perl/${MY_P}.tar.gz"
 
 LICENSE="|| ( Artistic GPL-2 )"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 ~mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""

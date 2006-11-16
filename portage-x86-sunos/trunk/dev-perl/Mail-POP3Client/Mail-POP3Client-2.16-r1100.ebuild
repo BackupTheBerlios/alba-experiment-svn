@@ -10,7 +10,7 @@ SRC_URI="mirror://cpan/authors/id/S/SD/SDOWD/${P}.tar.gz"
 
 LICENSE="Artistic"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc s390 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 ppc s390 sparc x86 -x86-sunos"
 IUSE=""
 
 SRC_TEST="do"

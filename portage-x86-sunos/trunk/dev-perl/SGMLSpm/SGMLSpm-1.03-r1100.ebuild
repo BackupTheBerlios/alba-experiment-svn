@@ -9,7 +9,7 @@ SRC_URI="mirror://cpan/authors/id/D/DM/DMEGG/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 s390 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 s390 sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=dev-lang/perl-5.8.0-r12"
