@@ -1,0 +1,16 @@
+#!/usr/bin/bash
+#
+# This script creates links for commands under /usr/libexec/gnu 
+# under /usr/bin prefixing them with 'g'
+#
+. /sbin/functions.sh
+
+D=/usr/bin
+GNUBINDIR=/usr/libexec/gnu
+
+for p in ${GNUBINDIR}/*; do
+	newp=`basename ${p}`
+	einfo "${p} -> ${D}/g${newp}"
+	cd ${D}
+	/usr/libexec/gnu/ln --force -s ../.."${GNUBINDIR}"/"${newp}" g"${newp}"
+done

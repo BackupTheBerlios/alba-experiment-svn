@@ -1,0 +1,134 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use Data::Dumper;
+use Term::ANSIColor qw(:constants);
+$Term::ANSIColor::AUTORESET = 1;
+
+
+my $opt_last;
+my $opt_f;
+my $opt_n;
+my $BASE_PORTDIR=`portageq portdir`;
+my $OVER_PORTDIRS=`portageq portdir_overlay`;
+chomp $BASE_PORTDIR;
+
+GetOptions(
+	"last" => \$opt_last,
+	"filter=s" => \$opt_f,
+	"nowait" => \$opt_n
+	);
+
+
+sub fkeyword($){
+
+	my $eb=shift;
+	open(EB,"$eb")|| die "can't open file: $!";
+	while (my $l=<EB>){
+		next unless $l=~/^KEYWORDS=(.*)$/;
+		return "$1";
+	}
+	close(EB);
+};
+
+foreach my $pkg (@ARGV){
+chomp $pkg;
+# detect esearch
+
+if ($pkg !~ m:/:){
+	if ( -f "/usr/bin/esearch"){
+		my @mypkg=split(' ',`esearch -c --own='%p ' "^$pkg\$"`);
+		$pkg=$mypkg[0];
+		chomp $pkg;
+		if (($#mypkg gt 0)){
+			print "Multiple matches found (\+$#mypkg): using $pkg\n";
+		}
+	}
+}
+
+my ($cat,$name)=split('/',$pkg);
+die "Package not found: you must specify a category/package name." unless defined($cat);
+my %e;
+my %k;
+if (-d "$BASE_PORTDIR/$pkg"){
+	opendir(BPD,"$BASE_PORTDIR/$pkg") || die "can't open dir: $!";
+	foreach (grep { /ebuild/ } readdir(BPD)){
+		$e{$_}="$BASE_PORTDIR";
+		$k{$_}=fkeyword("$BASE_PORTDIR/$pkg/$_");
+	}
+	closedir(BPD);
+}
+for my $OVER_PORTDIR (split(' ',$OVER_PORTDIRS)){
+	chomp $OVER_PORTDIR;
+	if (-d "$OVER_PORTDIR/$pkg"){
+		opendir(OPD,"$OVER_PORTDIR/$pkg") || die "can't open dir: $!";
+		foreach (grep { /ebuild/ } readdir(OPD)){
+			$e{$_}="$OVER_PORTDIR";
+			$k{$_}=fkeyword("$OVER_PORTDIR/$pkg/$_");
+		}
+		closedir(OPD);
+	}
+}
+my $i=1;
+my @a;
+foreach my $x (sort keys %e){
+	my $y = $e{$x};
+	my $K = $k{$x};
+	$x =~ s/\.ebuild$//;
+	if (!defined($opt_f) || ($K=~/ $opt_f[ |"]/)){
+		print " [$i] ";
+		print BOLD, GREEN, "$cat/$x";
+		print CLEAR, CYAN, " ($y) ";
+		print RESET, "[$K]\n" 
+	}
+	$a[$i]="$cat/$x $y";
+	$i++;
+}
+print "\n";
+exit if $opt_n;
+print BOLD, WHITE, "Do you want to add an ebuild to the tree?\n";
+print "Give a command (+num adds an ebuild -num hard masks it)\n", CLEAR;
+print BOLD, WHITE, "ae-ever> ", CLEAR;
+my $num;
+while ($num=<STDIN>){
+	chomp $num;
+	if (($num =~ /^\d+$/) && ($num > 0) && ($num < $i)){
+		print YELLOW, BOLD, " * " , CLEAR , "Adding $a[$num]...\n";
+		system ("ae-add-ebuild $a[$num]");
+		print "\n"
+	}
+	elsif (($num =~/^-\d+$/) && ($num < 0) && ($num > -$i)){
+		print "#$a[abs($num)]\n";
+		my ($k,$y)=split(' ',$a[abs($num)]);
+		#print "#$k\n";
+		$k =~ m#^(.+)/(.+)-(\d.+)$#;
+		#print "$1 $2 $3 $y\n";
+		my $e="$y/$1/$2/$2-$3.ebuild";
+		print YELLOW, BOLD, " * " , CLEAR , "Masking -x86-sunos $e...\n";
+		system ("ekeyword -x86-sunos $e");
+		print "\n";
+	}
+	else {
+		print YELLOW, "No package selected: select one or ^D to exit\n", CLEAR;
+	}
+	print BOLD, WHITE, "ae-ever> ", CLEAR;
+}
+#print "a=@a\n";
+#print "num=$num i=$i\n";
+#print "a[num]=$a[$num]\n";
+#print "num defined\n" if defined($num);
+#print "num gt 0\n" if $num gt 0;
+#print "num lt i\n" if $num < $i;
+#if ((defined($num)) && ($num =~ /^\d*$/) && ($num > 0) && ($num < $i)){
+#	print "Adding $a[$num]...\n";
+#	exec ("ae-add-ebuild $a[$num]") or print STDERR "couldn't exec ae-add-ebuild $!";
+#}
+#else {
+#	print "No package selected\n";
+#}
+}
+
+
