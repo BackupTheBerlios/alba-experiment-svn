@@ -15,7 +15,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/${PN}/releases/${PV}/${P}.source
 	http://dev.gentoo.org/~kloeri/dist/${P}-patches-${PVER}.tar.bz2
 	crypt? ( !moznomail? ( http://www.mozilla-enigmail.org/downloads/src/enigmail-${EMVER}.tar.gz ) )"
 
-KEYWORDS="alpha amd64 hppa ppc ~ppc64 x86 ~x86-fbsd ~x86-sunos"
+KEYWORDS="alpha amd64 hppa ppc ~ppc64 x86 ~x86-fbsd -x86-sunos"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 IUSE="java ldap mozcalendar mozdevelop moznocompose moznoirc moznomail moznoroaming postgres crypt"

@@ -91,6 +91,15 @@ SHA256 01d85d830875aa05eec4ad209033473f3f8603f66781fdd9fd9b3cbb07ecbbd2 files/au
 MD5 bc49c3ba33df8d9bd85ab91d7ffa50bd files/automake-1.9.6-infopage-namechange.patch 1156
 RMD160 6c6c899d0119bd1068c3e1c63301c7ee74663ba9 files/automake-1.9.6-infopage-namechange.patch 1156
 SHA256 32fcbef369731846abb28181cc924c4d8261eafd3b86d3c506976de622b76737 files/automake-1.9.6-infopage-namechange.patch 1156
+MD5 2ede6dd5e637107ae83803eb5fce2fce files/digest-automake-1.4_p6 247
+RMD160 b5e05f8e52b376e9c0d086066156bcae069b0187 files/digest-automake-1.4_p6 247
+SHA256 1cd426d3329ac2495c6817c70807024e6632b8d3291afc43076b71bcff165086 files/digest-automake-1.4_p6 247
 MD5 d465eb29487d18df3427e8482f7c376e files/digest-automake-1.6.3 247
 RMD160 8766b8d66af4d819ddf5c4526c23dae370ee3b52 files/digest-automake-1.6.3 247
 SHA256 8b0b2a3946994f88b2de96db50a6e1896298cccfa392dbd1e2a90e6f976b4a20 files/digest-automake-1.6.3 247
+MD5 d087b5cb0276acbe01eab80a2cbbdeba files/digest-automake-1.8.5-r3 247
+RMD160 320241ea0150d84bba116a9cc547fc024848b48b files/digest-automake-1.8.5-r3 247
+SHA256 a5d9879a43d3ede54d07637e52b369917acbbe9161ee06c57611cf0ba4a9711c files/digest-automake-1.8.5-r3 247
+MD5 5412d32f0701bf03d3e1163b357ba622 files/digest-automake-1.9.6-r2 247
+RMD160 45e4e1eca50ab3121e9925c1135fea9c1cf06052 files/digest-automake-1.9.6-r2 247
+SHA256 c24c9e898e432194f98477a772ae8d41ae06765dff136c5bd4871c3746dae7ae files/digest-automake-1.9.6-r2 247

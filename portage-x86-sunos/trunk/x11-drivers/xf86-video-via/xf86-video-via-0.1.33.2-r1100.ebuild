@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org driver for via cards"
-KEYWORDS="~amd64 ~ia64 ~sh ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~amd64 ~ia64 ~sh ~x86 ~x86-fbsd -x86-sunos"
 IUSE="dri"
 RDEPEND="x11-base/xorg-server
 		x11-libs/libXvMC"

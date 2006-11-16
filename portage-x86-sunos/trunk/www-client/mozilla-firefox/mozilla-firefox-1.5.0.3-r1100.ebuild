@@ -24,7 +24,7 @@ for X in ${SHORTLANGS} ; do
 	SRC_URI="${SRC_URI} linguas_${X%%-*}? ( mirror://gentoo/firefox-${X}-${PV}.xpi )"
 done
 
-KEYWORDS="-* amd64 ~ia64 ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="-* amd64 ~ia64 ppc ~sparc ~x86 -x86-sunos"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 IUSE="java mozdevelop"

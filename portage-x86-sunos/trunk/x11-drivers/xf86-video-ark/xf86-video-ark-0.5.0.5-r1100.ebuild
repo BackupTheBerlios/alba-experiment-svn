@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org driver for ark cards"
-KEYWORDS="~amd64 ~ia64 ~sh ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~amd64 ~ia64 ~sh ~x86 ~x86-fbsd -x86-sunos"
 RDEPEND="x11-base/xorg-server"
 DEPEND="${RDEPEND}
 	x11-proto/fontsproto

@@ -10,7 +10,7 @@ SRC_URI="http://www.unixuser.org/~euske/vnc2swf/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc x86 ~x86-sunos"
+KEYWORDS="~amd64 ppc x86 -x86-sunos"
 IUSE="x11vnc"
 
 RDEPEND="|| ( (

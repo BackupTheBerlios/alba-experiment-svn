@@ -47,6 +47,8 @@ if [[ ${CATEGORY} != cross-* ]] ; then
 	PDEPEND="${PDEPEND} elibc_glibc? ( >=sys-libs/glibc-2.3.6 )"
 fi
 
+IUSE="sun-ld"
+
 src_unpack() {
 	gcc_src_unpack
 

@@ -14,7 +14,7 @@ SRC_URI="mirror://apache/ws/${PN}/${MY_PV}/${SRCFILE}"
 
 LICENSE="Apache-1.1"
 SLOT="1"
-KEYWORDS="x86 amd64 x86-sunos"
+KEYWORDS="amd64 x86 -x86-sunos"
 IUSE="debug doc"
 
 RDEPEND=">=virtual/jre-1.4

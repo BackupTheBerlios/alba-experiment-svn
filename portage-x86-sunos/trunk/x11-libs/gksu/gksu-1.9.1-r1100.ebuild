@@ -9,7 +9,7 @@ HOMEPAGE="http://www.nongnu.org/gksu/"
 SRC_URI="http://people.debian.org/~kov/gksu/gksu/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="${IUSE} nls"
 
 RDEPEND=">=x11-libs/libgksu-1.9.2

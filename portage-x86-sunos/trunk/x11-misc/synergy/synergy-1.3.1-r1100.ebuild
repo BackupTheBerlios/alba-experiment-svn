@@ -8,7 +8,7 @@ DESCRIPTION="Lets you easily share a single mouse and keyboard between multiple 
 SRC_URI="mirror://sourceforge/${PN}2/${P}.tar.gz"
 HOMEPAGE="http://synergy2.sourceforge.net/"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 SLOT="0"
 IUSE=""
 

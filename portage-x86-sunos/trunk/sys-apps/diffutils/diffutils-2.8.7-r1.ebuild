@@ -46,9 +46,7 @@ src_compile() {
 
 	local myconf
 	local pprefix="g"
-	if use g-prefix; then
-		myconf="--program-prefix=${pprefix}"
-	fi
+	[[ ! "${USERLAND}" == "GNU" ]] && myconf="--bindir=/usr/libexec/gnu"
 	econf $(use_enable nls) ${myconf} || die "econf"
 	use static && append-ldflags -static
 	emake LDFLAGS="${LDFLAGS}" || die "make"
@@ -58,10 +56,6 @@ src_install() {
 	make install DESTDIR="${D}" || die
 	dodoc ChangeLog NEWS README
 	
-	if use gnulinks ; then
-		create_gnulinks	
-	fi
-
 	# use the manpage from 'sys-apps/man-pages'
 	rm -f "${D}"/usr/share/man/man1/diff.1*
 }

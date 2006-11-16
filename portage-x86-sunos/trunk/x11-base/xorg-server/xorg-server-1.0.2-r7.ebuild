@@ -38,7 +38,7 @@ DESCRIPTION="X.Org X servers"
 # It's suid and has lazy bindings, so FEATURES="stricter" doesn't work
 RESTRICT="stricter"
 KEYWORDS="~alpha amd64 ~arm hppa ~ia64 ~mips ~ppc ppc64 ~sh ~sparc x86 ~x86-fbsd ~x86-sunos"
-IUSE="dri ipv6 minimal xprint"
+IUSE="dri ipv6 minimal xprint sun-ld vanilla"
 RDEPEND="x11-libs/libXfont
 	x11-libs/xtrans
 	x11-libs/libXau
@@ -139,6 +139,17 @@ pkg_setup() {
 	eselect opengl set --impl-headers ${OPENGL_DIR}
 	env-update
 	ldconfig
+}
+
+src_unpack() {
+	unpack ${A}
+
+	if use sun-ld; then 
+		cd ${WORKDIR}
+		epatch ${FILESDIR}/sunos-visibility.patch
+	fi
+	cd ${S}
+
 }
 
 src_install() {

@@ -18,7 +18,7 @@ SRC_URI="svg? ( !wmf? ( !png? ( !pdf? ( !doc? (
 
 LICENSE="public-domain" # creative commons
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 IUSE="doc svg png pdf wmf gzip"
 
 # We don't really need anything to run

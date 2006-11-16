@@ -10,9 +10,9 @@ SHA256 b3d5c54525bc600e3b23ca39ac659b8a657f968ab26998cc942bd049f2bc5fc0 coreutil
 MD5 c926ccc4f1ebd666b05108496083cf51 coreutils-5.96-r1100.ebuild 4734
 RMD160 1d0050d1b850f8e997c6398b4eb3bdae929e6850 coreutils-5.96-r1100.ebuild 4734
 SHA256 a8e0eb90424dd35057fdf06962492dbb84001d36b69ded3bd675c4a3516a7bde coreutils-5.96-r1100.ebuild 4734
-MD5 8317650ff23f6b26a11dc38bc1e7814b coreutils-6.4.ebuild 4535
-RMD160 c8cf958cc32cd45d08a562e10802cc1476d04f10 coreutils-6.4.ebuild 4535
-SHA256 53521fb53fccdc5526d608dbd936703af587e96e32825338fb9e23f1e155b0a0 coreutils-6.4.ebuild 4535
+MD5 c9912d1545a660fbf0b7a8c965f62ba1 coreutils-6.4.ebuild 4576
+RMD160 7acbb18dd6442d9d14de4fce6af1b6501915e284 coreutils-6.4.ebuild 4576
+SHA256 a2780b82ea94ef0687245d6161cc5b7a99cec6e72300beec306b72391ff0a396 coreutils-6.4.ebuild 4576
 MD5 55735adb690972eec2c296929d3c7856 files/130_all_coreutils-gnulibs-regex-symbol-hiding.patch 1024
 RMD160 cedf30f1dedfe4893f6f01cd45e288a59211ff1a files/130_all_coreutils-gnulibs-regex-symbol-hiding.patch 1024
 SHA256 7ad379725aec72a27173c2e9297019d94525af654f3eae41ddf1654f28cc6cbc files/130_all_coreutils-gnulibs-regex-symbol-hiding.patch 1024

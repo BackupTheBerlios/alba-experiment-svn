@@ -37,7 +37,11 @@ src_unpack() {
 }
 
 src_compile() {
-	econf --datadir=/usr/share/misc || die
+	local myconf
+	if [[ ! "$USERLAND" == "GNU" ]]; then
+		myconf="${myconf} --bindir=/usr/libexec/gnu"
+	fi
+	econf --datadir=/usr/share/misc ${myconf} || die
 	emake || die "emake failed"
 
 	use python && cd python && distutils_src_compile

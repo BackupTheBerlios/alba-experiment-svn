@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2.1"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""
 
 DOCS="AUTHORS ChangeLog INSTALL NEWS README* docs/*.txt"

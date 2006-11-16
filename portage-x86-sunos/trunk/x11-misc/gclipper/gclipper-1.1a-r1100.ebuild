@@ -8,7 +8,7 @@ HOMEPAGE="http://www.theleaf.be/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="x86 sparc ppc x86-sunos"
+KEYWORDS="ppc sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND="=x11-libs/gtk+-1.2*"

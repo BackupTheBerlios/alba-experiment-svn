@@ -13,7 +13,7 @@ LICENSE="GPL-2"
 SRC_URI="http://savannah.nongnu.org/download/${PN}/${MY_P}.tar.gz"
 
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~hppa ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="emacs"
 
 DEPEND="|| ( ( x11-libs/libXinerama x11-libs/libXtst ) virtual/x11 )

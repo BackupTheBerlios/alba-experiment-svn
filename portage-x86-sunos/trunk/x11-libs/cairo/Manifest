@@ -7,6 +7,9 @@ SHA256 c0860c9aaa94928a2d9817bbab4a27a3dc083cfe001bd25ac65c1afb63ee6f74 cairo-1.
 MD5 6600a332745a27c0333f2c8193a805fa files/cairo-1.0.2-pkg_macro.patch 542
 RMD160 2e5e8c260f59f6bb63d7e5e46d38b0ee25f025ad files/cairo-1.0.2-pkg_macro.patch 542
 SHA256 4ab7469075776de4fadcc733c9ceb9754b075e5a99b05fcdc247fc597b971149 files/cairo-1.0.2-pkg_macro.patch 542
+MD5 2a4e0d69f3712d3974defd1e815d272e files/cairo-1.0.4-ssp-nonsense.patch 591
+RMD160 1189664f878f77bd00457a7db682ea6e5fd8ead7 files/cairo-1.0.4-ssp-nonsense.patch 591
+SHA256 a6a0c993eec5687dd78325a35ee790597194b331290be0f2ae20783d7c638115 files/cairo-1.0.4-ssp-nonsense.patch 591
 MD5 62e12d0a17511661330583a73c7eac08 files/cairo-1.0.4-x86-sunos-visibility.patch 1168
 RMD160 e509ca2e2400881f5c1a2731956a8ffa57c51669 files/cairo-1.0.4-x86-sunos-visibility.patch 1168
 SHA256 d1ecf5f9202c2e0d320820506349f386ac7170e4957468d795a8550fe37a90c5 files/cairo-1.0.4-x86-sunos-visibility.patch 1168

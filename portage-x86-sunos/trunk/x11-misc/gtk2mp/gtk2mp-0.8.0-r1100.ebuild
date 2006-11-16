@@ -7,7 +7,7 @@ SRC_URI="http://www.moviegalaxy.com.ar/gtk2mp/${P}.tar.gz"
 HOMEPAGE="http://www.moviegalaxy.com.ar/gtk2mp/"
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~amd64 ~ppc x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc x86 -x86-sunos"
 
 IUSE=""
 

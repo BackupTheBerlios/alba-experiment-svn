@@ -14,7 +14,7 @@ SRC_URI="http://people.debian.org/~kov/gksu/${MY_PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="${IUSE} nls doc"
 
 DEPEND="doc? ( >=dev-util/gtk-doc-1.2-r1 )

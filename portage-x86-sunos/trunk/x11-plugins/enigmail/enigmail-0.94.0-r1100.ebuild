@@ -16,7 +16,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${TBVER}/so
 	http://dev.gentoo.org/~anarchy/dist/mozilla-thunderbird-${TBVER}-patches-${TBPVER}.tar.bz2
 	http://www.mozilla-enigmail.org/downloads/src/enigmail-${EMVER}.tar.gz"
 
-KEYWORDS="amd64 ~ia64 ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="amd64 ~ia64 ppc ~sparc ~x86 -x86-sunos"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 IUSE=""

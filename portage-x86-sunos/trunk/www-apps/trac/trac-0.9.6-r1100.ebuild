@@ -9,7 +9,7 @@ HOMEPAGE="http://trac.edgewall.com/"
 SRC_URI="http://ftp.edgewall.com/pub/trac/${P}.tar.gz"
 
 LICENSE="trac"
-KEYWORDS="~amd64 ppc ~sparc x86 ~x86-sunos"
+KEYWORDS="~amd64 ppc ~sparc x86 -x86-sunos"
 IUSE="cgi fastcgi postgres sqlite enscript silvercity"
 
 # doing so because utils (such as trac-admin), manpages... overlap

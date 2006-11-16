@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org driver for dynapro input devices"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sh ~sparc ~x86 ~x86-fbsd -x86-sunos"
 RDEPEND="x11-base/xorg-server"
 DEPEND="${RDEPEND}
 	x11-proto/inputproto

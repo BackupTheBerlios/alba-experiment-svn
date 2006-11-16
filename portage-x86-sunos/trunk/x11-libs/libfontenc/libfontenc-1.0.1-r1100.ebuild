@@ -8,7 +8,7 @@
 inherit x-modular
 
 DESCRIPTION="X.Org fontenc library"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd -x86-sunos"
 RDEPEND=""
 DEPEND="${RDEPEND}
 	x11-proto/xproto"

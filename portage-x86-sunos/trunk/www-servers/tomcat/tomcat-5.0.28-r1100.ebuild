@@ -9,7 +9,7 @@ DESCRIPTION="Apache Servlet-2.4/JSP-2.0 Container"
 SLOT="${PV/.*}"
 SRC_URI="mirror://apache/tomcat/tomcat-${SLOT}/v${PV}/src/jakarta-${P}-src.tar.gz"
 HOMEPAGE="http://tomcat.apache.org/"
-KEYWORDS="~x86 ~amd64 -ppc64 x86-sunos"
+KEYWORDS="~amd64 -ppc64 ~x86 -x86-sunos"
 LICENSE="Apache-2.0"
 #only one accepted revision of struts to force upgrading because of slot changes
 RDEPEND=">=virtual/jdk-1.4

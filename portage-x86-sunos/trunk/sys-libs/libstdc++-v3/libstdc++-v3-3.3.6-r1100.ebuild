@@ -130,7 +130,7 @@ HOMEPAGE="http://gcc.gnu.org/libstdc++/"
 
 LICENSE="GPL-2 LGPL-2.1"
 
-KEYWORDS="~amd64 ~mips ~ppc ppc64 sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~mips ~ppc ppc64 sparc ~x86 -x86-sunos"
 IUSE="multilib nls nptl build"
 
 # 3.2.3 -> 3.3.x install .so.5, so lets slot to 5

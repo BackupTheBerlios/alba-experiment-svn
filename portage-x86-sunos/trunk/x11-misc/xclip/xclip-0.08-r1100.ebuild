@@ -9,7 +9,7 @@ HOMEPAGE="http://people.debian.org/~kims/xclip/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86 ~x86-fbsd -x86-sunos"
 IUSE=""
 
 RDEPEND="|| ( (

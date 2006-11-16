@@ -9,7 +9,7 @@ HOMEPAGE="http://freshmeat.net/projects/goffice/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="gnome"
 #cairo support broken and -gtk broken
 

@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 LICENSE="GPL-2"
 
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~x86 ~ia64 ~ppc ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86 -x86-sunos"
 IUSE=""
 
 # autogen doesn't build with lower versions of guile on ia64
