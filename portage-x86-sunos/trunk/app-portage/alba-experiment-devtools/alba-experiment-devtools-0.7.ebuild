@@ -8,7 +8,7 @@ SRC_URI="http://download.berlios.de/alba-experiment/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-x86-sunos"
+KEYWORDS="~x86-sunos"
 IUSE=""
 
 DEPEND=">=sys-apps/portage-2.0.50
@@ -20,18 +20,17 @@ src_install() {
 	insinto /etc/conf.d
 	doins alba-experiment-devtools.conf
 
-	dodir /usr/share/alba-experiment/bin
-	exeinto /usr/share/alba-experiment/bin
-	cd "${S}"/bin
-	doexe *
+	for d in bin tools ; do
+		dodir /usr/share/alba-experiment/${d}
+		exeinto /usr/share/alba-experiment/${d}
+		cd "${S}"/${d}
+		doexe *
+	done
 
-	dodir /usr/share/alba-experiment/tools
-	exeinto /usr/share/alba-experiment/tools
-	cd "${S}"/tools
-	doexe *
-	
-	cd "${S}"/conf
-	dodir /usr/share/alba-experiment/conf
-	insinto /usr/share/alba-experiment/conf
-	doins *
+	for d in conf lib ; do
+		cd "${S}"/${d}
+		dodir /usr/share/alba-experiment/${d}
+		insinto /usr/share/alba-experiment/${d}
+		doins *
+	done
 }

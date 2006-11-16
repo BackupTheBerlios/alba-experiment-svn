@@ -8,7 +8,7 @@ SRC_URI="http://download.berlios.de/alba-experiment/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-x86-sunos"
+KEYWORDS="~x86-sunos"
 IUSE=""
 
 DEPEND=">=sys-apps/portage-2.0.50
