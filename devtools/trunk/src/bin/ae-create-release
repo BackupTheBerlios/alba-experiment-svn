@@ -23,14 +23,14 @@ SVNURL="https://svn.berlios.de/svnroot/repos/alba-experiment/${MODULE}/tags/"
 [ ! -d ${WORKDIR} ] && mkdir -p ${WORKDIR} 2>/dev/null 1>&2
 
 einfon "Finding last release..."
-REL0=`svn ls ${SVNURL} | $TAIL -n 1`
+REL0=`svn ls ${SVNURL} | gtail -n 1`
 REL=`basename $REL0`
 echo "${REL}"
 
 einfo "Exporting the release"
 svn export ${SVNURL}/${REL} "${WORKDIR}"/"${PKGNAME}"-"${REL}"
 
-ebegin "Creating package"
+ebegin "Creating package ${PKGNAME}-${REL}"
 cd ${WORKDIR}
-$TAR jcf ${DISTDIR}/${PKGNAME}-${REL}.tar.bz2 ${PKGNAME}-${REL}
+gtar jcf ${DISTDIR}/${PKGNAME}-${REL}.tar.bz2 ${PKGNAME}-${REL}
 eend $?

@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+ROOT=${ROOT} emerge -pe --columns $1 | grep 'N' | cut -d ']' -f 2 | cut -d '[' -f 1 |  while read pkg; do
+	echo $pkg
+	ae-ever -n $pkg
+done

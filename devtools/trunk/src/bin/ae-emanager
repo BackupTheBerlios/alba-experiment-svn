@@ -22,6 +22,59 @@ GetOptions(
 	"nowait" => \$opt_n
 	);
 
+#my %cmds={
+#	diff => &ediff,
+#	print => &eprint,
+#	p => &eprint
+#};
+
+
+sub ediff($$){
+	system("colordiff -U0 $1 $2");
+}
+
+sub eprint($){
+	my $pkg=shift;
+	my ($cat,$name)=split('/',$pkg);
+	my %e;
+	my %k;
+	if (-d "$BASE_PORTDIR/$pkg"){
+		opendir(BPD,"$BASE_PORTDIR/$pkg") || die "can't open dir: $!";
+		foreach (grep { /ebuild/ } readdir(BPD)){
+			$e{$_}="$BASE_PORTDIR";
+			$k{$_}=fkeyword("$BASE_PORTDIR/$pkg/$_");
+		}
+		closedir(BPD);
+	}
+	for my $OVER_PORTDIR (split(' ',$OVER_PORTDIRS)){
+		chomp $OVER_PORTDIR;
+		if (-d "$OVER_PORTDIR/$pkg"){
+			opendir(OPD,"$OVER_PORTDIR/$pkg") || die "can't open dir: $!";
+			foreach (grep { /ebuild/ } readdir(OPD)){
+				$e{$_}="$OVER_PORTDIR";
+				$k{$_}=fkeyword("$OVER_PORTDIR/$pkg/$_");
+			}
+			closedir(OPD);
+		}
+	}
+	my @a;
+	my $i=1;
+	foreach my $x (sort keys %e){
+		my $y = $e{$x};
+		my $K = $k{$x};
+		$x =~ s/\.ebuild$//;
+		if (!defined($opt_f) || ($K=~/ $opt_f[ |"]/)){
+			print " [$i] ";
+			print BOLD, GREEN, "$cat/$x";
+			print CLEAR, CYAN, " ($y) ";
+			print RESET, "[$K]\n" 
+		}
+		$a[$i]="$cat/$x $y";
+		$i++;
+	}
+	print "\n";
+	return $i,@a;
+}
 
 sub fkeyword($){
 
@@ -51,43 +104,8 @@ if ($pkg !~ m:/:){
 
 my ($cat,$name)=split('/',$pkg);
 die "Package not found: you must specify a category/package name." unless defined($cat);
-my %e;
-my %k;
-if (-d "$BASE_PORTDIR/$pkg"){
-	opendir(BPD,"$BASE_PORTDIR/$pkg") || die "can't open dir: $!";
-	foreach (grep { /ebuild/ } readdir(BPD)){
-		$e{$_}="$BASE_PORTDIR";
-		$k{$_}=fkeyword("$BASE_PORTDIR/$pkg/$_");
-	}
-	closedir(BPD);
-}
-for my $OVER_PORTDIR (split(' ',$OVER_PORTDIRS)){
-	chomp $OVER_PORTDIR;
-	if (-d "$OVER_PORTDIR/$pkg"){
-		opendir(OPD,"$OVER_PORTDIR/$pkg") || die "can't open dir: $!";
-		foreach (grep { /ebuild/ } readdir(OPD)){
-			$e{$_}="$OVER_PORTDIR";
-			$k{$_}=fkeyword("$OVER_PORTDIR/$pkg/$_");
-		}
-		closedir(OPD);
-	}
-}
-my $i=1;
-my @a;
-foreach my $x (sort keys %e){
-	my $y = $e{$x};
-	my $K = $k{$x};
-	$x =~ s/\.ebuild$//;
-	if (!defined($opt_f) || ($K=~/ $opt_f[ |"]/)){
-		print " [$i] ";
-		print BOLD, GREEN, "$cat/$x";
-		print CLEAR, CYAN, " ($y) ";
-		print RESET, "[$K]\n" 
-	}
-	$a[$i]="$cat/$x $y";
-	$i++;
-}
-print "\n";
+my ($i,@a)=eprint($pkg);
+
 exit if $opt_n;
 print BOLD, WHITE, "Do you want to add an ebuild to the tree?\n";
 print "Give a command (+num adds an ebuild -num hard masks it)\n", CLEAR;
@@ -101,7 +119,7 @@ while ($num=<STDIN>){
 		print "\n"
 	}
 	elsif (($num =~/^-\d+$/) && ($num < 0) && ($num > -$i)){
-		print "#$a[abs($num)]\n";
+		#print "#$a[abs($num)]\n";
 		my ($k,$y)=split(' ',$a[abs($num)]);
 		#print "#$k\n";
 		$k =~ m#^(.+)/(.+)-(\d.+)$#;
@@ -111,6 +129,10 @@ while ($num=<STDIN>){
 		system ("ekeyword -x86-sunos $e");
 		print "\n";
 	}
+	#elsif (defined($cmd{$num})){
+		#my ($c,@par)=split(' ',$num);
+		#&{$cmd{$c}} @par;
+	#}
 	else {
 		print YELLOW, "No package selected: select one or ^D to exit\n", CLEAR;
 	}

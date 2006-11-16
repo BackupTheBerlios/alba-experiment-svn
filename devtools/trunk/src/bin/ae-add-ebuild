@@ -26,6 +26,7 @@ else
 fi
 
 ADDKEYWORD='~x86-sunos'
+PATCHBASEDIR="$AEOVERLAY/patches"
 
 CATEGORY=`echo $EBUILD| sed s/-[0-9].*$//`
 EBNAME=`echo $EBUILD | cut -d '/' -f 2`
@@ -84,5 +85,11 @@ if grep gen_usr_ldscript $AEOVERLAY/$CATEGORY/$EBNEWNAME.ebuild ; then
 	ewarn "NOTE: The ebuild uses gen_usr_ldscript. You have to remove it if you are using sun-ld"
 fi
 
+if grep $CATEGORY $PATCHBASEDIR/patched-ebuilds; then
+	ewarn
+	ewarn "NOTE: this ebuild has been patched to work with x86-sunos"
+	ewarn "      check in $PATCHBASEDIR/$CATEGORY for diff file"
+fi
+
 einfo "Testing the ebuild dependecies"
-emerge -qav =${CATEGORY}${EBVER}
+emerge -av =${CATEGORY}${EBVER}

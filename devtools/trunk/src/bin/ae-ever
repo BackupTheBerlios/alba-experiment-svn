@@ -6,6 +6,8 @@ use warnings;
 use Getopt::Long;
 use Data::Dumper;
 use Term::ANSIColor qw(:constants);
+use lib '/usr/share/alba-experiment/lib';
+use PortageUtils;
 $Term::ANSIColor::AUTORESET = 1;
 
 
@@ -13,13 +15,15 @@ my $opt_last;
 my $opt_f;
 my $opt_n;
 my $BASE_PORTDIR=`portageq portdir`;
-my $OVER_PORTDIRS=`portageq portdir_overlay`;
+my $OVER_PORTDIRS="$ENV{'AEOVERLAY'}";
 chomp $BASE_PORTDIR;
+
+die "You must set AEOVERLAY environment variable." unless ($OVER_PORTDIRS);
 
 GetOptions(
 	"last" => \$opt_last,
 	"filter=s" => \$opt_f,
-	"nowait" => \$opt_n
+	"non-interactive" => \$opt_n
 	);
 
 
@@ -51,13 +55,15 @@ if ($pkg !~ m:/:){
 
 my ($cat,$name)=split('/',$pkg);
 die "Package not found: you must specify a category/package name." unless defined($cat);
-my %e;
-my %k;
+my %ep;
+my %eo;
+my %kp;
+my %ko;
 if (-d "$BASE_PORTDIR/$pkg"){
 	opendir(BPD,"$BASE_PORTDIR/$pkg") || die "can't open dir: $!";
 	foreach (grep { /ebuild/ } readdir(BPD)){
-		$e{$_}="$BASE_PORTDIR";
-		$k{$_}=fkeyword("$BASE_PORTDIR/$pkg/$_");
+		$ep{$_}="$BASE_PORTDIR";
+		$kp{$_}=fkeyword("$BASE_PORTDIR/$pkg/$_");
 	}
 	closedir(BPD);
 }
@@ -66,45 +72,59 @@ for my $OVER_PORTDIR (split(' ',$OVER_PORTDIRS)){
 	if (-d "$OVER_PORTDIR/$pkg"){
 		opendir(OPD,"$OVER_PORTDIR/$pkg") || die "can't open dir: $!";
 		foreach (grep { /ebuild/ } readdir(OPD)){
-			$e{$_}="$OVER_PORTDIR";
-			$k{$_}=fkeyword("$OVER_PORTDIR/$pkg/$_");
+			$eo{$_}="$OVER_PORTDIR";
+			$ko{$_}=fkeyword("$OVER_PORTDIR/$pkg/$_");
 		}
 		closedir(OPD);
 	}
 }
 my $i=1;
 my @a;
-foreach my $x (sort keys %e){
-	my $y = $e{$x};
-	my $K = $k{$x};
+print CYAN, "$BASE_PORTDIR\n", CLEAR;
+my $y=$BASE_PORTDIR;
+foreach my $x (sort pkg_sort map {/^(.*).ebuild/;$1}	keys %ep){
+	my $K = $kp{$x.".ebuild"};
 	$x =~ s/\.ebuild$//;
 	if (!defined($opt_f) || ($K=~/ $opt_f[ |"]/)){
 		print " [$i] ";
-		print BOLD, GREEN, "$cat/$x";
-		print CLEAR, CYAN, " ($y) ";
+		print BOLD, GREEN, "$cat/$x ";
 		print RESET, "[$K]\n" 
 	}
-	$a[$i]="$cat/$x $y";
+	push @a,"$cat/$x $y";
 	$i++;
 }
 print "\n";
+print CYAN, "$OVER_PORTDIRS", CLEAR , "\n";
+foreach my $x (sort pkg_sort map {/^(.*).ebuild/;$1}	keys %eo){
+	my $y = $eo{$x.".ebuild"};
+	my $K = $ko{$x.".ebuild"};
+	$x =~ s/\.ebuild$//;
+	if (!defined($opt_f) || ($K=~/ $opt_f[ |"]/)){
+		print " [$i] ";
+		print BOLD, GREEN, "$cat/$x ";
+		print RESET, "[$K]\n" 
+	}
+	push @a,"$cat/$x $y";
+	$i++;
+}
+
+print "\n";
+
 exit if $opt_n;
 print BOLD, WHITE, "Do you want to add an ebuild to the tree? Give a number: ", CLEAR;
 my $num=<STDIN>;
 chomp $num;
 #print "a=@a\n";
 #print "num=$num i=$i\n";
-print "a[num]=$a[$num]\n";
+#print "a[num]=$a[$num-1]\n";
 #print "num defined\n" if defined($num);
 #print "num gt 0\n" if $num gt 0;
 #print "num lt i\n" if $num < $i;
-if ((defined($num)) && ($num =~ /^\d*$/) && ($num > 0) && ($num < $i)){
-	print "Adding $a[$num]...\n";
-	exec ("ae-add-ebuild $a[$num]") or print STDERR "couldn't exec ae-add-ebuild $!";
+if ((defined($num)) && ($num =~ /^\d*$/) && ($num-1 ge 0) && ($num-1 < $i)){
+        print "Adding $a[$num-1]...\n";
+        exec ("ae-add-ebuild $a[$num-1]") or print STDERR "couldn't exec ae-add-ebuild $!";
 }
 else {
-	print "No package selected\n";
+        print "No package selected\n";
 }
-
-
 
