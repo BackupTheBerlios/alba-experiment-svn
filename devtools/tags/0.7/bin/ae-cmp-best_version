@@ -1,0 +1,99 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+
+use Getopt::Long;
+use Data::Dumper;
+use Term::ANSIColor qw(:constants);
+use PortageUtils;
+$Term::ANSIColor::AUTORESET = 1;
+
+
+my $opt_last;
+my $opt_f;
+my $opt_n;
+my $BASE_PORTDIR=`portageq portdir`;
+my $OVER_PORTDIRS=`portageq portdir_overlay`;
+chomp $BASE_PORTDIR;
+
+my $filter_out1='-x86';
+my $filter_out2='-x86-sunos';
+
+GetOptions(
+	"last" => \$opt_last,
+	"filter=s" => \$opt_f,
+	"nowait" => \$opt_n
+	);
+
+
+sub fkeyword($){
+
+	my $eb=shift;
+	#print "DEBUG: $eb\n";
+	open(EB,"$eb")|| die "can't open file: $!";
+	while (my $l=<EB>){
+		next unless $l=~/^KEYWORDS=(.*)$/;
+		return "$1";
+	}
+	close(EB);
+};
+
+while (my $pkg=<>){
+#my $pkg=$ARGV[0];
+chomp $pkg;
+# detect esearch
+
+if ($pkg !~ m:/:){
+	if ( -f "/usr/bin/esearch"){
+		my @mypkg=split(' ',`esearch -c --own='%p ' "^$pkg\$"`);
+		$pkg=$mypkg[0];
+		chomp $pkg;
+		if (($#mypkg gt 0)){
+			print "Multiple matches found (\+$#mypkg): using $pkg\n";
+		}
+	}
+}
+
+my ($cat,$name)=split('/',$pkg);
+die "Package not found: you must specify a category/package name." unless defined($cat);
+my %ep;
+my %eo;
+my %kp;
+my %ko;
+if (-d "$BASE_PORTDIR/$pkg"){
+	opendir(BPD,"$BASE_PORTDIR/$pkg") || die "can't open dir: $!";
+	foreach (grep { /ebuild/ } readdir(BPD)){
+		my $kw=fkeyword("$BASE_PORTDIR/$pkg/$_");
+		next if ($kw =~ / $filter_out1[ |"]/);
+		next if (defined($opt_f) && ($kw =~ / $opt_f[ |"]/));
+		$ep{$_}="$BASE_PORTDIR";
+		$kp{$_}=$kw;
+	}
+	closedir(BPD);
+}
+for my $OVER_PORTDIR (split(' ',$OVER_PORTDIRS)){
+	chomp $OVER_PORTDIR;
+	if (-d "$OVER_PORTDIR/$pkg"){
+		opendir(OPD,"$OVER_PORTDIR/$pkg") || die "can't open dir: $!";
+		foreach (grep { /ebuild/ } readdir(OPD)){
+			my $kw=fkeyword("$OVER_PORTDIR/$pkg/$_");
+			next if ($kw =~ / $filter_out2[ |"]/);
+			$eo{$_}="$OVER_PORTDIR";
+			$ko{$_}=$kw;
+		}
+		closedir(OPD);
+	}
+}
+
+my @pkgu = (sort pkg_sort map {/^(.*).ebuild/;$1}	keys %ep);
+print "$cat/$pkgu[$#pkgu]";
+
+print " ";
+
+my @pkgo = (sort pkg_sort map {/^(.*).ebuild/;$1}	keys %eo);
+print "$cat/$pkgo[$#pkgo]";
+
+print "\n";
+}
+

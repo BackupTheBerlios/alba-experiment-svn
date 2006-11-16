@@ -1,0 +1,22 @@
+#!/usr/bin/perl
+
+use strict;
+
+my $PATCHBASEDIR="/opt/portage/x86-sunos/patches";
+my $PKGNAME=$ARGV[0];
+
+if ($PKGNAME =~ m:(\w+-\w+)/(\w+): ){
+	open(PLIST,'+>>',"$PATCHBASEDIR/patched-ebuilds") || die "Cannot open patched-ebuilds file";
+	my $found=0;
+	while ((my $l=<PLIST>) && ( $found == 0 )){
+		$found=1 if ($l=~/$PKGNAME/);
+	}
+	print PLIST "$PKGNAME\n" if ($found == 0);
+	mkdir "$PATCHBASEDIR/$1" if ! -d "$PATCHBASEDIR/$1" ;
+	mkdir "$PATCHBASEDIR/$1/$2" if ! -d "$PATCHBASEDIR/$1/$2" ;
+	print "$PATCHBASEDIR/$1/$2\n";
+	close(PLIST)
+} else {
+	die "\"$PKGNAME\" is not a catebory/package specification.\n";
+}
+

@@ -1,0 +1,24 @@
+#!/usr/bin/perl
+use LWP::UserAgent;
+use Data::Dumper;
+
+$ua = LWP::UserAgent->new;
+$ua->timeout(10);
+$ua->env_proxy;
+
+my $query=$ARGV[0];
+
+die "You must specify a query" unless ($query);
+
+my $response = $ua->get("http://packages.gentoo.org/search/?ssearch=$query");
+
+print Dumper($ua);
+
+if ($response->is_success){
+	print $response->content;
+}
+else {
+	die $response->status_line;
+}
+
+
