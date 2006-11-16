@@ -8,7 +8,7 @@ SRC_URI="mirror://debian/pool/main/d/dwww/dwww_${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 ~x86-sunos"
+KEYWORDS="~amd64 ~hppa ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 # tests only operate upon things we don't use

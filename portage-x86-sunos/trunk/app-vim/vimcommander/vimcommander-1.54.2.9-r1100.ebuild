@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: Total Commander style file explorer"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=808"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPFILES="vimcommander"

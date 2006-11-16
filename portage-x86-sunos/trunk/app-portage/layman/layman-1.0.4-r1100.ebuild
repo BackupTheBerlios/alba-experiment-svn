@@ -10,7 +10,7 @@ SRC_URI="http://build.pardus.de/downloads/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~x86 -x86-sunos"
 IUSE=""
 S=${WORKDIR}/${P}
 

@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/abeni/${P}.tbz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 
 IUSE=""
 DEPEND=">=dev-python/jaxml-3.01

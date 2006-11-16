@@ -12,7 +12,7 @@ SRC_URI="http://poppler.freedesktop.org/${MY_P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd -x86-sunos"
 IUSE="gtk qt cairo qt4"
 
 RDEPEND="~app-text/poppler-${PV}

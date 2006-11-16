@@ -8,7 +8,7 @@ DESCRIPTION="vim plugin: display marks on lines with errors"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=1027"
 
 LICENSE="as-is"
-KEYWORDS="alpha ia64 mips ppc sparc x86 x86-sunos"
+KEYWORDS="alpha ia64 mips ppc sparc x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPTEXT=\

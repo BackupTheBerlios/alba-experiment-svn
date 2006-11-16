@@ -8,7 +8,7 @@ SRC_URI="http://www.palfrader.org/keylookup/files/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~ppc-macos x86 ~x86-sunos"
+KEYWORDS="~amd64 ppc ~ppc-macos x86 -x86-sunos"
 IUSE=""
 
 RDEPEND="dev-lang/perl

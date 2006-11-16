@@ -8,7 +8,7 @@ HOMEPAGE="http://www.claws-and-paws.com/software/furball/index.shtml"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="x86 ppc sparc x86-sunos"
+KEYWORDS="ppc sparc x86 -x86-sunos"
 IUSE=""
 RDEPEND="dev-lang/perl
 	app-arch/tar"

@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: GNU info documentation browser"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=21"
 LICENSE="BSD"
-KEYWORDS="x86 alpha sparc ia64 ppc s390 amd64 x86-sunos"
+KEYWORDS="alpha amd64 ia64 ppc s390 sparc x86 -x86-sunos"
 IUSE=""
 DEPEND="${DEPEND} >=sys-apps/sed-4"
 

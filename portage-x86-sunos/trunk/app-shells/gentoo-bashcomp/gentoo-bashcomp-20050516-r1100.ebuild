@@ -8,7 +8,7 @@ SRC_URI="http://download.berlios.de/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=app-shells/bash-completion-20050121-r3"

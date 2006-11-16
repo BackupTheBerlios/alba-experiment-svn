@@ -10,7 +10,7 @@ SRC_URI="mirror://gnupg/alpha/gpa/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="nls"
 
 DEPEND=">=x11-libs/gtk+-2.2

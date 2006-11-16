@@ -8,7 +8,7 @@ DESCRIPTION="vim plugin: enhanced Tab key functionality"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=182"
 
 LICENSE="vim"
-KEYWORDS="alpha sparc x86 ppc amd64 ia64 mips x86-sunos"
+KEYWORDS="alpha amd64 ia64 mips ppc sparc x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPTEXT=\

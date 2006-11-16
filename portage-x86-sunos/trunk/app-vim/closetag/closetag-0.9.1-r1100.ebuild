@@ -8,7 +8,7 @@ DESCRIPTION="vim plugin: close HTML/XML tags quickly"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=13"
 
 LICENSE="vim"
-KEYWORDS="alpha amd64 ia64 mips ppc sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 mips ppc sparc x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPTEXT=\

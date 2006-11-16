@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: SVN (subversion) integration"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=922"
 LICENSE="as-is"
-KEYWORDS="alpha amd64 ~hppa ia64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ~hppa ia64 sparc x86 -x86-sunos"
 IUSE=""
 
 # vimspell map conflict, bug #91965

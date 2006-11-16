@@ -12,7 +12,7 @@ SRC_URI="http://dealmeida.net/public/${MY_P}.tar.gz"
 
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~sparc x86 ~x86-sunos"
+KEYWORDS="~amd64 ppc ~sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND="dev-lang/python"

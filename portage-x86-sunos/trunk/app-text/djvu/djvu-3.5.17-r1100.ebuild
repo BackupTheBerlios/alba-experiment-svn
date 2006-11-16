@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/djvu/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="xml qt jpeg tiff debug threads nls nsplugin kde"
 
 DEPEND="jpeg? ( >=media-libs/jpeg-6b-r2 )

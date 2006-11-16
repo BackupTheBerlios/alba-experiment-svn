@@ -9,7 +9,7 @@ HOMEPAGE="http://planner.imendio.org/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="doc libgda python"
 
 RDEPEND=">=dev-libs/glib-2.4

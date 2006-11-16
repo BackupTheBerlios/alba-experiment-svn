@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: Wikipedia syntax highlighting"
 HOMEPAGE="http://en.wikipedia.org/wiki/Wikipedia:Text_editor_support#Vim"
 LICENSE="as-is"
-KEYWORDS="alpha ~amd64 ~arm ~hppa ia64 mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha ~amd64 ~arm ~hppa ia64 mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPTEXT=\

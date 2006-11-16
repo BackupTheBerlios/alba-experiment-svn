@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/${PN}-${CVS_VERSION}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 x86-sunos"
+KEYWORDS="~amd64 ~x86 -x86-sunos"
 IUSE="evo irmc nokia6600 ldap bluetooth pda kdepim arts kdeenablefinal gnokii"
 # evo       - evolution plugin
 # irmc      - bluetooth/irmc/irda plugin ( local )

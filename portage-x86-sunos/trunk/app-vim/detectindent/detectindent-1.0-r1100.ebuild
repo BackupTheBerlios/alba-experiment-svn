@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: automatically detect file indent settings"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=1171"
 LICENSE="vim"
-KEYWORDS="amd64 ~hppa mips ~ppc sparc x86 x86-sunos"
+KEYWORDS="amd64 ~hppa mips ~ppc sparc x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPFILES="detectindent.txt"

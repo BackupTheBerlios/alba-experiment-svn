@@ -13,7 +13,7 @@ SRC_URI="ftp://ftp.berlios.de/pub/cdrecord/${P}.tar.bz2
 
 LICENSE="GPL-2 freedist"
 SLOT="0"
-KEYWORDS="amd64 arm hppa ia64 m68k ppc ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="amd64 arm hppa ia64 m68k ppc ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE="on-the-fly-crypt unicode"
 
 DEPEND="!app-cdr/dvdrtools"

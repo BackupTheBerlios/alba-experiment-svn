@@ -8,7 +8,7 @@ SRC_URI="ftp://ftp.enst.fr/pub/unix/a2ps/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc-macos ppc64 sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc-macos ppc64 sparc x86 ~x86-fbsd -x86-sunos"
 IUSE=""
 
 RDEPEND="virtual/libc"

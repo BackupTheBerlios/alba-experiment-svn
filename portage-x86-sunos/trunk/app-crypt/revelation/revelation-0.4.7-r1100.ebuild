@@ -10,7 +10,7 @@ SRC_URI="ftp://oss.codepoet.no/revelation/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~x86-sunos"
+KEYWORDS="~x86 -x86-sunos"
 IUSE=""
 
 DEPEND="dev-python/gnome-python-extras

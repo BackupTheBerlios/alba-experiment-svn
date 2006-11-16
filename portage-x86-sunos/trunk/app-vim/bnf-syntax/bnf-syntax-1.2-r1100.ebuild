@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: BNF file syntax highlighting"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=250"
 LICENSE="as-is"
-KEYWORDS="alpha amd64 ia64 mips ~ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 mips ~ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPTEXT=\

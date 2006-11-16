@@ -17,7 +17,7 @@ SRC_URI="${CSTR}/${MY_P}-release.tar.gz
 
 LICENSE="FESTIVAL BSD as-is"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ia64 ~mips ~ppc ~ppc64 sparc ~x86 x86-sunos"
+KEYWORDS="~alpha amd64 ~hppa ia64 ~mips ~ppc ~ppc64 sparc ~x86 -x86-sunos"
 
 RDEPEND="sys-libs/ncurses"
 DEPEND="${RDEPEND}

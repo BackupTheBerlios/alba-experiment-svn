@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: RGB / HSV color selector"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=927"
 LICENSE="public-domain"
-KEYWORDS="sparc x86 mips ppc amd64 alpha ia64 x86-sunos"
+KEYWORDS="alpha amd64 ia64 mips ppc sparc x86 -x86-sunos"
 IUSE=""
 RDEPEND=">=app-editors/gvim-6.2"
 

@@ -19,7 +19,7 @@ DEPEND=">=virtual/jdk-1.4
 
 LICENSE="sun-bcla-jsapi freetts"
 SLOT="0"
-KEYWORDS="amd64 ~ppc ~ppc64 sparc ~x86 x86-sunos"
+KEYWORDS="amd64 ~ppc ~ppc64 sparc ~x86 -x86-sunos"
 IUSE="doc jikes mbrola"
 
 src_unpack() {

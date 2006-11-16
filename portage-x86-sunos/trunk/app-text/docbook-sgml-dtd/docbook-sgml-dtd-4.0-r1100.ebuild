@@ -11,7 +11,7 @@ SRC_URI="http://www.oasis-open.org/docbook/sgml/${PV}/${MY_P}.zip"
 
 LICENSE="X11"
 SLOT="4.0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=app-arch/unzip-5.41"

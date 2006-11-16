@@ -10,7 +10,7 @@ SRC_URI="mirror://gentoo/distfiles/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="nls gtk2"
 
 RDEPEND="gtk2? ( >=x11-libs/gtk+-2 )

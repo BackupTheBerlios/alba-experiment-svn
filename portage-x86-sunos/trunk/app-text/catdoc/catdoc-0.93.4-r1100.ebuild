@@ -9,7 +9,7 @@ LICENSE="GPL-2"
 
 IUSE="tk"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc x86 ~x86-sunos"
+KEYWORDS="~amd64 ~ppc x86 -x86-sunos"
 
 DEPEND="tk? ( >=dev-lang/tk-8.1 )"
 

@@ -8,7 +8,7 @@ SRC_URI="http://jodrell.net/files/podbrowser/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 x86-sunos"
+KEYWORDS="~x86 -x86-sunos"
 IUSE=""
 SRC_TEST="do"
 

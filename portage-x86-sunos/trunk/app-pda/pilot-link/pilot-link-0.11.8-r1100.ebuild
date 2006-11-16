@@ -10,7 +10,7 @@ SRC_URI="http://pilot-link.org/source/${P}.tar.bz2"
 
 LICENSE="|| ( GPL-2 LGPL-2 )"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="perl java tcltk python png readline"
 
 DEPEND="virtual/libc

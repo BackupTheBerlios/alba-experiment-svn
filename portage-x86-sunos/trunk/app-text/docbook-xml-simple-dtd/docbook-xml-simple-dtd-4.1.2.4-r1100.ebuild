@@ -11,7 +11,7 @@ SRC_URI="http://www.nwalsh.com/docbook/simple/${PV}/${MY_P}.zip"
 
 LICENSE="X11"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=app-arch/unzip-5.41"

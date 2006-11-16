@@ -11,7 +11,7 @@ HOMEPAGE="http://hyperestraier.sf.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
-KEYWORDS="~amd64 ~ppc ~x86 ~x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 SLOT="0"
 
 DEPEND=">=dev-db/qdbm-1.8.53

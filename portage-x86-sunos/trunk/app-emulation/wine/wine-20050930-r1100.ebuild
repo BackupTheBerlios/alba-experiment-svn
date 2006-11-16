@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/Wine-${PV}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="-* x86-sunos"
+KEYWORDS="-* -x86-sunos"
 IUSE="alsa arts cups debug esd gif glut jack jpeg lcms ldap nas ncurses opengl oss scanner truetype xml X"
 RESTRICT="test" #72375
 

@@ -7,7 +7,7 @@ inherit vim-plugin
 DESCRIPTION="vim plugin: library with various useful functions"
 HOMEPAGE="http://www.vim.org/scripts/script.php?script_id=197"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 ia64 mips ppc sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 mips ppc sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=app-vim/multvals-3.10"

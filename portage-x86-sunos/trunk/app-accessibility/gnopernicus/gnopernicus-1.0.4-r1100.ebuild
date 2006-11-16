@@ -9,7 +9,7 @@ HOMEPAGE="http://www.baum.ro/gnopernicus.html"
 
 LICENSE="LGPL-2"
 SLOT="1"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="brltty doc ipv6"
 
 RDEPEND=">=gnome-base/gconf-2.6.1

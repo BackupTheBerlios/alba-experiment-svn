@@ -8,7 +8,7 @@ SRC_URI="mirror://sourceforge/colordiff/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 mips ppc ppc-macos ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 mips ppc ppc-macos ppc64 sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND="sys-apps/diffutils"

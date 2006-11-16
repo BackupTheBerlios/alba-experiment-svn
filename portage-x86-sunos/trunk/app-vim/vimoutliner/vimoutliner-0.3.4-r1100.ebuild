@@ -8,7 +8,7 @@ DESCRIPTION="vim plugin: easy and fast outlining"
 HOMEPAGE="http://www.vimoutliner.org/"
 SRC_URI="mirror://gentoo/${P}.tar.gz"
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~mips ~ppc ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 VIM_PLUGIN_HELPFILES="vimoutliner"

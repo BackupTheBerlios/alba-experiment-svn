@@ -12,7 +12,7 @@ LICENSE="GPL-2"
 IUSE="dbus djvu doc dvi nautilus t1lib tiff comics"
 
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ~ppc64 sparc x86 -x86-sunos"
 
 RDEPEND="
 	dvi? (

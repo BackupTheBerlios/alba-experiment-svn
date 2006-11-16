@@ -9,7 +9,7 @@ HOMEPAGE="http://seahorse.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ppc ppc64 sparc x86 ~x86-sunos"
+KEYWORDS="alpha ~amd64 ppc ppc64 sparc x86 -x86-sunos"
 
 RDEPEND=">=app-crypt/gnupg-1.2.0
 	>=app-crypt/gpgme-1.0.0

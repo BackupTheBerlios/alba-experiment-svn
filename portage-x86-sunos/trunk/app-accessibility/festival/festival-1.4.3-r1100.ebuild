@@ -24,7 +24,7 @@ SRC_URI="${SITE}/${P}-release.tar.gz
 
 LICENSE="FESTIVAL BSD as-is"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 sparc ~x86 x86-sunos"
+KEYWORDS="~alpha amd64 ~hppa ~ia64 ~mips ~ppc ~ppc64 sparc ~x86 -x86-sunos"
 IUSE="asterisk doc linguas_es mbrola"
 
 RDEPEND=">=app-accessibility/speech-tools-1.2.3-r2

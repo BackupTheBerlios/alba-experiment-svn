@@ -10,7 +10,7 @@ SRC_URI="http://cvs.nvu.com/download/${P}-sources.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
 
-KEYWORDS="x86 ppc sparc amd64 ~x86-sunos"
+KEYWORDS="amd64 ppc sparc x86 -x86-sunos"
 IUSE=""
 DEPEND="sys-apps/gawk
 	dev-lang/perl

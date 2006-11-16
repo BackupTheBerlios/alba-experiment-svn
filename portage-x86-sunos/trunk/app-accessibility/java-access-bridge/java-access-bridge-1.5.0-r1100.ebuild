@@ -9,7 +9,7 @@ HOMEPAGE="http://developer.gnome.org/projects/gap/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 COMMON_DEPEND=">=gnome-base/libbonobo-2

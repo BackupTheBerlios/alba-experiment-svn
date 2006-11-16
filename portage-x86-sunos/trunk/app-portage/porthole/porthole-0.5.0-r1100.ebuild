@@ -9,7 +9,7 @@ HOMEPAGE="http://porthole.sourceforge.net"
 SRC_URI="mirror://sourceforge/porthole/${P}.tar.bz2"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc ~sparc x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="debug nls"
 RDEPEND=">=dev-lang/python-2.3
 	>=sys-apps/portage-2.0.51-r3

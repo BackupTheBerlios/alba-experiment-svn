@@ -8,7 +8,7 @@ SRC_URI="http://www.l8nite.net/projects/splat/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 hppa ~mips ppc ppc-macos ppc64 ~sparc x86 x86-sunos"
+KEYWORDS="amd64 hppa ~mips ppc ppc-macos ppc64 ~sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND="dev-lang/perl"

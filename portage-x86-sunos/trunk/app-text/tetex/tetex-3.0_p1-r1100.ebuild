@@ -21,7 +21,7 @@ SRC_URI="http://dev.gentoo.org/~nattfodd/tetex/${TETEX_SRC}
 	${SRC_PATH_TETEX}/${TETEX_TEXMF}
 	http://dev.gentoo.org/~nattfodd/tetex/${P}-gentoo.tar.gz"
 
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc-macos ~ppc64 ~s390 ~sparc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~m68k ~ppc ~ppc-macos ~ppc64 ~s390 ~sparc ~x86 ~x86-fbsd -x86-sunos"
 
 # these are defined in tetex.eclass and tetex-3.eclass
 IUSE=""
