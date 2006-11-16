@@ -1,0 +1,19 @@
+--- /usr/portage/sys-devel/libperl/libperl-5.8.8-r1.ebuild	2006-10-17 10:37:25.000000000 +0200
++++ libperl-5.8.8-r1.ebuild	2006-10-25 16:24:44.423330000 +0200
+@@ -121,7 +120,7 @@
+ 	#   LIBPERL=libperl.so.${SLOT}.`echo ${PV} | cut -d. -f1,2`
+ 	#
+ 	cd ${S};
+-	use userland_Darwin || epatch ${FILESDIR}/${PN}-create-libperl-soname.patch
++	use userland_Darwin || use sun-ld || epatch ${FILESDIR}/${PN}-create-libperl-soname.patch
+ 
+ 	# Configure makes an unwarranted assumption that /bin/ksh is a
+ 	# good shell. This patch makes it revert to using /bin/sh unless
+@@ -172,6 +171,7 @@
+ 		*-netbsd*) osname="netbsd" ;;
+ 		*-openbsd*) osname="openbsd" ;;
+ 		*-darwin*) osname="darwin" ;;
++		*-solaris*) osname="solaris" ;;
+ 
+ 		*) osname="linux" ;;
+ 	esac

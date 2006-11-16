@@ -1,0 +1,58 @@
+--- gdm-2.14.9-r1.ebuild	2006-10-25 09:39:16.795420000 +0200
++++ gdm-2.14.9-r1100.ebuild	2006-09-29 15:33:00.875757000 +0200
+@@ -1,15 +1,15 @@
+ # Copyright 1999-2006 Gentoo Foundation
+ # Distributed under the terms of the GNU General Public License v2
+-# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/gdm-2.14.9-r1.ebuild,v 1.10 2006/10/20 20:59:19 kloeri Exp $
++# $Header: /var/cvsroot/gentoo-x86/gnome-base/gdm/gdm-2.14.9-r1.ebuild,v 1.6 2006/07/17 17:18:01 dang Exp $
+ 
+-inherit eutils pam gnome2
++inherit eutils pam gnome2 sun-smf-utils
+ 
+ DESCRIPTION="GNOME Display Manager"
+ HOMEPAGE="http://www.gnome.org/projects/gdm/"
+ 
+ LICENSE="GPL-2"
+ SLOT="0"
+-KEYWORDS="alpha amd64 hppa ia64 mips ppc ppc64 sparc x86 ~x86-sunos"
++KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ~ppc64 sparc x86 -x86-sunos"
+ IUSE="accessibility ipv6 pam selinux tcpd xinerama"
+ 
+ # Name of the tarball with gentoo specific files
+@@ -142,6 +142,11 @@
+ pkg_postinst() {
+ 	gnome2_pkg_postinst
+ 
++	case ${CHOST} in 
++		*-solaris2.1*)
++			smf_install 
++			;;
++		*)
+ 	# Soft restart, assumes Gentoo defaults for file locations
+ 	FIFOFILE=/var/gdm/.gdmfifo
+ 	PIDFILE=/var/run/gdm.pid
+@@ -155,6 +160,8 @@
+ 
+ 	einfo "To make GDM start at boot, edit /etc/rc.conf"
+ 	einfo "and then execute 'rc-update add xdm default'."
++	;;
++	esac
+ 
+ 	einfo "GDM has changed the location of its configuration file.  Please"
+ 	einfo "edit /etc/X11/gdm/custom.conf.  The factory defaults are located"
+@@ -166,6 +173,13 @@
+ pkg_postrm() {
+ 	gnome2_pkg_postrm
+ 
+-	einfo "To remove GDM from startup please execute"
+-	einfo "'rc-update del xdm default'"
++	case ${CHOST} in 
++		*-solaris2.1*)
++			smf_delete 
++			;;
++		*)
++			einfo "To remove GDM from startup please execute"
++			einfo "'rc-update del xdm default'"
++			;;
++	esac
+ }

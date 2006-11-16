@@ -7,7 +7,7 @@ CXXFLAGS="-O2 -march=i386 -pipe"
 MAKE="gmake"
 
 GNU_PREFIX="/usr/gnu"
-PREROOTPATH='/usr/gnu/bin:/usr/bin'
+PREROOTPATH='/usr/libexec/gnu:/usr/gnu/bin:/usr/bin'
 USE="x86-sunos g-prefix gnulinks nopie sun-ld gcc displace openldap-alternate-prefix nodrm"
 
 FEATURES="-sandbox -userpriv"

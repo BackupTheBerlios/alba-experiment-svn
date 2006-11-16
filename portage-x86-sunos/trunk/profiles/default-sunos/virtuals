@@ -11,7 +11,7 @@ virtual/libc	    sys-sunos/SUNWcsl
 virtual/jdk	    sys-sunos/SUNWj5dev
 virtual/jre	    sys-sunos/SUNWj5rt
 virtual/mta	    sys-sunos/SUNWsndmu
-virtual/libintl	    sys-sunos/SUNWcsu
+#virtual/libintl	    sys-sunos/SUNWcsu
 virtual/alsa	    sys-sunos/SUNWaudd
 virtual/pam	    sys-sunos/SUNWcsl	
 virtual/utempter    sys-sunos/SUNWcsu
@@ -20,6 +20,6 @@ app-arch/cpio	    sys-sunos/SUNWcsu
 app-misc/pax-utils  sys-sunos/SUNWcsu
 # sys-devel/gettext   sys-sunos/SUNWcsu
 sys-libs/glibc	    sys-sunos/SUNWcsl
-dev-libs/libiconv   sys-sunos/SUNWcsu
-sys-apps/man	    sys-sunos/SUNWdoc
+#dev-libs/libiconv   sys-sunos/SUNWcsu
+#sys-apps/man	    sys-sunos/SUNWdoc
 #
