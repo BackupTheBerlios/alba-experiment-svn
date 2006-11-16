@@ -16,3 +16,4 @@ sys-devel/binutils
 sys-apps/gawk
 sys-devel/gcc-config
 sys-devel/bison
+sys-devel/gettext
