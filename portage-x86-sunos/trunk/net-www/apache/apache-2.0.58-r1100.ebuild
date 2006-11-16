@@ -17,7 +17,7 @@ SRC_URI="mirror://apache/httpd/httpd-${PV}.tar.bz2
 
 LICENSE="Apache-2.0"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd -x86-sunos"
 IUSE="apache2 debug doc ldap mpm-leader mpm-peruser mpm-prefork mpm-threadpool mpm-worker no-suexec ssl static-modules threads selinux"
 
 RDEPEND="dev-lang/perl

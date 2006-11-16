@@ -19,7 +19,7 @@ for i in $UPSTREAM_PATCHES ; do
 done
 
 LICENSE="GPL-2"
-KEYWORDS="alpha ~amd64 ~hppa ~ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha ~amd64 ~hppa ~ppc ppc64 sparc x86 -x86-sunos"
 IUSE="snmp"
 
 DEPEND=""

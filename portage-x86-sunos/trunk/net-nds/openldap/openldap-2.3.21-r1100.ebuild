@@ -10,7 +10,7 @@ SRC_URI="mirror://openldap/openldap-release/${P}.tgz"
 
 LICENSE="OPENLDAP"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="berkdb crypt debug gdbm ipv6 kerberos minimal odbc perl readline samba sasl slp ssl tcpd selinux"
 
 # note that the 'samba' USE flag pulling in OpenSSL is NOT an error.  OpenLDAP

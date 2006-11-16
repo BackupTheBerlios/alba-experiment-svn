@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/${PN}/JXv${PV/_/}src.tar.bz2
 	mirror://sourceforge/${PN}/JXv${PV/_/}deploy.tar.bz2"
 LICENSE="CAOSL"
 SLOT="0"
-KEYWORDS="amd64 x86 x86-sunos"
+KEYWORDS="amd64 x86 -x86-sunos"
 IUSE="doc"
 RDEPEND=">=virtual/jre-1.4
 	>=dev-java/commons-discovery-0.2

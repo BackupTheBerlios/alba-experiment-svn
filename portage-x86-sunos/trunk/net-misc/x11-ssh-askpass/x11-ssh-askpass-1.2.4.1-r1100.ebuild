@@ -11,7 +11,7 @@ SRC_URI="http://www.liquidmeme.net/software/x11-ssh-askpass/${P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha amd64 ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha amd64 ia64 ~ppc ~sparc ~x86 -x86-sunos"
 
 DEPEND="virtual/libc
 	|| 	(

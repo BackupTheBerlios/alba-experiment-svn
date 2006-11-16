@@ -13,7 +13,7 @@ SRC_URI="http://www.wireshark.org/download/src/${MY_P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ~ia64 ppc ppc64 sparc x86 ~x86-sunos"
+KEYWORDS="alpha amd64 ~ia64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="adns gtk ipv6 snmp ssl kerberos threads selinux"
 
 RDEPEND=">=sys-libs/zlib-1.1.4

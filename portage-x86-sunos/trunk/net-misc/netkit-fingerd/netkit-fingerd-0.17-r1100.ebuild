@@ -13,7 +13,7 @@ SRC_URI="mirror://debian/pool/main/b/${MY_PN}/${MY_PN}_${PV}.orig.tar.gz"
 
 LICENSE="BSD"
 IUSE=""
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 sparc x86 -x86-sunos"
 SLOT="0"
 
 DEPEND="virtual/libc"

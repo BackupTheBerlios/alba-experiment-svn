@@ -10,7 +10,7 @@ DESCRIPTION="Two-way cross-platform file synchronizer"
 HOMEPAGE="http://www.cis.upenn.edu/~bcpierce/unison/"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64 ~sparc x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 
 DEPEND=">=dev-lang/ocaml-3.04
 	gtk? ( >=dev-ml/lablgtk-2.2 )"

@@ -10,7 +10,7 @@ HOMEPAGE="http://etherape.sourceforge.net/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86 ~x86-sunos"
+KEYWORDS="amd64 ppc sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=gnome-base/libglade-2.0

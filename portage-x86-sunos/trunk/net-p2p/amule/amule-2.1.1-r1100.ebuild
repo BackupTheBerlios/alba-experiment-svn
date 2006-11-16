@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="amuled debug gtk nls remote stats unicode"
 
 DEPEND=">=x11-libs/wxGTK-2.6.0

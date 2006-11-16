@@ -8,7 +8,7 @@ SRC_URI="http://www.gnomepro.com/${PN}/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 ia64 ~ppc sparc x86 ~x86-sunos"
+KEYWORDS="alpha ~amd64 ia64 ~ppc sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.0

@@ -13,7 +13,7 @@ SRC_URI="ftp://ftp.ncftp.com/ncftp/${P}-src.tar.bz2
 
 LICENSE="Clarified-Artistic"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE="" #ipv6"
 
 DEPEND=">=sys-libs/ncurses-5.2"

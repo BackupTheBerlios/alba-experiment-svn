@@ -10,7 +10,7 @@ SRC_URI="http://www.ekiga.org/includes/clicks_counter.php?http://www.ekiga.org/a
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="amd64 ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="avahi dbus doc gnome sdl"
 
 RDEPEND="~dev-libs/pwlib-1.10.1

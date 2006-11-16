@@ -11,7 +11,7 @@ SRC_URI="http://www.ekiga.org/admin/downloads/latest/sources/sources/${P}.tar.gz
 IUSE="novideo noaudio debug"
 SLOT="0"
 LICENSE="MPL-1.1"
-KEYWORDS="~alpha amd64 ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 ppc ~ppc64 sparc x86 -x86-sunos"
 
 RDEPEND=">=dev-libs/pwlib-1.10.1
 	>=media-video/ffmpeg-0.4.7"

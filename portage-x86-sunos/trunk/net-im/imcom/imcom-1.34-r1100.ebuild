@@ -12,7 +12,7 @@ DEPEND=">=dev-lang/python-2.2
 
 SLOT="0"
 LICENSE="BSD"
-KEYWORDS="~x86 ~ppc ~sparc ~amd64 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 src_compile() {

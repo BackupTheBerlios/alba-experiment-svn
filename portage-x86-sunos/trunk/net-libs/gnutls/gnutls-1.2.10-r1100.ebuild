@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.gnutls.org/pub/gnutls/${P}.tar.bz2"
 # GPL-2 for the gnutls-extras library and LGPL for the gnutls library.
 LICENSE="LGPL-2.1 GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc-macos ppc64 s390 sh sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ~ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE="zlib doc crypt"
 
 RDEPEND=">=dev-libs/libgcrypt-1.2.2

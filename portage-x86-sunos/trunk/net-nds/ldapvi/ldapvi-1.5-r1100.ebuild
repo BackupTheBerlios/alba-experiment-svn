@@ -7,7 +7,7 @@ HOMEPAGE="http://www.lichteblau.com/src.html"
 SRC_URI="http://www.lichteblau.com/download/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 hppa ppc x86 x86-sunos"
+KEYWORDS="~amd64 hppa ppc x86 -x86-sunos"
 
 DEPEND="sys-libs/ncurses
 		>=net-nds/openldap-2.2

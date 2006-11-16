@@ -23,7 +23,7 @@ SRC_URI="mirror://openbsd/OpenSSH/portable/${PARCH}.tar.gz
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd -x86-sunos"
 IUSE="ipv6 static pam tcpd kerberos skey selinux chroot X509 ldap smartcard sftplogging hpn libedit displace"
 
 RDEPEND="pam? ( virtual/pam )

@@ -11,7 +11,7 @@ DESCRIPTION="A great client/server software package allowing remote network acce
 SRC_URI="mirror://sourceforge/vnc-tight/${P}_unixsrc.tar.bz2"
 HOMEPAGE="http://www.tightvnc.com/"
 
-KEYWORDS="~alpha ~amd64 ~ppc ~sparc x86 ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc x86 -x86-sunos"
 LICENSE="GPL-2"
 SLOT="0"
 

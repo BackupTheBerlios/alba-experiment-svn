@@ -9,7 +9,7 @@ HOMEPAGE="http://www.bitbuilder.com/wifi_radar/"
 SRC_URI="http://www.bitbuilder.com/wifi_radar/bins/${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 IUSE="svg"
 
 RDEPEND=">=dev-python/pygtk-2.6.1

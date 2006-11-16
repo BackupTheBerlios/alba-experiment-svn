@@ -27,7 +27,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/mozilla/releases/mozilla${MY_PV}
 	mirror://gentoo/mozilla-${PV}-patches-${PVER}.tar.bz2
 	http://dev.gentoo.org/~anarchy/dist/mozilla-${PV}-patches-${PVER}.tar.bz2"
 
-KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 ~x86-sunos"
+KEYWORDS="alpha amd64 hppa ia64 ppc ppc64 sparc x86 -x86-sunos"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 IUSE="crypt gnome java ldap mozcalendar mozdevelop moznocompose moznoirc moznomail mozsvg postgres ssl"

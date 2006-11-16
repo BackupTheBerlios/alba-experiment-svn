@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/gnome-network/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=x11-libs/gtk+-2.5.4
