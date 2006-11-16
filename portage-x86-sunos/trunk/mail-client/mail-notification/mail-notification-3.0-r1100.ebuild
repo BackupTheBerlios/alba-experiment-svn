@@ -10,7 +10,7 @@ apop, ssl, sasl."
 HOMEPAGE="http://www.nongnu.org/mailnotify/"
 SRC_URI="http://savannah.nongnu.org/download/mailnotify/${P}.tar.gz"
 
-KEYWORDS="amd64 ppc sparc x86 ~x86-sunos"
+KEYWORDS="amd64 ppc sparc x86 -x86-sunos"
 SLOT="0"
 LICENSE="GPL-2"
 

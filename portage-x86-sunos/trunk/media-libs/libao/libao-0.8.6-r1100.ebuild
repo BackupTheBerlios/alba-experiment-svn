@@ -13,7 +13,7 @@ SRC_URI="http://downloads.xiph.org/releases/ao/${P}.tar.gz
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="alsa arts esd nas mmap static"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )

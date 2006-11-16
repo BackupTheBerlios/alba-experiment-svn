@@ -10,7 +10,7 @@ HOMEPAGE="http://www.gnunet.org/libextractor"
 SRC_URI="http://gnunet.org/${PN}/download/${P}.tar.gz"
 SLOT="0"
 LICENSE="LGPL-2.1"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 # Disabled tests because they dont work (tester@g.o)
 RESTRICT="test"
 DEPEND="virtual/libc

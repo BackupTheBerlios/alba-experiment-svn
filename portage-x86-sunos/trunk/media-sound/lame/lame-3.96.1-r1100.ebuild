@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/lame/${P}.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="gtk debug"
 
 RDEPEND=">=sys-libs/ncurses-5.2

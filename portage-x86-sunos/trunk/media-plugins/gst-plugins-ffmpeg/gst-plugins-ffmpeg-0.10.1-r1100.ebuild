@@ -17,7 +17,7 @@ HOMEPAGE="http://gstreamer.freedesktop.org/modules/gst-ffmpeg.html"
 SRC_URI="http://gstreamer.freedesktop.org/src/${MY_PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 hppa ppc ppc64 x86 ~x86-sunos"
+KEYWORDS="alpha amd64 hppa ppc ppc64 x86 -x86-sunos"
 IUSE=""
 
 S=${WORKDIR}/${MY_P}

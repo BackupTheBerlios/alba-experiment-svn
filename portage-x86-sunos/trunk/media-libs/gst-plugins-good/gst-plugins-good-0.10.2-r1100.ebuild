@@ -10,7 +10,7 @@ HOMEPAGE="http://gstreamer.net/"
 SRC_URI="http://gstreamer.freedesktop.org/src/${PN}/${P}.tar.bz2"
 
 LICENSE="GPL-2"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 
 RDEPEND=">=media-libs/gst-plugins-base-0.10.3
 	 >=dev-libs/liboil-0.3.3"

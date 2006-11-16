@@ -9,7 +9,7 @@ SRC_URI="mirror://mplayer/releases/codecs/all-${PV}.tar.bz2"
 HOMEPAGE="http://www.mplayerhq.hu/"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~x86 x86-sunos"
+KEYWORDS="-* ~amd64 ~x86 -x86-sunos"
 IUSE="quicktime real"
 
 S=${WORKDIR}/all-${PV}

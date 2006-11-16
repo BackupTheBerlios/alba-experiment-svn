@@ -6,7 +6,7 @@ inherit gst-plugins-ugly
 
 DESCRIPTION="Libmpeg2 based decoder plug-in for gstreamer"
 
-KEYWORDS="alpha amd64 hppa ppc ppc64 x86 ~x86-sunos"
+KEYWORDS="alpha amd64 hppa ppc ppc64 x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=media-libs/gst-plugins-base-0.10.3

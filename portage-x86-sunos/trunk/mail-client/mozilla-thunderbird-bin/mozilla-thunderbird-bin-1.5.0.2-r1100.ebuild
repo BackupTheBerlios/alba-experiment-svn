@@ -11,7 +11,7 @@ SRC_URI="
 HOMEPAGE="http://www.mozilla.org/projects/thunderbird"
 RESTRICT="nostrip"
 
-KEYWORDS="-* ~amd64 ~x86 x86-sunos"
+KEYWORDS="-* ~amd64 ~x86 -x86-sunos"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 IUSE=""

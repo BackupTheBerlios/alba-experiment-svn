@@ -133,7 +133,7 @@ DEPEND="${RDEPEND}
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="alpha ~amd64 hppa ~ia64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha ~amd64 hppa ~ia64 ppc ppc64 sparc x86 -x86-sunos"
 
 pkg_setup() {
 	if use real && use x86; then

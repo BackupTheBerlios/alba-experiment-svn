@@ -4,7 +4,7 @@
 
 inherit gst-plugins-ugly
 
-KEYWORDS="~alpha ~amd64 ~hppa ~ppc ppc64 sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ppc ppc64 sparc ~x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=media-libs/gst-plugins-base-0.10.3

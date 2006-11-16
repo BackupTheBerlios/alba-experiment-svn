@@ -10,7 +10,7 @@ SRC_URI="http://www.ggi-project.org/ftp/ggi/v2.1/${P}.src.tar.gz"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="alpha ~amd64 arm hppa ia64 ppc ppc64 s390 sh ~sparc x86 x86-sunos"
+KEYWORDS="alpha ~amd64 arm hppa ia64 ppc ppc64 s390 sh ~sparc x86 -x86-sunos"
 IUSE="X"
 
 RDEPEND="X? ( || ( x11-libs/libX11 virtual/x11 ) )

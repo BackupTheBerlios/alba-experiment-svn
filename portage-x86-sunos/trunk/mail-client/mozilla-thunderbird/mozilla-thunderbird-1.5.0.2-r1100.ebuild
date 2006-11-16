@@ -13,7 +13,7 @@ SRC_URI="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${PV}/sourc
 	mirror://gentoo/${P}-patches-${PVER}.tar.bz2
 	http://dev.gentoo.org/~anarchy/dist/${P}-patches-${PVER}.tar.bz2"
 
-KEYWORDS="amd64 ~ia64 ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="amd64 ~ia64 ppc ~sparc ~x86 -x86-sunos"
 SLOT="0"
 LICENSE="MPL-1.1 NPL-1.1"
 IUSE="ldap crypt"

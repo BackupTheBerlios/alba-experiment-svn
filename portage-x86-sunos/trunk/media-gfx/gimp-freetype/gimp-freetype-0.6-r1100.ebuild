@@ -8,7 +8,7 @@ HOMEPAGE="http://freetype.gimp.org/"
 
 SLOT="2"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ppc ppc64 x86 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=media-gfx/gimp-2

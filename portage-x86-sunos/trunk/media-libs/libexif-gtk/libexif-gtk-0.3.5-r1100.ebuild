@@ -12,7 +12,7 @@ HOMEPAGE="http://libexif.sf.net/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 ia64 ppc sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86 -x86-sunos"
 
 DEPEND="dev-util/pkgconfig
 		>=x11-libs/gtk+-2.0

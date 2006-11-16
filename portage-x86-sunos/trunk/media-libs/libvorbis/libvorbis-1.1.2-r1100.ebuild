@@ -10,7 +10,7 @@ SRC_URI="http://downloads.xiph.org/releases/vorbis/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sh ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sh ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=media-libs/libogg-1.0"

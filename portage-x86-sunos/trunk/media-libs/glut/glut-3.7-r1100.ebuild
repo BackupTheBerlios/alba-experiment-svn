@@ -11,7 +11,7 @@ HOMEPAGE="http://www.opengl.org/developers/documentation/glut/"
 
 LICENSE="glut"
 SLOT="0"
-KEYWORDS="x86 ppc sparc alpha x86-sunos"
+KEYWORDS="alpha ppc sparc x86 -x86-sunos"
 IUSE=""
 
 DEPEND="virtual/opengl

@@ -10,7 +10,7 @@ LICENSE="GPL-2"
 
 IUSE="exif jpeg tiff png gphoto2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~x86 -x86-sunos"
 
 RDEPEND=">=dev-libs/glib-2.4
 	>=x11-libs/gtk+-2.4
