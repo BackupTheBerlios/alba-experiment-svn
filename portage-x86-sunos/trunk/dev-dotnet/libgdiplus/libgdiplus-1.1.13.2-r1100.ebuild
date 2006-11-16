@@ -12,7 +12,7 @@ SRC_URI="http://www.go-mono.com/sources/${PN}-${PV:0:3}/${P}.tar.gz"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 ~x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 
 IUSE="tiff gif jpeg png"
 

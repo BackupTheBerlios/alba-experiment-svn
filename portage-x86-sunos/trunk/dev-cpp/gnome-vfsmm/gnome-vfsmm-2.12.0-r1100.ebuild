@@ -9,7 +9,7 @@ HOMEPAGE="http://gtkmm.sourceforge.net/"
 
 IUSE=""
 LICENSE="LGPL-2.1"
-KEYWORDS="alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 -x86-sunos"
 SLOT="1.1"
 
 RDEPEND=">=gnome-base/gnome-vfs-2.6

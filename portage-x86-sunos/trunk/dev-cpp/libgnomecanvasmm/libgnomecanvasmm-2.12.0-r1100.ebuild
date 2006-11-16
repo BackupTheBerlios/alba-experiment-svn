@@ -9,7 +9,7 @@ HOMEPAGE="http://gtkmm.sourceforge.net/"
 
 LICENSE="LGPL-2.1"
 SLOT="2.6"
-KEYWORDS="alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc"
 
 RDEPEND=">=gnome-base/libgnomecanvas-2.6

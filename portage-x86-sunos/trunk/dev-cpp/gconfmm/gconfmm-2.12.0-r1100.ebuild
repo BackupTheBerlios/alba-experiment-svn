@@ -9,7 +9,7 @@ HOMEPAGE="http://gtkmm.sourceforge.net/"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ~ia64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=gnome-base/gconf-2.4

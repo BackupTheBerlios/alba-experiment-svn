@@ -7,7 +7,7 @@ HOMEPAGE="http://libbinio.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="alpha amd64 hppa ~mips ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 hppa ~mips ppc ppc64 sparc x86 -x86-sunos"
 IUSE=""
 DEPEND=""
 
