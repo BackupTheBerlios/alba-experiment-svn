@@ -11,7 +11,7 @@ SRC_URI="${SRC_URI}
 
 LICENSE="GPL-2 LGPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="branding esd ipv6 tcpd"
 
 RDEPEND=">=x11-libs/gtk+-2.3.1

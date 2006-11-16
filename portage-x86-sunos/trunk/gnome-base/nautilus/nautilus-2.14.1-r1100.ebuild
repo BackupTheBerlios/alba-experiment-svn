@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/nautilus/"
 
 LICENSE="GPL-2 LGPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="beagle gnome"
 # cups flac gstreamer mad ogg vorbis
 

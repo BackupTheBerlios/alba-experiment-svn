@@ -10,7 +10,7 @@ LICENSE="GPL-2 LGPL-2"
 
 IUSE="berkdb doc firebird freetds ldap mdb mysql oci8 odbc postgres sqlite xbase openldap-alternate-prefix"
 SLOT="1"
-KEYWORDS="~alpha ~amd64 ~hppa ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 
 RDEPEND=">=dev-libs/glib-2
 	>=dev-libs/libxml2-2

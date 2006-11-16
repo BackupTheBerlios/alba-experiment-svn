@@ -15,7 +15,7 @@ SLOT="2.0"
 
 # when unmasking for an arch
 # double check none of the deps are still masked !
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunod x86-sunos"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunod -x86-sunos"
 
 IUSE="accessibility cdr dvdr hal"
 

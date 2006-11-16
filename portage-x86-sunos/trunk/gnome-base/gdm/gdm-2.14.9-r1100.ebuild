@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/projects/gdm/"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 hppa ~ia64 ~mips ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="accessibility ipv6 pam selinux tcpd xinerama"
 
 # Name of the tarball with gentoo specific files

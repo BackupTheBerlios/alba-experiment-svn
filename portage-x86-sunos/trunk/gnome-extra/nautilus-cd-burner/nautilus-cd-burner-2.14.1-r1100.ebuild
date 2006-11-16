@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="cdr dvdr hal static"
 
 RDEPEND=">=gnome-base/gnome-vfs-2.1.3.1

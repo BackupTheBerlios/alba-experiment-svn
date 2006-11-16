@@ -13,7 +13,7 @@ HOMEPAGE="http://www.gnome.org"
 
 LICENSE="FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=app-text/scrollkeeper-0.3.11

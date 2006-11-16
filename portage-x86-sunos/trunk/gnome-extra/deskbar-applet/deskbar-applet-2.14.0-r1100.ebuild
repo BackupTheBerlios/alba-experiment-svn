@@ -9,7 +9,7 @@ HOMEPAGE="http://browserbookapp.sourceforge.net/deskbar.html"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 x86-sunos"
+KEYWORDS="~amd64 ~x86 -x86-sunos"
 IUSE="beagle eds soap"
 
 RDEPEND=">=dev-lang/python-2.3

@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="GPL-2 FDL-1.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 hppa ~ia64 ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 hppa ~ia64 ppc ~ppc64 sparc x86 -x86-sunos"
 IUSE="artworkextra guile"
 
 RDEPEND=">=gnome-base/gconf-2
