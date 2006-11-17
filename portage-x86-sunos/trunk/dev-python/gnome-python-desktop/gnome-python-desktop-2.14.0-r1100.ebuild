@@ -10,7 +10,7 @@ HOMEPAGE="http://pygtk.org/"
 
 LICENSE="LGPL-2.1 GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~hppa ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 
 RDEPEND="virtual/python
 	>=dev-python/pygtk-2.4.0

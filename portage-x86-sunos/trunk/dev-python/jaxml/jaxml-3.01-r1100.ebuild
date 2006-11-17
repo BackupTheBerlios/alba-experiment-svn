@@ -10,7 +10,7 @@ SRC_URI="http://www.librelogiciel.com/software/jaxml/tarballs/${P}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~ia64 ppc x86 x86-sunos"
+KEYWORDS="amd64 ~ia64 ppc x86 -x86-sunos"
 
 IUSE=""
 DEPEND="virtual/python"

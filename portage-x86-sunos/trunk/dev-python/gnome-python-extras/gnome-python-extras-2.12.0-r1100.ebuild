@@ -9,7 +9,7 @@ HOMEPAGE="http://www.pygtk.org"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 ia64 ppc sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 ia64 ppc sparc x86 -x86-sunos"
 IUSE="doc firefox mozilla"
 
 RDEPEND=">=dev-lang/python-2.3

@@ -9,7 +9,7 @@ HOMEPAGE="http://www.pygtk.org/"
 
 LICENSE="LGPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~hppa ~ia64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="doc gtkhtml"
 
 RDEPEND=">=dev-lang/python-2.2

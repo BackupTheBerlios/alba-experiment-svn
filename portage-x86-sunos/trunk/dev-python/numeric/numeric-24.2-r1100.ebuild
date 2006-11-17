@@ -13,7 +13,7 @@ SRC_URI="mirror://sourceforge/numpy/${MY_P}.tar.gz"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=dev-lang/python-2.3"
