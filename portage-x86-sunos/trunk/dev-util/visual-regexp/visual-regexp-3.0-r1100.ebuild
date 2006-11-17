@@ -10,7 +10,7 @@ SRC_URI="http://laurent.riesterer.free.fr/regexp/visual_regexp-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc ~amd64 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=dev-lang/tcl-8.3

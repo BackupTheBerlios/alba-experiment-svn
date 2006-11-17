@@ -16,7 +16,7 @@ RDEPEND="sys-libs/ncurses
 	|| ( x11-libs/libX11 virtual/x11 )"
 
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~alpha ~ppc ~amd64 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 SRC_URI="ftp://sources.redhat.com/pub/${PN}/releases/${P}.tar.bz2"
 
 INSIGHTDIR="/opt/insight"

@@ -9,7 +9,7 @@ HOMEPAGE="http://developer.imendio.com/wiki/Devhelp"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~sparc ~x86 ~x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="firefox zlib"
 
 RDEPEND=">=gnome-base/gconf-2.6

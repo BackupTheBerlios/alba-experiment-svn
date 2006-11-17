@@ -9,7 +9,7 @@ HOMEPAGE="http://rapidsvn.tigris.org/"
 SRC_URI="http://www.rapidsvn.org/download/${P}.tar.gz"
 LICENSE="GPL-2 LGPL-2.1 FDL-1.2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86 ~x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc static"
 
 DEPEND=">=dev-util/subversion-1.3.2-r1

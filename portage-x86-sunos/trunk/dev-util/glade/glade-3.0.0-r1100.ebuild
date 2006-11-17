@@ -10,7 +10,7 @@ SRC_URI="mirror://gnome/sources/glade3/3.0/glade3-${PV}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="3"
-KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 ~x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="doc gnome"
 
 RDEPEND=">=dev-libs/glib-2.8.0

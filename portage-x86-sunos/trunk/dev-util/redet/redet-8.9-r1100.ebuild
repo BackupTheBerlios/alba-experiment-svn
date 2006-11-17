@@ -9,7 +9,7 @@ SRC_URI="http://www.billposer.org/Software/Downloads/${P}.tgz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~x86 x86-sunos"
+KEYWORDS="~x86 -x86-sunos"
 
 DEPEND=">=dev-lang/tcl-8.3
 	>=dev-lang/tk-8.3

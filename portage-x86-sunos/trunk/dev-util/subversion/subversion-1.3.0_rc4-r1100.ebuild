@@ -10,7 +10,7 @@ SRC_URI="http://subversion.tigris.org/downloads/${P/_rc/-rc}.tar.gz"
 
 LICENSE="Apache-1.1"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc-macos ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="apache2 berkdb python emacs perl java nls nowebdav zlib ruby"
 RESTRICT="test"
 

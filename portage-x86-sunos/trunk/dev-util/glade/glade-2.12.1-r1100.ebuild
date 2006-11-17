@@ -9,7 +9,7 @@ HOMEPAGE="http://glade.gnome.org/"
 
 LICENSE="GPL-2"
 SLOT="2"
-KEYWORDS="~alpha ~amd64 ~ppc ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ppc ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="accessibility gnome"
 # gnomedb
 

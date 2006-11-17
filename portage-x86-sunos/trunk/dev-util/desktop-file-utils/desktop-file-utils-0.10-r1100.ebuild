@@ -10,7 +10,7 @@ SRC_URI="http://www.freedesktop.org/software/desktop-file-utils/releases/${P}.ta
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=dev-libs/glib-2.0.0

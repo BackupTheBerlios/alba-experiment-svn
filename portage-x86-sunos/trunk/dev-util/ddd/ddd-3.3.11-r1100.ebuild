@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/ddd/${P}.tar.gz"
 
 SLOT="0"
 LICENSE="GPL-2 LGPL-2.1 FDL-1.1"
-KEYWORDS="~x86 ~ppc ~sparc ~alpha ~amd64 ~ia64 ~ppc64 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 DEPEND="|| ( ( x11-libs/libXaw

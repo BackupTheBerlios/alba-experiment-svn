@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnu.org/software/guile/"
 SRC_URI="mirror://gnu/guile/${P}.tar.gz"
 
 LICENSE="GPL-2"
-KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ~ppc-macos ppc64 s390 sh sparc x86 -x86-sunos"
 IUSE=""
 
 # Problems with parallel builds (#34029), so I'm taking the safer route

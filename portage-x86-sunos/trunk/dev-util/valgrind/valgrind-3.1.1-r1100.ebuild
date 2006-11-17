@@ -10,7 +10,7 @@ SRC_URI="http://www.valgrind.org/downloads/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="-* ~amd64 ~ppc x86 ~x86-sunos"
+KEYWORDS="-* ~amd64 ~ppc x86 -x86-sunos"
 IUSE="X"
 
 # bug #49147 (bogus stacktrace in gdb with --db-attach=yes) does not seem to be applicable anymore
