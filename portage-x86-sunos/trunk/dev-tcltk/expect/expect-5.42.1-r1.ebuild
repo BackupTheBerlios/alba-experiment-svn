@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/expect/expect-5.43.0.ebuild,v 1.2 2006/04/11 16:28:28 flameeyes Exp $
+# $Header: /var/cvsroot/gentoo-x86/dev-tcltk/expect/expect-5.42.1-r1.ebuild,v 1.8 2006/09/04 08:50:50 vapier Exp $
 
 inherit eutils gnuconfig
 
@@ -10,7 +10,7 @@ SRC_URI="http://expect.nist.gov/src/${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc ~x86 ~x86-fbsd -x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-sunos"
 IUSE="X doc"
 
 # We need dejagnu for src_test, but dejagnu needs expect
@@ -26,10 +26,10 @@ S=${WORKDIR}/${NON_MICRO_V}
 src_unpack() {
 	unpack ${A}
 	cd ${S}
-	epatch ${FILESDIR}/${PN}-5.42.1-multilib.patch
+	epatch ${FILESDIR}/${P}-multilib.patch
 
 	# fix the rpath being set to /var/tmp/portage/...
-	epatch ${FILESDIR}/${PN}-5.39.0-libdir.patch
+	epatch ${FILESDIR}/expect-5.39.0-libdir.patch
 
 	sed -i 's#/usr/local/bin#/usr/bin#' expect.man
 	sed -i 's#/usr/local/bin#/usr/bin#' expectk.man

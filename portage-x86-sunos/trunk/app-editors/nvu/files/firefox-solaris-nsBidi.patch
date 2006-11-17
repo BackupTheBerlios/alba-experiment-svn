@@ -1,0 +1,14 @@
+--- mozilla/layout/base/nsBidi.cpp.orig	2006-04-24 18:08:02.244689000 -0700
++++ mozilla/layout/base/nsBidi.cpp	2006-04-24 18:08:18.110615000 -0700
+@@ -78,9 +78,11 @@
+     L =   eCharType_LeftToRight,
+     R =   eCharType_RightToLeft,
+     EN =  eCharType_EuropeanNumber,
++#undef ES
+     ES =  eCharType_EuropeanNumberSeparator,
+     ET =  eCharType_EuropeanNumberTerminator,
+     AN =  eCharType_ArabicNumber,
++#undef CS
+     CS =  eCharType_CommonNumberSeparator,
+     B =   eCharType_BlockSeparator,
+     S =   eCharType_SegmentSeparator,

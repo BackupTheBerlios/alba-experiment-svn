@@ -1,0 +1,15 @@
+--- make/unix.mak.original	2006-07-31 16:02:26.148383000 +0200
++++ make/unix.mak	2006-07-31 16:01:16.118657497 +0200
+@@ -968,7 +968,11 @@
+ 
+ ifneq ($(OSTYPE),Darwin)
+   ifeq ($(OSTYPE),solaris)
+-    OPTCCFLAGS	+= -xO3 
++    ifneq ($(USE_GCC),yes)
++    	OPTCCFLAGS	+= -xO3 
++	else
++  		OPTCCFLAGS	+= -O2
++	endif
+   else
+     OPTCCFLAGS	+=  
+   endif
