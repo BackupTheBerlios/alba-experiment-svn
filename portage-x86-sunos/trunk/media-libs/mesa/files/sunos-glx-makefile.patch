@@ -1,0 +1,37 @@
+--- src/glx/x11/Makefile	2005-08-19 22:20:03.000000000 +0200
++++ src/glx/x11/Makefile	2006-09-02 12:10:16.552865000 +0200
+@@ -31,9 +31,7 @@
+ 	  xfont.c \
+ 	  glx_pbuffer.c \
+ 	  glx_query.c \
+-	  glx_texture_compression.c \
+-	  dri_glx.c \
+-	  XF86dri.c \
++	  glx_texture_compression.c
+ 
+ X86_SOURCES = $(TOP)/src/mesa/x86/glapi_x86.S
+ X86-64_SOURCES = $(TOP)/src/mesa/x86-64/glapi_x86-64.S
+@@ -43,6 +41,7 @@
+ OBJECTS = $(C_SOURCES:.c=.o) \
+ 	  $(ASM_SOURCES:.S=.o)
+ 
++ifdef USE_DRI
+ INCLUDES = -I. \
+ 	-I$(TOP)/include \
+ 	-I$(TOP)/include/GL/internal \
+@@ -51,6 +50,15 @@
+ 	-I$(TOP)/src/mesa/drivers/dri/common \
+         `pkg-config --cflags libdrm` \
+ 	$(X11_INCLUDES)
++else
++INCLUDES = -I. \
++	-I$(TOP)/include \
++	-I$(TOP)/include/GL/internal \
++	-I$(TOP)/src/mesa/main \
++	-I$(TOP)/src/mesa/glapi \
++	-I$(TOP)/src/mesa/drivers/dri/common \
++	$(X11_INCLUDES)
++endif
+ 
+ 
+ ##### RULES #####

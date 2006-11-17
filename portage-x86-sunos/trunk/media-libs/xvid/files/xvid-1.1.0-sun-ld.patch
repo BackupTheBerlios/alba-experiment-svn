@@ -1,0 +1,22 @@
+--- xvidcore-1.1.0/build/generic/configure.orig	2006-06-05 13:58:07.930195000 +0200
++++ xvidcore-1.1.0/build/generic/configure	2006-06-05 14:01:43.626035000 +0200
+@@ -3846,5 +3846,5 @@
+ PRE_SHARED_LIB=""
+ case "$target_os" in
+-     linux*|solaris*)
++     linux*)
+ 	echo "$as_me:$LINENO: result: ok" >&5
+ echo "${ECHO_T}ok" >&6
+@@ -3854,4 +3854,12 @@
+ 	SPECIFIC_CFLAGS="-fPIC"
+ 	;;
++	solaris*)
++    echo "$as_me:$LINENO: result: ok" >&5
++	echo "${ECHO_T}ok" >&6
++	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
++	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
++	SPECIFIC_LDFLAGS="-shared -lc -lm"
++	SPECIFIC_CFLAGS="-fPIC"
++	;;
+      *bsd*|irix*)
+ 	echo "$as_me:$LINENO: result: ok" >&5

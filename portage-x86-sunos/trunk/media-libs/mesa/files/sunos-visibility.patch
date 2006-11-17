@@ -1,0 +1,33 @@
+--- src/glx/x11/indirect.h.orig	2006-09-02 12:40:33.991041000 +0200
++++ src/glx/x11/indirect.h	2006-09-02 12:41:01.283459000 +0200
+@@ -38,7 +38,7 @@
+  */
+ 
+ #  if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
+-#    define HIDDEN  __attribute__((visibility("hidden")))
++#    define HIDDEN  //__attribute__((visibility("hidden")))
+ #  else
+ #    define HIDDEN
+ #  endif
+--- src/glx/x11/indirect_size.c.orig	2006-09-19 00:21:00.783456000 +0200
++++ src/glx/x11/indirect_size.c	2006-09-19 00:21:31.697659000 +0200
+@@ -42,7 +42,7 @@
+ #  endif
+ 
+ #  if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
+-#    define INTERNAL  __attribute__((visibility("internal")))
++#    define INTERNAL  //__attribute__((visibility("internal")))
+ #  else
+ #    define INTERNAL
+ #  endif
+--- src/glx/x11/indirect_size.h.orig	2006-09-19 00:21:14.036566000 +0200
++++ src/glx/x11/indirect_size.h	2006-09-19 00:21:40.304701000 +0200
+@@ -49,7 +49,7 @@
+ #  endif
+ 
+ #  if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
+-#    define INTERNAL  __attribute__((visibility("internal")))
++#    define INTERNAL  //__attribute__((visibility("internal")))
+ #  else
+ #    define INTERNAL
+ #  endif
