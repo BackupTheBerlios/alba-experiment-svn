@@ -9,7 +9,7 @@ HOMEPAGE="http://cairographics.org/pycairo"
 SRC_URI="http://cairographics.org/releases/${P}.tar.gz"
 LICENSE="|| ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="gtk numeric svg"
 
 DEPEND=">=dev-lang/python-2.3

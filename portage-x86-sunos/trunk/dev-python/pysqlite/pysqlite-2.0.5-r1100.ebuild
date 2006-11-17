@@ -9,7 +9,7 @@ DESCRIPTION="Python wrapper for the local database Sqlite"
 SRC_URI="http://initd.org/pub/software/pysqlite/releases/${PV:0:3}/${PV}/pysqlite-${PV}.tar.gz"
 HOMEPAGE="http://initd.org/tracker/pysqlite/"
 
-KEYWORDS="alpha ~amd64 ia64 ppc sparc x86 ~x86-sunos"
+KEYWORDS="alpha ~amd64 ia64 ppc sparc x86 -x86-sunos"
 LICENSE="pysqlite"
 SLOT="2"
 

@@ -1,0 +1,11 @@
+--- config/sunos.cfg.orig	2001-11-23 15:56:32.000000000 +0100
++++ config/sunos.cfg	2006-07-24 15:09:58.790318000 +0200
+@@ -12,6 +12,6 @@
+ build_togl=1
+ gl_platform=GLX
+-include_dirs=/usr/openwin/include:/mgl/apps/include
+-library_dirs=/usr/openwin/lib:/mgl/prog/sun4SunOS5/lib/
++include_dirs=/usr/openwin/include:/usr/include/:/usr/X11/include:/usr/X11R6/include:/usr/lib/tk8.4/include
++library_dirs=/usr/openwin/lib:/usr/lib/:/usr/X11/lib:/usr/X11R6/lib
+ 
+ ; a os.pathsep separated list of the libs needed when linking GL

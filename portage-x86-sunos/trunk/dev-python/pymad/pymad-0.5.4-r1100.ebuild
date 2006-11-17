@@ -11,7 +11,7 @@ SRC_URI="http://www.spacepants.org/src/pymad/download/${P}.tar.gz"
 IUSE=""
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ia64 ~ppc ~sparc ~x86 -x86-sunos"
 
 DEPEND="virtual/python
 	media-sound/madplay"

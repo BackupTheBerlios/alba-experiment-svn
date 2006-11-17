@@ -10,7 +10,7 @@ SRC_URI="http://people.via.ecp.fr/~flo/2002/PyXMMS/dist/${P}.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=dev-lang/python-2.2.2

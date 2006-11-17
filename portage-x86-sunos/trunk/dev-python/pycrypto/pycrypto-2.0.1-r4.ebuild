@@ -16,7 +16,7 @@ IUSE="bindist gmp test"
 RDEPEND="virtual/python
 	gmp? ( dev-libs/gmp )"
 DEPEND="${RDEPEND}
-	test? ( =dev-python/sancho-0.11-r1100 )"
+	test? ( =dev-python/sancho-0.11-r1 )"
 
 src_unpack() {
 	unpack ${A}

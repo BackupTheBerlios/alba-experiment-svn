@@ -19,7 +19,7 @@ DEPEND="virtual/python
 
 SLOT="0"
 LICENSE="PYTHON"
-KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 x86-sunos"
+KEYWORDS="~alpha ~amd64 ~ia64 ~ppc ~sparc ~x86 -x86-sunos"
 IUSE="doc sasl ssl"
 
 PYTHON_MODNAME="ldap"
