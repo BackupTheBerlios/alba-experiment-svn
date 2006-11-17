@@ -13,7 +13,7 @@ SRC_URI="http://www.extreme.indiana.edu/dist/java-repository/xpp3/distributions/
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="x86 amd64 ppc x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc jikes junit source"
 
 DEPEND=">=virtual/jdk-1.4

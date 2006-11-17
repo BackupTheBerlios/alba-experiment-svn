@@ -12,7 +12,7 @@ SRC_URI="mirror://gentoo/distfiles/${P}.tar.bz2"
 
 LICENSE="Apache-2.0"
 SLOT="1.3"
-KEYWORDS="amd64 ppc ~ppc64 x86 x86-sunos"
+KEYWORDS="amd64 ppc ~ppc64 x86 -x86-sunos"
 IUSE="doc source"
 
 DEPEND=">=virtual/jdk-1.3

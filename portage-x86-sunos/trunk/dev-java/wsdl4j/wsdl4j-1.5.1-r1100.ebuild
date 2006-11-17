@@ -10,7 +10,7 @@ SRC_URI="mirror://gentoo/${P}-gentoo.tar.bz2"
 
 LICENSE="CPL-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 IUSE="doc jikes junit source"
 
 DEPEND=">=virtual/jdk-1.4

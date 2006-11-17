@@ -17,7 +17,7 @@ SRC_URI="mirror://apache/xml/commons/${MY_P}.tar.gz"
 # See ${S}/java/external for the license files
 LICENSE="Apache-1.1 public-domain W3C-document W3C"
 SLOT="0"
-KEYWORDS="x86 amd64 ppc64 ppc sparc x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 DEPEND=">=virtual/jdk-1.4

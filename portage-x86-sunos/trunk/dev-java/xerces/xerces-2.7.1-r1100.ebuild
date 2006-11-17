@@ -11,7 +11,7 @@ SRC_URI="mirror://apache/xml/${PN}-j/${MY_PN}-src.${PV}.tar.gz"
 
 LICENSE="Apache-1.1"
 SLOT="2"
-KEYWORDS="amd64 ppc x86 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc jikes examples source"
 
 RDEPEND=">=virtual/jre-1.4

@@ -11,7 +11,7 @@ SRC_URI="http://archive.apache.org/dist/xml/xerces-j/old_xerces1/Xerces-J-src.${
 
 LICENSE="Apache-1.1"
 SLOT="1.3"
-KEYWORDS="x86 ppc sparc amd64 x86-sunos"
+KEYWORDS="amd64 ppc sparc x86 -x86-sunos"
 
 DEPEND=">=virtual/jdk-1.3
 	jikes? ( dev-java/jikes )

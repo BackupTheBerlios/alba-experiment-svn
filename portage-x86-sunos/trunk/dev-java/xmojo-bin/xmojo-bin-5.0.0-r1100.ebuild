@@ -9,7 +9,7 @@ HOMEPAGE="http://www.xmojo.org/"
 SRC_URI="http://www.xmojo.org/products/xmojo/downloads/XMOJO_5_0_0.tar.gz"
 LICENSE="LGPL-2.1"
 SLOT="5.0"
-KEYWORDS="~x86 ~amd64 x86-sunos"
+KEYWORDS="~amd64 ~x86 -x86-sunos"
 IUSE="doc"
 DEPEND=""
 RDEPEND=">=virtual/jre-1.4
