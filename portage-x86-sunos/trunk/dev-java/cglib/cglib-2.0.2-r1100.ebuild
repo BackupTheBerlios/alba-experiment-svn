@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/${PN}/${PN}-src-${PV}.jar"
 HOMEPAGE="http://cglib.sourceforge.net"
 LICENSE="Apache-1.1"
 SLOT="2"
-KEYWORDS="amd64 ~ppc x86 x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 RDEPEND=">=virtual/jre-1.4
 	jikes? ( >=dev-java/jikes-1.21 )
 	source? ( app-arch/zip )

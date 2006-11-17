@@ -9,7 +9,7 @@ HOMEPAGE="http://dom4j.sourceforge.net/"
 SRC_URI="mirror://sourceforge/dom4j/${P}.tar.gz"
 LICENSE="Apache-1.1"
 SLOT="1"
-KEYWORDS="amd64 ppc x86 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 # jikes disabled as per bug #123004
 IUSE="doc source"
 RDEPEND="|| ( =virtual/jre-1.5* )

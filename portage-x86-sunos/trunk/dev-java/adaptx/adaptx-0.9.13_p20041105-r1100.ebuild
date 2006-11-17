@@ -20,7 +20,7 @@ DEPEND=">=virtual/jdk-1.4
 	>=dev-java/ant-core-1.4
 	${RDEPEND}"
 SLOT="0.9"
-KEYWORDS="amd64 ~ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="amd64 ~ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc"
 
 S=${WORKDIR}/adaptx-20041105

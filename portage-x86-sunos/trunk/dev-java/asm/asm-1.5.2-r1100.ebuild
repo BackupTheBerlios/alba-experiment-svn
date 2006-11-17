@@ -9,7 +9,7 @@ HOMEPAGE="http://asm.objectweb.org"
 SRC_URI="http://download.forge.objectweb.org/${PN}/${P}.tar.gz"
 LICENSE="BSD"
 SLOT="1.5"
-KEYWORDS="amd64 ~ppc x86 x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 IUSE="doc"
 DEPEND=">=virtual/jdk-1.3
 	dev-java/ant-core

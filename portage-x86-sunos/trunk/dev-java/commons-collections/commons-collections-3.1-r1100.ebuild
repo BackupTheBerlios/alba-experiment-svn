@@ -10,7 +10,7 @@ SRC_URI="mirror://apache/jakarta/commons/collections/source/${P}-src.tar.gz"
 
 LICENSE="Apache-1.1"
 SLOT="0"
-KEYWORDS="x86 sparc ppc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 DEPEND=">=virtual/jdk-1.3

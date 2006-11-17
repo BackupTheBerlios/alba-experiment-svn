@@ -9,7 +9,7 @@ SRC_URI="http://dist.codehaus.org/${PN}/distributions/${P/_rc/.RC}.zip"
 HOMEPAGE="http://aspectwerkz.codehaus.org"
 LICENSE="LGPL-2.1"
 SLOT="2"
-KEYWORDS="amd64 ~ppc x86 x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 RDEPEND=">=virtual/jre-1.4
 	=dev-java/asm-1.5*
 	dev-java/bcel

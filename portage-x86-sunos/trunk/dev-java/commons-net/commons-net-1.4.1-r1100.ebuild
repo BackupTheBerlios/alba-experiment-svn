@@ -18,7 +18,7 @@ DEPEND=">=virtual/jdk-1.3
 	${RDEPEND}"
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~x86 ~sparc ~ppc ~amd64 ~ppc64 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 # disabling unit tests:
 # http://issues.apache.org/bugzilla/show_bug.cgi?id=37985
 IUSE="doc examples jikes source" # junit

@@ -9,7 +9,7 @@ HOMEPAGE="http://dist.codehaus.org/classworlds/distributions/classworlds-1.0-src
 SRC_URI="http://dist.codehaus.org/classworlds/distributions/${P}-src.tar.gz"
 LICENSE="codehaus-classworlds"
 SLOT="1"
-KEYWORDS="x86 ~ppc amd64 x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 IUSE="doc jikes"
 RDEPEND=">=virtual/jre-1.4
 	>=dev-java/xerces-2.6"

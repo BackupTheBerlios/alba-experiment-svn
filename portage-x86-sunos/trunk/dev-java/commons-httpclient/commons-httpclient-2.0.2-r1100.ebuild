@@ -10,7 +10,7 @@ SRC_URI="mirror://apache/jakarta/commons/httpclient/source/${P/_/-}-src.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ppc ppc64 ~sparc x86 x86-sunos"
+KEYWORDS="~amd64 ppc ppc64 ~sparc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 RDEPEND=">=virtual/jre-1.3

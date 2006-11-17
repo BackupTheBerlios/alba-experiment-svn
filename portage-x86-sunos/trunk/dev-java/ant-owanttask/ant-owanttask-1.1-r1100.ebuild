@@ -9,7 +9,7 @@ HOMEPAGE="http://monolog.objectweb.org"
 SRC_URI="http://www.gentoo.org/~karltk/java/distfiles/owanttask-${PV}-gentoo.tar.bz2"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="x86 ppc amd64 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE=""
 DEPEND=">=virtual/jdk-1.4"
 RDEPEND=">=virtual/jre-1.4

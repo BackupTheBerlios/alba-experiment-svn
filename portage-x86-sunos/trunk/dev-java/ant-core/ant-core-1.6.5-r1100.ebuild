@@ -14,7 +14,7 @@ SRC_URI="mirror://apache/ant/source/apache-${MY_PN}-${PV}-src.tar.bz2"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ia64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="doc source"
 
 DEPEND="virtual/libc

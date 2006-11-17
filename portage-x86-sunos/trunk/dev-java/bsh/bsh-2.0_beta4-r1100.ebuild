@@ -13,7 +13,7 @@ SRC_URI="http://www.beanshell.org/${MY_DIST} mirror://gentoo/beanshell-icon.png"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc x86-sunos"
+KEYWORDS="~amd64 ~ppc ~x86 -x86-sunos"
 IUSE="doc jikes readline source"
 
 RDEPEND=">=virtual/jdk-1.4

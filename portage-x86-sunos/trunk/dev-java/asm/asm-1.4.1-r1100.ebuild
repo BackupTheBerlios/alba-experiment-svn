@@ -9,7 +9,7 @@ HOMEPAGE="http://asm.objectweb.org"
 SRC_URI="http://download.forge.objectweb.org/${PN}/ASM_${PV}_src.zip"
 LICENSE="BSD"
 SLOT="1.4.1"
-KEYWORDS="x86 ~ppc amd64 x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 IUSE="doc"
 DEPEND=">=virtual/jdk-1.3
 	app-arch/unzip

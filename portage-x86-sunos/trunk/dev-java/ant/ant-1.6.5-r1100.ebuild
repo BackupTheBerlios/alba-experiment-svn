@@ -7,7 +7,7 @@ HOMEPAGE="http://ant.apache.org/"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="~x86 ~amd64 ~ppc ~sparc ~ppc64 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE=""
 
 DEPEND="=dev-java/ant-tasks-${PV}*

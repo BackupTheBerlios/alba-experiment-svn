@@ -9,7 +9,7 @@ SRC_URI="mirror://gentoo/gentoo-concurrent-util-1.3.4.tar.bz2"
 HOMEPAGE="http://gee.cs.oswego.edu/dl/classes/EDU/oswego/cs/dl/util/concurrent/intro.html"
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 RDEPEND=">=virtual/jre-1.2"
 DEPEND=">=virtual/jdk-1.2
 	>=dev-java/ant-core-1.5

@@ -8,7 +8,7 @@ DESCRIPTION="Data binding framework for Java"
 SRC_URI="http://dist.codehaus.org/${PN}/${PV}/${P}-src.tgz"
 HOMEPAGE="http://www.castor.org"
 LICENSE="Exolab"
-KEYWORDS="amd64 x86 x86-sunos"
+KEYWORDS="amd64 x86 -x86-sunos"
 SLOT="0.9"
 IUSE="doc jikes postgres source"
 

@@ -29,7 +29,7 @@ DEPEND=">=virtual/jdk-1.3
 
 LICENSE="Apache-1.1"
 SLOT="1.2"
-KEYWORDS="x86 amd64 ppc64 sparc ppc x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc javamail jikes jms source"
 
 S=${WORKDIR}/LogKit-${PV}

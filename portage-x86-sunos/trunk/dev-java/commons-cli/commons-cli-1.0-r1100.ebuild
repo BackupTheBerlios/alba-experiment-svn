@@ -10,7 +10,7 @@ SRC_URI="mirror://apache/jakarta/commons/cli/source/cli-${PV}-src.tar.gz"
 
 LICENSE="Apache-1.1"
 SLOT="1"
-KEYWORDS="x86 sparc ppc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc jikes junit source"
 
 RDEPEND=">=virtual/jre-1.3

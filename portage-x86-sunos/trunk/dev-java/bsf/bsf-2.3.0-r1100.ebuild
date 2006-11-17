@@ -9,7 +9,7 @@ HOMEPAGE="http://jakarta.apache.org/bsf/"
 SRC_URI="http://cvs.apache.org/dist/jakarta/bsf/v${PV}rc1/src/${PN}-src-${PV}.tar.gz mirror://gentoo/bsf-rhino-1.5.patch.bz2"
 LICENSE="Apache-1.1"
 SLOT="2.3"
-KEYWORDS="x86 ppc sparc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc jikes jython rhino source"
 
 RDEPEND=">=virtual/jre-1.4

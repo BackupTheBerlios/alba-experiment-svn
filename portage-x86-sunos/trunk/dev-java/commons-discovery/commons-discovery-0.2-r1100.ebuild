@@ -10,7 +10,7 @@ SRC_URI="mirror://apache/jakarta/commons/discovery/source/${P}-src.tar.gz"
 
 LICENSE="Apache-2.0"
 SLOT="0"
-KEYWORDS="x86 ppc ~sparc amd64 x86-sunos"
+KEYWORDS="amd64 ppc ~sparc x86 -x86-sunos"
 IUSE="source junit jikes doc"
 
 RDEPEND=">=virtual/jre-1.4

@@ -10,7 +10,7 @@ SRC_URI="http://www.antlr.org/download/${P}.tar.gz"
 
 LICENSE="ANTLR"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc64 ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc64 ~x86 -x86-sunos"
 IUSE="doc debug examples mono nocxx nojava python script source"
 
 RDEPEND=">=virtual/jdk-1.2
