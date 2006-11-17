@@ -28,7 +28,7 @@ SRC_URI="x86? ( $x86file ) amd64? ( $amd64file ) x86-sunos? ( $x86sunfile )
 		jce? ( $jcefile )"
 SLOT="1.5"
 LICENSE="sun-bcla-java-vm"
-KEYWORDS="~x86 ~amd64 -* x86-sunos"
+KEYWORDS="-* ~amd64 ~x86 -x86-sunos"
 RESTRICT="fetch nostrip stricter"
 IUSE="X alsa doc browserplugin nsplugin jce mozilla examples"
 

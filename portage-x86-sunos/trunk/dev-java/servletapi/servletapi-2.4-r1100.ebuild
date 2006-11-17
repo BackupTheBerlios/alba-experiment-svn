@@ -10,7 +10,7 @@ SRC_URI="mirror://apache/jakarta/tomcat-5/v5.0.19/src/jakarta-tomcat-5.0.19-src.
 
 LICENSE="Apache-1.1"
 SLOT="2.4"
-KEYWORDS="x86 sparc ppc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 DEPEND=">=virtual/jdk-1.4

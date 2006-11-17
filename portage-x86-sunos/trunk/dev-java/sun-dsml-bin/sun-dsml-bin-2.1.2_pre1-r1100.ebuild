@@ -11,7 +11,7 @@ SRC_URI="${At}"
 
 LICENSE="sun-bcla-dsml"
 SLOT="2"
-KEYWORDS="x86 amd64 ~ppc x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 IUSE="doc"
 
 DEPEND=">=app-arch/unzip-5.50-r1"

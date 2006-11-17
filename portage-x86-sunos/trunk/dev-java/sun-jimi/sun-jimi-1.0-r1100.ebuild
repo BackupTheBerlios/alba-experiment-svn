@@ -9,7 +9,7 @@ HOMEPAGE="http://java.sun.com/products/jimi/"
 SRC_URI="jimi1_0.zip"
 LICENSE="sun-bcla-jimi"
 SLOT="0"
-KEYWORDS="amd64 ppc sparc x86 x86-sunos"
+KEYWORDS="amd64 ppc sparc x86 -x86-sunos"
 IUSE="doc"
 DEPEND=">=virtual/jdk-1.3
 		app-arch/unzip"

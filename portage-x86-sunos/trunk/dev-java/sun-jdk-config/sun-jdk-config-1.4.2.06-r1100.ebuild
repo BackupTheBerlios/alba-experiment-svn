@@ -23,7 +23,7 @@ HOMEPAGE="http://java.sun.com/j2se/1.4.2/"
 SRC_URI=""
 SLOT="1.4"
 LICENSE="sun-bcla-java-vm"
-KEYWORDS="~x86 ~amd64 -* x86-sunos"
+KEYWORDS="-* ~amd64 ~x86 -x86-sunos"
 RESTRICT="fetch nostrip stricter"
 IUSE="X alsa doc browserplugin nsplugin jce mozilla examples"
 
