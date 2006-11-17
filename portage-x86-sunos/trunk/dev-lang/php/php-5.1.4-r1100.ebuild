@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-lang/php/php-5.1.4.ebuild,v 1.9 2006/05/06 12:09:18 corsair Exp $
 
 IUSE="cgi cli discard-path force-cgi-redirect"
-KEYWORDS="alpha amd64 ~arm hppa ~ia64 ppc ppc64 ~s390 ~sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 ~arm hppa ~ia64 ppc ppc64 ~s390 ~sh sparc x86 ~x86-fbsd -x86-sunos"
 
 # NOTE: Portage doesn't support setting PROVIDE based on the USE flags
 #		that have been enabled, so we have to PROVIDE everything for now

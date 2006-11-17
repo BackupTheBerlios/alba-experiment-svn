@@ -17,7 +17,7 @@ RDEPEND="$DEPEND"
 
 SLOT="0"
 LICENSE="LGPL-2"
-KEYWORDS="x86 ppc x86-sunos"
+KEYWORDS="ppc x86 -x86-sunos"
 
 src_compile()
 {

@@ -12,7 +12,7 @@ SRC_URI="http://www.go-mono.com/sources/mono-${PV:0:3}/${P}.tar.gz"
 
 LICENSE="|| ( GPL-2 LGPL-2 X11 )"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 ~x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="nptl X"
 
 DEPEND=">=dev-libs/glib-2.0

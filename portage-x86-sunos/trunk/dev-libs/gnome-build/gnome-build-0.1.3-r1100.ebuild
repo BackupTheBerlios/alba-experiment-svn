@@ -9,7 +9,7 @@ HOMEPAGE="http://www.gnome.org/"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~x86-sunos"
+KEYWORDS="~amd64 ~x86 -x86-sunos"
 
 RDEPEND=">=x11-libs/gtk+-2.4
 	>=gnome-base/libglade-2.0

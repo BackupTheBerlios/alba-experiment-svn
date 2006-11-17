@@ -12,7 +12,7 @@ SRC_URI="http://www.ekiga.org/admin/downloads/latest/sources/sources/${P}.tar.gz
 
 LICENSE="MPL-1.1"
 SLOT="0"
-KEYWORDS="~alpha amd64 ~hppa ppc ~ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 ~hppa ppc ~ppc64 sparc x86 -x86-sunos"
 
 RDEPEND="alsa? ( media-libs/alsa-lib )
 	ieee1394? ( media-libs/libdv

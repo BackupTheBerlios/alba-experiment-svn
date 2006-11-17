@@ -13,7 +13,7 @@ SRC_URI="ftp://ftp.andrew.cmu.edu/pub/cyrus-mail/${P}.tar.gz
 
 LICENSE="as-is"
 SLOT="2"
-KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 ~mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd -x86-sunos"
 # Removed 'static' USE flag because it is broken upstream, Bug #94137
 IUSE="berkdb crypt gdbm ldap mysql postgres kerberos ssl java pam
 		authdaemond sample urandom srp ntlm_unsupported_patch"

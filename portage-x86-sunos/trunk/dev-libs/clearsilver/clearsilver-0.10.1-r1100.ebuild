@@ -15,7 +15,7 @@ SRC_URI="http://www.clearsilver.net/downloads/${P}.tar.gz"
 
 LICENSE="CS-1.0"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~sparc x86 ~x86-sunos"
+KEYWORDS="~amd64 ppc ~sparc x86 -x86-sunos"
 IUSE="perl python zlib"
 
 DEPEND="python? ( dev-lang/python )

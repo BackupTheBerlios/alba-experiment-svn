@@ -11,7 +11,7 @@ SRC_URI="http://www.ocaml-programming.de/packages/${P}.tar.gz"
 LICENSE="MIT X11"
 
 SLOT="0"
-KEYWORDS="~alpha amd64 ia64 ppc ppc-macos ppc64 sparc x86 x86-sunos"
+KEYWORDS="~alpha amd64 ia64 ppc ppc-macos ppc64 sparc x86 -x86-sunos"
 
 DEPEND=">=dev-lang/ocaml-3.07"
 

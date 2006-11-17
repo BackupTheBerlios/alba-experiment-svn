@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/camomile/${P}.tar.bz2"
 
 LICENSE="LGPL-2"
 SLOT="0"
-KEYWORDS="~x86 ~ppc x86-sunos"
+KEYWORDS="~ppc ~x86 -x86-sunos"
 IUSE=""
 
 DEPEND=">=dev-lang/ocaml-3.07"

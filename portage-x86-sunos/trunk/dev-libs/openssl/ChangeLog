@@ -1,0 +1,8 @@
+# ChangeLog for dev-libs/openssl
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  15 Nov 2006; Fabrizio Listello <flistello@gmail.com> ChangeLog:
+  Masked -x86-sunos version 0.9.8* because of
+  http://www.openssl.org/~appro/values.c bug
+

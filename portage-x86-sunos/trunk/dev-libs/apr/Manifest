@@ -16,6 +16,6 @@ SHA256 dea6bb956dc56d3001f743df2ee104d14b569e5281e2d3fb26dd0ad9f47f9af2 files/ap
 MD5 3a0d2bae49b03d08d65da84b4b3beee6 files/config.layout.patch 818
 RMD160 dada232c8b85e6c3c62fbc6caa1d05f36164dc27 files/config.layout.patch 818
 SHA256 eeacaf654f23084e842bff02b97c083a8da5b5c056fd086166ba2d250edf3181 files/config.layout.patch 818
-MD5 8bb79f3dac09621c4febdeac09330f0e files/digest-apr-0.9.12 229
-RMD160 9f0ffdaf7aae699ddb7d9cbbed094ec9d39a70de files/digest-apr-0.9.12 229
-SHA256 1797ab8859057650d0fcc5954af29d3433f30f9e74da4ad96f4291cb600028bd files/digest-apr-0.9.12 229
+MD5 b57608f31fa2af09b38d76820aa79ea1 files/digest-apr-0.9.12 235
+RMD160 3febf6c27a02388ccc7b2cf8b37f55b2006ffad6 files/digest-apr-0.9.12 235
+SHA256 9ec8cac33dfcf931b83ae7a71c104a6e0844bbb0a9af30e0fbabbe0934474be1 files/digest-apr-0.9.12 235

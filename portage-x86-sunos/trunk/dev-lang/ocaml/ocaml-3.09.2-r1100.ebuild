@@ -11,7 +11,7 @@ SRC_URI="http://caml.inria.fr/distrib/ocaml-3.09/${P}.tar.bz2"
 
 LICENSE="QPL-1.0 LGPL-2"
 SLOT="0"
-KEYWORDS="~ppc ~ppc64 ~x86 x86-sunos"
+KEYWORDS="~ppc ~ppc64 ~x86 -x86-sunos"
 IUSE="tcltk latex"
 
 DEPEND="virtual/libc

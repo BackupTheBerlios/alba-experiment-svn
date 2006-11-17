@@ -11,7 +11,7 @@ HOMEPAGE="http://spruce.sourceforge.net/gmime/"
 
 SLOT="0"
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~hppa ppc ~sparc x86 ~x86-sunos"
+KEYWORDS="amd64 ~hppa ppc ~sparc x86 -x86-sunos"
 
 RDEPEND=">=dev-libs/glib-2
 	doc? ( >=dev-util/gtk-doc-1.0 )

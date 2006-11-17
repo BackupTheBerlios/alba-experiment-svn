@@ -11,7 +11,7 @@ HOMEPAGE="http://www.gnu.org/software/libiconv/"
 SLOT="0"
 LICENSE="LGPL-2.1"
 KEYWORDS="~x86-fbsd ~x86-sunos"
-IUSE="build"
+IUSE="build sun-ld g-prefix gnulinks"
 
 DEPEND="!sys-libs/glibc"
 
@@ -35,7 +35,7 @@ src_compile() {
 	filter-ldflags -static
 
 	local myconf=""
-	if use x86-sunos; then
+	if use gnulinks; then
 		myconf="${myconf} \
 			--includedir=/usr/gnu/include \
 			--bindir=/usr/gnu/bin"
@@ -67,7 +67,7 @@ src_install() {
 		gen_usr_ldscript libcharset.so
 	fi
 	
-	if use x86-sunos; then
+	if use gnulinks; then
 		dodir /usr/bin
 		dosym /usr/gnu/bin/iconv /usr/bin/giconv
 	fi
