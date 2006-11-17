@@ -1,0 +1,26 @@
+--- bash-*.ebuild.original	2006-09-20 10:36:50.744459000 +0200
++++ bash-*.ebuild.patched	2006-09-20 10:36:48.707663000 +0200
+@@ -126,6 +146,11 @@
+ 		newins "${FILESDIR}"/dot-${f} .${f}
+ 	done
+ 
++	if use g-prefix ; then
++		sed -i s:g*grep:ggrep: ${D}/etc/bash/bashrc || die "sed failed"
++	fi
++	
++
+ 	if use build ; then
+ 		rm -rf "${D}"/usr
+ 	else
+@@ -147,3 +172,11 @@
+ 		rm -f "${D}"/etc/bash/bash_logout
+ 	fi
+ }
++
++pkg_postinst() {
++	if [[ "${USERLAND}" == "SunOS" ]]; then
++		ewarn "Please note:"
++		ewarn "your Solaris /bin/sh shell has been replaced with GNU Bash shell"
++		ewarn "the original Solaris shell can be used by pointing to /sbin/sh"
++	fi
++}

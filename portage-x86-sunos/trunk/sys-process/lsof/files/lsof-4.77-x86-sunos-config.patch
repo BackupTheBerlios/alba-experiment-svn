@@ -1,0 +1,12 @@
+--- Configure.orig	2006-06-04 13:49:57.161575000 +0200
++++ Configure	2006-06-04 13:51:11.423026000 +0200
+@@ -3883,4 +3883,9 @@
+ 	LSOF_VERS="100000"
+ 	;;
++      5.11*)
++	LSOF_TSTBIGF=" "
++	LSOF_TSTLFLG="-lsocket -lnsl"
++	LSOF_VERS="100000"
++	;;
+       *)
+ 	echo Unknown Solaris version: $LSOF_VSTR

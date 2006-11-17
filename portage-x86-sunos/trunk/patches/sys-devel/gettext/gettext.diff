@@ -1,0 +1,17 @@
+--- gettext_original	2006-10-26 10:56:20.672821000 +0200
++++ gettext_x86-sunos	2006-10-25 14:07:17.459312000 +0200
+@@ -55,2 +63,3 @@
+ 	use nocxx && export CXX=$(tc-getCC)
++	use g-prefix && myconf='${myconf} --program-prefix=g'
+ 	econf \
+@@ -70,6 +79,10 @@
+ 	dosym msgfmt /usr/bin/gmsgfmt #43435
+ 	dobin gettext-tools/misc/gettextize || die "gettextize"
+ 
++	if use gnulinks ; then
++		create_gnulinks
++	fi
++
+ 	# remove stuff that glibc handles
+ 	if use elibc_glibc ; then
+ 		rm -f "${D}"/usr/include/libintl.h

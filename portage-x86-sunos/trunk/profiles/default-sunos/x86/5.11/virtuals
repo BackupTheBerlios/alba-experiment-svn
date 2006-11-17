@@ -1,0 +1,11 @@
+# Copyright 1999-2005 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: 
+
+virtual/eject			sys-sunos/SUNWcsu
+virtual/fam			sys-sunos/SUNWcsu
+virtual/logger			sys-sunos/SUNWcsu	
+virtual/ldap			sys-sunos/SUNWcsl
+net-analyzer/traceroute		sys-sunos/SUNWcsu
+net-misc/whois			sys-sunos/SUNWrcmdc
+net-misc/iputils		sys-sunos/SUNWbip

@@ -1,0 +1,17 @@
+--- tar-new.ebuild	2006-11-14 09:27:44.617661000 +0100
++++ tar-old.ebuild	2006-09-29 15:33:32.453927000 +0200
+@@ -58,0 +63,15 @@
++	if use build ; then
++		rm -r "${D}"/usr
++	else
++		dodir /usr/bin
++		use x86-sunos || dosym /bin/${p}tar /usr/bin/${p}tar
++		dodoc AUTHORS ChangeLog* NEWS README* PORTS THANKS
++		newman "${FILESDIR}"/tar.1 ${p}tar.1
++		mv "${D}"/usr/sbin/${p}backup{,-tar}
++		mv "${D}"/usr/sbin/${p}restore{,-tar}
++	fi
++	if use gnulinks ; then
++		dodir ${GNU_PREFIX}/bin
++		dosym /bin/${p}tar ${GNU_PREFIX}/bin/tar
++	fi

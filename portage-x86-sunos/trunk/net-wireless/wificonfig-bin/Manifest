@@ -1,0 +1,6 @@
+MD5 4bfa96d307517284314b3f62ed4cff99 files/digest-wificonfig-bin-0.2 253
+RMD160 d82a6607d885ac5c0809d0cf096bed4a7e16ff4a files/digest-wificonfig-bin-0.2 253
+SHA256 d62f2b10551c3cebba12310679b70166be6c667d8b9993330b748c9c74ff19b3 files/digest-wificonfig-bin-0.2 253
+MD5 7c4f7b63d697bd69a4c90fe274a34558 wificonfig-bin-0.2.ebuild 796
+RMD160 6be6be3ffc0e239f617418d77e798860dc042e25 wificonfig-bin-0.2.ebuild 796
+SHA256 b48494cf966ffd24071794e2b927d89ade3571bacbef764a950ee545d735e67d wificonfig-bin-0.2.ebuild 796

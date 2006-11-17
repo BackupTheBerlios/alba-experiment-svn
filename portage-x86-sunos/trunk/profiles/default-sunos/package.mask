@@ -1,0 +1,3 @@
+# <flistello@gmail.com> (14 Jun 2006)
+# This does not compile on solaris
+=dev-python/numeric-24.2-r1100
