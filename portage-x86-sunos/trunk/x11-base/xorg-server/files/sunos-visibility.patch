@@ -1,0 +1,22 @@
+--- Mesa-6.4.2/src/glx/x11/indirect_size.h.orig	2006-09-19 01:01:07.579054000 +0200
++++ Mesa-6.4.2/src/glx/x11/indirect_size.h	2006-09-19 01:02:30.532715000 +0200
+@@ -49,7 +49,7 @@
+ #  endif
+ 
+ #  if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
+-#    define INTERNAL  __attribute__((visibility("internal")))
++#    define INTERNAL  //__attribute__((visibility("internal")))
+ #  else
+ #    define INTERNAL
+ #  endif
+--- Mesa-6.4.2/src/glx/x11/indirect_size.c.orig	2006-09-19 01:01:01.646090000 +0200
++++ Mesa-6.4.2/src/glx/x11/indirect_size.c	2006-09-19 01:02:22.631871000 +0200
+@@ -42,7 +42,7 @@
+ #  endif
+ 
+ #  if (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 3)) && defined(__ELF__)
+-#    define INTERNAL  __attribute__((visibility("internal")))
++#    define INTERNAL  //__attribute__((visibility("internal")))
+ #  else
+ #    define INTERNAL
+ #  endif

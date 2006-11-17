@@ -1,0 +1,7 @@
+# ChangeLog for www-client/mozilla-firefox
+# Copyright 1999-2006 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  11 Aug 2006; Fabrizio Listello <flistello at gmail dot com> ChangeLog:
+  Added a patch for fixing Solaris compilation issue in nsBidi.cpp
+
