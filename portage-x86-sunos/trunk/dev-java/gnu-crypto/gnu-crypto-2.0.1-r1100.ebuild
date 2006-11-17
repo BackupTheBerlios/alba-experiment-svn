@@ -10,7 +10,7 @@ SRC_URI="ftp://ftp.gnupg.org/GnuPG/gnu-crypto/gnu-crypto-2.0.1.tar.bz2"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="~amd64 ppc ~ppc64 ~x86 x86-sunos"
+KEYWORDS="~amd64 ppc ~ppc64 ~x86 -x86-sunos"
 IUSE="doc"
 
 DEPEND=">=virtual/jdk-1.3"

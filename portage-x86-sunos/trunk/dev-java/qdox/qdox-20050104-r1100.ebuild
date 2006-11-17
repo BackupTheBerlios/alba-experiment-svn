@@ -10,7 +10,7 @@ SRC_URI="mirror://gentoo/${P}.tar.bz2"
 
 LICENSE="Apache-1.1"
 SLOT="1.6" # it's the 1.6 codebase
-KEYWORDS="x86 amd64 ppc x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 DEPEND=">=virtual/jdk-1.4

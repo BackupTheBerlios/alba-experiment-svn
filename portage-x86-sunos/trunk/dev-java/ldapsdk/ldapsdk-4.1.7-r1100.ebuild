@@ -10,7 +10,7 @@ SRC_URI="http://www.mozilla.org/directory/${PN}_java_20020819.tar.gz"
 
 LICENSE="MPL-1.1"
 SLOT="4.1"
-KEYWORDS="x86 amd64 sparc x86-sunos"
+KEYWORDS="amd64 sparc x86 -x86-sunos"
 IUSE="doc"
 
 RDEPEND=">=virtual/jre-1.4

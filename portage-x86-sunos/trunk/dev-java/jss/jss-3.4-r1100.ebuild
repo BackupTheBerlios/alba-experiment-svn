@@ -11,7 +11,7 @@ SRC_URI="ftp://ftp.mozilla.org/pub/mozilla.org/security/${PN}/releases/${RTM_NAM
 
 LICENSE="MPL-1.1"
 SLOT="3.4"
-KEYWORDS="x86 amd64 sparc x86-sunos"
+KEYWORDS="amd64 sparc x86 -x86-sunos"
 IUSE=""
 
 RDEPEND=">=virtual/jre-1.4

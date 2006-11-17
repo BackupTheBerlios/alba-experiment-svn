@@ -11,7 +11,7 @@ HOMEPAGE="http://www.gnu.org/software/classpathx/jaxp/"
 SRC_URI="ftp://ftp.gnu.org/pub/gnu/classpathx/${MY_P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc"
 
 RDEPEND=">=virtual/jre-1.3

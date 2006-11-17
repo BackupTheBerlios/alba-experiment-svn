@@ -9,7 +9,7 @@ HOMEPAGE="http://groovy.codehaus.org/"
 SRC_URI="http://dist.codehaus.org/groovy/distributions/${PN}-1.0-beta-4-src.tar.gz"
 LICENSE="codehaus-groovy"
 SLOT="1"
-KEYWORDS="~x86 ~amd64 x86-sunos"
+KEYWORDS="~amd64 ~x86 -x86-sunos"
 IUSE="doc jikes"
 DEPEND=">=dev-java/xerces-2.6
 	>=dev-java/commons-cli-1.0-r3

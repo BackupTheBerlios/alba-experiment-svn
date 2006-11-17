@@ -24,7 +24,7 @@ SRC_URI="${file_main} ${file_rowset} ${file_nls}
 	doc? ( ${file_doc} )
 "
 HOMEPAGE="http://otn.oracle.com/software/tech/java/sqlj_jdbc/htdocs/jdbc9201.html"
-KEYWORDS="~x86 ~ppc ~sparc ~amd64 ~x86-sunos"
+KEYWORDS="~amd64 ~ppc ~sparc ~x86 -x86-sunos"
 LICENSE="oracle-jdbc"
 SLOT="7"
 DEPEND=">=app-arch/unzip-5.50-r1"

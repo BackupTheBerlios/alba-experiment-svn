@@ -9,7 +9,7 @@ HOMEPAGE="http://www.jcraft.com/jsch/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.zip"
 LICENSE="jcraft"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="doc jikes source examples"
 
 RDEPEND=">=virtual/jdk-1.4

@@ -10,7 +10,7 @@ SRC_URI="http://ftpna2.bea.com/pub/downloads/${PN}.jar"
 
 LICENSE="bea.ri.jsr173"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 RDEPEND=">=virtual/jre-1.3

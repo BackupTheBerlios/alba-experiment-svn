@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/relaxng/${MY_P}.zip"
 
 LICENSE="as-is"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 DEPEND=">=virtual/jdk-1.4

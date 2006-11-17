@@ -10,7 +10,7 @@ SRC_URI="http://www.jcraft.com/${PN}/${P}.tar.gz"
 
 LICENSE="jcraft"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 IUSE="doc jikes source"
 
 DEPEND=">=virtual/jdk-1.4

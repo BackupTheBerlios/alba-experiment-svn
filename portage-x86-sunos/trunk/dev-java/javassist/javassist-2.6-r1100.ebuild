@@ -10,7 +10,7 @@ HOMEPAGE="http://www.csg.is.titech.ac.jp/~chiba/javassist/"
 
 LICENSE="MPL-1.1"
 SLOT="2"
-KEYWORDS="x86 amd64 ~ppc x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 RDEPEND=">=virtual/jre-1.4"

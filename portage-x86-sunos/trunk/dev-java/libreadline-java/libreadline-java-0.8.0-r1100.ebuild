@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/java-readline/${P}-src.tar.gz"
 
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="x86 sparc ppc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc source"
 
 RDEPEND=">=virtual/jre-1.4

@@ -10,7 +10,7 @@ SRC_URI="javahelp-${PV//./_}.zip"
 
 LICENSE="sun-j2sl"
 SLOT="0"
-KEYWORDS="x86 ppc amd64 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc"
 
 DEPEND=">=app-arch/unzip-5.50-r1"

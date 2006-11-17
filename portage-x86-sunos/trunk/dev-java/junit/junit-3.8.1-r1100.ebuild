@@ -11,7 +11,7 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_P}.zip"
 HOMEPAGE="http://www.junit.org/"
 LICENSE="CPL-1.0"
 SLOT="0"
-KEYWORDS="x86 ppc sparc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="doc jikes source"
 DEPEND=">=virtual/jdk-1.3
 	jikes? ( >=dev-java/jikes-1.21 )

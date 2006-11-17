@@ -9,7 +9,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}-src.zip"
 HOMEPAGE="http://www.karneim.com/jrexx/"
 LICENSE="LGPL-2.1"
 SLOT="0"
-KEYWORDS="x86 amd64 ~ppc x86-sunos"
+KEYWORDS="amd64 ~ppc x86 -x86-sunos"
 RDEPEND=">=virtual/jre-1.4"
 DEPEND=">=virtual/jdk-1.4
 		app-arch/unzip

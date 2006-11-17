@@ -10,7 +10,7 @@ HOMEPAGE="http://www.cs.princeton.edu/~appel/modern/java/CUP/"
 SRC_URI="http://www.cs.princeton.edu/~appel/modern/java/CUP/java_cup_v10k.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ppc ppc64 sparc x86 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="source"
 DEPEND=">=virtual/jdk-1.3
 	source? ( app-arch/zip )"

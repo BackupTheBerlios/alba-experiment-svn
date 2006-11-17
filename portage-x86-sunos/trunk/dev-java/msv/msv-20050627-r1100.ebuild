@@ -10,7 +10,7 @@ SRC_URI="mirror://gentoo/${PN}.${PV}.zip"
 
 LICENSE="BSD Apache-1.1"
 SLOT="0"
-KEYWORDS="amd64 ppc x86 x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc jikes source"
 
 RDEPEND=">=virtual/jre-1.4

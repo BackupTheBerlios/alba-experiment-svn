@@ -10,7 +10,7 @@ HOMEPAGE="http://jakarta.apache.org/"
 SLOT="1.3"
 IUSE="doc jikes source"
 LICENSE="Apache-1.1"
-KEYWORDS="x86 ppc sparc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 DEPEND=">=virtual/jdk-1.4
 	dev-java/ant-core
 	jikes? ( dev-java/jikes )

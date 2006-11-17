@@ -9,7 +9,7 @@ SRC_URI="http://www.clarkware.com/software/${P}.zip"
 HOMEPAGE="http://www.clarkware.com/software/JUnitPerf.html"
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="x86 amd64 ppc x86-sunos"
+KEYWORDS="amd64 ppc x86 -x86-sunos"
 IUSE="doc jikes junit source"
 DEPEND=">=virtual/jdk-1.3
 	app-arch/unzip

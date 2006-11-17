@@ -9,7 +9,7 @@ SRC_URI="x86? (http://www.kpdus.com/jad/linux/jadls158.zip)
 		x86-sunos? (http://www.kpdus.com/jad/solaris/jadsx8158.zip)"
 DEPEND="app-arch/unzip"
 RDEPEND=""
-KEYWORDS="x86 amd64 -ppc ~x86-sunos"
+KEYWORDS="amd64 -ppc x86 -x86-sunos"
 SLOT="0"
 LICENSE="freedist"
 IUSE=""

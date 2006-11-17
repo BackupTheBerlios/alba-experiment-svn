@@ -10,7 +10,7 @@ SRC_URI="mirror://apache/logging/log4j/${PV}/${MY_P}.tar.gz"
 HOMEPAGE="http://logging.apache.org/log4j/"
 LICENSE="Apache-1.1"
 SLOT="0"
-KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 x86-sunos"
+KEYWORDS="~amd64 ~ppc ~ppc64 ~sparc ~x86 -x86-sunos"
 # jikes support disabled: bug #108819
 IUSE="doc javamail jms jmx source"
 

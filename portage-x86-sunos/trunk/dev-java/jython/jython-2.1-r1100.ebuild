@@ -11,7 +11,7 @@ MY_PV="21"
 SRC_URI="mirror://gentoo/${P}.tar.bz2"
 LICENSE="JPython"
 SLOT="0"
-KEYWORDS="x86 ppc sparc amd64 ppc64 x86-sunos"
+KEYWORDS="amd64 ppc ppc64 sparc x86 -x86-sunos"
 IUSE="readline jikes source doc"
 # servlet
 
