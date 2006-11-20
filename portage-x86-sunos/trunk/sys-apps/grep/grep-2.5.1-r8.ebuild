@@ -12,7 +12,7 @@ SRC_URI="mirror://gnu/${PN}/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-sunos"
-IUSE="build nls static gnulinks g-prefix"
+IUSE="build nls static gnulinks"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
@@ -45,14 +45,11 @@ src_compile() {
 		append-ldflags -static
 	fi
 
-	if use g-prefix ; then 
-		g=g;
-		myconf="${myconf} --program-prefix=${g}"
-	fi
+	use userland_GNU && bindir="/bin" || bindir="/usr/libexec/gnu"
 
 	econf \
-		--bindir=/bin \
 		$(use_enable nls) \
+		--bindir=${bindir} \
 		--disable-perl-regexp \
 		${myconf} \
 		|| die "econf failed"
@@ -61,11 +58,13 @@ src_compile() {
 
 src_install() {
 	make DESTDIR="${D}" install || die "make install failed"
+	
+	use userland_GNU && bindir="/bin" || bindir="/usr/libexec/gnu"
 
 	# Override the default shell scripts... grep knows how to act
 	# based on how it's called
-	ln -sfn ${g}grep "${D}"/bin/${g}egrep || die "ln egrep failed"
-	ln -sfn ${g}grep "${D}"/bin/${g}fgrep || die "ln fgrep failed"
+	ln -sfn ${g}grep "${D}"/${bindir}/${g}egrep || die "ln egrep failed"
+	ln -sfn ${g}grep "${D}"/${bindir}/${g}fgrep || die "ln fgrep failed"
 
 	if use build ; then
 		rm -r "${D}"/usr/share
@@ -74,6 +73,6 @@ src_install() {
 	fi
 
 	if use gnulinks ; then
-		create_gnulinks
+		create_glinks
 	fi
 }
