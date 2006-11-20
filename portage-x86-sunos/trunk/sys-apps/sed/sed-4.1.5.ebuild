@@ -47,11 +47,10 @@ src_compile() {
 	src_bootstrap_sed
 
 	local myconf=""
-	if ! use userland_GNU ; then
-		myconf="--program-prefix=g"
-	fi
+	use userland_GNU \
+		&& myconf="${myconf} --bindir=/bin" \
+		|| myconf="${myconf} --bindir=/usr/libexec/gnu"
 	econf \
-		--bindir=/bin \
 		$(use_enable nls) \
 		${myconf} \
 		|| die "Configure failed"
@@ -67,9 +66,7 @@ src_install() {
 	docinto examples
 	dodoc "${FILESDIR}"/{dos2unix,unix2dos}
 
-	if use gnulinks; then
-		create_gnulinks
-	fi
+	use gnulinks && create_glinks
 
 	rm -f "${D}"/usr/lib/charset.alias "${D}"/usr/share/locale/locale.alias
 }
