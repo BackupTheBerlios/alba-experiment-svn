@@ -4,16 +4,23 @@
 . /etc/make.conf
 
 GOTO=$1
-PATH=/usr/gnu/bin:$PATH
+PATH=/usr/gnu/bin:/usr/libexec/gnu:$PATH
 STAGENAME="stage1.5-x86-sunos2.11"
 STAGEDIST="/var/tmp/${STAGENAME}"
 STAGEPKGLIST="${GTODEVHOME}/conf/${STAGENAME}.pkglist"
+BUILDFILE="${GTODEVHOME}/conf/${STAGENAME}.buildver"
 LOGFILE="/var/log/portage/${STAGENAME}.log"
 PKGDIR=`portageq pkgdir`
 date > ${LOGFILE}
 OPT=""
 
-[[ -d ${STAGEDIST} ]] && rm -Rf ${STAGEDIST}
+stageflags='-nls' 
+[[ -f ${BUILDFILE} ]] || echo 0 > ${BUILDFILE}
+BUILDVER="$(cat ${BUILDFILE})"
+BUILDVER=$((${BUILDVER} + 1))
+einfo "Build #${BUILDVER}"
+
+#[[ -d ${STAGEDIST} ]] && rm -Rf ${STAGEDIST}
 mkdir -p ${STAGEDIST}/image 2>/dev/null
 
 function phase1 {
@@ -29,32 +36,34 @@ function phase1 {
 		ebegin "Adding package ${PBV}"
 		FEATURES='-collision-protect'
 		export FEATURES
-		ROOT="${STAGEDIST}/image" emerge -v --usepkgonly ${OPT} ${pkg} >> $LOGFILE 2>&1
+		USE="${stageflags}" ROOT="${STAGEDIST}/image" emerge -v --usepkgonly ${OPT} ${pkg} >> $LOGFILE 2>&1
 		eend $?
 	done 
 }
 
 function phase2 {
 	einfo "II - Patching..."
-	ebegin "Moving /bin files to /usr/bin"
-	cd ${STAGEDIST}/image/ && mv bin/* usr/bin/
-	rmdir bin
-	eend $?
+	#ebegin "Moving /bin files to /usr/bin"
+	#cd ${STAGEDIST}/image/ && mv bin/* usr/bin/
+	#rmdir bin
+	#eend $?
+	ebegin "Nothing to do"
+	eend 0
 }
 
 function phase3 {
-	ebegin "III - Creating stagefile ${STAGENAME}..."
+	ebegin "III - Creating stagefile ${STAGENAME}-b${BUILDVER}..."
 	cd ${STAGEDIST}/image
-	/usr/bin/tar cf ../${STAGENAME}.suntar *
-	gzip ../${STAGENAME}.suntar
+	/usr/bin/tar cf ../${STAGENAME}-b${BUILDVER}.suntar *
+	gzip ../${STAGENAME}-b${BUILDVER}.suntar
 	eend
 	unset FEATURES
 }
 
 case $GOTO in
-	I,1) phase1; phase2 ; phase3;;
-	II,2) phase2 ; phase3;;
-	III,3) phase3 ;;
+	I|1) phase1; phase2 ; phase3;;
+	II|2) phase2 ; phase3;;
+	III|3) phase3 ;;
 	*) phase1; phase2; phase3
 esac
-
+echo ${BUILDVER} > ${BUILDFILE}
