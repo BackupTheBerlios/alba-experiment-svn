@@ -54,7 +54,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" installbuilddir=/usr/share/apr-0/build install || die
+	emake DESTDIR="${D}" installbuilddir=/usr/share/apr-0/build install || die
 
 	# bogus values pointing at /var/tmp/portage
 	sed -i -e 's:APR_SOURCE_DIR=.*:APR_SOURCE_DIR=/usr/share/apr-0:g' ${D}/usr/bin/apr-config

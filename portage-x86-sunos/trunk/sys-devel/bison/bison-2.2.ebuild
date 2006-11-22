@@ -37,7 +37,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die
 
 	# This one is installed by dev-util/yacc
 	mv "${D}"/usr/bin/yacc{,.bison} || die

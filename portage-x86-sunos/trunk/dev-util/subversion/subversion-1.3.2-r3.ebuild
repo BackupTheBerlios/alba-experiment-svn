@@ -130,18 +130,18 @@ src_compile() {
 	if use perl; then
 		# Work around a buggy Makefile.PL, bug 64634
 		mkdir -p subversion/bindings/swig/perl/native/blib/arch/auto/SVN/{_Client,_Delta,_Fs,_Ra,_Repos,_Wc}
-		make swig-pl || die "Perl library building failed"
+		emake swig-pl || die "Perl library building failed"
 	fi
 
 	if use ruby; then
-		make swig-rb || die "Ruby library building failed"
+		emake swig-rb || die "Ruby library building failed"
 	fi
 
 	if use java; then
 		# ensure that the destination dir exists, else some compilation fails
 		mkdir -p ${S}/subversion/bindings/java/javahl/classes
 		# Compile javahl
-		make JAVAC_FLAGS="$(java-pkg_javac-args) -encoding iso8859-1" javahl || die "Compilation failed"
+		emake JAVAC_FLAGS="$(java-pkg_javac-args) -encoding iso8859-1" javahl || die "Compilation failed"
 	fi
 
 	if use emacs; then
@@ -160,7 +160,7 @@ src_install () {
 	python_version
 	PYTHON_DIR=/usr/$(get_libdir)/python${PYVER}
 
-	make DESTDIR=${D} install || die "Installation of subversion failed"
+	emake DESTDIR=${D} install || die "Installation of subversion failed"
 
 #	This might not be necessary with the new install
 #	if [[ -e ${D}/usr/$(get_libdir)/apache2 ]]; then
@@ -174,7 +174,7 @@ src_install () {
 
 	dobin svn-config
 	if use python; then
-		make install-swig-py DESTDIR=${D} DISTUTIL_PARAM=--prefix=${D}  LD_LIBRARY_PATH="-L${D}/usr/$(get_libdir)" || die "Installation of subversion python bindings failed"
+		emake install-swig-py DESTDIR=${D} DISTUTIL_PARAM=--prefix=${D}  LD_LIBRARY_PATH="-L${D}/usr/$(get_libdir)" || die "Installation of subversion python bindings failed"
 
 		# move python bindings
 		mkdir -p ${D}${PYTHON_DIR}/site-packages
@@ -183,14 +183,14 @@ src_install () {
 		rmdir ${D}/usr/$(get_libdir)/svn-python
 	fi
 	if use perl; then
-		make DESTDIR=${D} install-swig-pl || die "Perl library building failed"
+		emake DESTDIR=${D} install-swig-pl || die "Perl library building failed"
 		fixlocalpod
 	fi
 	if use ruby; then
-		make DESTDIR=${D} install-swig-rb || die "Installation of subversion ruby bindings failed"
+		emake DESTDIR=${D} install-swig-rb || die "Installation of subversion ruby bindings failed"
 	fi
 	if use java; then
-		make DESTDIR="${D}" install-javahl || die "installation failed"
+		emake DESTDIR="${D}" install-javahl || die "installation failed"
 		java-pkg_regso ${D}/usr/$(get_libdir)/libsvnjavahl*.so
 		java-pkg_dojar ${D}/usr/$(get_libdir)/svn-javahl/svn-javahl.jar
 		rm -r ${D}/usr/$(get_libdir)/svn-javahl/*.jar

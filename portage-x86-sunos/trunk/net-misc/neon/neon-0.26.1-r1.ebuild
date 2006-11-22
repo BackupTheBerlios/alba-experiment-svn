@@ -64,11 +64,11 @@ src_compile() {
 }
 
 src_test() {
-	make check || die "Trying make check without success."
+	emake check || die "Trying make check without success."
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die 'install failed'
+	emake DESTDIR="${D}" install || die 'install failed'
 	dodoc AUTHORS BUGS ChangeLog NEWS README THANKS TODO doc/*
 }
 
