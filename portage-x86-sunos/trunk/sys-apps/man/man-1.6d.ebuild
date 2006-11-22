@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/sys-apps/man/man-1.6d.ebuild,v 1.12 2006/08/22 13:34:07 geoman Exp $
 
-inherit eutils flag-o-matic toolchain-funcs
+inherit eutils flag-o-matic toolchain-funcs gnuize
 
 DESCRIPTION="Standard commands to read man pages"
 HOMEPAGE="http://primates.ximian.com/~flucifredi/man/"
@@ -80,7 +80,7 @@ src_compile() {
 		mylang="none"
 	fi
 	use x86-sunos && append-flags "-DSYSV"
-		
+
 	./configure \
 		-confdir=/etc \
 		+sgid +fhs \
@@ -106,17 +106,20 @@ src_install() {
 	for x in ${mansects//:/ } ; do
 		keepdir /var/cache/man/cat${x}
 	done
-	
-	if use g-prefix ; then
-	cd ${D}/usr/bin
-	  for x in *; do
-		mv ${x} g${x}
-	  if use gnulinks; then
-		dodir ${GNU_PREFIX}/bin
-		dosym /usr/bin/g${x} /${GNU_PREFIX}/bin/${x}
-	  fi
-	  done
+
+	if ! use userland_GNU ; then
+		dodir /usr/libexec/gnu
+		cd "${D}"/usr/bin
+		for x in *; do
+			mv ${x} "${D}"/usr/libexec/gnu
+		done
+		cd "${D}"/usr/sbin
+		for x in *; do
+			mv ${x} "${D}"/usr/libexec/gnu
+		done
+		create_glinks
 	fi
+	
 }
 
 pkg_postinst() {

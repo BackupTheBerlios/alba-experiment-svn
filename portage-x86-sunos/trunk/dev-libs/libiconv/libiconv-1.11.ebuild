@@ -37,8 +37,8 @@ src_compile() {
 	local myconf=""
 	if use gnulinks; then
 		myconf="${myconf} \
-			--includedir=/usr/gnu/include \
-			--bindir=/usr/gnu/bin"
+			--includedir=/usr/include/iconv \
+			--bindir=/usr/libexec/gnu"
 	fi
 
 	# Install in /lib as utils installed in /lib like gnutar
@@ -68,8 +68,7 @@ src_install() {
 	fi
 	
 	if use gnulinks; then
-		dodir /usr/bin
-		dosym /usr/gnu/bin/iconv /usr/bin/giconv
+		create_glinks
 	fi
 
 	use build && rm -rf "${D}/usr"

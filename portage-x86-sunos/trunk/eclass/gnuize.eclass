@@ -44,3 +44,17 @@ create_gnulinks() {
 		fi
 	done
 }
+
+create_glinks() {
+	# Creates synlinks un /usr/bin with a g-prefix for 
+	# commands in /usr/libexec/gnu of the package
+	cd "${D}"
+	if [[ -d /usr/libexec/gnu ]] ; then
+		cd "${D}"/usr/libexec/gnu
+		dodir /usr/bin
+		local x
+		for x in *; do
+			dosym /usr/libexec/gnu/${x} /usr/bin/g${x} #adds a leading 'g' to command
+		done
+	fi
+}

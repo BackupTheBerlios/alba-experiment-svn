@@ -126,8 +126,8 @@ src_install() {
 		newins "${FILESDIR}"/dot-${f} .${f}
 	done
 
-	if use g-prefix ; then
-		sed -i s:g*grep:ggrep: ${D}/etc/bash/bashrc || die "sed failed"
+	if ! userland_GNU ; then
+		sed -i s:g*grep:/usr/libexec/gnu/grep: ${D}/etc/bash/bashrc || die "sed failed"
 	fi
 	
 

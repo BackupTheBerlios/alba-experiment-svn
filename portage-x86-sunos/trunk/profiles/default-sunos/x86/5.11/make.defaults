@@ -6,7 +6,7 @@ CFLAGS="-O2 -march=i386 -pipe"
 CXXFLAGS="-O2 -march=i386 -pipe"
 MAKE="gmake"
 
-GNU_PREFIX="/usr/gnu"
+GNU_PREFIX="/usr/libexec/gnu"
 PREROOTPATH='/usr/libexec/gnu:/usr/gnu/bin:/usr/bin'
 USE="x86-sunos g-prefix gnulinks nopie sun-ld gcc displace openldap-alternate-prefix nodrm"
 

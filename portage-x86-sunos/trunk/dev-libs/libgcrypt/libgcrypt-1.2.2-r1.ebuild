@@ -31,6 +31,7 @@ src_unpack() {
 #	epatch ${WORKDIR}/${PN}-1.2.1-GNU-stack-fix.patch
 
 	elibtoolize
+	${SED:-sed} -i -e "s:^LDADD = ../src/libgcrypt.la:LDADD = ../src/libgcrypt.la ../cipher/libcipher.la:" ${S}/tests/Makefile.in
 }
 
 src_compile() {
@@ -44,7 +45,7 @@ src_compile() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die
 	dodoc AUTHORS BUGS ChangeLog NEWS README* THANKS TODO VERSION
 
 	# backwards compat symlinks

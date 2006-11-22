@@ -24,7 +24,7 @@ src_unpack() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "installed failed"
+	emake DESTDIR="${D}" install || die "installed failed"
 	dodoc AUTHORS ChangeLog NEWS README README-alpha THANKS TODO
 	use doc && dohtml doc/opencdk-api.html
 }

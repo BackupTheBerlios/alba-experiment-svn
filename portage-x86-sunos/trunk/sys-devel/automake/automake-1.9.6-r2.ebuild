@@ -36,7 +36,7 @@ src_unpack() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die
+	emake DESTDIR="${D}" install || die
 
 	local x
 	for x in aclocal automake ; do
