@@ -1,0 +1,187 @@
+2006-06-02 17:58  brx
+
+	* .: tagging release 0.5
+
+2006-06-02 17:57  brx
+
+	* devtools/trunk/src/bin/ae-add-ebuild,
+	  devtools/trunk/src/bin/create-stage1.5-x86-sunos,
+	  devtools/trunk/src/bin/portage-tree-cmp.pl,
+	  devtools/trunk/src/bin/spm,
+	  devtools/trunk/src/conf/stage1.5-x86-sunos2.11.pkglist: minor
+	  lifting changes to ae-add-ebuild, changed the criteria for
+	  create-stage, added a new tool to compare portage trees
+
+2006-05-11 08:05  brx
+
+	* devtools/tags/0.4, devtools/tags/0.4/bin/ae-add-ebuild,
+	  devtools/tags/0.4/bin/ae-create-devtools-release,
+	  devtools/tags/0.4/bin/spm,
+	  devtools/tags/0.4/conf.d/alba-experiment-devtools.conf,
+	  devtools/trunk/src/bin/ae-create-devtools-release:
+
+2006-05-11 08:01  brx
+
+	* devtools/trunk/src/bin/ae-create-devtools-release: fixed
+	  commands usage
+
+2006-05-11 07:56  brx
+
+	* devtools/trunk/src/bin/spm: addedd support for option -q to spm
+
+2006-05-09 16:37  brx
+
+	* devtools/trunk/src/bin/ae-add-ebuild,
+	  devtools/trunk/src/conf.d/alba-experiment-devtools.conf:
+
+2006-05-09 16:36  brx
+
+	* devtools/trunk/src/bin/spm: Initial commit for an rpm like
+	  command to manager solaris packages
+
+2006-04-19 07:44  brx
+
+	* devtools/trunk/src/bin/ae-add-ebuild,
+	  devtools/trunk/src/bin/eadd-sunos-ebuild: automatically removes
+	  old digests
+
+2006-04-11 16:47  brx
+
+	* devtools/trunk/src/conf/stage1.5-x86-sunos2.11.pkglist: fixed
+	  stage pkg list
+
+2006-04-11 16:21  brx
+
+	* devtools/trunk/src/bin/find-pkg-by-file,
+	  devtools/trunk/src/bin/fpkgf, devtools/trunk/src/bin/pkglist:
+	  addedd a couple of tools
+
+2006-04-07 15:50  brx
+
+	* devtools/trunk/src/bin/ae-backup-files.sh: addedd script to
+	  backup overwritten files
+
+2006-04-06 15:15  brx
+
+	* devtools/tags/0.3,
+	  devtools/tags/0.3/bin/create-stage1.5-x86-sunos-pkg,
+	  devtools/trunk/src/bin/create-stage1.5-x86-sunos-pkg: tagging
+	  release 0.3
+
+2006-04-06 08:57  brx
+
+	* devtools/trunk/src/bin/ae-create-devtools-release,
+	  devtools/trunk/src/bin/create-stage1.5-x86-sunos-pkg,
+	  devtools/trunk/src/conf/stage1.5-x86-sunos2.11.pkglist: updated
+	  list of packages, solved dependecies
+
+2006-04-04 12:53  brx
+
+	* devtools/trunk/src, trunk/src/alba-experiment-devtools:
+	  repository layout rework: moved devtools to a separate module
+
+2006-04-04 12:20  brx
+
+	* trunk/src/alba-experiment-devtools/bin/create-stage1.5-x86-sunos,
+	  
+	  trunk/src/alba-experiment-devtools/conf/stage1.5-x86-sunos2.11.pkglist:
+	  fixed issues
+
+2006-04-03 12:22  brx
+
+	* trunk/src/alba-experiment-devtools/bin/create-stage1.5-x86-sunos,
+	  
+	  trunk/src/alba-experiment-devtools/bin/create-stage1.5-x86-sunos-pkg:
+	  * addedd command to create a Solaris package from the stage
+	  * fixed issues
+
+2006-04-03 09:45  brx
+
+	* trunk/src/alba-experiment-devtools/bin/create-stage1.5-x86-sunos,
+	  
+	  trunk/src/alba-experiment-devtools/bin/create-stage1.5-x86-sunos-pkg,
+	  
+	  trunk/src/alba-experiment-devtools/conf/stage1.5-x86-sunos2.11.pkglist:
+	  minor revision
+
+2006-03-31 12:34  brx
+
+	* trunk/src/alba-experiment-devtools/conf/stage1.5-x86-sunos.pkglist,
+	  
+	  trunk/src/alba-experiment-devtools/conf/stage1.5-x86-sunos2.11.pkglist:
+	  
+
+2006-03-31 12:25  brx
+
+	* trunk/src/alba-experiment-devtools/conf,
+	  trunk/src/alba-experiment-devtools/conf/stage1.5-x86-sunos.pkglist:
+	  added configuration for the create stage script
+
+2006-03-31 12:23  brx
+
+	* trunk/src/alba-experiment-devtools/bin/eadd-sunos-ebuild,
+	  trunk/src/gentoolkit-dev-sunos:
+
+2006-03-21 22:21  brx
+
+	* trunk/src/alba-experiment-devtools/conf.d/alba-experiment-devtools.conf:
+	  update the conf
+
+2006-03-21 22:17  brx
+
+	* trunk/src/alba-experiment-devtools/conf.d/alba-experiment-devtools.conf,
+	  
+	  trunk/src/alba-experiment-devtools/conf.d/gentoolkit-dev-sunos.conf:
+	  Gentoo/Solaris aka Alba-experiment release 0.1
+
+2006-03-21 21:49  brx
+
+	* trunk/src/alba-experiment-devtools,
+	  trunk/src/alda-experiment-devtools:
+
+2006-03-21 21:48  brx
+
+	* trunk/src/alda-experiment-devtools,
+	  trunk/src/alda-experiment-devtools/bin/create-stage1.5-x86-sunos,
+	  trunk/src/alda-experiment-devtools/bin/fpkgf,
+	  trunk/src/alda-experiment-devtools/conf.d/gentoolkit-dev-sunos.conf:
+	  
+
+2006-03-15 21:41  brx
+
+	* trunk/src, trunk/src/baselayout-sunos-0.1,
+	  trunk/src/gentoolkit-dev-sunos: maybe src is a better name
+
+2006-03-15 21:40  brx
+
+	* trunk/packages/baselayout-sunos-0.1,
+	  trunk/packages/baselayout-sunos-0.1/etc,
+	  trunk/packages/baselayout-sunos-0.1/etc/conf.d,
+	  trunk/packages/baselayout-sunos-0.1/etc/conf.d/local.start,
+	  trunk/packages/baselayout-sunos-0.1/etc/conf.d/local.stop,
+	  trunk/packages/baselayout-sunos-0.1/etc/env.d,
+	  trunk/packages/baselayout-sunos-0.1/etc/env.d/00basic,
+	  trunk/packages/baselayout-sunos-0.1/etc/env.d/00basic-sunos,
+	  trunk/packages/baselayout-sunos-0.1/etc/inputrc,
+	  trunk/packages/baselayout-sunos-0.1/etc/profile,
+	  trunk/packages/baselayout-sunos-0.1/etc/profile.gentoo,
+	  trunk/packages/baselayout-sunos-0.1/etc/rc.conf,
+	  trunk/packages/baselayout-sunos-0.1/sbin,
+	  trunk/packages/baselayout-sunos-0.1/sbin/env-update.sh,
+	  trunk/packages/baselayout-sunos-0.1/sbin/functions.sh,
+	  trunk/packages/baselayout-sunos-0.1/sbin/ldconfig,
+	  trunk/packages/baselayout-sunos-0.1/sbin/runscript.sh,
+	  trunk/packages/gentoolkit-dev-sunos,
+	  trunk/packages/gentoolkit-dev-sunos/bin,
+	  trunk/packages/gentoolkit-dev-sunos/bin/eadd-sunos-ebuild,
+	  trunk/packages/gentoolkit-dev-sunos/bin/fpkgf,
+	  trunk/packages/gentoolkit-dev-sunos/conf.d,
+	  trunk/packages/gentoolkit-dev-sunos/conf.d/gentoolkit-dev-sunos.conf,
+	  trunk/packages/gentoolkit-dev-sunos/tools,
+	  trunk/packages/gentoolkit-dev-sunos/tools/01-add_portage_users.sh,
+	  
+	  trunk/packages/gentoolkit-dev-sunos/tools/02-configure_profile.sh,
+	  trunk/packages/gentoolkit-dev-sunos/tools/do-solarispkg,
+	  trunk/packages/gentoolkit-dev-sunos/tools/prepare-unpack: sunos
+	  specific packages to be installed with alda-experiment
+
