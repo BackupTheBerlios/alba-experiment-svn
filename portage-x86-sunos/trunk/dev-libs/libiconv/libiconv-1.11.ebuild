@@ -35,7 +35,7 @@ src_compile() {
 	filter-ldflags -static
 
 	local myconf=""
-	if use gnulinks; then
+	if ! use userland_GNU; then
 		myconf="${myconf} \
 			--includedir=/usr/include/iconv \
 			--bindir=/usr/libexec/gnu"
