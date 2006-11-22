@@ -54,7 +54,7 @@ pkg_preinst() {
 }
 
 src_install() {
-	make DESTDIR="${D}" install || die "make install failed"
+	emake DESTDIR="${D}" install || die "make install failed"
 	newconfd "${FILESDIR}"/rsyncd.conf.d rsyncd
 	newinitd "${FILESDIR}"/rsyncd.init.d rsyncd
 	if ! use build ; then
