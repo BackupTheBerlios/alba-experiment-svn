@@ -50,8 +50,8 @@ src_compile() {
 		myconf="${myconf} --includedir=/usr/include/ncurses"
 	fi
 
-	if use g-prefix ; then
-		myconf="${myconf} --program-prefix=g"
+	if ! use userland_GNU ; then
+		myconf="${myconf} --bindir=/usr/libexec/gnu"
 	fi
 
 	# First we build the regular ncurses ...
@@ -108,10 +108,10 @@ src_install() {
 	# files overwrite the unicode versions
 	if use unicode ; then
 		cd "${WORKDIR}"/widec
-		make DESTDIR="${D}" install || die "make widec install failed"
+		emake DESTDIR="${D}" install || die "make widec install failed"
 	fi
 	cd "${WORKDIR}"/narrowc
-	make DESTDIR="${D}" install || die "make narrowc install failed"
+	emake DESTDIR="${D}" install || die "make narrowc install failed"
 
 	if [[ ${CHOST} != *-darwin* ]] ; then
 		# Move static and extraneous ncurses libraries out of /lib
@@ -183,7 +183,7 @@ src_install() {
 		done
 	fi
 
-	use gnulinks && create_gnulinks
+	use gnulinks && create_glinks
 }
 
 pkg_preinst() {
