@@ -1,6 +1,6 @@
 # Copyright 1999-2006 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Header: /var/cvsroot/gentoo-x86/sys-libs/com_err/com_err-1.38.ebuild,v 1.18 2006/01/07 00:26:12 swegener Exp $
+# $Header: /var/cvsroot/gentoo-x86/sys-libs/com_err/com_err-1.39.ebuild,v 1.5 2006/11/11 09:18:55 vapier Exp $
 
 inherit eutils flag-o-matic toolchain-funcs
 
@@ -10,7 +10,7 @@ SRC_URI="mirror://sourceforge/e2fsprogs/e2fsprogs-${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 -x86-sunos"
+KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-sunos"
 IUSE="nls"
 
 RDEPEND=""
@@ -21,7 +21,9 @@ S=${WORKDIR}/e2fsprogs-${PV}
 src_unpack() {
 	unpack ${A}
 	cd "${S}"
-	epatch "${FILESDIR}"/${PN}-1.37-makefile.patch
+	epatch "${FILESDIR}"/${PN}-1.39-makefile.patch
+	epatch "${FILESDIR}"/${PN}-1.39-parse-types.patch
+	epatch "${FILESDIR}"/${PN}-1.38-locale.patch
 }
 
 src_compile() {
@@ -37,7 +39,6 @@ src_compile() {
 		*)         libtype=elf;;
 	esac
 
-	mkdir -p lib/{blkid,e2p,et,ext2fs,ss,uuid}/{checker,elfshared,pic,profiled} #102412
 	econf \
 		--enable-${libtype}-shlibs \
 		--with-ldopts="${LDFLAGS}" \
@@ -71,11 +72,11 @@ src_install() {
 
 pkg_postinst() {
 	echo
-	einfo "PLEASE PLEASE take note of this"
-	einfo "Please make *sure* to run revdep-rebuild now"
-	einfo "Certain things on your system may have linked against a"
-	einfo "different version of com_err -- those things need to be"
-	einfo "recompiled.  Sorry for the inconvenience"
+	ewarn "PLEASE PLEASE take note of this"
+	ewarn "Please make *sure* to run revdep-rebuild now"
+	ewarn "Certain things on your system may have linked against a"
+	ewarn "different version of com_err -- those things need to be"
+	ewarn "recompiled.  Sorry for the inconvenience"
 	echo
 	epause 10
 	ebeep
