@@ -1,0 +1,6 @@
+MD5 fccc0d251b1ae615cca12f4c651ee042 files/digest-setuptools-0.6_rc3 250
+RMD160 f5ce1ab6d3ad34cd9dfafc5b004f4b54fffbda0a files/digest-setuptools-0.6_rc3 250
+SHA256 b1ae83fae9b250465d4e9008b54bf4c20ca6d2527e0a665c551552a13b08f372 files/digest-setuptools-0.6_rc3 250
+MD5 3771d19c6361dee968d81784b49ae54d setuptools-0.6_rc3.ebuild 823
+RMD160 6164cdf81599650e19aba37774c6e5172561ae94 setuptools-0.6_rc3.ebuild 823
+SHA256 173eb24efd16c24f905c049b4e14c131d1426198359d23733b1f112c5860df4d setuptools-0.6_rc3.ebuild 823
