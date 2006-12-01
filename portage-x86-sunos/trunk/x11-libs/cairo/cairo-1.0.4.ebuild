@@ -11,7 +11,7 @@ SRC_URI="http://cairographics.org/releases/${P}.tar.gz"
 LICENSE="|| ( LGPL-2.1 MPL-1.1 )"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ~ia64 mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-sunos"
-IUSE="doc glitz png X"
+IUSE="doc glitz png X sun-ld"
 # bug 118106: not entirely broken, just too flakey
 RESTRICT="test"
 
@@ -30,6 +30,14 @@ DEPEND="${RDEPEND}
 	X? ( || ( x11-proto/renderproto virtual/x11 ) )
 	doc? (	>=dev-util/gtk-doc-1.3
 		~app-text/docbook-xml-dtd-4.2 )"
+
+src_unpack() {
+	unpack "${A}"
+	cd "${S}"
+
+	use sun-ld && epatch ${FILESDIR}/${P}-x86-sunos-visibility.patch
+}
+
 
 src_compile() {
 
