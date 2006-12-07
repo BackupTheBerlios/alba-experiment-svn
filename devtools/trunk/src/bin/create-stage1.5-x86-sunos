@@ -54,7 +54,7 @@ function phase2 {
 function phase3 {
 	ebegin "III - Creating stagefile ${STAGENAME} for build ${BUILDVER}..."
 	cd ${STAGEDIST}/image
-	mkdir -ae ${STAGEDIST}/image/var/ae
+	mkdir -p ${STAGEDIST}/image/var/ae
 	echo ${BUILDVER} > ${STAGEDIST}/image/var/ae/${STAGENAME}.buildver
 	/usr/bin/tar cf ../${STAGENAME}.suntar *
 	gzip ../${STAGENAME}.suntar

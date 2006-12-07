@@ -91,5 +91,7 @@ if grep $CATEGORY $PATCHBASEDIR/patched-ebuilds; then
 	ewarn "      check in $PATCHBASEDIR/$CATEGORY for diff file"
 fi
 
-einfo "Testing the ebuild dependecies"
-emerge -av =${CATEGORY}${EBVER}
+if [ "$3" != "--no-emerge" ]; then
+	einfo "Testing the ebuild dependecies"
+	emerge -av =${CATEGORY}${EBVER}
+fi
