@@ -1,0 +1,6 @@
+MD5 68b329da9893e34099c7d8ad5cb9c940 files/digest-qemu-0.8.2 1
+RMD160 c0da025038ed83c687ddc430da9846ecb97f3998 files/digest-qemu-0.8.2 1
+SHA256 01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b files/digest-qemu-0.8.2 1
+MD5 68620133d4923fd6f4b2d748c6dc9d86 qemu-0.8.2.ebuild 516
+RMD160 6decf12c12d15ebdfc6451c984196bb634eb9604 qemu-0.8.2.ebuild 516
+SHA256 7749e3806aafecf1ec122a45b1c8965b0b9eeee004308da70f384ee3beccc9fb qemu-0.8.2.ebuild 516
