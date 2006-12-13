@@ -1,0 +1,6 @@
+MD5 a0bf02bcd57c994d37b44ba7e1d7be77 files/digest-gconf-sharp-2.8.0 533
+RMD160 18c62e75ccf30d6f33a94d9d2a47ce05685f99c1 files/digest-gconf-sharp-2.8.0 533
+SHA256 1cb001520314e44370cf56d79fa2f62a61493cd37ffd9c4689c247ebeefd3f54 files/digest-gconf-sharp-2.8.0 533
+MD5 6ecff1976c0b760d4fcb8ee7236adf8a gconf-sharp-2.8.0.ebuild 833
+RMD160 e553587500622afed628e16ed71c13414435f776 gconf-sharp-2.8.0.ebuild 833
+SHA256 0644a2c8132557e64372ea5c8ba122879638973fffee642aaac66209f58efaad gconf-sharp-2.8.0.ebuild 833
