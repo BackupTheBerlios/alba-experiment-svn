@@ -1,0 +1,6 @@
+MD5 a0bf02bcd57c994d37b44ba7e1d7be77 files/digest-gtk-sharp-2.8.0 533
+RMD160 18c62e75ccf30d6f33a94d9d2a47ce05685f99c1 files/digest-gtk-sharp-2.8.0 533
+SHA256 1cb001520314e44370cf56d79fa2f62a61493cd37ffd9c4689c247ebeefd3f54 files/digest-gtk-sharp-2.8.0 533
+MD5 d583b5ceda8e53c0a67f98e88a1a0440 gtk-sharp-2.8.0.ebuild 1760
+RMD160 926d4e7f548f1efc4450934d2b6cede947060ab8 gtk-sharp-2.8.0.ebuild 1760
+SHA256 170e2eaff1bb571480d65985e9968f3463cbee56bb9396e4f122a38af37c010f gtk-sharp-2.8.0.ebuild 1760
