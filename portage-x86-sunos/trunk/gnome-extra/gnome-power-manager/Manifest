@@ -1,0 +1,6 @@
+MD5 e5c5d04823f614cda5bdc08d2a1f572b files/digest-gnome-power-manager-2.16.2 283
+RMD160 430868e75f07726eb2c2263aac4d9da0ea9c3eff files/digest-gnome-power-manager-2.16.2 283
+SHA256 926ab8a257da1f380e906cfa84ffbe694781cf24847961d9af134a6b810bc2b8 files/digest-gnome-power-manager-2.16.2 283
+MD5 238bc0211e29a1e62e6c3c9cb8b4d693 gnome-power-manager-2.16.2.ebuild 2178
+RMD160 fa2095531cb1498862621324a76ecf177fba274e gnome-power-manager-2.16.2.ebuild 2178
+SHA256 3fac2d5661c68ced3d3bf3a5cf533a886ce783ba14d2c13776240a735f5e142d gnome-power-manager-2.16.2.ebuild 2178
