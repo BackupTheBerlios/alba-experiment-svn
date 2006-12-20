@@ -1,0 +1,6 @@
+MD5 627cecd487e9b9d172fdf6b92bf0ff94 files/digest-perl-ldap-0.33 244
+RMD160 eddc647d6eb7d55d6e174c730783149d4b0b048f files/digest-perl-ldap-0.33 244
+SHA256 3953d7eb4e4f2446e9a6b82adb08a526a8a9c1a1811a34edc21ab88cef05ce1b files/digest-perl-ldap-0.33 244
+MD5 4d3cc58e7e7e350f20ba2d053a42bfb7 perl-ldap-0.33.ebuild 1041
+RMD160 001fdcc872c315612f394ee3975d854cddab8d2c perl-ldap-0.33.ebuild 1041
+SHA256 e0b5fe194ff857bcaf35a939dc2671cd5c8021118daa23a9a0f1038f6d628f4c perl-ldap-0.33.ebuild 1041
