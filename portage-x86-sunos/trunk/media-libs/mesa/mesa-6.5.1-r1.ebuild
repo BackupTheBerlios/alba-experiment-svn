@@ -43,7 +43,7 @@ RDEPEND="dev-libs/expat
 	x11-libs/libXxf86vm
 	x11-libs/libXi
 	x11-libs/libXmu
-	>=x11-libs/libdrm-2.0.2
+	!x86-sunos? ( >=x11-libs/libdrm-2.0.2 )
 	x11-libs/libICE
 	app-admin/eselect-opengl
 	motif? ( virtual/motif )
@@ -83,6 +83,8 @@ pkg_setup() {
 		CONFIG="freebsd-dri-amd64"
 	elif use kernel_FreeBSD; then
 		CONFIG="freebsd-dri"
+	elif use x86-sunos; then
+		CONFIG=solaris-x86-gcc-noopenwin
 	elif use x86; then
 		CONFIG="linux-dri-x86"
 	elif use amd64; then
@@ -103,6 +105,12 @@ src_unpack() {
 	cd ${S}
 	# FreeBSD 6.* doesn't have posix_memalign().
 	[[ ${CHOST} == *-freebsd6.* ]] && sed -i -e "s/-DHAVE_POSIX_MEMALIGN//" configs/freebsd{,-dri}
+
+	# Fix compilation on Solaris x86, based on Nexenta patch
+	# http://www.gnusolaris.org/cgi-bin/trac.cgi/browser/gnusolaris1/mesa/trunk/src/glx/x11/Makefile?rev=39061
+	use x86-sunos && epatch ${FILESDIR}/${P}-visibility.patch
+	cp ${FILESDIR}/solaris-x86-gcc-noopenwin ${S}/configs
+
 
 	# Don't compile debug code with USE=-debug - bug #125004
 	if ! use debug; then

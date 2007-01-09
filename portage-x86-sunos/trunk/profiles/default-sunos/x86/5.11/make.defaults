@@ -1,5 +1,5 @@
-ARCH="x86-sunos"
-ACCEPT_KEYWORDS="~x86-sunos x86-sunos"
+ARCH="x86-sunos x86-solaris"
+ACCEPT_KEYWORDS="~x86-sunos x86-sunos x86-solaris ~x86-solaris"
 
 CHOST="i386-pc-solaris2.11"
 CFLAGS="-O2 -march=i386 -pipe"
