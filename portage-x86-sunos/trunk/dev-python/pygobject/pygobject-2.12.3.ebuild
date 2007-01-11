@@ -4,7 +4,7 @@
 
 WANT_AUTOMAKE=1.8
 
-inherit gnome2 python eutils autotools
+inherit gnome2 python eutils autotools flag-o-matic
 
 DESCRIPTION="GNOME 2 bindings for Python"
 HOMEPAGE="http://www.pygtk.org/"
@@ -40,6 +40,7 @@ src_unpack() {
 	# disable pyc compiling
 	mv py-compile py-compile.orig
 	ln -s /bin/true py-compile
+	use x86-solaris && append-flags -D_XPG6
 }
 
 src_install() {

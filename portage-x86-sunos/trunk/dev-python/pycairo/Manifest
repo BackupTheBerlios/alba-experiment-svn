@@ -1,12 +1,16 @@
-MD5 462de4a9cdf0b5e0f747577e9a2c6af5 files/digest-pycairo-1.2.2 241
-RMD160 259057f0d532619511ebc19946446e0d5114aefc files/digest-pycairo-1.2.2 241
-SHA256 cadcf8ef20a657b1d0f86edd50a637110f2ee1f2ce5666557d94603c68bd0d8e files/digest-pycairo-1.2.2 241
+AUX pycairo-1.2.0-no-automagic-deps.patch 2139 RMD160 db9914a757e719adb8a5eac1160e64f49a1e9aa0 SHA1 d8d5172b26c203e06f82be05c32ccc3b3c460a2b SHA256 eebeff8268edd50ffe7d1cf7a2ea3cefd0054cafb2b6011d55f4eef83c485eac
 MD5 c3f2b9e9b397bc0af5c30c3d6069c3e3 files/pycairo-1.2.0-no-automagic-deps.patch 2139
 RMD160 db9914a757e719adb8a5eac1160e64f49a1e9aa0 files/pycairo-1.2.0-no-automagic-deps.patch 2139
 SHA256 eebeff8268edd50ffe7d1cf7a2ea3cefd0054cafb2b6011d55f4eef83c485eac files/pycairo-1.2.0-no-automagic-deps.patch 2139
+AUX pycairo-1.2.2-no-automagic-deps.patch 1387 RMD160 6493a79ab123a254b02d6a9ddf44aa01d07b9e67 SHA1 054829af9bc2d4076022369fe1be339bcdf99bb1 SHA256 b1852d6588485b72700d08f5a31d10c6887988568e9a3293c1d5d6314864a046
 MD5 b21fac25bd6e6f6970890e65c6fe9b77 files/pycairo-1.2.2-no-automagic-deps.patch 1387
 RMD160 6493a79ab123a254b02d6a9ddf44aa01d07b9e67 files/pycairo-1.2.2-no-automagic-deps.patch 1387
 SHA256 b1852d6588485b72700d08f5a31d10c6887988568e9a3293c1d5d6314864a046 files/pycairo-1.2.2-no-automagic-deps.patch 1387
-MD5 c7b3be76507f16821c555748ea805298 pycairo-1.2.2.ebuild 1105
-RMD160 3abecc6a1bd0c758a3573e56b481ebd3c4ed9153 pycairo-1.2.2.ebuild 1105
-SHA256 f03d4e078e2f86321d789095dea63186fe081cf41ab4467c2fcfcd54b2332795 pycairo-1.2.2.ebuild 1105
+DIST pycairo-1.2.2.tar.gz 482417 RMD160 3151ca5b80985c9fcd2b001488e23938bd8db84e SHA1 ac3ccc5393ece678c2873d8807006432f616d15b SHA256 ab10b00c209e9feaebfff944d411f300ca032d09d3ebb64e3498acf9fea09c6d
+EBUILD pycairo-1.2.2.ebuild 1159 RMD160 6f15e54f29a418a0ead5f5bf9e53a8818f34a762 SHA1 3e617eb8c20fb4edd939229b3153bfd0034e5215 SHA256 1299f11dedb1514ee0ce2db9d83561c9ec54c492d3f62dcc82de66cc62052b2b
+MD5 f76a31cce2f2bf0c700bfaa352c82f49 pycairo-1.2.2.ebuild 1159
+RMD160 6f15e54f29a418a0ead5f5bf9e53a8818f34a762 pycairo-1.2.2.ebuild 1159
+SHA256 1299f11dedb1514ee0ce2db9d83561c9ec54c492d3f62dcc82de66cc62052b2b pycairo-1.2.2.ebuild 1159
+MD5 462de4a9cdf0b5e0f747577e9a2c6af5 files/digest-pycairo-1.2.2 241
+RMD160 259057f0d532619511ebc19946446e0d5114aefc files/digest-pycairo-1.2.2 241
+SHA256 cadcf8ef20a657b1d0f86edd50a637110f2ee1f2ce5666557d94603c68bd0d8e files/digest-pycairo-1.2.2 241
