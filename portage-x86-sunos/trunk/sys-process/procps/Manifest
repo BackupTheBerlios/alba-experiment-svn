@@ -1,12 +1,48 @@
+AUX 3.2.4-64bit-display.patch 1566 RMD160 964f2e17a1ea3bf13ef5c77c745bad048fad1d13 SHA1 c0bdd840b60b7bee832271f9676cbb63894a76ef SHA256 f1cf8a0af323248ce747d842ef1387ffc4c7b60a00664c722199e6bb54883d22
 MD5 5557c7fb6275f031e3770c70993baf69 files/3.2.4-64bit-display.patch 1566
+RMD160 964f2e17a1ea3bf13ef5c77c745bad048fad1d13 files/3.2.4-64bit-display.patch 1566
+SHA256 f1cf8a0af323248ce747d842ef1387ffc4c7b60a00664c722199e6bb54883d22 files/3.2.4-64bit-display.patch 1566
+AUX 3.2.4-linux26-slab.patch 521 RMD160 6d8a91f6df93528fd59ccc69b7d42b2821859d28 SHA1 3f97075cef01e5745934dc7c0fb4c96008dffbf9 SHA256 1d07c222617a781b3f7b294961c718e7b6df468424302145ed072e8062df412a
 MD5 7e94d86add2921b1262479b92f51da27 files/3.2.4-linux26-slab.patch 521
+RMD160 6d8a91f6df93528fd59ccc69b7d42b2821859d28 files/3.2.4-linux26-slab.patch 521
+SHA256 1d07c222617a781b3f7b294961c718e7b6df468424302145ed072e8062df412a files/3.2.4-linux26-slab.patch 521
+AUX 3.2.5-top-sort.patch 1384 RMD160 7ab964b4dd310d5032826abe64a46b8b6e968a80 SHA1 ad7782f3f4d118fa67c667d611a1eb2f4c736808 SHA256 bd52bdde8f43e9f1428d18efa13691abd83a25ea2f99d8c44fabccd7f2ba902b
 MD5 eb892816cc3a56418f4157eb67e18fa6 files/3.2.5-top-sort.patch 1384
-MD5 a26e86ab1efcb58809f0f46aa735ef07 files/digest-procps-3.2.4-r3 64
-MD5 f4e5ac4b1eaf4acdbf0dc9573cdf5438 files/digest-procps-3.2.5-r1 64
-MD5 f4e5ac4b1eaf4acdbf0dc9573cdf5438 files/digest-procps-3.2.5-r9999 64
-MD5 21a0dfaadcef71823a8a53d709451d61 files/digest-procps-3.2.6 64
-MD5 f9e1b99ab8000432b594c2a22c7d6ca4 files/procps-3.2.5-proc-mount.patch 588
+RMD160 7ab964b4dd310d5032826abe64a46b8b6e968a80 files/3.2.5-top-sort.patch 1384
+SHA256 bd52bdde8f43e9f1428d18efa13691abd83a25ea2f99d8c44fabccd7f2ba902b files/3.2.5-top-sort.patch 1384
+AUX procps-3.2.3-noproc.patch 911 RMD160 0c6714c16424a31cde28f8e667f05a46e71402d1 SHA1 6cc1c4fc8f7e39347619f4c9f1432dfc6d0164a1 SHA256 e3897fe3e8df43750f514e8fc84a82f5e00c0bc2245bbd21ad2d8ff9789087f1
+MD5 b62aa57d9092d563b2ad50ae36ac4305 files/procps-3.2.3-noproc.patch 911
+RMD160 0c6714c16424a31cde28f8e667f05a46e71402d1 files/procps-3.2.3-noproc.patch 911
+SHA256 e3897fe3e8df43750f514e8fc84a82f5e00c0bc2245bbd21ad2d8ff9789087f1 files/procps-3.2.3-noproc.patch 911
+AUX procps-3.2.5-proc-mount.patch 621 RMD160 cbe2e0a44332990c46f1a56a779e845a574c6d88 SHA1 34982cbd9b295e246fe091a5ec578cdb67036453 SHA256 d529af3f98f9fe9499bb19478670f23e65245b036174972237e91ce2420c85b5
+MD5 8e1e5788236911ff97d0f7ef1aa5460f files/procps-3.2.5-proc-mount.patch 621
+RMD160 cbe2e0a44332990c46f1a56a779e845a574c6d88 files/procps-3.2.5-proc-mount.patch 621
+SHA256 d529af3f98f9fe9499bb19478670f23e65245b036174972237e91ce2420c85b5 files/procps-3.2.5-proc-mount.patch 621
+AUX procps-3.2.6-links.patch 597 RMD160 4cf05ca33ad0aebcd9063e769f1ca6060a46b07f SHA1 b6c561570e5a80cebb2c16053121d3a3970710bb SHA256 1994e4442ca143ea68638ab55eeda69fdd71ff9773aef386429ef2f03f29bc36
+MD5 e6f89219f5041b2d376ee82b729b7055 files/procps-3.2.6-links.patch 597
+RMD160 4cf05ca33ad0aebcd9063e769f1ca6060a46b07f files/procps-3.2.6-links.patch 597
+SHA256 1994e4442ca143ea68638ab55eeda69fdd71ff9773aef386429ef2f03f29bc36 files/procps-3.2.6-links.patch 597
+AUX procps-3.2.6-mips-n32_isnt_usable_on_mips64_yet.patch 380 RMD160 1f0796a5e1745d32ac12786e712823ae0359c986 SHA1 145e81079f980913327f3a2680e87d1ebba87f4f SHA256 7fa2c0891f8c96072e0cd6578228b122ca69602e89416e7a73c370895d93a267
 MD5 c9fd7d71e11288f4c3e9387b42a7e465 files/procps-3.2.6-mips-n32_isnt_usable_on_mips64_yet.patch 380
+RMD160 1f0796a5e1745d32ac12786e712823ae0359c986 files/procps-3.2.6-mips-n32_isnt_usable_on_mips64_yet.patch 380
+SHA256 7fa2c0891f8c96072e0cd6578228b122ca69602e89416e7a73c370895d93a267 files/procps-3.2.6-mips-n32_isnt_usable_on_mips64_yet.patch 380
+AUX procps-3.2.7-proc-mount.patch 657 RMD160 90d0dae26d4a514ef0dbcb3c90ba167d0890d14e SHA1 07bdfb5484189daad7beb18fd5e2f280e3de3cad SHA256 17194621e6f5307c1712fab15a13a7da0e10315cf8b45b34403b54c70013b2ba
+MD5 6bf4dea614e3a72119470880860ecc00 files/procps-3.2.7-proc-mount.patch 657
+RMD160 90d0dae26d4a514ef0dbcb3c90ba167d0890d14e files/procps-3.2.7-proc-mount.patch 657
+SHA256 17194621e6f5307c1712fab15a13a7da0e10315cf8b45b34403b54c70013b2ba files/procps-3.2.7-proc-mount.patch 657
+AUX procps-mips-define-pagesize.patch 1028 RMD160 aa0cb4fdf76d50bae983683e0de0a06daba52361 SHA1 7658c35e40c4c565bd4f4124b09c43ec474da0bd SHA256 9000966beaa7ae9e8261dfc691b7b7bec08857e8404de60f30b10bbe6e702d8e
 MD5 7ba1d9bd2f1c46766282250643ab9ebd files/procps-mips-define-pagesize.patch 1028
+RMD160 aa0cb4fdf76d50bae983683e0de0a06daba52361 files/procps-mips-define-pagesize.patch 1028
+SHA256 9000966beaa7ae9e8261dfc691b7b7bec08857e8404de60f30b10bbe6e702d8e files/procps-mips-define-pagesize.patch 1028
+AUX procps-mips-n32_isnt_usable_on_mips64_yet.patch 431 RMD160 baae7cdff022beb1bff0c346338fa583c025d19d SHA1 51775dac3b21b31b372cde3d91ee5a50dde9e900 SHA256 c1fa4dbaa23cd6e3173da01fbeac9808adb5f56148bd720a2c1d03bd72682f83
 MD5 5fdac6b265f6ff3866056fb2d97d2a0c files/procps-mips-n32_isnt_usable_on_mips64_yet.patch 431
-MD5 464d545104c7759cb2c461eae214b842 procps-3.2.5-r9999.ebuild 2287
+RMD160 baae7cdff022beb1bff0c346338fa583c025d19d files/procps-mips-n32_isnt_usable_on_mips64_yet.patch 431
+SHA256 c1fa4dbaa23cd6e3173da01fbeac9808adb5f56148bd720a2c1d03bd72682f83 files/procps-mips-n32_isnt_usable_on_mips64_yet.patch 431
+DIST procps-3.2.6.tar.gz 279084 RMD160 f0b09701ce48d9f6db1cbb209b02ba026ee58d09 SHA1 91f44180eb50a94eb945c2598c0e849879e65893 SHA256 f98c7d065168a13f981e815f2472fe5eec7f4efdae6844b21a573ebada56727e
+EBUILD procps-3.2.6.ebuild 2218 RMD160 f3101fbe7916d0df856557ac05d57d68d4819404 SHA1 9008659ee2943961cb9c5ee6d5a6a4d4831cb3e5 SHA256 b94e53f5e7fb47aae7e7ea43bca1c2296e81e28abf230e8030a56df8e32c0f96
+MD5 8d72526d07a070f4ed3ad9d02f8fa24c procps-3.2.6.ebuild 2218
+RMD160 f3101fbe7916d0df856557ac05d57d68d4819404 procps-3.2.6.ebuild 2218
+SHA256 b94e53f5e7fb47aae7e7ea43bca1c2296e81e28abf230e8030a56df8e32c0f96 procps-3.2.6.ebuild 2218
+MD5 e6685df581de20f3e06c47f260da131b files/digest-procps-3.2.6 238
+RMD160 fc19f3d7b54fd68fdb01132b9686fcf8d85af139 files/digest-procps-3.2.6 238
+SHA256 1a816d33dddc7b2af6af9f85d5d47afd9e95d6b4227d473025ae41d1686b068e files/digest-procps-3.2.6 238
