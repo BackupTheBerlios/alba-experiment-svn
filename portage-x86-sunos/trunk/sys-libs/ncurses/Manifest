@@ -1,51 +1,39 @@
-MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r5 64
-RMD160 b238795ec1b72d5e0cfaffa2701846e3218be2ee files/digest-ncurses-5.4-r5 64
-SHA256 f92a103594dfd5a20160a9b155cfb0eacc0dd53fcaa60d89f5542db4a1ed416d files/digest-ncurses-5.4-r5 64
-MD5 a370aabb0870d2822a0ab839947919f3 files/digest-ncurses-5.4-r6 64
-RMD160 b238795ec1b72d5e0cfaffa2701846e3218be2ee files/digest-ncurses-5.4-r6 64
-SHA256 f92a103594dfd5a20160a9b155cfb0eacc0dd53fcaa60d89f5542db4a1ed416d files/digest-ncurses-5.4-r6 64
-MD5 97d66c7857e4be9c07d6ae8d7798a16c files/digest-ncurses-5.4.20050319 142
-RMD160 96c03d6f2b75c2d681e4c70f15c09d47fef76da6 files/digest-ncurses-5.4.20050319 142
-SHA256 22f58f00dc26934ac7102ea8a89eaabc5d585b40cb4cb3465bed322d90095396 files/digest-ncurses-5.4.20050319 142
-MD5 cfb597b362a2079e24880e47e24357df files/digest-ncurses-5.5 64
-RMD160 7569b55dc3e4da22ad0df3d19015d62679b3f817 files/digest-ncurses-5.5 64
-SHA256 988db975bb4e8f9b2e07526e7a95367496153510f24f112d0bb16c38cfde4e65 files/digest-ncurses-5.5 64
-MD5 cfb597b362a2079e24880e47e24357df files/digest-ncurses-5.5-r1 64
-RMD160 7569b55dc3e4da22ad0df3d19015d62679b3f817 files/digest-ncurses-5.5-r1 64
-SHA256 988db975bb4e8f9b2e07526e7a95367496153510f24f112d0bb16c38cfde4e65 files/digest-ncurses-5.5-r1 64
+AUX ncurses-5.4-c++-templates.patch 351 RMD160 d9a0e9387367be813e7067b4ddeddf907a2217b8 SHA1 80471645bee521e6f154c7ff5a9acdc2e87879ef SHA256 853fc14f7ab2f5eb156b2e7d658d79243877102a18cd2845e3ebd4eb24193d7c
+MD5 118971faee11066510aa77e6c6a2c51b files/ncurses-5.4-c++-templates.patch 351
+RMD160 d9a0e9387367be813e7067b4ddeddf907a2217b8 files/ncurses-5.4-c++-templates.patch 351
+SHA256 853fc14f7ab2f5eb156b2e7d658d79243877102a18cd2845e3ebd4eb24193d7c files/ncurses-5.4-c++-templates.patch 351
+AUX ncurses-5.4-share-sed.patch 686 RMD160 95a2ee637ccad464e182ae5270fb7c569c080e69 SHA1 3518b171abfbfca5e3b3588fc97e24d6ea2cdd96 SHA256 a4c04a260ddacc8d283b14120d8d467836aa091b7af3e08905c3e33170665b06
+MD5 1ecbf68a55269d2cebeb997f6973fc1d files/ncurses-5.4-share-sed.patch 686
+RMD160 95a2ee637ccad464e182ae5270fb7c569c080e69 files/ncurses-5.4-share-sed.patch 686
+SHA256 a4c04a260ddacc8d283b14120d8d467836aa091b7af3e08905c3e33170665b06 files/ncurses-5.4-share-sed.patch 686
+AUX ncurses-5.4-xterm.patch 495 RMD160 4b63e381d8c155e83df1668985ed40c5b144ab9d SHA1 c2136713b2e301f99e9202a8b1bfb8bd9bc847df SHA256 120e60719cf70879af5b57318a8ebd52282f19ac3507f45a5aeda7811036253d
+MD5 61ecd5aac5ddbd35cc4d4a00282eed01 files/ncurses-5.4-xterm.patch 495
+RMD160 4b63e381d8c155e83df1668985ed40c5b144ab9d files/ncurses-5.4-xterm.patch 495
+SHA256 120e60719cf70879af5b57318a8ebd52282f19ac3507f45a5aeda7811036253d files/ncurses-5.4-xterm.patch 495
+AUX ncurses-5.5-gfbsd.patch 3060 RMD160 cf0eb3118ec5c0cd009d8569bb48fb92268b7877 SHA1 fa8eee8125fa9e6e70fa2b2f4632fd12b4218349 SHA256 eb640dac78faf5970896d695d36953c2e36a89d92264cbea1b7a0c926ff635b1
+MD5 ad3890f5461218f96e1f999a48879711 files/ncurses-5.5-gfbsd.patch 3060
+RMD160 cf0eb3118ec5c0cd009d8569bb48fb92268b7877 files/ncurses-5.5-gfbsd.patch 3060
+SHA256 eb640dac78faf5970896d695d36953c2e36a89d92264cbea1b7a0c926ff635b1 files/ncurses-5.5-gfbsd.patch 3060
+AUX ncurses-5.5-terminfo-gnome.patch 597 RMD160 08f295ee2441dfae36b692f29fdb39dcd7e1390a SHA1 6fd87ec2214dc45d96b8558c2e9f3d1ee1faf847 SHA256 cc5110c84c1cdfdc13ea11c8cecf0f48a35c4096a25e10ba814889e5f3df2696
+MD5 d4e86212987c8a600a510b09d1c27090 files/ncurses-5.5-terminfo-gnome.patch 597
+RMD160 08f295ee2441dfae36b692f29fdb39dcd7e1390a files/ncurses-5.5-terminfo-gnome.patch 597
+SHA256 cc5110c84c1cdfdc13ea11c8cecf0f48a35c4096a25e10ba814889e5f3df2696 files/ncurses-5.5-terminfo-gnome.patch 597
+AUX xterm-debian.ti 342 RMD160 7f0506819afd9687891eaf03548c659c0ee1abd7 SHA1 dba1f761fe5ec11ac4c9549512bb5be35cc4da77 SHA256 1b10cdbff41f757c9f23f42c58dd6966e3c253b36fc6ceae1034233535743de0
+MD5 2167b54d7c96964183554e767e5f5376 files/xterm-debian.ti 342
+RMD160 7f0506819afd9687891eaf03548c659c0ee1abd7 files/xterm-debian.ti 342
+SHA256 1b10cdbff41f757c9f23f42c58dd6966e3c253b36fc6ceae1034233535743de0 files/xterm-debian.ti 342
+DIST ncurses-5.5.tar.gz 2314030 RMD160 aac34d2530519fbb0fde7af87a365205339ba230 SHA1 46414a72e91a62f63a8c9af00f0d65497f5ecc5a SHA256 27a63f3a2ac9d13c1ed9a0a33ee4497c19a6b5810b8f9738e7654a0e12225b93
+EBUILD ncurses-5.5-r2.ebuild 6509 RMD160 334e8c891294fb134caf622378321d918a9ca4c2 SHA1 f0cb19a15acefa8f996b825598b0dc9627b2939f SHA256 37d785427786b36f7636c206e03b1e547352687e4fbec3f3378e7dfdc34837dd
+MD5 3a350cb11889ef92a793bd6b7f02bd31 ncurses-5.5-r2.ebuild 6509
+RMD160 334e8c891294fb134caf622378321d918a9ca4c2 ncurses-5.5-r2.ebuild 6509
+SHA256 37d785427786b36f7636c206e03b1e547352687e4fbec3f3378e7dfdc34837dd ncurses-5.5-r2.ebuild 6509
+EBUILD ncurses-5.5-r3.ebuild 6041 RMD160 5308ecfe713e4aa3a942e058593d4b35e2a3fdd5 SHA1 c69492355c9d632c2820ddf099410fb2ed5bbc7e SHA256 a7ac0943676b1e77b2b083bee846aa98e8e21471cca89733be45a91987ed2c43
+MD5 85b56805b9b6f5ba3914bf77ede78fa4 ncurses-5.5-r3.ebuild 6041
+RMD160 5308ecfe713e4aa3a942e058593d4b35e2a3fdd5 ncurses-5.5-r3.ebuild 6041
+SHA256 a7ac0943676b1e77b2b083bee846aa98e8e21471cca89733be45a91987ed2c43 ncurses-5.5-r3.ebuild 6041
 MD5 6a01577df5b8434affdc1217be2ba5b1 files/digest-ncurses-5.5-r2 238
 RMD160 755dd213b7e9f190613456f3bc9f419dcbc84271 files/digest-ncurses-5.5-r2 238
 SHA256 f86ecfaaa7faef60ffbc739f005574acbd940ee20502129d8d6c6aa433e1ecee files/digest-ncurses-5.5-r2 238
 MD5 6a01577df5b8434affdc1217be2ba5b1 files/digest-ncurses-5.5-r3 238
 RMD160 755dd213b7e9f190613456f3bc9f419dcbc84271 files/digest-ncurses-5.5-r3 238
 SHA256 f86ecfaaa7faef60ffbc739f005574acbd940ee20502129d8d6c6aa433e1ecee files/digest-ncurses-5.5-r3 238
-MD5 118971faee11066510aa77e6c6a2c51b files/ncurses-5.4-c++-templates.patch 351
-RMD160 d9a0e9387367be813e7067b4ddeddf907a2217b8 files/ncurses-5.4-c++-templates.patch 351
-SHA256 853fc14f7ab2f5eb156b2e7d658d79243877102a18cd2845e3ebd4eb24193d7c files/ncurses-5.4-c++-templates.patch 351
-MD5 1ecbf68a55269d2cebeb997f6973fc1d files/ncurses-5.4-share-sed.patch 686
-RMD160 95a2ee637ccad464e182ae5270fb7c569c080e69 files/ncurses-5.4-share-sed.patch 686
-SHA256 a4c04a260ddacc8d283b14120d8d467836aa091b7af3e08905c3e33170665b06 files/ncurses-5.4-share-sed.patch 686
-MD5 61ecd5aac5ddbd35cc4d4a00282eed01 files/ncurses-5.4-xterm.patch 495
-RMD160 4b63e381d8c155e83df1668985ed40c5b144ab9d files/ncurses-5.4-xterm.patch 495
-SHA256 120e60719cf70879af5b57318a8ebd52282f19ac3507f45a5aeda7811036253d files/ncurses-5.4-xterm.patch 495
-MD5 ad3890f5461218f96e1f999a48879711 files/ncurses-5.5-gfbsd.patch 3060
-RMD160 cf0eb3118ec5c0cd009d8569bb48fb92268b7877 files/ncurses-5.5-gfbsd.patch 3060
-SHA256 eb640dac78faf5970896d695d36953c2e36a89d92264cbea1b7a0c926ff635b1 files/ncurses-5.5-gfbsd.patch 3060
-MD5 d4e86212987c8a600a510b09d1c27090 files/ncurses-5.5-terminfo-gnome.patch 597
-RMD160 08f295ee2441dfae36b692f29fdb39dcd7e1390a files/ncurses-5.5-terminfo-gnome.patch 597
-SHA256 cc5110c84c1cdfdc13ea11c8cecf0f48a35c4096a25e10ba814889e5f3df2696 files/ncurses-5.5-terminfo-gnome.patch 597
-MD5 2167b54d7c96964183554e767e5f5376 files/xterm-debian.ti 342
-RMD160 7f0506819afd9687891eaf03548c659c0ee1abd7 files/xterm-debian.ti 342
-SHA256 1b10cdbff41f757c9f23f42c58dd6966e3c253b36fc6ceae1034233535743de0 files/xterm-debian.ti 342
-MD5 e8c58ac35724fe7a24b1a92957d88310 ncurses-5.4-r1100.ebuild 5823
-RMD160 e5e4acdb1b2bc9cd3abd17d48b1772c6302daa6e ncurses-5.4-r1100.ebuild 5823
-SHA256 c699bb6b810dde183f48557c615fa6dcac6dfff1bfa94b0a19ed1debb6957f0f ncurses-5.4-r1100.ebuild 5823
-MD5 b20fec2a885ec970dbf3561d714f3ad6 ncurses-5.4-r999.ebuild 5725
-RMD160 e98d15d11af640efd54192e40f48fb53039dfd33 ncurses-5.4-r999.ebuild 5725
-SHA256 2639e21ee6358bd38140f2e0f20a0179939010e56b23019d7092c0a53f5f8966 ncurses-5.4-r999.ebuild 5725
-MD5 3a350cb11889ef92a793bd6b7f02bd31 ncurses-5.5-r2.ebuild 6509
-RMD160 334e8c891294fb134caf622378321d918a9ca4c2 ncurses-5.5-r2.ebuild 6509
-SHA256 37d785427786b36f7636c206e03b1e547352687e4fbec3f3378e7dfdc34837dd ncurses-5.5-r2.ebuild 6509
-MD5 59eec846c5acbbeda1e30426872c61a1 ncurses-5.5-r3.ebuild 6062
-RMD160 92a4b84b5bff426dcd40a14baa0deced3db97781 ncurses-5.5-r3.ebuild 6062
-SHA256 2c28c6e142f39b3da03cc9816f7325844f095fa3b86531bb275183cc23171cbd ncurses-5.5-r3.ebuild 6062

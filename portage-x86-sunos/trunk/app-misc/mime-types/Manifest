@@ -1,9 +1,8 @@
-MD5 181ab70a4437d5198098734afb934bfc files/digest-mime-types-5 235
-RMD160 755a62786d64cd281d2ca9b94f8bd80d0321c180 files/digest-mime-types-5 235
-SHA256 ee721f10ace391da04b19bf5bbf87cae62c90a50d2b323b8ad9c6f18b7740c2d files/digest-mime-types-5 235
-MD5 04f9f1578afed47d9518929937e0c118 mime-types-5-r1100.ebuild 560
-RMD160 d3163f95f508cc143b6da6ccef82542f91bc7ad8 mime-types-5-r1100.ebuild 560
-SHA256 0f1a7e6e9a567ae89f1966c44698cb2a515e500fa4698ddbba9f5756a4cafcf6 mime-types-5-r1100.ebuild 560
+DIST mime-types-5.tar.bz2 6191 RMD160 35c1ad09a04a0365e04bef31f5ab5a7490c9f4bd SHA1 dc05966a9ec722a1cacf274c9fe9a835910c43e4 SHA256 1cc1b85ed9806e5b06ff97d3e269aa2b9ecd6c67814ccdf4de9cc13e618c0c2c
+EBUILD mime-types-5.ebuild 556 RMD160 a9b23f6db0fcf6d36b749dc541033aca0c82bf78 SHA1 e9b7f5bffe940fbd38ed0e97cbcc88875fb0fea2 SHA256 cf6d066dd91b64314fa57de02d4d391f8d8c35c8f4a9329ca6f407f9bea2e27f
 MD5 c577096e4b730581d17c2eb9de8897f3 mime-types-5.ebuild 556
 RMD160 a9b23f6db0fcf6d36b749dc541033aca0c82bf78 mime-types-5.ebuild 556
 SHA256 cf6d066dd91b64314fa57de02d4d391f8d8c35c8f4a9329ca6f407f9bea2e27f mime-types-5.ebuild 556
+MD5 181ab70a4437d5198098734afb934bfc files/digest-mime-types-5 235
+RMD160 755a62786d64cd281d2ca9b94f8bd80d0321c180 files/digest-mime-types-5 235
+SHA256 ee721f10ace391da04b19bf5bbf87cae62c90a50d2b323b8ad9c6f18b7740c2d files/digest-mime-types-5 235

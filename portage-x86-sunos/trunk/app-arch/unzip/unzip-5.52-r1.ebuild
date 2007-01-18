@@ -41,6 +41,7 @@ src_compile() {
 		*-freebsd*)   TARGET=freebsd ;;
 		*-openbsd*)   TARGET=bsd ;;
 		*-darwin*)    TARGET=macosx ;;
+		*-solaris*)	  TARGET=solaris;;
 		*)            die "Unknown target, you suck" ;;
 	esac
 	append-lfs-flags #104315

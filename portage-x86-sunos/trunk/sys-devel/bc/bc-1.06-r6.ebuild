@@ -55,26 +55,23 @@ src_compile() {
 	local myconf=""
 	use static && append-ldflags -static
 	use readline && myconf="--with-readline"
-	use g-prefix && {
-		pprefix='g'
-		myconf="${myconf} --program-prefix=${pprefix}"
-	}
+	use ! userland_GNU && myconf="${myconf} --bindir=${GNU_PREFIX}"
 	econf ${myconf} || die
 	emake || die
 }
 
 src_install() {
-	into /usr
-	if use g-prefix ; then 
-		newbin bc/bc gbc || die
-		newbin dc/dc gdc || die
-	else
+	if use userland_GNU  ; then 
+		into /usr
 		dobin bc/bc dc/dc || die
+	else
+		dodir ${GNU_PREFIX}
+		cp ${S}/bc/bc ${D}/${GNU_PREFIX}
+		cp ${S}/dc/dc ${D}/${GNU_PREFIX}
 	fi
 	use gnulinks  && {
-		dodir ${GNU_PREFIX}/bin
-		dosym /usr/bin/${pprefix}bc ${GNU_PREFIX}/bin/bc
-		dosym /usr/bin/${pprefix}dc ${GNU_PREFIX}/bin/dc
+		dosym ${GNU_PREFIX}/bc /usr/bin/gbc
+		dosym ${GNU_PREFIX}/dc /usr/bin/gdc
 	}
 
 	doinfo doc/*.info

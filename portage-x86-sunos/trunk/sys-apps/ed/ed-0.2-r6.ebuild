@@ -50,4 +50,18 @@ src_install() {
 		infodir="${D}"/usr/share/info \
 		install || die
 	dodoc ChangeLog NEWS POSIX README THANKS TODO
+
+	if [[ ${USERLAND} == "SunOS" ]] ; then
+		# create symlinks in /usr/gnu/bin
+		dodir ${GNU_PREFIX}
+		cd "${D}"
+		cd bin
+		einfo "Creating links in ${GNU_PREFIX}"
+			local x
+			for x in * ; do
+				mv ${x} ${D}/${GNU_PREFIX}/${x}
+				dosym ${GNU_PREFIX}/${x} /bin/g${x}
+			done
+	fi
+
 }

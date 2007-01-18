@@ -1,6 +1,5 @@
-MD5 841040c04f175ff1d6246ad39ba976bf build-docbook-catalog-1.2-r1100.ebuild 564
-RMD160 1c4e4d12d32cd25a457af85b6292205bffc296c7 build-docbook-catalog-1.2-r1100.ebuild 564
-SHA256 a8fe8c58df91c6d92dd6d49193c802b2849028d8052859c987693905a3c58f5d build-docbook-catalog-1.2-r1100.ebuild 564
+DIST build-docbook-catalog-1.2.bz2 3094 RMD160 195dff6781e9f9bbd2c2a2dfd874a6c43169c8ba SHA1 8a4bbf12f01faa1799218cff7e87ab26cfe38963 SHA256 cccceec14c2dc89eb03b0e3afa802105809905f3577d7e0104363f683c4dc4f6
+EBUILD build-docbook-catalog-1.2.ebuild 581 RMD160 aa9aac1c0e46798dc2362a96d374766ba8604bbb SHA1 1dda7e5e530297e7d4bb4a24bec501b45b4a80df SHA256 71ce4202d3c9dbc22d263ca6fd4948aca671a51766f3de002638271c504fa105
 MD5 283734b121683d03e4f7f6cc6a697678 build-docbook-catalog-1.2.ebuild 581
 RMD160 aa9aac1c0e46798dc2362a96d374766ba8604bbb build-docbook-catalog-1.2.ebuild 581
 SHA256 71ce4202d3c9dbc22d263ca6fd4948aca671a51766f3de002638271c504fa105 build-docbook-catalog-1.2.ebuild 581

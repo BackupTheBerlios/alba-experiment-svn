@@ -7,3 +7,5 @@ sys-libs/ncurses
 net-print/cups
 app-arch/tar
 sys-process/lsof
+sys-libs/readline
+app-arch/unzip

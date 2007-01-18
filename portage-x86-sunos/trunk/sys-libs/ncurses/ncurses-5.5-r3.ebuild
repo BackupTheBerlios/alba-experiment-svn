@@ -15,10 +15,11 @@ LICENSE="MIT"
 SLOT="5"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k ~mips ppc ppc64 s390 sh sparc
 ~sparc-fbsd x86 ~x86-fbsd ~x86-sunos"
-IUSE="bootstrap build debug doc gpm minimal nocxx trace unicode gnulinks g-prefix"
+IUSE="bootstrap build debug doc gpm minimal nocxx trace unicode gnulinks sun-ld"
 
 DEPEND="gpm? ( sys-libs/gpm )"
 RDEPEND="${DEPEND}"
+BINDIR="/usr/bin"
 
 S=${WORKDIR}/${MY_P}
 
@@ -46,12 +47,12 @@ src_compile() {
 		&& myconf="${myconf} --without-cxx --without-cxx-binding --without-ada"
 
 	# this is for mantain the original Solaris curses and relocate ncurses
-	if use x86-sunos; then
-		myconf="${myconf} --includedir=/usr/include/ncurses"
-	fi
-
+	#if use x86-sunos; then
+		#myconf="${myconf} --includedir=/usr/include/ncurses"
+	#fi
 	if ! use userland_GNU ; then
 		myconf="${myconf} --bindir=/usr/libexec/gnu"
+		BINDIR="/usr/libexec/gnu"
 	fi
 
 	# First we build the regular ncurses ...
@@ -118,7 +119,12 @@ src_install() {
 		dodir /usr/$(get_libdir)
 		cd "${D}"/$(get_libdir)
 		mv lib{form,menu,panel}.so* *.a "${D}"/usr/$(get_libdir)/
-		use sun-ld || gen_usr_ldscript lib{,n}curses.so
+		if use sun-ld ; then
+			dosym /$(get_libdir)/libncurses.so  /usr/$(get_libdir)/libncurses.so
+			dosym /$(get_libdir)/libncurses.so  /usr/$(get_libdir)/libcurses.so
+		else
+			gen_usr_ldscript lib{,n}curses.so
+		fi
 		if use unicode ; then
 			mv lib{form,menu,panel}w.so* "${D}"/usr/$(get_libdir)/
 			use sun-ld || gen_usr_ldscript lib{,n}cursesw.so
@@ -161,8 +167,7 @@ src_install() {
 		# Install xterm-debian terminfo entry to satisfy bug #18486
 		LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${D}/usr/$(get_libdir):${D}/$(get_libdir) \
 		TERMINFO=${D}/usr/share/terminfo \
-			"${D}"/usr/bin/tic "${FILESDIR}"/xterm-debian.ti
-
+			"${D}"${BINDIR}/tic "${FILESDIR}"/xterm-debian.ti
 		if use minimal ; then
 			cp "${D}"/usr/share/terminfo/x/xterm-debian "${D}"/etc/terminfo/x/
 			rm -r "${D}"/usr/share/terminfo
@@ -171,16 +176,6 @@ src_install() {
 		cd "${S}"
 		dodoc ANNOUNCE MANIFEST NEWS README* TO-DO doc/*.doc
 		use doc && dohtml -r doc/html/
-	fi
-
-	if use x86-sunos; then
-		local savelibs="/lib/libcurses.so /usr/lib/libcurses.so"
-		einfo "Removing libs that would conflict with the system..."
-		for l in ${savelibs}; do
-			ebegin "\t${l}"
-			rm "${D}"${l}
-			eend $?
-		done
 	fi
 
 	use gnulinks && create_glinks

@@ -1,9 +1,8 @@
-MD5 6571e081f73782afb921924b083dcd89 files/digest-gnu-gs-fonts-std-8.11 283
-RMD160 022fe31472e20de79fb737c95165a6ff827165aa files/digest-gnu-gs-fonts-std-8.11 283
-SHA256 6cfa340b40217e9b7aa2a93b80ceda3946e054a219b5751911444647ed044262 files/digest-gnu-gs-fonts-std-8.11 283
-MD5 c13939de4232bfff4869b0f867e44ac7 gnu-gs-fonts-std-8.11-r1100.ebuild 657
-RMD160 0e7e03bc40efdc580c4519feaa28927aa73d9ac9 gnu-gs-fonts-std-8.11-r1100.ebuild 657
-SHA256 8ef6c9621b8ed57fd49604690d1c5d8f35fcfb09a1e4af662cf99ccced547ca9 gnu-gs-fonts-std-8.11-r1100.ebuild 657
+DIST ghostscript-fonts-std-8.11.tar.gz 3752871 RMD160 10a19a10d0388bc084a7c1d3da845068d7169054 SHA1 2a7198e8178b2e7dba87cb5794da515200b568f5 SHA256 0eb6f356119f2e49b2563210852e17f57f9dcc5755f350a69a46a0d641a0c401
+EBUILD gnu-gs-fonts-std-8.11.ebuild 675 RMD160 f27f690b74818450f6a2f272467de31ab2fea2e0 SHA1 ec278c5bc35bb593d1782e44d50fbf8895823db4 SHA256 15e6d5739fb994322e8ca1ab7af7d3f62de7e54046b0a7a4d8b8ef879cd2f3e4
 MD5 20ff787b1bedbd7238e784b0174387e5 gnu-gs-fonts-std-8.11.ebuild 675
 RMD160 f27f690b74818450f6a2f272467de31ab2fea2e0 gnu-gs-fonts-std-8.11.ebuild 675
 SHA256 15e6d5739fb994322e8ca1ab7af7d3f62de7e54046b0a7a4d8b8ef879cd2f3e4 gnu-gs-fonts-std-8.11.ebuild 675
+MD5 6571e081f73782afb921924b083dcd89 files/digest-gnu-gs-fonts-std-8.11 283
+RMD160 022fe31472e20de79fb737c95165a6ff827165aa files/digest-gnu-gs-fonts-std-8.11 283
+SHA256 6cfa340b40217e9b7aa2a93b80ceda3946e054a219b5751911444647ed044262 files/digest-gnu-gs-fonts-std-8.11 283

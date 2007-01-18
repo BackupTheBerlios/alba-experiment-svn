@@ -1,12 +1,16 @@
+DIST docbook-xsl-1.68.1.tar.bz2 967283 RMD160 3d73528a80e26b82935e0d26420eaa9355b49a3c SHA1 b39a164cbfa6ec1373266bf1593610a366d72fa8 SHA256 57019b2f3d2967d5e464aafa15c29b8780f23c0f9e071a38b2951587e20d7cf6
+DIST docbook-xsl-1.70.1.tar.bz2 1627881 RMD160 789070e60949f943cdff269dc1ae8fc7c69770ff SHA1 b3248d88d0d3986760c0790003d8570a9fc7e038 SHA256 80c819111ba7abd9f3c6dc4df2586d34225742fcf876fa0520a6c532e5cfb416
+EBUILD docbook-xsl-stylesheets-1.68.1-r1.ebuild 1400 RMD160 14facab57b67b140d0ae1f1d4debcb63e713387c SHA1 534380a9bdce8513d3874da4bc62fad6c425569c SHA256 67de2e48a02a797e91b22f8b93aa1efb053f9f1685fad6c2b08225b1c6b97f26
 MD5 d6e7c7cb1a05d1e95cf8d5450e6ffda2 docbook-xsl-stylesheets-1.68.1-r1.ebuild 1400
 RMD160 14facab57b67b140d0ae1f1d4debcb63e713387c docbook-xsl-stylesheets-1.68.1-r1.ebuild 1400
 SHA256 67de2e48a02a797e91b22f8b93aa1efb053f9f1685fad6c2b08225b1c6b97f26 docbook-xsl-stylesheets-1.68.1-r1.ebuild 1400
-MD5 3f5e130f71262fafe434267323479417 docbook-xsl-stylesheets-1.69.1-r1100.ebuild 1291
-RMD160 7630a1f4389025aabfbb5d93959a592bf1eeb208 docbook-xsl-stylesheets-1.69.1-r1100.ebuild 1291
-SHA256 3d664148cd6cc86c553fa13da679e21ed407b49c7aea13839ddc3a9dec80c937 docbook-xsl-stylesheets-1.69.1-r1100.ebuild 1291
+EBUILD docbook-xsl-stylesheets-1.70.1.ebuild 1294 RMD160 2344576a828be8dff26651cfaea0f02cfb9e8b9b SHA1 2f85f45b32781e8aa89ff512007754eb0a2b38d7 SHA256 b78bbfd5521d1686feafb9c23d67139291a9d82f1c225ff9cc676b238acd41fd
 MD5 eb4ce99c9db4aa51666ca4674ba91558 docbook-xsl-stylesheets-1.70.1.ebuild 1294
 RMD160 2344576a828be8dff26651cfaea0f02cfb9e8b9b docbook-xsl-stylesheets-1.70.1.ebuild 1294
 SHA256 b78bbfd5521d1686feafb9c23d67139291a9d82f1c225ff9cc676b238acd41fd docbook-xsl-stylesheets-1.70.1.ebuild 1294
+MD5 8452f3152f0c32d66bfeb64aaf399c0a files/digest-docbook-xsl-stylesheets-1.68.1-r1 259
+RMD160 51e1fe523a215fe197d70395b013e5f5648ce8e9 files/digest-docbook-xsl-stylesheets-1.68.1-r1 259
+SHA256 8e0f57b40aa9e9dc1df27e5fecfbafa622ea49729391212ca9ac4c8e12fb2100 files/digest-docbook-xsl-stylesheets-1.68.1-r1 259
 MD5 bd7fa76fcf154572b394a14169b082ca files/digest-docbook-xsl-stylesheets-1.70.1 262
 RMD160 750568d843c68f0856998c941c4a5fb6ad3a74a9 files/digest-docbook-xsl-stylesheets-1.70.1 262
 SHA256 9f7b56a637eb66cd184297037245cb410db255da34f1c9d26a4d212d91f98963 files/digest-docbook-xsl-stylesheets-1.70.1 262

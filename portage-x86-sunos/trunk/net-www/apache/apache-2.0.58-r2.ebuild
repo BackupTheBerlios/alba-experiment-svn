@@ -18,7 +18,7 @@ SRC_URI="mirror://apache/httpd/httpd-${PV}.tar.bz2
 LICENSE="Apache-2.0"
 SLOT="2"
 KEYWORDS="alpha amd64 arm hppa ia64 mips ppc ppc64 s390 sh sparc x86 ~x86-fbsd ~x86-sunos"
-IUSE="apache2 debug doc ldap mpm-itk mpm-leader mpm-peruser mpm-prefork mpm-threadpool mpm-worker ssl static-modules threads selinux"
+IUSE="apache2 debug doc ldap mpm-itk mpm-leader mpm-peruser mpm-prefork mpm-threadpool mpm-worker ssl static-modules threads selinux openldap-alternate-prefix"
 
 RDEPEND="dev-lang/perl
 	~dev-libs/apr-0.9.12
@@ -120,6 +120,7 @@ src_compile() {
 
 	local myconf
 	useq ldap && myconf="${myconf} --enable-auth-ldap=${modtype} --enable-ldap=${modtype}"
+	use openldap-alternate-prefix && use ldap && myconf="${myconf} --with-ldap-include=/usr/openldap/include --with-ldap-lib=/usr/openldap/lib"
 	useq ssl && myconf="${myconf} --with-ssl=/usr  --enable-ssl=${modtype}"
 	useq ssl || myconf="${myconf} --disable-ssl"
 

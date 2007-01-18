@@ -15,7 +15,7 @@ SRC_URI="mirror://gnu/readline/${P}.tar.gz
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="alpha amd64 arm hppa ia64 m68k mips ppc ~ppc-macos ppc64 s390 sh sparc x86 ~x86-sunos"
-IUSE=""
+IUSE="sun-ld"
 
 # We must be certain that we have a bash that is linked
 # to its internal readline, else we may get problems.
@@ -58,7 +58,7 @@ src_install() {
 	make DESTDIR="${D}" install || die
 	dodir /$(get_libdir)
 
-	if ! use userland_Darwin ; then
+	if ! use userland_Darwin && ! use sun-ld; then
 		mv "${D}"/usr/$(get_libdir)/*.so* "${D}"/$(get_libdir)
 		chmod a+rx "${D}"/$(get_libdir)/*.so*
 
